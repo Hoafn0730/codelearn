@@ -11,15 +11,16 @@
             href="https: //fonts.googleapis.com/css2? family = Roboto: wght @ 300; 400; 500; 700 & display = swap "
             rel=" stylesheet "
         />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     </head>
 
     <body>
         <div id="root"></div>
         <div class="app">
+            <!-- Header -->
             <header class="header">
-                <div class="grid wide d-flex-center">
+                <div class="grid d-flex-center">
+                    <!-- Header logo -->
                     <div class="header_logo">
                         <a href="/" class="header_logo-link">
                             <svg viewBox="0 0 102 21.705" class="logo">
@@ -33,7 +34,7 @@
                             </svg>
                         </a>
 
-                        <button class="header_categories-btn btn">
+                        <button aria-expanded="false" class="header_categories-btn btn">
                             Categories
                             <svg
                                 viewBox="0 0 8 8"
@@ -53,45 +54,57 @@
                                 </g>
                             </svg>
                         </button>
-                        <ul class="header_categories-list">
-                            <li class="header_categories-item">1</li>
-                            <li class="header_categories-item">2</li>
-                            <li class="header_categories-item">3</li>
-                        </ul>
+
+                        <!-- Categories -->
+                        <div aria-hidden="true" class="header_categories categories-wrapper">
+                            <div class="categories_header">
+                                <h6 class="categories_heading">Categories</h6>
+                            </div>
+
+                            <ul class="header_categories-list"></ul>
+                        </div>
                     </div>
 
+                    <!-- Header body -->
                     <div class="header_body d-flex-center">
+                        <!-- Search -->
                         <div class="header_search">
                             <i class="header_search-icon fa-solid fa-magnifying-glass"></i>
-                            <input type="text" class="header_search-input" placeholder="Tìm kiếm">
+                            <input type="text" class="header_search-input" placeholder="Tìm kiếm" />
 
-                            <div class="header_search-result">
-                                <div class="search-result-list">
-                                    <div class="search_result-header">
-                                        <i class="header_search-icon fa-solid fa-magnifying-glass"></i>
-                                        <span>Kết quả cho 'sass'</span>
+                            <div class="header_search-history">
+                                <div class="search-history-list">
+                                    <div class="search_history-header">
+                                        <div class="search_history-heading">
+                                            <i class="header_search-icon fa-solid fa-magnifying-glass"></i>
+                                            <span>Lịch sử tìm kiếm</span>
+                                        </div>
+                                        <ul class="search_history-list"></ul>
                                     </div>
-
-
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Header Actions -->
                     <div class="header_actions">
                         <div class="header_actions-learning btn">Khoá học của tôi</div>
                         <div class="notification-btn">
                             <i class="notification-icon fa-solid fa-bell"></i>
                         </div>
                         <div class="header_actions-avatar">
-                            <img class="avatar" src="./assets/img/apple-touch-icon.webp" alt="">
+                            <img class="avatar" src="./assets/img/apple-touch-icon.webp" alt="" />
                         </div>
                     </div>
                 </div>
             </header>
+
+            <!-- Container -->
             <div class="container"></div>
 
+            <!-- Footer -->
             <footer class="footer"></footer>
         </div>
-        <script type="module" src="./js/script.js"></script>
+        <script type="module" src="./assets/js/script.js"></script>
     </body>
 </html>

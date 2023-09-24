@@ -1,0 +1,79 @@
+:root {
+    --white-color    : #fff;
+    --black-color    : #000;
+    --text-color     : #333;
+    --primary-color  : #3A10E5;
+    --border-color   : #dbdbdb;
+    --beige-color    : #FFF0E5;
+    --star-gold-color: #ffce3d;
+    --desc-color     : #0000008a;
+
+    --header-height: 80px;
+
+}
+
+* {
+    box-sizing: inherit;
+    margin    : 0;
+    padding   : 0;
+}
+
+html {
+    font-size  : 61.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing : border-box;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.d-flex-center {
+    align-items    : center;
+    display        : flex;
+    justify-content: center;
+}
+
+.dropdown-icon {
+    height          : 14px;
+    margin-left     : 6px;
+    transition      : transform 0.35s ease-out;
+    transform-origin: center 0.3125rem;
+}
+
+.btn {
+    min-width      : 124px;
+    height         : 34px;
+    text-decoration: none;
+    border         : none;
+    border-radius  : 2px;
+    font-size      : 1.5rem;
+    padding        : 0 12px;
+    outline        : none;
+    cursor         : pointer;
+    color          : var(--black-color);
+    display        : inline-flex;
+    align-items    : center;
+    justify-content: center;
+    line-height    : 1.6rem;
+
+    &:hover {
+        color: var(--primary-color);
+    }
+}
+
+
+
+/* Animation */
+@keyframes fadeIn {
+    0% {
+        opacity  : 0;
+        transform: translateY(-8px);
+    }
+
+    100% {
+        opacity  : 1;
+        transform: translateY(0);
+    }
+}

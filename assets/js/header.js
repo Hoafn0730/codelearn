@@ -1,4 +1,4 @@
-import Category from './components/Category/Category.js';
+import Category from './components/Category.js';
 var API = 'http://localhost:3000';
 
 function getCategories(callback) {

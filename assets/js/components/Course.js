@@ -1,9 +1,9 @@
-function Category({ category }) {
+function Course({ Course }) {
     return `
-    <li class="header_categories-item category_item-${category.id}">
+    <li class="header_categories-item category_item-${Course.id}">
         <a href="#" class="header_categories-link">
             <div class="header_categoties-item-content">
-                ${category.name}
+                ${Course.name}
             </div>
             <i class="header_categories-icon fa-solid fa-angle-right"></i>
         </a> 
@@ -11,4 +11,4 @@ function Category({ category }) {
     `;
 }
 
-export default Category;
+export default Course;

@@ -58,6 +58,11 @@ html {
 }
 .btn:hover {
   color: var(--primary-color);
+  background-color: rgba(22, 24, 35, 0.05);
+}
+
+body {
+  height: 2000px;
 }
 
 /* Animation */

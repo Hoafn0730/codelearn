@@ -1,3 +1,5 @@
+@import 'mixin';
+
 // Header
 .header {
     height          : var(--header-height);
@@ -31,7 +33,6 @@
         }
 
         .header_categories-btn {
-            position        : relative;
             margin-left     : 30px;
             font-size       : 1.6rem;
             background-color: var(--beige-color);
@@ -44,24 +45,18 @@
         }
 
         .categories-wrapper {
+            border-radius : 10px;
             min-width     : 360px;
             padding-bottom: 14px;
             padding       : 16px 0;
+            height        : 480px;
+            inset         : 45px 0 0 30%;
         }
 
         .header_categories {
-            position        : absolute;
-            inset           : 45px 0 0 30%;
-            border-radius   : 10px;
-            box-shadow      : 0 -4px 32px rgba(0, 0, 0, .2);
-            background-color: var(--white-color);
-            overflow        : hidden;
-            height          : 480px;
-            display         : none;
+            @include sub-menu;
+            display: none;
 
-            animation  : fadeIn .3s ease;
-            transition : all .3s ease-in-out;
-            will-change: opacity, transform;
 
             .categories_header {
                 align-items: center;
@@ -75,24 +70,16 @@
             }
 
             .header_categories-list {
-                list-style         : none;
-                font-size          : 1.8rem;
-                overflow-y         : auto;
-                overscroll-behavior: contain;
-                max-height         : 58vh;
+                @include sub-menu-list;
 
                 .header_categories-item {
-                    padding      : 10px;
-                    transition   : background-color .3s;
-                    border-radius: 10px;
-                    margin       : 0 8px;
+                    @include sub-menu-item;
 
                     .header_categories-link {
-                        text-decoration: none;
-                        color          : var(--black-color);
-                        padding        : 10px;
-                        display        : flex;
+                        @include sub-menu-link;
                         justify-content: space-between;
+                        padding        : 10px;
+
 
                         .header_categories-icon {
                             display: block;
@@ -113,7 +100,6 @@
                 &::-webkit-scrollbar {
                     width: 8px;
                 }
-
 
                 &::-webkit-scrollbar-thumb {
                     background-color: #d9d9d9;
@@ -222,12 +208,130 @@
         align-items    : center;
         display        : flex;
         justify-content: flex-end;
+        position       : relative;
 
-        .header_actions-learning {
-            font-size: 1.6rem;
+
+        // My courses
+        .header_mycourses-btn {
+            font-size       : 1.6rem;
+            background-color: transparent;
+        }
+
+        .header_mycourses {
+            @include sub-menu;
+            display: none;
+
+            .mycourses_header {
+                align-items: center;
+                display    : flex;
+                padding    : 10px 20px 20px;
+
+                .mycourses_heading {
+                    font-size  : 2rem;
+                    line-height: 1.6rem;
+                }
+            }
+
+            .header_mycourses-list {
+                @include sub-menu-list;
+
+                .header_mycourses-item {
+                    @include sub-menu-item;
+
+                    .header_mycourses-link {
+                        @include sub-menu-link;
+
+                        .header_mycourses-item-thumb {
+                            background-color: #ebebeb;
+                            border-radius   : 8px;
+                            display         : block;
+                            line-height     : 67px;
+                            max-height      : 67px;
+                            text-align      : center;
+                            width           : 120px;
+
+                            &::after {
+                                color    : var(--text-color);
+                                content  : "NO IMAGE";
+                                font-size: 1.2rem;
+                            }
+                        }
+
+                        .header_mycourses-info {
+                            margin-left: 12px;
+
+                            .header_mycourses-title {
+                                font-size: 1.4rem;
+                                margin   : 6px 0 0;
+                            }
+
+                            .header_mycourses-lastCompleted {
+                                color    : #666;
+                                font-size: 1.2rem;
+                                margin   : 4px 0 0;
+
+                            }
+
+                            .VerticalProgressBar {
+                                background-color: #ddd;
+                                background-color: var(--bg-color, #ddd);
+                                border-radius   : 4px;
+                                height          : 8px;
+                                margin-top      : 8px;
+                                overflow        : hidden;
+                                position        : relative;
+
+                                &::after {
+                                    content         : "";
+                                    display         : block;
+                                    position        : absolute;
+                                    bottom          : 0;
+                                    left            : 0;
+                                    top             : 0;
+                                    background-color: var(--primary-color);
+                                    background-color: var(--color, var(--primary-color));
+                                    transition      : width 1s ease;
+                                    width           : var(--progress);
+                                }
+                            }
+
+                        }
+                    }
+
+                    &:hover {
+                        background-color: rgba(22, 24, 35, .05);
+                        color           : var(--primary-color);
+                    }
+
+                    &:hover .header_mycourses-link {
+                        color: var(--primary-color);
+                    }
+
+                }
+
+                &::-webkit-scrollbar {
+                    width: 8px;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: #d9d9d9;
+                    border-radius   : 100px;
+                }
+            }
+        }
+
+        .mycourses-wrapper {
+            border-radius : 10px;
+            min-width     : 360px;
+            padding-bottom: 14px;
+            padding       : 16px 0;
+            height        : 480px;
+            inset         : 45px 20% 0 0;
         }
 
 
+
+        // Notification
         .notification-btn {
             user-select: none;
             padding    : 8px;

@@ -1,0 +1,31 @@
+@mixin sub-menu {
+    position        : absolute;
+    box-shadow      : 0 -4px 32px rgba(0, 0, 0, .2);
+    background-color: var(--white-color);
+    overflow        : hidden;
+
+    animation  : fadeIn .3s ease;
+    transition : all .3s ease-in-out;
+    will-change: opacity, transform;
+}
+
+@mixin sub-menu-list {
+    list-style         : none;
+    font-size          : 1.8rem;
+    overflow-y         : auto;
+    overscroll-behavior: contain;
+    max-height         : 58vh;
+}
+
+@mixin sub-menu-item {
+    padding      : 10px;
+    transition   : background-color .3s;
+    border-radius: 10px;
+    margin       : 0 8px;
+}
+
+@mixin sub-menu-link {
+    text-decoration: none;
+    color          : var(--black-color);
+    display        : flex;
+}

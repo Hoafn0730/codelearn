@@ -54,7 +54,6 @@
                                 </g>
                             </svg>
                         </button>
-
                         <!-- Categories -->
                         <div aria-hidden="true" class="header_categories categories-wrapper">
                             <div class="categories_header">
@@ -88,10 +87,38 @@
 
                     <!-- Header Actions -->
                     <div class="header_actions">
-                        <div class="header_actions-learning btn">Khoá học của tôi</div>
-                        <div class="notification-btn">
+                        <button aria-expanded="false" class="header_mycourses-btn btn">My Courses</button>
+
+                        <div aria-hidden="true" class="header_mycourses mycourses-wrapper">
+                            <div class="mycourses_header">
+                                <h6 class="mycourses_heading">My Courses</h6>
+                            </div>
+                            <ul class="header_mycourses-list">
+
+                                <li class="header_mycourses-item category_item-${Course.id}">
+                                    <a href="#" class="header_mycourses-link">
+                                        <img
+                                            src="./assets/img/Coding School Logo_.jpg"
+                                            alt=""
+                                            class="header_mycourses-item-thumb"
+                                        />
+                                        <div class="header_mycourses-info">
+                                            <h3 class="header_mycourses-title">
+                                                Xây dựng Website với ReactJS
+                                            </h3>
+                                            <p class="header_mycourses-lastCompleted">Học cách đây 7 ngày trước</p>
+                                            <div class="VerticalProgressBar" style="--progress: 79%;"></div>
+                                        </div>
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div  class="notification-btn">
                             <i class="notification-icon fa-solid fa-bell"></i>
                         </div>
+
                         <div class="header_actions-avatar">
                             <img class="avatar" src="./assets/img/apple-touch-icon.webp" alt="" />
                         </div>

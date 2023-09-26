@@ -59,11 +59,14 @@ html {
     line-height    : 1.6rem;
 
     &:hover {
-        color: var(--primary-color);
+        color           : var(--primary-color);
+        background-color: rgba(22, 24, 35, .05);
     }
 }
 
-
+body {
+    height: 2000px;
+}
 
 /* Animation */
 @keyframes fadeIn {

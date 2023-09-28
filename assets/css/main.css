@@ -79,6 +79,7 @@
   text-decoration: none;
   color: var(--black-color);
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 10px;
 }
@@ -215,11 +216,13 @@
   transition: background-color 0.3s;
   border-radius: 10px;
   margin: 0 8px;
+  max-height: 52vh;
 }
 .header .header_actions .header_mycourses .header_mycourses-list .header_mycourses-item .header_mycourses-link {
   text-decoration: none;
   color: var(--black-color);
   display: flex;
+  align-items: center;
 }
 .header .header_actions .header_mycourses .header_mycourses-list .header_mycourses-item .header_mycourses-link .header_mycourses-item-thumb {
   background-color: #ebebeb;
@@ -253,16 +256,18 @@
   border-radius: 4px;
   height: 8px;
   margin-top: 8px;
-  overflow: hidden;
   position: relative;
+}
+.header .header_actions .header_mycourses .header_mycourses-list .header_mycourses-item .header_mycourses-link .header_mycourses-info .VerticalProgressBar:hover .tooltiptext {
+  display: block;
+  opacity: 1;
 }
 .header .header_actions .header_mycourses .header_mycourses-list .header_mycourses-item .header_mycourses-link .header_mycourses-info .VerticalProgressBar::after {
   content: "";
   display: block;
   position: absolute;
-  bottom: 0;
-  left: 0;
-  top: 0;
+  border-radius: 4px;
+  inset: 0;
   background-color: var(--primary-color);
   background-color: var(--color, var(--primary-color));
   transition: width 1s ease;
@@ -270,10 +275,9 @@
 }
 .header .header_actions .header_mycourses .header_mycourses-list .header_mycourses-item:hover {
   background-color: rgba(22, 24, 35, 0.05);
-  color: var(--primary-color);
 }
 .header .header_actions .header_mycourses .header_mycourses-list .header_mycourses-item:hover .header_mycourses-link {
-  color: var(--primary-color);
+  color: var(--black-color);
 }
 .header .header_actions .header_mycourses .header_mycourses-list::-webkit-scrollbar {
   width: 8px;
@@ -285,10 +289,10 @@
 .header .header_actions .mycourses-wrapper {
   border-radius: 10px;
   min-width: 360px;
-  padding-bottom: 14px;
-  padding: 16px 0;
-  height: 480px;
-  inset: 45px 20% 0 0;
+  padding-bottom: 10px;
+  padding-top: 16px;
+  min-height: 10px;
+  inset: 46px 20% auto auto;
 }
 .header .header_actions .notification-btn {
   user-select: none;
@@ -302,17 +306,105 @@
 .header .header_actions .notification-btn .notification-icon:hover {
   color: var(--primary-color);
 }
+.header .header_actions .header_notifications {
+  position: absolute;
+  box-shadow: 0 -4px 32px rgba(0, 0, 0, 0.2);
+  background-color: var(--white-color);
+  overflow: hidden;
+  animation: fadeIn 0.3s ease;
+  transition: all 0.3s ease-in-out;
+  will-change: opacity, transform;
+  display: none;
+}
+.header .header_actions .header_notifications .notifications_header {
+  align-items: center;
+  display: flex;
+  padding: 10px 20px 20px;
+}
+.header .header_actions .header_notifications .notifications_header .notifications_heading {
+  font-size: 2rem;
+  line-height: 1.6rem;
+}
+.header .header_actions .header_notifications .header_notifications-list {
+  list-style: none;
+  font-size: 1.8rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  max-height: 58vh;
+  max-height: 53vh;
+  padding-bottom: 8px;
+}
+.header .header_actions .header_notifications .header_notifications-list .header_notifications-item {
+  padding: 10px;
+  transition: background-color 0.3s;
+  border-radius: 10px;
+  margin: 0 8px;
+}
+.header .header_actions .header_notifications .header_notifications-list .header_notifications-item .notification-link {
+  text-decoration: none;
+  color: var(--black-color);
+  display: flex;
+  align-items: center;
+}
+.header .header_actions .header_notifications .header_notifications-list .header_notifications-item .notification-link .notification_message {
+  margin-left: 12px;
+  line-height: 1.6rem;
+}
+.header .header_actions .header_notifications .header_notifications-list .header_notifications-item .notification-link .notification_message div {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-top: 6px;
+}
+.header .header_actions .header_notifications .header_notifications-list .header_notifications-item .notification-link .notification_message .notification_createdAt {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-top: 6px;
+}
+.header .header_actions .header_notifications .header_notifications-list .header_notifications-item:hover {
+  background-color: rgba(22, 24, 35, 0.05);
+}
+.header .header_actions .header_notifications .header_notifications-list .header_notifications-item:hover .header_mycourses-link {
+  color: var(--black-color);
+}
+.header .header_actions .header_notifications .header_notifications-list::-webkit-scrollbar {
+  width: 8px;
+}
+.header .header_actions .header_notifications .header_notifications-list::-webkit-scrollbar-thumb {
+  background-color: #d9d9d9;
+  border-radius: 100px;
+}
+.header .header_actions .header_notifications .header_notifications-isSeeAll {
+  align-items: center;
+  bottom: 0;
+  background-color: #fff;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--primary-color);
+  cursor: pointer;
+  display: flex;
+  font-size: 14px;
+  font-weight: 500;
+  height: 44px;
+  justify-content: center;
+  text-decoration: none;
+  position: sticky;
+  position: -webkit-sticky;
+}
+.header .header_actions .header_notifications .header_notifications-isSeeAll:hover {
+  background-color: rgba(17, 20, 34, 0.245);
+}
+.header .header_actions .notifications-wrapper {
+  border-radius: 10px;
+  width: 360px;
+  min-height: 180px;
+  padding-bottom: 14px;
+  padding: 16px 0 0 0;
+  inset: 46px 10% auto auto;
+}
 .header .header_actions .header_actions-avatar {
   margin-left: 12px;
   border-radius: 50%;
   cursor: pointer;
-}
-.header .header_actions .header_actions-avatar .avatar {
-  border: 1px solid #000;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  object-fit: cover;
 }
 .header .header_logo,
 .header .header_body,

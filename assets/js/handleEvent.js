@@ -6,15 +6,14 @@ const myCourses = document.querySelector('.header_mycourses');
 function handleEvent() {
     let isExpanded = false;
     let target;
-
     const actions = [btnCategories, btnMyCourses];
     const elementsExpanded = [categories, myCourses];
 
+    // Handle event actions click
     actions.forEach((action, index) => {
         action.onclick = function (e) {
             if (e.target === target) {
                 isExpanded = !isExpanded;
-                console.log(2, isExpanded);
                 const nextElement = e.target.nextElementSibling;
 
                 e.target.ariaExpanded = isExpanded ? true : false;
@@ -58,6 +57,7 @@ function handleEvent() {
             categories.style.display = 'none';
             target = null;
         }
+
         if (!e.target.closest('.header_mycourses')) {
             isExpanded = false;
             btnMyCourses.ariaExpanded = false;
@@ -66,6 +66,12 @@ function handleEvent() {
             target = null;
         }
     };
+
+    // Handle event onmouseover show tooltip - chua lam
+    // setTimeout(() => {
+    //     const VerticalProgress = document.querySelector('.VerticalProgressBar');
+    //     VerticalProgress.onmouseover = (e) => {};
+    // }, 1000);
 }
 
 export default handleEvent;

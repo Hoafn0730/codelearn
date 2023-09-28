@@ -88,35 +88,146 @@
                     <!-- Header Actions -->
                     <div class="header_actions">
                         <button aria-expanded="false" class="header_mycourses-btn btn">My Courses</button>
-
-                        <div aria-hidden="true" class="header_mycourses mycourses-wrapper">
+                        <div aria-hidden="true" id="mycourses" class="header_mycourses mycourses-wrapper">
                             <div class="mycourses_header">
                                 <h6 class="mycourses_heading">My Courses</h6>
                             </div>
-                            <ul class="header_mycourses-list">
+                            <ul class="header_mycourses-list"></ul>
+                        </div>
 
-                                <li class="header_mycourses-item category_item-${Course.id}">
-                                    <a href="#" class="header_mycourses-link">
-                                        <img
-                                            src="./assets/img/Coding School Logo_.jpg"
-                                            alt=""
-                                            class="header_mycourses-item-thumb"
-                                        />
-                                        <div class="header_mycourses-info">
-                                            <h3 class="header_mycourses-title">
-                                                Xây dựng Website với ReactJS
-                                            </h3>
-                                            <p class="header_mycourses-lastCompleted">Học cách đây 7 ngày trước</p>
-                                            <div class="VerticalProgressBar" style="--progress: 79%;"></div>
+                        <div aria-expanded="false" class="notification-btn">
+                            <i class="notification-icon fa-solid fa-bell"></i>
+                        </div>
+                        <div aria-hidden="true" id="notifications" class="header_notifications notifications-wrapper">
+                            <div class="notifications_header">
+                                <h6 class="notifications_heading">Notifications</h6>
+                            </div>
+                            <ul class="header_notifications-list">
+
+                                <li class="header_notifications-item notification-${course.id}">
+                                    <a href="#" class="notification-link">
+                                        <img src="./assets/img/apple-touch-icon.webp" alt="" class="avatar" />
+
+                                        <div class="notification_message">
+                                            <div>Bài học
+                                                <strong>
+                                                    Giới thiệu khóa học Sass
+                                                </strong>
+                                                mới được thêm vào.
+                                            </div>
+                                            <p class="notification_createdAt">
+                                                một tháng trước
+                                            </p>
                                         </div>
                                     </a>
                                 </li>
-                                
-                            </ul>
-                        </div>
 
-                        <div  class="notification-btn">
-                            <i class="notification-icon fa-solid fa-bell"></i>
+                                <li class="header_notifications-item notification-${course.id}">
+                                    <a href="#" class="notification-link">
+                                        <img src="./assets/img/apple-touch-icon.webp" alt="" class="avatar" />
+
+                                        <div class="notification_message">
+                                            <div>Bài học
+                                                <strong>
+                                                    Giới thiệu khóa học Sass
+                                                </strong>
+                                                mới được thêm vào.
+                                            </div>
+                                            <p class="notification_createdAt">
+                                                một tháng trước
+                                            </p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="header_notifications-item notification-${course.id}">
+                                    <a href="#" class="notification-link">
+                                        <img src="./assets/img/apple-touch-icon.webp" alt="" class="avatar" />
+
+                                        <div class="notification_message">
+                                            <div>Bài học
+                                                <strong>
+                                                    Giới thiệu khóa học Sass
+                                                </strong>
+                                                mới được thêm vào.
+                                            </div>
+                                            <p class="notification_createdAt">
+                                                một tháng trước
+                                            </p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="header_notifications-item notification-${course.id}">
+                                    <a href="#" class="notification-link">
+                                        <img src="./assets/img/apple-touch-icon.webp" alt="" class="avatar" />
+
+                                        <div class="notification_message">
+                                            <div>Bài học
+                                                <strong>
+                                                    Giới thiệu khóa học Sass
+                                                </strong>
+                                                mới được thêm vào.
+                                            </div>
+                                            <p class="notification_createdAt">
+                                                một tháng trước
+                                            </p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="header_notifications-item notification-${course.id}">
+                                    <a href="#" class="notification-link">
+                                        <img src="./assets/img/apple-touch-icon.webp" alt="" class="avatar" />
+
+                                        <div class="notification_message">
+                                            <div>Bài học
+                                                <strong>
+                                                    Giới thiệu khóa học Sass
+                                                </strong>
+                                                mới được thêm vào.
+                                            </div>
+                                            <p class="notification_createdAt">
+                                                một tháng trước
+                                            </p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="header_notifications-item notification-${course.id}">
+                                    <a href="#" class="notification-link">
+                                        <img src="./assets/img/apple-touch-icon.webp" alt="" class="avatar" />
+
+                                        <div class="notification_message">
+                                            <div>Bài học
+                                                <strong>
+                                                    Giới thiệu khóa học Sass
+                                                </strong>
+                                                mới được thêm vào.
+                                            </div>
+                                            <p class="notification_createdAt">
+                                                một tháng trước
+                                            </p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="header_notifications-item notification-${course.id}">
+                                    <a href="#" class="notification-link">
+                                        <img src="./assets/img/apple-touch-icon.webp" alt="" class="avatar" />
+
+                                        <div class="notification_message">
+                                            <div>Bài học
+                                                <strong>
+                                                    Giới thiệu khóa học Sass
+                                                </strong>
+                                                mới được thêm vào.
+                                            </div>
+                                            <p class="notification_createdAt">
+                                                một tháng trước
+                                            </p>
+                                        </div>
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                            <a href="#" class="header_notifications-isSeeAll">Xem tất cả thông báo</a>
                         </div>
 
                         <div class="header_actions-avatar">

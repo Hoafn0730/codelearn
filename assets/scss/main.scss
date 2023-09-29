@@ -75,13 +75,13 @@
                 .header_categories-item {
                     @include sub-menu-item;
 
-                    .header_categories-link {
+                    .header_categorie-link {
                         @include sub-menu-link;
                         justify-content: space-between;
                         padding        : 10px;
 
 
-                        .header_categories-icon {
+                        .header_categorie-icon {
                             display: block;
                         }
 
@@ -92,7 +92,7 @@
                         color           : var(--primary-color);
                     }
 
-                    &:hover .header_categories-link {
+                    &:hover .header_categorie-link {
                         color: var(--primary-color);
                     }
                 }
@@ -235,14 +235,24 @@
             .header_mycourses-list {
                 @include sub-menu-list;
 
+                .header_courses-empty {
+                    padding        : 10px;
+                    margin         : 0 8px;
+                    height         : 80px;
+                    text-align     : center;
+                    display        : flex;
+                    justify-content: center;
+                    align-items    : center;
+                }
+
                 .header_mycourses-item {
                     @include sub-menu-item;
                     max-height: 52vh;
 
-                    .header_mycourses-link {
+                    .header_mycourse-link {
                         @include sub-menu-link;
 
-                        .header_mycourses-item-thumb {
+                        .header_mycourse-item-thumb {
                             background-color: #ebebeb;
                             border-radius   : 8px;
                             display         : block;
@@ -258,15 +268,15 @@
                             }
                         }
 
-                        .header_mycourses-info {
+                        .header_mycourse-info {
                             margin-left: 12px;
 
-                            .header_mycourses-title {
+                            .header_mycourse-title {
                                 font-size: 1.4rem;
                                 margin   : 6px 0 0;
                             }
 
-                            .header_mycourses-lastCompleted {
+                            .header_mycourse-lastCompleted {
                                 color    : #666;
                                 font-size: 1.2rem;
                                 margin   : 4px 0 0;
@@ -280,11 +290,6 @@
                                 height          : 8px;
                                 margin-top      : 8px;
                                 position        : relative;
-
-                                &:hover .tooltiptext {
-                                    display: block;
-                                    opacity: 1;
-                                }
 
                                 &::after {
                                     content         : "";
@@ -304,11 +309,6 @@
 
                     &:hover {
                         background-color: rgba(22, 24, 35, .05);
-
-                    }
-
-                    &:hover .header_mycourses-link {
-                        color: var(--black-color);
                     }
 
                 }
@@ -339,17 +339,12 @@
             user-select: none;
             padding    : 8px;
             cursor     : pointer;
+            font-size  : 2rem;
+            color      : #707070;
 
-            .notification-icon {
-                font-size: 2rem;
-                color    : #707070;
-
-                &:hover {
-                    color: var(--primary-color);
-                }
+            &:hover {
+                color: var(--primary-color);
             }
-
-
         }
 
         .header_notifications {
@@ -372,6 +367,15 @@
                 max-height    : 53vh;
                 padding-bottom: 8px;
 
+                .header_notifications-empty {
+                    padding        : 10px;
+                    margin         : 0 8px;
+                    height         : 80px;
+                    text-align     : center;
+                    display        : flex;
+                    justify-content: center;
+                    align-items    : center;
+                }
 
                 .header_notifications-item {
                     padding      : 10px;
@@ -423,24 +427,25 @@
             }
 
             .header_notifications-isSeeAll {
-                align-items: center;
-                bottom     : 0;
+                bottom: 0;
 
                 background-color: #fff;
                 border-top      : 1px solid rgba(0, 0, 0, .1);
                 color           : var(--primary-color);
                 cursor          : pointer;
                 display         : flex;
+                justify-content : center;
+                align-items     : center;
                 font-size       : 14px;
                 font-weight     : 500;
                 height          : 44px;
-                justify-content : center;
                 text-decoration : none;
                 position        : sticky;
                 position        : -webkit-sticky;
 
+
                 &:hover {
-                    background-color: rgba(17, 20, 34, 0.245);
+                    background-color: rgba(22, 24, 35, .05)
                 }
 
             }
@@ -461,7 +466,6 @@
             margin-left  : 12px;
             border-radius: 50%;
             cursor       : pointer;
-
         }
 
     }

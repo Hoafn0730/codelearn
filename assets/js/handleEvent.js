@@ -2,12 +2,19 @@ const btnCategories = document.querySelector('.header_categories-btn');
 const categories = document.querySelector('.header_categories');
 const btnMyCourses = document.querySelector('.header_mycourses-btn');
 const myCourses = document.querySelector('.header_mycourses');
+const btnNatifications = document.querySelector('.notification-icon');
+const notifications = document.querySelector('.header_notifications');
+const btnAvatar = document.querySelector('.header_actions-avatar');
 
 function handleEvent() {
     let isExpanded = false;
     let target;
-    const actions = [btnCategories, btnMyCourses];
-    const elementsExpanded = [categories, myCourses];
+    const actions = [btnCategories, btnMyCourses, btnNatifications];
+    const elementsExpanded = [categories, myCourses, notifications];
+
+    btnAvatar.onclick = (e) => {
+        console.log(123);
+    };
 
     // Handle event actions click
     actions.forEach((action, index) => {
@@ -63,6 +70,14 @@ function handleEvent() {
             btnMyCourses.ariaExpanded = false;
             myCourses.ariaHidden = true;
             myCourses.style.display = 'none';
+            target = null;
+        }
+
+        if (!e.target.closest('#notifications')) {
+            isExpanded = false;
+            btnNatifications.ariaExpanded = false;
+            notifications.ariaHidden = true;
+            notifications.style.display = 'none';
             target = null;
         }
     };

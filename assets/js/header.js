@@ -1,5 +1,6 @@
 import Category from './components/Category.js';
 import Course from './components/Course.js';
+import Notification from './components/Notification.js';
 
 var API = 'http://localhost:3000';
 
@@ -24,9 +25,36 @@ const course = {
     },
     renderCourse: function (courses) {
         const listCourses = document.querySelector('.header_mycourses-list');
+        if (courses.length == 0) {
+            listCourses.innerHTML = `
+                <div class="header_courses-empty">Your course list is empty</div>
+            `;
+            return;
+        }
         const htmls = courses.map((course) => Course({ course }));
         listCourses.innerHTML = htmls.join('');
     },
 };
 
-export { category, course };
+const notification = {
+    getNotifications: function (callback) {
+        fetch(API + '/notifications')
+            .then((response) => response.json())
+            .then(callback);
+    },
+    renderNotification: function (notifications) {
+        const listNotifications = document.querySelector('.header_notifications-list');
+        if (notifications.length == 0) {
+            listNotifications.innerHTML = `
+                <div class="header_notifications-empty">No notifications.</div>
+            `;
+            document.querySelector('.header_notifications-isSeeAll').style.display = 'none';
+            return;
+        }
+
+        const htmls = notifications.map((notification) => Notification({ notification }));
+        listNotifications.innerHTML = htmls.join('');
+    },
+};
+
+export { category, course, notification };

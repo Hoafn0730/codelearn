@@ -415,10 +415,64 @@
   border-radius: 50%;
   cursor: pointer;
 }
+.header .header_actions .header_userMenu {
+  position: absolute;
+  box-shadow: 0 -4px 32px rgba(0, 0, 0, 0.2);
+  background-color: var(--white-color);
+  overflow: hidden;
+  animation: fadeIn 0.3s ease;
+  transition: all 0.3s ease-in-out;
+  will-change: opacity, transform;
+  display: none;
+}
+.header .header_actions .header_userMenu .userMenu_user {
+  display: flex;
+  align-items: center;
+}
+.header .header_actions .header_userMenu .userMenu_user .userMenu_user-avatar {
+  margin: 10px 0;
+}
+.header .header_actions .header_userMenu .userMenu_user .userMenu_info {
+  margin-left: 12px;
+}
+.header .header_actions .header_userMenu .userMenu_user .userMenu_info .userMenu_info-name {
+  color: #292929;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.header .header_actions .header_userMenu .userMenu_user .userMenu_info .userMenu_info-username {
+  color: #757575;
+  font-size: 1.4rem;
+  margin-top: 4px;
+}
+.header .header_actions .header_userMenu hr {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  margin: 8px 0;
+}
+.header .header_actions .header_userMenu .userMenu-list .userMenu_item-link {
+  color: #666;
+  cursor: pointer;
+  display: block;
+  font-size: 1.4rem;
+  padding: 10px 0;
+}
+.header .header_actions .userMenu-wrapper {
+  border-radius: 10px;
+  min-width: 230px;
+  min-height: 180px;
+  padding: 8px 24px;
+  inset: 46px 0 auto auto;
+}
 .header .header_logo,
 .header .header_body,
 .header .header_actions {
   flex: 1 1;
+}
+
+.container .home_slideShow {
+  margin-top: 18px;
+  min-height: 270px;
 }
 
 /*# sourceMappingURL=main.css.map */

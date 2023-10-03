@@ -19,7 +19,7 @@
         <div class="app">
             <!-- Header -->
             <header class="header">
-                <div class="grid d-flex-center">
+                <div class="grid wide d-flex-center">
                     <!-- Header logo -->
                     <div class="header_logo">
                         <a href="/" class="header_logo-link">
@@ -87,6 +87,7 @@
 
                     <!-- Header Actions -->
                     <div class="header_actions">
+                        <!-- myCourse -->
                         <button aria-expanded="false" class="header_mycourses-btn btn">My Courses</button>
                         <div aria-hidden="true" id="mycourses" class="header_mycourses mycourses-wrapper">
                             <div class="mycourses_header">
@@ -95,6 +96,7 @@
                             <ul class="header_mycourses-list"></ul>
                         </div>
 
+                        <!-- Notificotion -->
                         <div aria-expanded="false" class="notification-btn notification-icon fa-solid fa-bell"></div>
                         <div aria-hidden="true" id="notifications" class="header_notifications notifications-wrapper">
                             <div class="notifications_header">
@@ -106,15 +108,58 @@
                             <a href="#" class="header_notifications-isSeeAll">Xem tất cả thông báo</a>
                         </div>
 
-                        <div class="header_actions-avatar">
+                        <!-- User Menu -->
+                        <div aria-expanded="false" class="header_actions-avatar">
                             <img class="avatar" src="./assets/img/apple-touch-icon.webp" alt="" />
+                        </div>
+                        <div aria-hidden="true" id="userMenu" class="header_userMenu userMenu-wrapper">
+                            <div class="userMenu_user">
+                                <div class="userMenu_user-avatar">
+                                    <img class="avatar" src="./assets/img/apple-touch-icon.webp" alt="" />
+                                </div>
+                                <div class="userMenu_info">
+                                    <span class="userMenu_info-name">Hoàn Trần</span>
+                                    <div class="userMenu_info-username">@hoantran2</div>
+                                </div>
+                            </div>
+                            <hr />
+                            <ul class="userMenu-list">
+                                <li class="userMenu_item">
+                                    <a href="" class="userMenu_item-link"> Trang cá nhân </a>
+                                </li>
+                                <hr />
+                                <li class="userMenu_item">
+                                    <a href="" class="userMenu_item-link"> Viết blog </a>
+                                </li>
+                                <li class="userMenu_item">
+                                    <a href="" class="userMenu_item-link"> Bài viết của tôi </a>
+                                </li>
+                                <hr />
+                                <li class="userMenu_item">
+                                    <a href="" class="userMenu_item-link"> Bài viết đã lưu </a>
+                                </li>
+                                <hr />
+                                <li class="userMenu_item">
+                                    <a href="" class="userMenu_item-link"> Cài đặt </a>
+                                </li>
+                                <li class="userMenu_item">
+                                    <a href="" class="userMenu_item-link"> Đăng xuất </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </header>
 
             <!-- Container -->
-            <div class="container"></div>
+            <div class="container">
+                <div class="grid wide">
+                    <div class="home_slideShow">
+                        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, commodi est? Maxime minima quis exercitationem quia, accusamus quisquam. Consequuntur est esse modi harum impedit dicta commodi iste voluptatibus cumque similique.</h1>
+                    </div>
+                </div>
+                <div class="sideBar"></div>
+            </div>
 
             <!-- Footer -->
             <footer class="footer"></footer>

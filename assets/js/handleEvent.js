@@ -3,18 +3,20 @@ const categories = document.querySelector('.header_categories');
 const btnMyCourses = document.querySelector('.header_mycourses-btn');
 const myCourses = document.querySelector('.header_mycourses');
 const btnNatifications = document.querySelector('.notification-icon');
-const notifications = document.querySelector('.header_notifications');
-const btnAvatar = document.querySelector('.header_actions-avatar');
+const notifications = document.querySelector('#notifications');
+let btnAvatar = document.querySelector('.avatar');
+const userMenu = document.querySelector('#userMenu');
 
 function handleEvent() {
     let isExpanded = false;
     let target;
-    const actions = [btnCategories, btnMyCourses, btnNatifications];
-    const elementsExpanded = [categories, myCourses, notifications];
-
     btnAvatar.onclick = (e) => {
-        console.log(123);
+        btnAvatar = btnAvatar.parentElement;
+        target = btnAvatar.parentElement;
     };
+
+    const actions = [btnCategories, btnMyCourses, btnNatifications, btnAvatar];
+    const elementsExpanded = [categories, myCourses, notifications, userMenu];
 
     // Handle event actions click
     actions.forEach((action, index) => {
@@ -78,6 +80,14 @@ function handleEvent() {
             btnNatifications.ariaExpanded = false;
             notifications.ariaHidden = true;
             notifications.style.display = 'none';
+            target = null;
+        }
+
+        if (!e.target.closest('#userMenu')) {
+            isExpanded = false;
+            btnAvatar.ariaExpanded = false;
+            userMenu.ariaHidden = true;
+            userMenu.style.display = 'none';
             target = null;
         }
     };

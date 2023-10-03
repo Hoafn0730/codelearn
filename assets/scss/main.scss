@@ -468,6 +468,66 @@
             cursor       : pointer;
         }
 
+        .header_userMenu {
+            @include sub-menu;
+            display: none;
+
+            .userMenu_user {
+                display    : flex;
+                align-items: center;
+
+                .userMenu_user-avatar {
+                    margin: 10px 0;
+                }
+
+                .userMenu_info {
+                    margin-left: 12px;
+
+                    .userMenu_info-name {
+                        color      : #292929;
+                        font-size  : 1.6rem;
+                        font-weight: 600;
+                    }
+
+                    .userMenu_info-username {
+                        color     : #757575;
+                        font-size : 1.4rem;
+                        margin-top: 4px;
+
+                    }
+                }
+
+            }
+
+            hr {
+                border    : none;
+                border-top: 1px solid rgba(0, 0, 0, .05);
+                margin    : 8px 0;
+            }
+
+            .userMenu-list {
+                .userMenu_item-link {
+                    color    : #666;
+                    cursor   : pointer;
+                    display  : block;
+                    font-size: 1.4rem;
+                    padding  : 10px 0;
+
+                }
+
+
+            }
+
+        }
+
+        .userMenu-wrapper {
+            border-radius: 10px;
+            min-width    : 230px;
+            min-height   : 180px;
+            padding      : 8px 24px;
+            inset        : 46px 0 auto auto;
+        }
+
     }
 
     .header_logo,
@@ -478,4 +538,12 @@
 
 
 
+}
+
+// Container
+.container {
+    .home_slideShow {
+        margin-top: 18px;
+        min-height: 270px;
+    }
 }

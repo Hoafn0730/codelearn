@@ -25,7 +25,7 @@ const course = {
     },
     renderCourse: function (courses) {
         const listCourses = document.querySelector('.header_mycourses-list');
-        if (courses.length == 0) {
+        if (courses.length == 0 || courses == null) {
             listCourses.innerHTML = `
                 <div class="header_courses-empty">Your course list is empty</div>
             `;

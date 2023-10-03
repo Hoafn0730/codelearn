@@ -9,7 +9,7 @@
     --desc-color     : #0000008a;
 
     --header-height: 80px;
-
+    --width-sideBar: 96px;
 }
 
 * {
@@ -115,9 +115,13 @@ ul {
     object-fit   : cover;
 }
 
-body {
-    height: 2000px;
+.svg-inline--fa {
+    display       : var(--fa-display, inline-block);
+    height        : 1em;
+    overflow      : visible;
+    vertical-align: -0.125em;
 }
+
 
 body::-webkit-scrollbar {
     width: 10px;
@@ -132,6 +136,8 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-track {
     border-radius: 10px;
 }
+
+
 
 /* Animation */
 @keyframes fadeIn {

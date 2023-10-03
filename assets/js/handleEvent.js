@@ -10,6 +10,7 @@ const userMenu = document.querySelector('#userMenu');
 function handleEvent() {
     let isExpanded = false;
     let target;
+
     btnAvatar.onclick = (e) => {
         btnAvatar = btnAvatar.parentElement;
         target = btnAvatar.parentElement;

@@ -19,7 +19,7 @@
         <div class="app">
             <!-- Header -->
             <header class="header">
-                <div class="grid wide d-flex-center">
+                <div class="grid d-flex-center">
                     <!-- Header logo -->
                     <div class="header_logo">
                         <a href="/" class="header_logo-link">
@@ -96,6 +96,9 @@
                             <ul class="header_mycourses-list"></ul>
                         </div>
 
+                        <!-- Cart -->
+                        <div class="cart-btn cart-icon fa-solid fa-cart-shopping"></div>
+
                         <!-- Notificotion -->
                         <div aria-expanded="false" class="notification-btn notification-icon fa-solid fa-bell"></div>
                         <div aria-hidden="true" id="notifications" class="header_notifications notifications-wrapper">
@@ -153,16 +156,92 @@
 
             <!-- Container -->
             <div class="container">
-                <div class="grid wide">
-                    <div class="home_slideShow">
-                        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, commodi est? Maxime minima quis exercitationem quia, accusamus quisquam. Consequuntur est esse modi harum impedit dicta commodi iste voluptatibus cumque similique.</h1>
+                <!-- Sidebar -->
+                <div class="sideBar">
+                    <div class="sideBar_wrapper">
+                        <ul class="sideBar_list">
+                            <li class="sideBar_item">
+                                <a href="#" class="sideBar_item-link">
+                                    <i class="fa-solid fa-house"></i>
+                                    <span class="text sideBar_item-text">Trang chủ</span>
+                                </a>
+                            </li>
+
+                            <li class="sideBar_item">
+                                <a href="#" class="sideBar_item-link">
+                                    <i class="fa-solid fa-road"></i>
+                                    <span class="text sideBar_item-text">Lộ trình</span>
+                                </a>
+                            </li>
+
+                            <li class="sideBar_item">
+                                <a href="#" class="sideBar_item-link">
+                                    <i class="fa-solid fa-newspaper"></i>
+                                    <span class="text sideBar_item-text">Bài viết</span>
+                                </a>
+                            </li>
+
+                        </ul>
                     </div>
                 </div>
-                <div class="sideBar"></div>
+
+                <!-- Content -->
+                <div class="content">
+                    <div class="grid">
+                        <div class="home_slideShow">
+                            <div class="slideShow_wrapper">
+                                <div class="slick-slider">
+                                    <div class="slide_arrow slide_prev">
+                                        <svg
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            data-prefix="fas"
+                                            data-icon="chevron-left"
+                                            class="svg-inline--fa fa-chevron-left"
+                                            role="img"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 320 512"
+                                        >
+                                            <path
+                                                fill="currentColor"
+                                                d="M224 480c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25l192-192c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l169.4 169.4c12.5 12.5 12.5 32.75 0 45.25C240.4 476.9 232.2 480 224 480z"
+                                            ></path>
+                                        </svg>
+                                    </div>
+                                    <div class="slick-list">
+                                        <div class="slick-track">
+                                            <div class="slick-slide">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slide_arrow slide_next">
+                                        <svg
+                                            aria-hidden="true"
+                                            focusable="false"
+                                            data-prefix="fas"
+                                            data-icon="chevron-right"
+                                            class="svg-inline--fa fa-chevron-right"
+                                            role="img"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 320 512"
+                                        >
+                                            <path
+                                                fill="currentColor"
+                                                d="M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.63c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z"
+                                            ></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Footer -->
-            <footer class="footer"></footer>
+            <footer class="footer">
+                <h1>Footer</h1>
+            </footer>
         </div>
         <script type="module" src="./assets/js/script.js"></script>
     </body>

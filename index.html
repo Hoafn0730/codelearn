@@ -55,7 +55,7 @@
                             </svg>
                         </button>
                         <!-- Categories -->
-                        <div aria-hidden="true" class="header_categories categories-wrapper">
+                        <div aria-hidden="true" id="categories" class="header_categories categories-wrapper">
                             <div class="categories_header">
                                 <h6 class="categories_heading">Categories</h6>
                             </div>
@@ -180,7 +180,6 @@
                                     <span class="text sideBar_item-text">Bài viết</span>
                                 </a>
                             </li>
-
                         </ul>
                     </div>
                 </div>
@@ -188,6 +187,7 @@
                 <!-- Content -->
                 <div class="content">
                     <div class="grid">
+                        <!-- SlideShow -->
                         <div class="home_slideShow">
                             <div class="slideShow_wrapper">
                                 <div class="slick-slider">
@@ -208,11 +208,81 @@
                                             ></path>
                                         </svg>
                                     </div>
-                                    <div class="slick-list">
-                                        <div class="slick-track">
-                                            <div class="slick-slide">
+                                    <div class="slide-list">
+                                        <div class="slide-track">
+
+                                            <div class="slide-item">
+                                                <div class="slide_item-left">
+                                                    <h2 class="slide_item-heading">Học React miễn phí</h2>
+                                                    <p class="slide_item-desc">
+                                                        Để đạt được kết quả tốt trong mọi việc ta cần xác định mục tiêu
+                                                        rõ ràng cho việc đó. Học lập trình cũng không là ngoại lệ.
+                                                    </p>
+                                                    <a
+                                                        rel="noreferrer noopener noreferrer"
+                                                        class="slide_item-btn"
+                                                        target="_blank"
+                                                        href="https://fullstack.edu.vn/"
+                                                    >
+                                                        Đăng ký ngay
+                                                    </a>
+                                                </div>
+
+                                                <div class="slide_item-right">
+                                                    <img
+                                                        src="https://files.fullstack.edu.vn/f8-prod/banners/Banner_web_ReactJS.png"
+                                                        alt="Học React miễn phí" title="Học React miễn phí"
+                                                    />
+                                                </div>
                                             </div>
+                                            <div class="slide-item">
+                                                <div class="slide_item-left">
+                                                    <h2 class="slide_item-heading">Học React</h2>
+                                                    <p class="slide_item-desc">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis tenetur vel ipsam, modi eos ab possimus? Perferendis nihil vero, quas laudantium corporis, unde obcaecati necessitatibus amet tenetur, assumenda quo laborum.
+                                                    </p>
+                                                    <a
+                                                        rel="noreferrer noopener noreferrer"
+                                                        class="slide_item-btn"
+                                                        target="_blank"
+                                                        href="https://fullstack.edu.vn/"
+                                                    >
+                                                        Đăng ký ngay
+                                                    </a>
+                                                </div>
+
+                                                <div class="slide_item-right">
+                                                    <img
+                                                        src="https://files.fullstack.edu.vn/f8-prod/banners/Banner_web_ReactJS.png"
+                                                        alt="Học React miễn phí" title="Học React miễn phí"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div class="slide-item">
+                                                <div class="slide_item-left">
+                                                    <h2 class="slide_item-heading">Học React 2</h2>
+                                                    <p class="slide_item-desc">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis tenetur vel ipsam, modi eos ab possimus? Perferendis nihil vero, quas laudantium corporis, unde obcaecati necessitatibus amet tenetur, assumenda quo laborum.
+                                                    </p>
+                                                    <a
+                                                        rel="noreferrer noopener noreferrer"
+                                                        class="slide_item-btn"
+                                                        target="_blank"
+                                                        href="https://fullstack.edu.vn/"
+                                                    >
+                                                        Đăng ký ngay
+                                                    </a>
+                                                </div>
+
+                                                <div class="slide_item-right">
+                                                    <img
+                                                        src="https://files.fullstack.edu.vn/f8-prod/banners/Banner_web_ReactJS.png"
+                                                        alt="Học React miễn phí" title="Học React miễn phí"
+                                                    />
+                                                </div>
+                                            </div> 
                                         </div>
+
                                     </div>
                                     <div class="slide_arrow slide_next">
                                         <svg
@@ -231,6 +301,11 @@
                                             ></path>
                                         </svg>
                                     </div>
+                                    <ul class="slider-dots">
+                                        <li class="slider-dot-item active" data-index="0"></li>
+                                        <li class="slider-dot-item" data-index="1"></li>
+                                        <li class="slider-dot-item" data-index="2"></li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>

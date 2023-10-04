@@ -57,4 +57,8 @@ const notification = {
     },
 };
 
-export { category, course, notification };
+export default () => {
+    category.getCategories(category.renderCategory);
+    course.getCourses(course.renderCourse);
+    notification.getNotifications(notification.renderNotification);
+};

@@ -1,0 +1,22 @@
+/* Mobile*/
+@media (max-width: 739px) {
+
+    .container .content .home_slideShow .slideShow_wrapper .slick-slider .slide-list .slide-track .slide-item .slide_item-right,
+    .cart-btn.cart-icon,
+    .header_mycourses-btn,
+    .header_categories-btn,
+    .sideBar {
+        display: none;
+    }
+
+    .container .content {
+        width: 100%;
+    }
+
+    .header .header_body .header_search {
+        width   : 300px;
+        overflow: hidden;
+    }
+
+
+}

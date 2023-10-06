@@ -11,14 +11,19 @@ const slideItems = document.querySelectorAll('.slide-item');
 const prevSlide = document.querySelector('.slide_prev');
 const nextSlide = document.querySelector('.slide_next');
 const dotItems = document.querySelectorAll('.slider-dot-item');
+
+let isExpanded = false;
+let target;
 const slidesLength = slideItems.length;
 let posisionX = 0;
 let index = 0;
+let interval;
+let stateTranslateOfSlickTrack = true;
+let hidden, visibilityChange;
+let stateTab = true;
+let time = 15000;
 
 function handleEvent() {
-    let isExpanded = false;
-    let target;
-
     btnAvatar.onclick = (e) => {
         btnAvatar = btnAvatar.parentElement;
         target = btnAvatar.parentElement;
@@ -100,12 +105,41 @@ function handleEvent() {
         }
     };
 
-    //
+    runSetInterval();
+
+    if (typeof document.hidden !== 'undefined') {
+        hidden = 'hidden';
+        visibilityChange = 'visibilitychange';
+    } else if (typeof document.msHidden !== 'undefined') {
+        hidden = 'msHidden';
+        visibilityChange = 'msvisibilitychange';
+    } else if (typeof document.webkitHidden !== 'undefined') {
+        hidden = 'webkitHidden';
+        visibilityChange = 'webkitvisibilitychange';
+    }
+
+    // Hàm xử lý sự kiện visibilityChange cho document
+    function handleVisibilityChange() {
+        stateTab = document[hidden] ? false : true;
+        if (stateTab) {
+            // Nếu user ở trong tab.
+            runSetInterval();
+        } else {
+            runClearInterval();
+        }
+    }
+    document.addEventListener(visibilityChange, handleVisibilityChange, false);
+
+    // Handle click slider
     nextSlide.onclick = (e) => {
-        handleChangeSlide(1);
+        if (stateTranslateOfSlickTrack) {
+            handleChangeSlide(1);
+        }
     };
     prevSlide.onclick = (e) => {
-        handleChangeSlide(-1);
+        if (stateTranslateOfSlickTrack) {
+            handleChangeSlide(-1);
+        }
     };
 
     dotItems.forEach(
@@ -120,45 +154,63 @@ function handleEvent() {
             }),
     );
 
+    // Sự kiện transitionend
+    slideList.ontransitionend = () => {
+        stateTranslateOfSlickTrack = true;
+        // index = index === slidesLength ? 0 : index === -1 ? slidesLength - 1 : index;
+        // posisionX = index;
+    };
+
     function handleChangeSlide(direction) {
+        stateTranslateOfSlickTrack = false;
         if (direction === 1) {
+            runClearInterval();
             index++;
-            if (index > slidesLength - 1) {
-                index = slidesLength - 1;
-                return;
-            }
             posisionX = posisionX - 100;
+            if (index > slidesLength - 1) {
+                index = 0;
+                posisionX = index * 100;
+            }
             slideList.style = `transform: translateX(${posisionX}%);`;
             dotItems.forEach((el) => el.classList.remove('active'));
             dotItems[index].classList.add('active');
+            runSetInterval();
             return;
         }
+
         if (direction === -1) {
+            runClearInterval();
             index--;
-            if (index < 0) {
-                index = 0;
-                return;
-            }
             posisionX = posisionX + 100;
+            if (index < 0) {
+                index = slidesLength - 1;
+                posisionX = -1 * index * 100;
+            }
             slideList.style = `transform: translateX(${posisionX}%);`;
             dotItems.forEach((el) => el.classList.remove('active'));
             dotItems[index].classList.add('active');
+            runSetInterval();
             return;
         }
     }
 
-    // setInterval(() => {
-    //     index++;
-    //     posisionX = posisionX - 100;
-    //     if (index > slidesLength - 1) {
-    //         index = 0;
-    //         posisionX = 0;
-    //         return;
-    //     }
-    //     slideList.style = `transform: translateX(${posisionX}%);`;
-    //     dotItems.forEach((el) => el.classList.remove('active'));
-    //     dotItems[index].classList.add('active');
-    // }, 2000);
+    function runSetInterval() {
+        interval = setInterval(() => {
+            index++;
+            posisionX = posisionX - 100;
+            if (index > slidesLength - 1) {
+                index = 0;
+                posisionX = index * 100;
+            }
+            slideList.style = `transform: translateX(${posisionX}%);`;
+            dotItems.forEach((el) => el.classList.remove('active'));
+            dotItems[index].classList.add('active');
+        }, time);
+    }
+
+    function runClearInterval() {
+        clearInterval(interval);
+    }
 
     // Handle event onmouseover show tooltip - chua lam
     // setTimeout(() => {

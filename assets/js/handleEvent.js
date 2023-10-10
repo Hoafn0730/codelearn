@@ -1,3 +1,5 @@
+import handleRoute from './route.js';
+
 const btnCategories = document.querySelector('.header_categories-btn');
 const categories = document.querySelector('#categories');
 const btnMyCourses = document.querySelector('.header_mycourses-btn');
@@ -6,22 +8,10 @@ const btnNatifications = document.querySelector('.notification-icon');
 const notifications = document.querySelector('#notifications');
 let btnAvatar = document.querySelector('.avatar');
 const userMenu = document.querySelector('#userMenu');
-const slideList = document.querySelector('.slide-track');
-const slideItems = document.querySelectorAll('.slide-item');
-const prevSlide = document.querySelector('.slide_prev');
-const nextSlide = document.querySelector('.slide_next');
-const dotItems = document.querySelectorAll('.slider-dot-item');
+const links = document.querySelectorAll('a');
 
 let isExpanded = false;
 let target;
-const slidesLength = slideItems.length;
-let posisionX = 0;
-let index = 0;
-let interval;
-let stateTranslateOfSlickTrack = true;
-let hidden, visibilityChange;
-let stateTab = true;
-let time = 15000;
 
 function handleEvent() {
     btnAvatar.onclick = (e) => {
@@ -105,111 +95,13 @@ function handleEvent() {
         }
     };
 
-    runSetInterval();
-
-    if (typeof document.hidden !== 'undefined') {
-        hidden = 'hidden';
-        visibilityChange = 'visibilitychange';
-    } else if (typeof document.msHidden !== 'undefined') {
-        hidden = 'msHidden';
-        visibilityChange = 'msvisibilitychange';
-    } else if (typeof document.webkitHidden !== 'undefined') {
-        hidden = 'webkitHidden';
-        visibilityChange = 'webkitvisibilitychange';
-    }
-
-    // Hàm xử lý sự kiện visibilityChange cho document
-    function handleVisibilityChange() {
-        stateTab = document[hidden] ? false : true;
-        if (stateTab) {
-            // Nếu user ở trong tab.
-            runSetInterval();
-        } else {
-            runClearInterval();
-        }
-    }
-    document.addEventListener(visibilityChange, handleVisibilityChange, false);
-
-    // Handle click slider
-    nextSlide.onclick = (e) => {
-        if (stateTranslateOfSlickTrack) {
-            handleChangeSlide(1);
-        }
-    };
-    prevSlide.onclick = (e) => {
-        if (stateTranslateOfSlickTrack) {
-            handleChangeSlide(-1);
-        }
-    };
-
-    dotItems.forEach(
-        (item) =>
-            (item.onclick = (e) => {
-                const slideIndex = parseInt(e.target.dataset.index);
-                dotItems.forEach((el) => el.classList.remove('active'));
-                e.target.classList.add('active');
-                index = slideIndex;
-                posisionX = -1 * index * 100;
-                slideList.style = `transform: translateX(${posisionX}%);`;
-            }),
-    );
-
-    // Sự kiện transitionend
-    slideList.ontransitionend = () => {
-        stateTranslateOfSlickTrack = true;
-        // index = index === slidesLength ? 0 : index === -1 ? slidesLength - 1 : index;
-        // posisionX = index;
-    };
-
-    function handleChangeSlide(direction) {
-        stateTranslateOfSlickTrack = false;
-        if (direction === 1) {
-            runClearInterval();
-            index++;
-            posisionX = posisionX - 100;
-            if (index > slidesLength - 1) {
-                index = 0;
-                posisionX = index * 100;
-            }
-            slideList.style = `transform: translateX(${posisionX}%);`;
-            dotItems.forEach((el) => el.classList.remove('active'));
-            dotItems[index].classList.add('active');
-            runSetInterval();
-            return;
-        }
-
-        if (direction === -1) {
-            runClearInterval();
-            index--;
-            posisionX = posisionX + 100;
-            if (index < 0) {
-                index = slidesLength - 1;
-                posisionX = -1 * index * 100;
-            }
-            slideList.style = `transform: translateX(${posisionX}%);`;
-            dotItems.forEach((el) => el.classList.remove('active'));
-            dotItems[index].classList.add('active');
-            runSetInterval();
-            return;
-        }
-    }
-
-    function runSetInterval() {
-        interval = setInterval(() => {
-            index++;
-            posisionX = posisionX - 100;
-            if (index > slidesLength - 1) {
-                index = 0;
-                posisionX = index * 100;
-            }
-            slideList.style = `transform: translateX(${posisionX}%);`;
-            dotItems.forEach((el) => el.classList.remove('active'));
-            dotItems[index].classList.add('active');
-        }, time);
-    }
-
-    function runClearInterval() {
-        clearInterval(interval);
+    // Sự kiện click vào sidebar menu
+    links.forEach((link) => (link.onclick = loadContent));
+    function loadContent(e) {
+        e.preventDefault();
+        // Thêm route vào URL
+        history.pushState({}, '', e.target.closest('.sideBar_item-link'));
+        handleRoute();
     }
 
     // Handle event onmouseover show tooltip - chua lam

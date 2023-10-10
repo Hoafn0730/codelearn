@@ -79,6 +79,28 @@ ul {
     }
 }
 
+.star {
+    .checked {
+        color: orange;
+    }
+}
+
+.price {
+    margin-top: 6px;
+
+    .courseItem_old-price {
+        font-size      : 1.4rem;
+        margin-right   : 8px;
+        text-decoration: line-through;
+    }
+
+    .courseItem_new-price {
+        color      : var(--primary-color);
+        font-size  : 1.6rem;
+        font-weight: 600;
+    }
+}
+
 .tooltiptext {
     position        : absolute;
     display         : none;

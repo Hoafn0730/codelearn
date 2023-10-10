@@ -77,6 +77,24 @@ ul {
   background-color: rgba(22, 24, 35, 0.05);
 }
 
+.star .checked {
+  color: orange;
+}
+
+.price {
+  margin-top: 6px;
+}
+.price .courseItem_old-price {
+  font-size: 1.4rem;
+  margin-right: 8px;
+  text-decoration: line-through;
+}
+.price .courseItem_new-price {
+  color: var(--primary-color);
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
 .tooltiptext {
   position: absolute;
   display: none;

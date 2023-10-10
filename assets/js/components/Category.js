@@ -1,6 +1,6 @@
 function Category({ category }) {
     return `
-    <li class="header_categories-item category_item-${category.categoryId}">
+    <li class="header_categories-item category_item-${category.id}">
         <a href="#" class="header_categorie-link">
             <div class="header_categotie-item-content">
                 ${category.name}

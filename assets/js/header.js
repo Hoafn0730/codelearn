@@ -2,8 +2,6 @@ import Category from './components/Category.js';
 import Course from './components/Course.js';
 import Notification from './components/Notification.js';
 
-var API = 'http://localhost:3000';
-
 const category = {
     getCategories: function (callback) {
         fetch(API + '/categories')

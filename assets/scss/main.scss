@@ -570,7 +570,7 @@
             left      : 0;
             transition: width .2s linear;
 
-            // align-items        : center;
+            // align-items   : center;
             display       : flex;
             flex-direction: column;
             flex-shrink   : 0;
@@ -622,9 +622,6 @@
                         color: var(--primary-color);
                     }
                 }
-
-
-
             }
         }
     }
@@ -859,25 +856,135 @@
                         }
                     }
 
-                    .price {
-                        margin-top: 6px;
-
-                        .courseItem_old-price {
-                            font-size      : 1.4rem;
-                            margin-right   : 8px;
-                            text-decoration: line-through;
-                        }
-
-                        .courseItem_new-price {
-                            color      : var(--primary-color);
-                            font-size  : 1.6rem;
-                            font-weight: 600;
-                        }
-                    }
-
                 }
             }
         }
+
+        .courseDetail_wrapper {
+            padding: 20px;
+
+            .courseDetail_heading {
+                font-size  : 3.2rem;
+                font-weight: 700;
+                margin-top : 16px;
+                min-height : 33px;
+            }
+
+            .last-update-date,
+            .courseDetail_description {
+                font-size: 1.6rem;
+                margin   : 10px 0;
+            }
+
+            .curriculum {
+                margin-top: 30px;
+
+                .curriculum-header {
+                    font-size  : 2rem;
+                    font-weight: 700;
+                    margin     : 20px 0;
+                }
+
+                .curriculum-list {
+                    border-radius: 10px;
+                    box-shadow   : 0 0 10px rgba(0, 0, 0, 0.1);
+
+                    .curriculum-item {
+                        .curriculum_panel {
+                            padding        : 20px;
+                            border-bottom  : 1px solid #e0e0e0;
+                            cursor         : pointer;
+                            transition     : background-color 0.3s ease-in-out;
+                            display        : flex;
+                            justify-content: space-between;
+                            align-items    : center;
+
+                            .curriculum_heading {
+                                font-size     : 18px;
+                                font-weight   : 700;
+                                padding-bottom: 3px;
+                                padding-top   : 3px;
+                            }
+
+                            .icon-container i {
+                                font-size : 16px;
+                                cursor    : pointer;
+                                transition: transform 0.3s ease-in-out;
+                            }
+
+                            .icon-container i.active {
+                                transform: rotate(90deg);
+                            }
+                        }
+
+                        .curriculum_collapse {
+                            font-size    : 16px;
+                            max-height   : 0;
+                            overflow     : hidden;
+                            transition   : max-height 0.3s ease-in-out;
+                            padding-left : 10px;
+                            padding-right: 10px;
+
+                            .curriculum_lessionItem {
+                                padding: 20px;
+
+                                .duration {
+                                    float: right;
+                                }
+                            }
+                        }
+
+                        .curriculum_collapse.active {
+                            border-bottom: 1px solid #e0e0e0;
+                        }
+                    }
+                }
+            }
+
+            .courseDetail_description {
+                margin-top: 30px;
+
+                h1 {
+                    padding: 20px 0;
+                }
+
+                p {
+                    font-size  : 1.6rem;
+                    line-height: 2rem;
+                }
+
+                ;
+            }
+        }
+
+        .courseDetail_purchaseBadge {
+            text-align: center;
+
+            .courseDetail_preview {
+                padding      : 20px;
+                overflow     : hidden;
+                margin-bottom: 10px;
+
+                .courseDetail_img {
+                    border-radius: 16px;
+                    object-fit   : contain;
+                    width        : 100%;
+                }
+            }
+
+            .courseDetail_btn {
+                margin          : 10px 0 20px 0;
+                border-radius   : 16px;
+                background-color: var(--primary-color);
+                color           : var(--white-color);
+            }
+
+            .courseDetail_level {
+                font-size: 1.6rem;
+            }
+        }
+
+
     }
 }
 

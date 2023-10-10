@@ -1,4 +1,4 @@
-import handleRoute from './route.js';
+import router from './router.js';
 
 const btnCategories = document.querySelector('.header_categories-btn');
 const categories = document.querySelector('#categories');
@@ -8,12 +8,14 @@ const btnNatifications = document.querySelector('.notification-icon');
 const notifications = document.querySelector('#notifications');
 let btnAvatar = document.querySelector('.avatar');
 const userMenu = document.querySelector('#userMenu');
-const links = document.querySelectorAll('a');
 
 let isExpanded = false;
 let target;
 
 function handleEvent() {
+    window.addEventListener('load', router);
+    window.addEventListener('hashchange', router);
+
     btnAvatar.onclick = (e) => {
         btnAvatar = btnAvatar.parentElement;
         target = btnAvatar.parentElement;
@@ -94,15 +96,6 @@ function handleEvent() {
             target = null;
         }
     };
-
-    // Sự kiện click vào sidebar menu
-    links.forEach((link) => (link.onclick = loadContent));
-    function loadContent(e) {
-        e.preventDefault();
-        // Thêm route vào URL
-        history.pushState({}, '', e.target.closest('.sideBar_item-link'));
-        handleRoute();
-    }
 
     // Handle event onmouseover show tooltip - chua lam
     // setTimeout(() => {

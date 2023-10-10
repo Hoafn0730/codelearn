@@ -1,3 +1,5 @@
+import useEffect from '../utils.js';
+
 function RoadMap() {
     return `<div class="grid">
         <div class="roadmap_wrapper">

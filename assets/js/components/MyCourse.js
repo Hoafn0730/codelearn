@@ -1,4 +1,4 @@
-function Course({ course }) {
+function MyCourse({ course }) {
     return `
         <li class="header_mycourses-item course_item-${course.id}">
             <a href="#" class="header_mycourse-link">
@@ -19,4 +19,4 @@ function Course({ course }) {
     `;
 }
 
-export default Course;
+export default MyCourse;

@@ -1,7 +1,7 @@
 import useEffect from '../utils.js';
-import handleRoute from '../route.js';
+import CommonItem from '../components/CommonItem.js';
 
-function Home() {
+function Home({ dataArray }) {
     useEffect(() => {
         const slideList = document.querySelector('.slide-track');
         const slideItems = document.querySelectorAll('.slide-item');
@@ -124,19 +124,6 @@ function Home() {
         function runClearInterval() {
             clearInterval(interval);
         }
-    });
-
-    useEffect(() => {
-        const links = document.querySelectorAll('.commonItem_link');
-        console.log('🚀 ~ file: home.js:131 ~ useEffect ~ links:', links);
-        links.forEach((item) => {
-            item.onclick = (e) => {
-                e.preventDefault();
-                // // Thêm route vào URL
-                history.pushState({}, '', e.target.closest('.commonItem_link'));
-                handleRoute();
-            };
-        });
     });
 
     return `
@@ -281,82 +268,9 @@ function Home() {
                     </div>
                     <div class="scrollList_body">
                         <div class="row">
-                            <div class="col l-3 m-4 c-12">
-                                <div class="commonItem_wrapper">
-                                    <a href="/courses/javascript" class="commonItem_link">
-                                        <!-- <button class="btn commonItem_btn">Xem khóa học</button> -->
-                                        <img
-                                            src="https://img-b.udemycdn.com/course/240x135/3655840_1c3c.jpg"
-                                            alt=""
-                                            class="commonItem_thumb"
-                                        />
-                                    </a>
-                                    <h3 class="commonItem_title">
-                                        <a href="#">The Ultimate 2023 Fullstack Web asfdsf</a>
-                                    </h3>
-                                    <div class="price">
-                                        <span class="courseItem_old-price">2.500.000đ</span>
-                                        <span class="courseItem_new-price">1.299.000đ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col l-3 m-4 c-12">
-                                <div class="commonItem_wrapper">
-                                    <a href="#" class="commonItem_link">
-                                        <!-- <button class="btn commonItem_btn">Xem khóa học</button> -->
-                                        <img
-                                            src="https://img-b.udemycdn.com/course/240x135/3655840_1c3c.jpg"
-                                            alt=""
-                                            class="commonItem_thumb"
-                                        />
-                                    </a>
-                                    <h3 class="commonItem_title">
-                                        <a href="#">The Ultimate 2023 Fullstack </a>
-                                    </h3>
-                                    <div class="price">
-                                        <span class="courseItem_old-price">2.500.000đ</span>
-                                        <span class="courseItem_new-price">1.299.000đ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col l-3 m-4 c-12">
-                                <div class="commonItem_wrapper">
-                                    <a href="#" class="commonItem_link">
-                                        <!-- <button class="btn commonItem_btn">Xem khóa học</button> -->
-                                        <img
-                                            src="https://img-b.udemycdn.com/course/240x135/3655840_1c3c.jpg"
-                                            alt=""
-                                            class="commonItem_thumb"
-                                        />
-                                    </a>
-                                    <h3 class="commonItem_title">
-                                        <a href="#">The Ultimate 2023 Fullstack Web Development Bootcamp</a>
-                                    </h3>
-                                    <div class="price">
-                                        <span class="courseItem_old-price">2.500.000đ</span>
-                                        <span class="courseItem_new-price">1.299.000đ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col l-3 m-4 c-12">
-                                <div class="commonItem_wrapper">
-                                    <a href="#" class="commonItem_link">
-                                        <!-- <button class="btn commonItem_btn">Xem khóa học</button> -->
-                                        <img
-                                            src="https://img-b.udemycdn.com/course/240x135/3655840_1c3c.jpg"
-                                            alt=""
-                                            class="commonItem_thumb"
-                                        />
-                                    </a>
-                                    <h3 class="commonItem_title">
-                                        <a href="#">The Ultimate 2023 Fullstack Web Development Bootcamp</a>
-                                    </h3>
-                                    <div class="price">
-                                        <span class="courseItem_old-price">2.500.000đ</span>
-                                        <span class="courseItem_new-price">1.299.000đ</span>
-                                    </div>
-                                </div>
-                            </div>
+                        
+                           ${dataArray.map((data) => CommonItem({ data })).join('')}
+                            
                         </div>
                     </div>
                 </div>

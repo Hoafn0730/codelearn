@@ -958,12 +958,22 @@
         }
 
         .courseDetail_purchaseBadge {
-            text-align: center;
+            position      : -webkit-sticky;
+            position      : sticky;
+            align-items   : center;
+            background    : #fff;
+            display       : flex;
+            flex-direction: column;
+            top           : 90px;
+            padding-bottom: 40px;
+            margin-bottom : 80px;
+
 
             .courseDetail_preview {
                 padding      : 20px;
                 overflow     : hidden;
                 margin-bottom: 10px;
+
 
                 .courseDetail_img {
                     border-radius: 16px;

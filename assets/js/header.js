@@ -1,5 +1,5 @@
 import Category from './components/Category.js';
-import Course from './components/Course.js';
+import MyCourse from './components/MyCourse.js';
 import Notification from './components/Notification.js';
 
 const category = {
@@ -15,7 +15,7 @@ const category = {
     },
 };
 
-const course = {
+const myCourse = {
     getCourses: function (callback) {
         fetch(API + '/mycourses')
             .then((response) => response.json())
@@ -29,7 +29,7 @@ const course = {
             `;
             return;
         }
-        const htmls = courses.map((course) => Course({ course }));
+        const htmls = courses.map((course) => MyCourse({ course }));
         listCourses.innerHTML = htmls.join('');
     },
 };
@@ -57,6 +57,6 @@ const notification = {
 
 export default () => {
     category.getCategories(category.renderCategory);
-    course.getCourses(course.renderCourse);
+    myCourse.getCourses(myCourse.renderCourse);
     notification.getNotifications(notification.renderNotification);
 };

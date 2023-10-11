@@ -1,4 +1,4 @@
-import router from './router.js';
+import router from './routes/router.js';
 
 const btnCategories = document.querySelector('.header_categories-btn');
 const categories = document.querySelector('#categories');

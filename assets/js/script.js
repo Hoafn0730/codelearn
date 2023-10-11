@@ -1,9 +1,8 @@
-import render from './header.js';
+import render from './config/db/index.js';
 import handleEvent from './handleEvent.js';
 
 function start() {
     render();
     handleEvent();
-    console.log(window.location.hash);
 }
 start();

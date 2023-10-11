@@ -1,7 +1,7 @@
-import useEffect from '../utils.js';
+import useEffect from '../utils/hook.js';
 import CommonItem from '../components/CommonItem.js';
 
-function Home({ dataArray }) {
+function Home({ dataCourses }) {
     useEffect(() => {
         const slideList = document.querySelector('.slide-track');
         const slideItems = document.querySelectorAll('.slide-item');
@@ -259,8 +259,6 @@ function Home({ dataArray }) {
 
 
 
-
-
             <div class="home_wrapper">
                 <div class="scrollList_vertical">
                     <div class="scrollList_heading">
@@ -268,9 +266,7 @@ function Home({ dataArray }) {
                     </div>
                     <div class="scrollList_body">
                         <div class="row">
-                        
-                           ${dataArray.map((data) => CommonItem({ data })).join('')}
-                            
+                           ${dataCourses.map((data) => CommonItem({ data })).join('')}
                         </div>
                     </div>
                 </div>
@@ -283,7 +279,7 @@ function Home({ dataArray }) {
                         <div class="row">
                             <div class="col l-3 m-4 c-12">
                                 <div class="commonItem_wrapper">
-                                    <a href="#" class="commonItem_link">
+                                    <a href="detail-course.html" class="commonItem_link">
                                         <!-- <button class="btn commonItem_btn">Xem khóa học</button> -->
                                         <img
                                             src="https://img-b.udemycdn.com/course/240x135/3655840_1c3c.jpg"

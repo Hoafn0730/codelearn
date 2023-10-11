@@ -1,4 +1,4 @@
-import useEffect from '../utils.js';
+import useEffect from '../utils/hook.js';
 
 function Blog() {
     return `<div class="grid">

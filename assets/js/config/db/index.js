@@ -1,6 +1,6 @@
-import Category from './components/Category.js';
-import MyCourse from './components/MyCourse.js';
-import Notification from './components/Notification.js';
+import Category from '../../components/Category.js';
+import MyCourse from '../../components/MyCourse.js';
+import Notification from '../../components/Notification.js';
 
 const category = {
     getCategories: function (callback) {
@@ -52,6 +52,16 @@ const notification = {
 
         const htmls = notifications.map((notification) => Notification({ notification }));
         listNotifications.innerHTML = htmls.join('');
+    },
+};
+
+export const course = {
+    getCourse: function () {
+        const dataArray = [];
+        fetch(API + '/courses')
+            .then((response) => response.json())
+            .then((data) => dataArray.push(...data));
+        return dataArray;
     },
 };
 

@@ -79,6 +79,27 @@ ul {
     }
 }
 
+.VerticalProgressBar {
+    background-color: #ddd;
+    background-color: var(--bg-color, #ddd);
+    border-radius   : 4px;
+    height          : 8px;
+    margin-top      : 8px;
+    position        : relative;
+
+    &::after {
+        content         : "";
+        display         : block;
+        position        : absolute;
+        border-radius   : 4px;
+        inset           : 0;
+        background-color: var(--primary-color);
+        background-color: var(--color, var(--primary-color));
+        transition      : width 1s ease;
+        width           : var(--progress);
+    }
+}
+
 .star {
     .checked {
         color: orange;
@@ -157,19 +178,4 @@ body::-webkit-scrollbar-thumb {
 
 body::-webkit-scrollbar-track {
     border-radius: 10px;
-}
-
-
-
-/* Animation */
-@keyframes fadeIn {
-    0% {
-        opacity  : 0;
-        transform: translateY(-8px);
-    }
-
-    100% {
-        opacity  : 1;
-        transform: translateY(0);
-    }
 }

@@ -1,6 +1,6 @@
 function CommonItem({ data }) {
     return `
-    <div class="col l-3 m-4 c-12">
+    <div class="col l-3 m-6 c-12">
         <div class="commonItem_wrapper">
             <a href="#/courses/${data.slug}" class="commonItem_link">
                 <!-- <button class="btn commonItem_btn">Xem khóa học</button> -->

@@ -1,0 +1,533 @@
+@import "../abstracts";
+
+// Header
+.header {
+    height          : var(--header-height);
+    position        : sticky;
+    position        : -webkit-sticky;
+    inset           : 0;
+    padding         : 0 30px;
+    border-bottom   : 1px solid #000;
+    font-size       : 1.4rem;
+    display         : flex;
+    align-items     : center;
+    background-color: var(--beige-color);
+    z-index         : 3;
+
+    .header_logo {
+        align-items: center;
+        display    : flex;
+        position   : relative;
+
+        .header_logo-link {
+            text-decoration : none;
+            color           : var(--black-color);
+            background-color: transparent;
+
+            .logo {
+                height: 28px;
+            }
+
+            &:hover {
+                cursor         : pointer;
+                text-decoration: none;
+                color          : var(--primary-color);
+            }
+        }
+
+        .header_categories-btn {
+            margin-left     : 30px;
+            font-size       : 1.6rem;
+            background-color: var(--beige-color);
+
+            &:hover {
+                color : var(--primary-color);
+                cursor: pointer;
+            }
+
+        }
+
+        .categories-wrapper {
+            border-radius : 10px;
+            min-width     : 360px;
+            padding-bottom: 14px;
+            padding       : 16px 0;
+            min-height    : 300px;
+            inset         : 45px 0 0 30%;
+        }
+
+        .header_categories {
+            @include sub-menu;
+            display: none;
+
+
+            .categories_header {
+                align-items: center;
+                display    : flex;
+                padding    : 10px 20px 20px;
+
+                .categories_heading {
+                    font-size  : 2rem;
+                    line-height: 1.6rem;
+                }
+            }
+
+            .header_categories-list {
+                @include sub-menu-list;
+
+                .header_categories-item {
+                    @include sub-menu-item;
+
+                    .header_categorie-link {
+                        @include sub-menu-link;
+                        justify-content: space-between;
+                        padding        : 10px;
+
+
+                        .header_categorie-icon {
+                            display: block;
+                        }
+
+                    }
+
+                    &:hover {
+                        background-color: rgba(22, 24, 35, .05);
+                        color           : var(--primary-color);
+                    }
+
+                    &:hover .header_categorie-link {
+                        color: var(--primary-color);
+                    }
+                }
+
+                &::-webkit-scrollbar {
+                    width: 8px;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: #d9d9d9;
+                    border-radius   : 100px;
+                }
+            }
+
+        }
+
+    }
+
+    .header_body {
+        .header_search {
+            height          : 40px;
+            width           : 420px;
+            border          : 2px solid #cacaca;
+            border-radius   : 20px;
+            background-color: var(--white-color);
+            padding         : 0 16px 0 8px;
+            transition      : border-color .2s ease-in-out;
+            display         : inline-flex;
+            align-items     : center;
+            position        : relative;
+
+            .header_search-icon {
+                font-size : 1.6rem;
+                padding   : 6px;
+                color     : var(--black-color);
+                transition: opacity .2s ease-in-out;
+                opacity   : .6;
+
+                &:hover {
+                    opacity: 1;
+                    color  : var(--primary-color);
+
+                }
+            }
+
+            .header_search-input {
+                border          : none;
+                caret-color     : var(--primary-color);
+                flex            : 1 1;
+                height          : 100%;
+                outline         : none;
+                padding         : 0 4px;
+                background-color: var(--white-color);
+                font-size       : 1.6rem;
+                margin-right    : 8px;
+            }
+
+            &:focus-within {
+                border-color: var(--primary-color);
+            }
+
+            &:focus-within .header_search-history {
+                display: block;
+            }
+
+            .header_search-history {
+                position     : absolute;
+                inset        : 46px auto auto 0px;
+                margin       : 0px;
+                background   : var(--white-color);
+                border-radius: 10px;
+                box-shadow   : 0 -4px 32px rgba(0, 0, 0, .2);
+                color        : #1d2129;
+                margin       : 0;
+                overflow     : hidden;
+                padding-left : 0;
+                display      : none;
+
+                animation  : fadeIn .3s ease;
+                transition : all .3s ease-in-out;
+                will-change: opacity, transform;
+
+                .search-history-list {
+                    color              : var(--desc-color);
+                    max-height         : calc(90vh - 66px);
+                    min-height         : 50px;
+                    min-width          : 230px;
+                    overflow-y         : auto;
+                    overscroll-behavior: contain;
+                    padding            : 12px 24px;
+                    width              : 420px;
+
+
+                    .search_history-header {
+                        align-items: center;
+                        display    : flex;
+                        padding    : 6px 0 0;
+                        color      : var(--desc-color);
+
+                        .header_search-icon {
+                            padding: 0 12px 0 0;
+                        }
+                    }
+                }
+
+            }
+
+        }
+
+    }
+
+    .header_actions {
+        align-items    : center;
+        display        : flex;
+        justify-content: flex-end;
+        position       : relative;
+
+
+        // My courses
+        .header_mycourses-btn {
+            font-size       : 1.6rem;
+            background-color: transparent;
+        }
+
+        .header_mycourses {
+            @include sub-menu;
+            display: none;
+
+            .mycourses_header {
+                align-items: center;
+                display    : flex;
+                padding    : 10px 20px 20px;
+
+                .mycourses_heading {
+                    font-size  : 2rem;
+                    line-height: 1.6rem;
+                }
+            }
+
+            .header_mycourses-list {
+                @include sub-menu-list;
+
+                .header_courses-empty {
+                    padding        : 10px;
+                    margin         : 0 8px;
+                    height         : 80px;
+                    text-align     : center;
+                    display        : flex;
+                    justify-content: center;
+                    align-items    : center;
+                }
+
+                .header_mycourses-item {
+                    @include sub-menu-item;
+                    max-height: 52vh;
+
+                    .header_mycourse-link {
+                        @include sub-menu-link;
+
+                        .header_mycourse-item-thumb {
+                            background-color: #ebebeb;
+                            border-radius   : 8px;
+                            display         : block;
+                            line-height     : 67px;
+                            max-height      : 67px;
+                            text-align      : center;
+                            width           : 120px;
+
+                            &::after {
+                                color    : var(--text-color);
+                                content  : "NO IMAGE";
+                                font-size: 1.2rem;
+                            }
+                        }
+
+                        .header_mycourse-info {
+                            margin-left: 12px;
+
+                            .header_mycourse-title {
+                                font-size: 1.4rem;
+                                margin   : 6px 0 0;
+                            }
+
+                            .header_mycourse-lastCompleted {
+                                color    : #666;
+                                font-size: 1.2rem;
+                                margin   : 4px 0 0;
+
+                            }
+
+                        }
+                    }
+
+                    &:hover {
+                        background-color: rgba(22, 24, 35, .05);
+                    }
+
+                }
+
+                &::-webkit-scrollbar {
+                    width: 8px;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: #d9d9d9;
+                    border-radius   : 100px;
+                }
+            }
+        }
+
+        .mycourses-wrapper {
+            border-radius : 10px;
+            min-width     : 360px;
+            padding-bottom: 10px;
+            padding-top   : 16px;
+            min-height    : 10px;
+            inset         : 46px 30% auto auto;
+        }
+
+
+        .cart-btn {
+            user-select: none;
+            padding    : 8px;
+            cursor     : pointer;
+            font-size  : 2rem;
+            color      : #707070;
+        }
+
+        ;
+
+        // Notifications
+        .notification-btn {
+            user-select: none;
+            padding    : 8px;
+            cursor     : pointer;
+            font-size  : 2rem;
+            color      : #707070;
+
+            &:hover {
+                color: var(--primary-color);
+            }
+        }
+
+        .header_notifications {
+            @include sub-menu;
+            display: none;
+
+            .notifications_header {
+                align-items: center;
+                display    : flex;
+                padding    : 10px 20px 20px;
+
+                .notifications_heading {
+                    font-size  : 2rem;
+                    line-height: 1.6rem;
+                }
+            }
+
+            .header_notifications-list {
+                @include sub-menu-list;
+                max-height    : 53vh;
+                padding-bottom: 8px;
+
+                .header_notifications-empty {
+                    padding        : 10px;
+                    margin         : 0 8px;
+                    height         : 80px;
+                    text-align     : center;
+                    display        : flex;
+                    justify-content: center;
+                    align-items    : center;
+                }
+
+                .header_notifications-item {
+                    padding      : 10px;
+                    transition   : background-color .3s;
+                    border-radius: 10px;
+                    margin       : 0 8px;
+
+                    .notification-link {
+                        @include sub-menu-link;
+
+                        .notification_message {
+                            margin-left: 12px;
+                            line-height: 1.6rem;
+
+                            div {
+                                font-size  : 1.4rem;
+                                font-weight: 500;
+                                margin-top : 6px;
+                            }
+
+                            .notification_createdAt {
+                                color      : var(--primary-color);
+                                font-size  : 1.3rem;
+                                font-weight: 500;
+                                margin-top : 6px;
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        background-color: rgba(22, 24, 35, .05);
+
+                    }
+
+                    &:hover .header_mycourses-link {
+                        color: var(--black-color);
+                    }
+
+                }
+
+                &::-webkit-scrollbar {
+                    width: 8px;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: #d9d9d9;
+                    border-radius   : 100px;
+                }
+            }
+
+            .header_notifications-isSeeAll {
+                bottom: 0;
+
+                background-color: #fff;
+                border-top      : 1px solid rgba(0, 0, 0, .1);
+                color           : var(--primary-color);
+                cursor          : pointer;
+                display         : flex;
+                justify-content : center;
+                align-items     : center;
+                font-size       : 14px;
+                font-weight     : 500;
+                height          : 44px;
+                text-decoration : none;
+                position        : sticky;
+                position        : -webkit-sticky;
+
+
+                &:hover {
+                    background-color: rgba(22, 24, 35, .05)
+                }
+
+            }
+
+        }
+
+        .notifications-wrapper {
+            border-radius : 10px;
+            width         : 360px;
+            min-height    : 180px;
+            padding-bottom: 14px;
+            padding       : 16px 0 0 0;
+            inset         : 46px 10% auto auto;
+        }
+
+
+        .header_actions-avatar {
+            margin-left  : 12px;
+            border-radius: 50%;
+            cursor       : pointer;
+        }
+
+        .header_userMenu {
+            @include sub-menu;
+            display: none;
+
+            .userMenu_user {
+                display    : flex;
+                align-items: center;
+
+                .userMenu_user-avatar {
+                    margin: 10px 0;
+                }
+
+                .userMenu_info {
+                    margin-left: 12px;
+
+                    .userMenu_info-name {
+                        color      : #292929;
+                        font-size  : 1.6rem;
+                        font-weight: 600;
+                    }
+
+                    .userMenu_info-username {
+                        color     : #757575;
+                        font-size : 1.4rem;
+                        margin-top: 4px;
+
+                    }
+                }
+
+            }
+
+            hr {
+                border    : none;
+                border-top: 1px solid rgba(0, 0, 0, .05);
+                margin    : 8px 0;
+            }
+
+            .userMenu-list {
+                .userMenu_item-link {
+                    color    : #666;
+                    cursor   : pointer;
+                    display  : block;
+                    font-size: 1.4rem;
+                    padding  : 10px 0;
+
+                }
+
+
+            }
+
+        }
+
+        .userMenu-wrapper {
+            border-radius: 10px;
+            min-width    : 230px;
+            min-height   : 180px;
+            padding      : 8px 24px;
+            inset        : 46px 0 auto auto;
+        }
+
+    }
+
+    .header_logo,
+    .header_body,
+    .header_actions {
+        flex: 1 1;
+    }
+
+
+
+}

@@ -4,7 +4,7 @@ import Notification from '../../components/Notification.js';
 
 const category = {
     getCategories: function (callback) {
-        fetch(API + '/categories')
+        fetch(API + '/Category/get-all')
             .then((response) => response.json())
             .then(callback);
     },

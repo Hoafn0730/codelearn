@@ -27,8 +27,9 @@ template('detail-course', function () {
 function router(evt) {
     routePath();
     const parts = window.location.href.split('.');
+    var params = new URL(window.location.href).searchParams;
 
-    if (parts[parts.length - 1] !== 'html') {
+    if (parts[parts.length - 1] !== 'html' && params.size === 0) {
         let url = window.location.hash.slice(1) || '/';
         let route = resolveRoute(url);
         route();

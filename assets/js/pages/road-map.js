@@ -1,4 +1,4 @@
-import useEffect from '../utils/hook.js';
+import { useEffect } from '../utils/hook.js';
 
 function RoadMap() {
     return `<div class="grid">

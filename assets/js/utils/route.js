@@ -11,9 +11,10 @@ function template(name, templateFunction) {
 }
 function resolveRoute(route) {
     try {
+        // debugger;
         return routes[route];
     } catch (e) {
-        throw new Error(`Route ${route} not found`);
+        console.log(`Route ${route} not found`);
     }
 }
 

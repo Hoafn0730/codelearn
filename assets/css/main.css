@@ -876,6 +876,29 @@ body::-webkit-scrollbar-track {
   object-fit: contain;
 }
 
+.commonItem_wrapper {
+  flex-shrink: 0;
+  margin-bottom: 32px;
+  overflow: hidden;
+}
+.commonItem_wrapper .commonItem_link {
+  border-radius: 16px;
+  display: block;
+  overflow: hidden;
+}
+.commonItem_wrapper .commonItem_link .commonItem_thumb {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+.commonItem_wrapper .commonItem_title a {
+  -webkit-box-orient: vertical;
+  color: #292929;
+  font-size: 1.6rem;
+  line-height: 1.4;
+  overflow: hidden;
+}
+
 .home_wrapper {
   margin-top: 40px;
   overflow: hidden;
@@ -894,28 +917,6 @@ body::-webkit-scrollbar-track {
 .home_wrapper .scrollList_body {
   min-height: 200px;
   padding-bottom: 0;
-}
-.home_wrapper .scrollList_body .commonItem_wrapper {
-  flex-shrink: 0;
-  margin-bottom: 32px;
-  overflow: hidden;
-}
-.home_wrapper .scrollList_body .commonItem_wrapper .commonItem_link {
-  border-radius: 16px;
-  display: block;
-  overflow: hidden;
-}
-.home_wrapper .scrollList_body .commonItem_wrapper .commonItem_link .commonItem_thumb {
-  width: 100%;
-  object-fit: cover;
-  border-radius: 16px;
-}
-.home_wrapper .scrollList_body .commonItem_wrapper .commonItem_title a {
-  -webkit-box-orient: vertical;
-  color: #292929;
-  font-size: 1.6rem;
-  line-height: 1.4;
-  overflow: hidden;
 }
 
 .courseDetail_wrapper {
@@ -1024,6 +1025,110 @@ body::-webkit-scrollbar-track {
 }
 .courseDetail_purchaseBadge .courseDetail_level {
   font-size: 1.6rem;
+}
+
+.watch_wrapper {
+  margin-top: 20px;
+}
+.watch_wrapper .video {
+  border-radius: 10px;
+}
+.watch_wrapper .video_title {
+  margin-top: 10px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  display: -webkit-box;
+  overflow: hidden;
+  line-height: 1.8;
+  width: 80%;
+}
+
+.lessons_wrapper {
+  margin-top: 20px;
+  height: 500px;
+  width: 100%;
+  border: 2px solid #ffcda9;
+  border-radius: 10px;
+  padding-top: 20px;
+}
+.lessons_wrapper .lesson_header {
+  font-size: 2rem;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  display: -webkit-box;
+  overflow: hidden;
+  line-height: 1.8;
+  padding: 0 20px 8px 20px;
+}
+.lessons_wrapper .lesson_list {
+  list-style: none;
+  font-size: 1.8rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  max-height: 58vh;
+  font-size: 1.8rem;
+  padding-top: 10px;
+}
+.lessons_wrapper .lesson_list::-webkit-scrollbar {
+  width: 0;
+}
+.lessons_wrapper .lesson_list .lesson_item {
+  padding: 10px;
+  transition: background-color 0.3s;
+  border-radius: 10px;
+  margin: 0 8px;
+  display: flex;
+  align-items: center;
+}
+.lessons_wrapper .lesson_list .lesson_item .lesson_item-index {
+  margin-right: 10px;
+}
+.lessons_wrapper .lesson_list .lesson_item .lesson_item-link {
+  text-decoration: none;
+  color: var(--black-color);
+  display: flex;
+  align-items: center;
+}
+.lessons_wrapper .lesson_list .lesson_item .lesson_item-link .lesson_item-thumb {
+  background-color: #ebebeb;
+  border-radius: 8px;
+  display: block;
+  line-height: 67px;
+  max-height: 67px;
+  text-align: center;
+  width: 100px;
+}
+.lessons_wrapper .lesson_list .lesson_item .lesson_item-link .lesson_item-thumb::after {
+  color: var(--text-color);
+  content: "NO IMAGE";
+  font-size: 1.2rem;
+}
+.lessons_wrapper .lesson_list .lesson_item .lesson_item-link .lesson_item-title {
+  margin-left: 6px;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  overflow: hidden;
+}
+.lessons_wrapper .lesson_list .lesson_item:hover {
+  background-color: rgba(22, 24, 35, 0.05);
+}
+
+.lesson_description {
+  margin: 10px 0;
+}
+.lesson_description .hashtag {
+  display: block;
+  margin: 10px 0;
+  font-size: 1.6rem;
+  color: blue;
+}
+
+.lesson_related {
+  margin-top: 10px;
 }
 
 /*# sourceMappingURL=main.css.map */

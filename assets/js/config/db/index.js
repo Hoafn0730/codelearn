@@ -1,10 +1,11 @@
 import Category from '../../components/Category.js';
 import MyCourse from '../../components/MyCourse.js';
 import Notification from '../../components/Notification.js';
+var API = "http://localhost:3000"
 
 const category = {
     getCategories: function (callback) {
-        fetch(API + '/Category/get-all')
+        fetch(API + '/Categories')
             .then((response) => response.json())
             .then(callback);
     },

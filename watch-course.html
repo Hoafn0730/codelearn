@@ -14,12 +14,12 @@
         <script src="./assets/js/jquery-3.6.0.min.js"></script>
         <script src="./assets/js/angular.min.js"></script>
         <script src="./assets/js/global.js"></script>
-        <script type="module" src="./assets/js/chitiet.js"></script>
+        <script src="./assets/js/watch.js"></script>
     </head>
 
     <body>
         <div id="root"></div>
-        <div ng-app="AppHocTap" ng-controller="ChiTietCtrl" class="app">
+        <div class="app">
             <!-- Header -->
             <header class="header">
                 <div class="grid d-flex-center">
@@ -188,95 +188,68 @@
                 </div>
 
                 <!-- Content -->
-                <div id="content" class="content">
+                <div ng-app="AppWatch" ng-controller="WatchCtrl" id="content" class="content">
                     <div class="grid">
                         <div class="row">
                             <div class="col l-8 m-12 c-12">
-                                <div class="courseDetail_wrapper">
-                                    <h1 class="courseDetail_heading">{{khoahoc.nameCourse}}</h1>
-                                    <div class="courseDetail_description">{{khoahoc.description}}</div>
-                                    <div class="star">
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star"></span>
-                                    </div>
-                                    <div class="last-update-date">
-                                        <span id="last-updated">~ Last updated {{formattedDate}}</span>
-                                    </div>
-                                    <div class="curriculum">
-                                        <h1 class="curriculum-header">Nội dung khóa học</h1>
-                                        <ul class="curriculum-list">
-                                            <li class="curriculum-item">
-                                                <div class="curriculum_panel">
-                                                    <div class="curriculum_heading">1. Giới thiệu</div>
-                                                    <div class="icon-container">
-                                                        <i class="fas fa-chevron-right"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="curriculum_collapse">
-                                                    <div ng-repeat="x in listBaiHoc" class="curriculum_lessionItem">
-                                                        <span>{{$index + 1}}. {{x.nameLesson}}</span>
-                                                        <span class="duration">{{x.duration}}</span>
-                                                    </div>
-                                                </div>
-                                            </li>
-
-                                            <li class="curriculum-item">
-                                                <div class="curriculum_panel">
-                                                    <div class="curriculum_heading">1. Giới thiệu</div>
-                                                    <div class="icon-container">
-                                                        <i class="fas fa-chevron-right"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="curriculum_collapse">
-                                                    <div ng-repeat="x in listBaiHoc" class="curriculum_lessionItem">
-                                                        <span>{{$index + 3}}. {{x.nameLesson}}</span>
-                                                        <span class="duration">{{x.duration}}</span>
-                                                    </div>
-                                                </div>
-                                            </li>
-
-                                            <li class="curriculum-item">
-                                                <div class="curriculum_panel">
-                                                    <div class="curriculum_heading">1. Giới thiệu</div>
-                                                    <div class="icon-container">
-                                                        <i class="fas fa-chevron-right"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="curriculum_collapse">
-                                                    <div ng-repeat="x in listBaiHoc" class="curriculum_lessionItem">
-                                                        <span>{{$index + 5}}. {{x.nameLesson}}</span>
-                                                        <span class="duration">{{x.duration}}</span>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="courseDetail_description">
-                                        <h1>Mô tả</h1>
-                                        <p>{{khoahoc.content}}</p>
-                                    </div>
+                                <div class="watch_wrapper">
+                                    <iframe
+                                        class="video"
+                                        width="100%"
+                                        height="492"
+                                        src=""
+                                        title="YouTube video player"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen
+                                    ></iframe>
+                                    <h1 class="video_title">
+                                        #14 Enum Types | Khóa Học TypeScript Cơ Bản Cho Người Mới Bắt Đầu Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, provident excepturi! Qui, obcaecati excepturi! Facere, tenetur neque laudantium, accusamus minus commodi vel quos sed dicta aut, quo nihil praesentium. Exercitationem?
+                                    </h1>
                                 </div>
                             </div>
 
                             <div class="col l-4 m-12 c-12">
-                                <div class="courseDetail_purchaseBadge">
-                                    <div class="courseDetail_preview">
-                                        <img src="{{khoahoc.image}}" alt="" class="courseDetail_img" />
-                                    </div>
-                                    <div class="price">
-                                        <span class="courseItem_old-price">2.500.000đ</span>
-                                        <span class="courseItem_new-price">{{formatNumber}}đ</span>
-                                    </div>
-                                    <button
-                                        class="btn courseDetail_btn"
-                                    >
-                                        Vào học
-                                    </button>
-                                    <div class="courseDetail_level">~ {{khoahoc.level}}</div>
+                                <div class="lessons_wrapper">
+                                    <h3 class="lesson_header">
+                                        <a href="#">TypeScript cơ bản từ a -> z cho người mới Lorem</a>
+                                    </h3>
+
+                                    <ul class="lesson_list">
+
+                                        <li ng-repeat="x in listBaiHoc" class="lesson_item">
+                                            <span class="lesson_item-index">{{$index + 1}}</span>
+                                            <a href="watch-course.html?c={{khoahoc.courseId}}&l={{x.lessonId}}&v={{x.videoId}}" class="lesson_item-link">
+                                                <img
+                                                    src="https://i.ytimg.com/vi/{{x.videoId}}/hq720.jpg"
+                                                    alt=""
+                                                    class="lesson_item-thumb"
+                                                />
+                                                <h3 class="lesson_item-title">{{x.nameLesson}}</h3>
+                                            </a>
+                                        </li>
+                                        
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col l-8 m-12 c-12">
+                                <div class="lesson_description">
+                                    <h1>Mô tả</h1>
+                                    <a href="#" class="hashtag">#nodejs</a>
+                                    <p class="lesson_description-detail" style="font-size: 1.4rem;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil necessitatibus sed sequi repellat earum corrupti voluptatem quasi magni illo quibusdam a esse temporibus unde, numquam ab consequuntur suscipit! Nam, recusandae. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia ratione eaque dolor nihil autem animi praesentium sunt dolore accusamus commodi et, error nesciunt earum velit numquam, tempora excepturi quo aperiam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi a nihil vel expedita accusantium nostrum quae enim soluta, quos, nisi dignissimos quod doloribus eum quaerat! Repudiandae voluptatem ut est voluptate? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit inventore fugit ullam quae sit quia quaerat deserunt, labore voluptatem sunt expedita quisquam ex voluptatibus blanditiis pariatur perspiciatis temporibus delectus fuga.</p>
+                                </div>
+                                <div class="lesson_comment">
+                                    <h1>Comments</h1>
+                                </div>
+                            </div>
+
+                            <div class="col l-4 m-12 c-12">
+                                <div class="lesson_related">
+                                    <h1>Liên quan</h1>
                                 </div>
                             </div>
                         </div>
@@ -328,6 +301,5 @@
             </footer>
         </div>
         <script type="module" src="./assets/js/script.js"></script>
-        <script src="./assets/js/detailCourse.js"></script>
     </body>
 </html>

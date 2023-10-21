@@ -1,0 +1,115 @@
+@import '../abstracts';
+
+.watch_wrapper {
+    margin-top: 20px;
+
+    .video {
+        border-radius: 10px;
+    }
+
+    .video_title {
+        margin-top        : 10px;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        display           : -webkit-box;
+        overflow          : hidden;
+        line-height       : 1.8;
+        width             : 80%;
+    }
+}
+
+.lessons_wrapper {
+    margin-top   : 20px;
+    height       : 500px;
+    width        : 100%;
+    border       : 2px solid #ffcda9;
+    border-radius: 10px;
+    padding-top  : 20px;
+
+    .lesson_header {
+        font-size         : 2rem;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        display           : -webkit-box;
+        overflow          : hidden;
+        line-height       : 1.8;
+        padding           : 0 20px 8px 20px;
+    }
+
+    .lesson_list {
+        @include sub-menu-list;
+        // // width            : 100%;
+        // // height        : 100%;
+        // display       : flex;
+        // flex-direction: column;
+        font-size  : 1.8rem;
+        padding-top: 10px;
+
+        &::-webkit-scrollbar {
+            width: 0;
+        }
+
+        .lesson_item {
+            @include sub-menu-item;
+            display    : flex;
+            align-items: center;
+
+            .lesson_item-index {
+                margin-right: 10px;
+            }
+
+            .lesson_item-link {
+                @include sub-menu-link;
+
+                .lesson_item-thumb {
+
+                    background-color: #ebebeb;
+                    border-radius   : 8px;
+                    display         : block;
+                    line-height     : 67px;
+                    max-height      : 67px;
+                    text-align      : center;
+                    width           : 100px;
+
+                    &::after {
+                        color    : var(--text-color);
+                        content  : "NO IMAGE";
+                        font-size: 1.2rem;
+                    }
+                }
+
+                .lesson_item-title {
+                    margin-left       : 6px;
+                    font-size         : 1.6rem;
+                    line-height       : 1.6rem;
+                    -webkit-box-orient: vertical;
+                    word-wrap         : break-word;
+                    -webkit-line-clamp: 2;
+                    display           : -webkit-box;
+                    overflow          : hidden;
+                }
+
+            }
+
+            &:hover {
+                background-color: rgba(22, 24, 35, .05);
+            }
+        }
+    }
+}
+
+.lesson_description {
+    margin: 10px 0;
+
+    .hashtag {
+        display  : block;
+        margin   : 10px 0;
+        font-size: 1.6rem;
+        color    : blue;
+
+    }
+}
+
+.lesson_related {
+    margin-top: 10px;
+}

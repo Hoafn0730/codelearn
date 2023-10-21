@@ -1,4 +1,4 @@
-import useEffect from '../utils/hook.js';
+import { useEffect } from '../utils/hook.js';
 import CommonItem from '../components/CommonItem.js';
 
 function Home({ dataCourses }) {
@@ -279,7 +279,7 @@ function Home({ dataCourses }) {
                         <div class="row">
                             <div class="col l-3 m-4 c-12">
                                 <div class="commonItem_wrapper">
-                                    <a href="detail-course.html" class="commonItem_link">
+                                    <a href="detail-course.html?id=1" class="commonItem_link">
                                         <!-- <button class="btn commonItem_btn">Xem khóa học</button> -->
                                         <img
                                             src="https://img-b.udemycdn.com/course/240x135/3655840_1c3c.jpg"

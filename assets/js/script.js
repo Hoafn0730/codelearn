@@ -5,4 +5,7 @@ function start() {
     render();
     handleEvent();
 }
+
+
+
 start();

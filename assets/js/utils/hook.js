@@ -4,4 +4,13 @@ const useEffect = (cb, changed) => {
     }, 0);
 };
 
-export default useEffect;
+const useState = function (state) {
+    return [
+        () => state,
+        (value) => {
+            state = value;
+        },
+    ];
+};
+
+export { useState, useEffect };

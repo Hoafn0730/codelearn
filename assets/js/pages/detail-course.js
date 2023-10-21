@@ -1,4 +1,4 @@
-import useEffect from '../utils/hook.js';
+import { useEffect } from '../utils/hook.js';
 
 function DetailCourse({ dataCourses }) {
     const parts = window.location.href.split('/');

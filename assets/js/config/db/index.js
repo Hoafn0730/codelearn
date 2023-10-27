@@ -1,11 +1,10 @@
 import Category from '../../components/Category.js';
 import MyCourse from '../../components/MyCourse.js';
 import Notification from '../../components/Notification.js';
-var API = "http://localhost:3000"
 
 const category = {
     getCategories: function (callback) {
-        fetch(API + '/Categories')
+        fetch(API + '/api-user/category/get-all')
             .then((response) => response.json())
             .then(callback);
     },
@@ -15,10 +14,10 @@ const category = {
         listCategories.innerHTML = htmls.join('');
     },
 };
-
+const id = 5;
 const myCourse = {
     getCourses: function (callback) {
-        fetch(API + '/mycourses')
+        fetch(API + '/api-user/course/get-by-userid?id=' + id)
             .then((response) => response.json())
             .then(callback);
     },
@@ -37,13 +36,23 @@ const myCourse = {
 
 const notification = {
     getNotifications: function (callback) {
-        fetch(API + '/notifications')
+        const data = {
+            page: 1,
+            pageSize: 10,
+        };
+        fetch(API + '/api-user/notification/get-notyfication', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
             .then((response) => response.json())
             .then(callback);
     },
-    renderNotification: function (notifications) {
+    renderNotification: function ({ data }) {
         const listNotifications = document.querySelector('.header_notifications-list');
-        if (notifications.length == 0) {
+        if (data.length == 0) {
             listNotifications.innerHTML = `
                 <div class="header_notifications-empty">No notifications.</div>
             `;
@@ -51,7 +60,7 @@ const notification = {
             return;
         }
 
-        const htmls = notifications.map((notification) => Notification({ notification }));
+        const htmls = data.map((notification) => Notification({ notification }));
         listNotifications.innerHTML = htmls.join('');
     },
 };

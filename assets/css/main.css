@@ -1013,9 +1013,19 @@ body::-webkit-scrollbar-track {
   margin-bottom: 10px;
 }
 .courseDetail_purchaseBadge .courseDetail_preview .courseDetail_img {
+  display: block;
   border-radius: 16px;
   object-fit: contain;
-  width: 100%;
+  background-color: #ebebeb;
+  text-align: center;
+  line-height: 1.6rem;
+  height: 258px;
+  width: 460px;
+}
+.courseDetail_purchaseBadge .courseDetail_preview .courseDetail_img::after {
+  color: var(--text-color);
+  content: "NO IMAGE";
+  font-size: 1.2rem;
 }
 .courseDetail_purchaseBadge .courseDetail_btn {
   margin: 10px 0 20px 0;

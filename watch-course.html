@@ -14,7 +14,7 @@
         <script src="./assets/js/jquery-3.6.0.min.js"></script>
         <script src="./assets/js/angular.min.js"></script>
         <script src="./assets/js/global.js"></script>
-        <script src="./assets/js/watch.js"></script>
+        <script defer type="module" src="./assets/js/watch.js"></script>
     </head>
 
     <body>
@@ -204,7 +204,7 @@
                                         allowfullscreen
                                     ></iframe>
                                     <h1 class="video_title">
-                                        #14 Enum Types | Khóa Học TypeScript Cơ Bản Cho Người Mới Bắt Đầu Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, provident excepturi! Qui, obcaecati excepturi! Facere, tenetur neque laudantium, accusamus minus commodi vel quos sed dicta aut, quo nihil praesentium. Exercitationem?
+                                        {{baiHoc.nameLesson}}
                                     </h1>
                                 </div>
                             </div>
@@ -212,12 +212,12 @@
                             <div class="col l-4 m-12 c-12">
                                 <div class="lessons_wrapper">
                                     <h3 class="lesson_header">
-                                        <a href="#">TypeScript cơ bản từ a -> z cho người mới Lorem</a>
+                                        <a href="#">{{khoahoc.nameCourse}}</a>
                                     </h3>
 
                                     <ul class="lesson_list">
 
-                                        <li ng-repeat="x in listBaiHoc" class="lesson_item">
+                                        <li ng-repeat="x in listBaiHoc" class="lesson_item" onclick="handleClick(e)">
                                             <span class="lesson_item-index">{{$index + 1}}</span>
                                             <a href="watch-course.html?c={{khoahoc.courseId}}&l={{x.lessonId}}&v={{x.videoId}}" class="lesson_item-link">
                                                 <img
@@ -240,7 +240,12 @@
                                 <div class="lesson_description">
                                     <h1>Mô tả</h1>
                                     <a href="#" class="hashtag">#nodejs</a>
-                                    <p class="lesson_description-detail" style="font-size: 1.4rem;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil necessitatibus sed sequi repellat earum corrupti voluptatem quasi magni illo quibusdam a esse temporibus unde, numquam ab consequuntur suscipit! Nam, recusandae. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia ratione eaque dolor nihil autem animi praesentium sunt dolore accusamus commodi et, error nesciunt earum velit numquam, tempora excepturi quo aperiam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi a nihil vel expedita accusantium nostrum quae enim soluta, quos, nisi dignissimos quod doloribus eum quaerat! Repudiandae voluptatem ut est voluptate? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit inventore fugit ullam quae sit quia quaerat deserunt, labore voluptatem sunt expedita quisquam ex voluptatibus blanditiis pariatur perspiciatis temporibus delectus fuga.</p>
+
+                                    <p class="lesson_description-detail" style="font-size: 1.4rem;">
+                                        {{baiHoc.description}}
+                                        <br>
+                                        {{baiHoc.content}}
+                                    </p>
                                 </div>
                                 <div class="lesson_comment">
                                     <h1>Comments</h1>

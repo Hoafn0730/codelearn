@@ -1,6 +1,6 @@
 function Notification({ notification }) {
     return `
-    <li class="header_notifications-item notification-${notification.id}">
+    <li class="header_notifications-item notification-${notification.notificationId}">
         <a href="#" class="notification-link">
             <img src="./assets/img/apple-touch-icon.webp" alt="" class="avatar" />
 

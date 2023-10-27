@@ -148,12 +148,11 @@
             </div>
         </main>
         <script>
-            var user = JSON.parse(localStorage.getItem('user'));
-            if (!user) {
-                // window.location.href = "../admin/login.html";
+            var account = JSON.parse(localStorage.getItem('account'));
+            if (!account) {
+                window.location.href = "./login.html";
             }
-
             LoadUser();
-        </script>
+         </script>
     </body>
 </html>

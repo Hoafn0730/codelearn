@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
         <link rel="stylesheet" href="./assets/css/login.css" />
+        <script src="./assets/js/global.js"></script>
 
     </head>
     <body>
@@ -229,10 +230,10 @@
                     </svg>
                 </div>
                 <div class="container__content">
-                    <form class="container__form" action="./index.html">
+                    <form id="login" class="container__form">
                         <input type="text" name="username" placeholder="Username" class="container__inputField" />
                         <input type="password" name="password" placeholder="Password" class="container__inputField" />
-                        <button type="submit" value="Login" class="container__sumbitButton">Login</button>
+                        <button type="submit" value="Login" id="login-btn" class="container__sumbitButton">Login</button>
                     </form>
                     <div class="container__links">
                         <a href="#emptyLink" class="container__link">Need Account?</a>
@@ -242,5 +243,6 @@
                 </div>
             </div>
         </div>
+        <script src="./assets/js/login.js"></script>
     </body>
 </html>

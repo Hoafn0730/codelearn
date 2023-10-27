@@ -13,7 +13,7 @@ app.controller('ChiTietCtrl', function ($scope, $http) {
     $scope.GetKhoaHoc = function () {
         $http({
             method: 'GET',
-            url: API + '/api/Course/get-by-id?id=' + id,
+            url: API + '/api-user/course/get-by-id?id=' + id,
         }).then(function (response) {
             $scope.formattedDate = formatDate(response.data.updatedAt);
             // debugger;

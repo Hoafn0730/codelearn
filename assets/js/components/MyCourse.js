@@ -1,18 +1,18 @@
 function MyCourse({ course }) {
     return `
-        <li class="header_mycourses-item course_item-${course.id}">
+        <li class="header_mycourses-item course_item-${course.courseId}">
             <a href="#" class="header_mycourse-link">
                 <img
-                    src="${course.thumb}"
+                    src="${course.image}"
                     alt=""
                     class="header_mycourse-item-thumb"
                 />
                 <div class="header_mycourse-info">
                     <h3 class="header_mycourse-title">
-                        ${course.name}
+                        ${course.nameCourse}
                     </h3>
-                    <p class="header_mycourse-lastCompleted">Học cách đây ${course.lastCompleted} ngày trước</p>
-                    <div class="VerticalProgressBar" aria-describedby="mycourses" style="--progress: ${course.process}%;"></div>
+                    <p class="header_mycourse-lastCompleted">Học cách đây ${course.createdAt} ngày trước</p>
+                    <div class="VerticalProgressBar" aria-describedby="mycourses" style="--progress: ${50}%;"></div>
                 </div>
             </a>
         </li>

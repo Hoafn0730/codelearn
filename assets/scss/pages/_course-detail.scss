@@ -114,9 +114,14 @@
 
 
         .courseDetail_img {
-            border-radius: 16px;
-            object-fit   : contain;
-            width        : 100%;
+            display         : block;
+            border-radius   : 16px;
+            object-fit      : contain;
+            background-color: #ebebeb;
+            text-align      : center;
+            line-height     : 1.6rem;
+            height          : 258px;
+            width           : 460px;
         }
     }
 

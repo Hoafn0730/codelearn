@@ -1,3 +1,5 @@
+import { formatDate } from '../utils/util.js';
+
 function Notification({ notification }) {
     return `
     <li class="header_notifications-item notification-${notification.notificationId}">
@@ -12,7 +14,7 @@ function Notification({ notification }) {
                     mới được thêm vào.
                 </div>
                 <p class="notification_createdAt">
-                    ${notification.createdAt}
+                    ${formatDate(notification.createdAt)}
                 </p>
             </div>
         </a>

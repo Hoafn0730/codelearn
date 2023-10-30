@@ -1,4 +1,4 @@
-import { formatDate, formatNumber } from './utils/util.js';
+import { formatDate, formatNumber } from '../utils/util.js';
 
 var app = angular.module('AppHocTap', []);
 app.controller('ChiTietCtrl', function ($scope, $http) {
@@ -18,7 +18,6 @@ app.controller('ChiTietCtrl', function ($scope, $http) {
             $scope.formattedDate = formatDate(response.data.updatedAt);
             // debugger;
             $scope.khoahoc = response.data;
-            $scope.formatNumber = formatNumber(response.data.price);
             $scope.listBaiHoc = response.data.list_json_Lessons;
             document.querySelector('.btn.courseDetail_btn').onclick = () =>
                 location.assign('./watch-course.html?c=' + id);

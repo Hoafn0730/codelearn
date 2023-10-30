@@ -18,7 +18,7 @@
     </head>
 
     <body>
-        <div ng-app="AppHocTap" ng-controller="HomeCtrl" class="app">
+        <div class="app">
             <!-- Header -->
             <header class="header">
                 <div class="grid d-flex-center">
@@ -67,7 +67,7 @@
                     </div>
 
                     <!-- Header body -->
-                    <div class="header_body d-flex-center">
+                    <div ng-app="AppHocTap" ng-controller="SearchCtrl"  class="header_body d-flex-center">
                         <!-- Search -->
                         <div class="header_search">
                             <i class="header_search-icon fa-solid fa-magnifying-glass"></i>
@@ -233,7 +233,7 @@
                 </div>
             </footer>
         </div>
-        <script src="./assets/js/home.js"></script>
+        <script src="./assets/js/services/searchService.js"></script>
         <script type="module" src="./assets/js/script.js"></script>
     </body>
 </html>

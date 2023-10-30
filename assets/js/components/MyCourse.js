@@ -1,3 +1,5 @@
+import { calculateDay } from '../utils/util.js';
+
 function MyCourse({ course }) {
     return `
         <li class="header_mycourses-item course_item-${course.courseId}">
@@ -11,7 +13,9 @@ function MyCourse({ course }) {
                     <h3 class="header_mycourse-title">
                         ${course.nameCourse}
                     </h3>
-                    <p class="header_mycourse-lastCompleted">Học cách đây ${course.createdAt} ngày trước</p>
+                    <p class="header_mycourse-lastCompleted">Học cách đây ${calculateDay(
+                        course.updatedAt,
+                    )} ngày trước</p>
                     <div class="VerticalProgressBar" aria-describedby="mycourses" style="--progress: ${50}%;"></div>
                 </div>
             </a>

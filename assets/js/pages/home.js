@@ -128,6 +128,7 @@ function Home({ dataCourses }) {
 
     return `
     <div class="grid">
+
             <!-- SlideShow -->
             <div class="home_slideShow">
                 <div class="slideShow_wrapper">
@@ -266,7 +267,7 @@ function Home({ dataCourses }) {
                     </div>
                     <div class="scrollList_body">
                         <div class="row">
-                           ${dataCourses.map((data) => CommonItem({ data })).join('')}
+                           ${dataCourses.list_json_PopularCourses.map((data) => CommonItem({ data })).join('')}
                         </div>
                     </div>
                 </div>
@@ -277,368 +278,29 @@ function Home({ dataCourses }) {
                     </div>
                     <div class="scrollList_body">
                         <div class="row">
-                            <div class="col l-3 m-4 c-12">
-                                <div class="commonItem_wrapper">
-                                    <a href="detail-course.html?id=1" class="commonItem_link">
-                                        <!-- <button class="btn commonItem_btn">Xem khóa học</button> -->
-                                        <img
-                                            src="https://img-b.udemycdn.com/course/240x135/3655840_1c3c.jpg"
-                                            alt=""
-                                            class="commonItem_thumb"
-                                        />
-                                    </a>
-                                    <h3 class="commonItem_title">
-                                        <a href="#">The Ultimate 2023 Fullstack Web asfdsf</a>
-                                    </h3>
-                                    <div class="price">
-                                        <span class="courseItem_old-price">2.500.000đ</span>
-                                        <span class="courseItem_new-price">1.299.000đ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col l-3 m-4 c-12">
-                                <div class="commonItem_wrapper">
-                                    <a href="#" class="commonItem_link">
-                                        <!-- <button class="btn commonItem_btn">Xem khóa học</button> -->
-                                        <img
-                                            src="https://img-b.udemycdn.com/course/240x135/3655840_1c3c.jpg"
-                                            alt=""
-                                            class="commonItem_thumb"
-                                        />
-                                    </a>
-                                    <h3 class="commonItem_title">
-                                        <a href="#">The Ultimate 2023 Fullstack </a>
-                                    </h3>
-                                    <div class="price">
-                                        <span class="courseItem_old-price">2.500.000đ</span>
-                                        <span class="courseItem_new-price">1.299.000đ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col l-3 m-4 c-12">
-                                <div class="commonItem_wrapper">
-                                    <a href="#" class="commonItem_link">
-                                        <!-- <button class="btn commonItem_btn">Xem khóa học</button> -->
-                                        <img
-                                            src="https://img-b.udemycdn.com/course/240x135/3655840_1c3c.jpg"
-                                            alt=""
-                                            class="commonItem_thumb"
-                                        />
-                                    </a>
-                                    <h3 class="commonItem_title">
-                                        <a href="#">The Ultimate 2023 Fullstack Web Development Bootcamp</a>
-                                    </h3>
-                                    <div class="price">
-                                        <span class="courseItem_old-price">2.500.000đ</span>
-                                        <span class="courseItem_new-price">1.299.000đ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col l-3 m-4 c-12">
-                                <div class="commonItem_wrapper">
-                                    <a href="#" class="commonItem_link">
-                                        <!-- <button class="btn commonItem_btn">Xem khóa học</button> -->
-                                        <img
-                                            src="https://img-b.udemycdn.com/course/240x135/3655840_1c3c.jpg"
-                                            alt=""
-                                            class="commonItem_thumb"
-                                        />
-                                    </a>
-                                    <h3 class="commonItem_title">
-                                        <a href="#">The Ultimate 2023 Fullstack Web Development Bootcamp</a>
-                                    </h3>
-                                    <div class="price">
-                                        <span class="courseItem_old-price">2.500.000đ</span>
-                                        <span class="courseItem_new-price">1.299.000đ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col l-3 m-4 c-12">
-                                <div class="commonItem_wrapper">
-                                    <a href="#" class="commonItem_link">
-                                        <!-- <button class="btn commonItem_btn">Xem khóa học</button> -->
-                                        <img
-                                            src="https://img-b.udemycdn.com/course/240x135/3655840_1c3c.jpg"
-                                            alt=""
-                                            class="commonItem_thumb"
-                                        />
-                                    </a>
-                                    <h3 class="commonItem_title">
-                                        <a href="#">The Ultimate 2023 Fullstack Web Development Bootcamp</a>
-                                    </h3>
-                                    <div class="price">
-                                        <span class="courseItem_old-price">2.500.000đ</span>
-                                        <span class="courseItem_new-price">1.299.000đ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col l-3 m-4 c-12">
-                                <div class="commonItem_wrapper">
-                                    <a href="#" class="commonItem_link">
-                                        <!-- <button class="btn commonItem_btn">Xem khóa học</button> -->
-                                        <img
-                                            src="https://img-b.udemycdn.com/course/240x135/3655840_1c3c.jpg"
-                                            alt=""
-                                            class="commonItem_thumb"
-                                        />
-                                    </a>
-                                    <h3 class="commonItem_title">
-                                        <a href="#">The Ultimate 2023 Fullstack Web Development Bootcamp</a>
-                                    </h3>
-                                    <div class="price">
-                                        <span class="courseItem_old-price">2.500.000đ</span>
-                                        <span class="courseItem_new-price">1.299.000đ</span>
-                                    </div>
-                                </div>
-                            </div>
+                            ${dataCourses.list_json_FreeCourses.map((data) => CommonItem({ data })).join('')}
                         </div>
                     </div>
                 </div>
 
                 <div class="scrollList_vertical">
                     <div class="scrollList_heading">
-                        <h1>Trend Blogs</h1>
+                        <h1>Pro Courses</h1>
                     </div>
                     <div class="scrollList_body">
                         <div class="row">
-                            <div class="col l-3 m-4 c-12">
-                                <div class="commonItem_wrapper">
-                                    <a href="#" class="commonItem_link">
-                                        <!-- <button class="btn commonItem_btn">Xem khóa học</button> -->
-                                        <img
-                                            src="https://img-b.udemycdn.com/course/240x135/3655840_1c3c.jpg"
-                                            alt=""
-                                            class="commonItem_thumb"
-                                        />
-                                    </a>
-                                    <h3 class="commonItem_title">
-                                        <a href="#">The Ultimate 2023 Fullstack Web asfdsf</a>
-                                    </h3>
-                                    <div class="price">
-                                        <span class="courseItem_old-price">2.500.000đ</span>
-                                        <span class="courseItem_new-price">1.299.000đ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col l-3 m-4 c-12">
-                                <div class="commonItem_wrapper">
-                                    <a href="#" class="commonItem_link">
-                                        <!-- <button class="btn commonItem_btn">Xem khóa học</button> -->
-                                        <img
-                                            src="https://img-b.udemycdn.com/course/240x135/3655840_1c3c.jpg"
-                                            alt=""
-                                            class="commonItem_thumb"
-                                        />
-                                    </a>
-                                    <h3 class="commonItem_title">
-                                        <a href="#">The Ultimate 2023 Fullstack </a>
-                                    </h3>
-                                    <div class="price">
-                                        <span class="courseItem_old-price">2.500.000đ</span>
-                                        <span class="courseItem_new-price">1.299.000đ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col l-3 m-4 c-12">
-                                <div class="commonItem_wrapper">
-                                    <a href="#" class="commonItem_link">
-                                        <!-- <button class="btn commonItem_btn">Xem khóa học</button> -->
-                                        <img
-                                            src="https://img-b.udemycdn.com/course/240x135/3655840_1c3c.jpg"
-                                            alt=""
-                                            class="commonItem_thumb"
-                                        />
-                                    </a>
-                                    <h3 class="commonItem_title">
-                                        <a href="#">The Ultimate 2023 Fullstack Web Development Bootcamp</a>
-                                    </h3>
-                                    <div class="price">
-                                        <span class="courseItem_old-price">2.500.000đ</span>
-                                        <span class="courseItem_new-price">1.299.000đ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col l-3 m-4 c-12">
-                                <div class="commonItem_wrapper">
-                                    <a href="#" class="commonItem_link">
-                                        <!-- <button class="btn commonItem_btn">Xem khóa học</button> -->
-                                        <img
-                                            src="https://img-b.udemycdn.com/course/240x135/3655840_1c3c.jpg"
-                                            alt=""
-                                            class="commonItem_thumb"
-                                        />
-                                    </a>
-                                    <h3 class="commonItem_title">
-                                        <a href="#">The Ultimate 2023 Fullstack Web Development Bootcamp</a>
-                                    </h3>
-                                    <div class="price">
-                                        <span class="courseItem_old-price">2.500.000đ</span>
-                                        <span class="courseItem_new-price">1.299.000đ</span>
-                                    </div>
-                                </div>
-                            </div>
+                            ${dataCourses.list_json_ProCourses.map((data) => CommonItem({ data })).join('')}
                         </div>
                     </div>
                 </div>
 
                 <div class="scrollList_vertical">
                     <div class="scrollList_heading">
-                        <h1>Popular Courses</h1>
+                        <h1>New Courses</h1>
                     </div>
                     <div class="scrollList_body">
                         <div class="row">
-                            <div class="col l-3 m-4 c-12">
-                                <div class="commonItem_wrapper">
-                                    <a href="#" class="commonItem_link">
-                                        <!-- <button class="btn commonItem_btn">Xem khóa học</button> -->
-                                        <img
-                                            src="https://img-b.udemycdn.com/course/240x135/3655840_1c3c.jpg"
-                                            alt=""
-                                            class="commonItem_thumb"
-                                        />
-                                    </a>
-                                    <h3 class="commonItem_title">
-                                        <a href="#">The Ultimate 2023 Fullstack Web asfdsf</a>
-                                    </h3>
-                                    <div class="price">
-                                        <span class="courseItem_old-price">2.500.000đ</span>
-                                        <span class="courseItem_new-price">1.299.000đ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col l-3 m-4 c-12">
-                                <div class="commonItem_wrapper">
-                                    <a href="#" class="commonItem_link">
-                                        <!-- <button class="btn commonItem_btn">Xem khóa học</button> -->
-                                        <img
-                                            src="https://img-b.udemycdn.com/course/240x135/3655840_1c3c.jpg"
-                                            alt=""
-                                            class="commonItem_thumb"
-                                        />
-                                    </a>
-                                    <h3 class="commonItem_title">
-                                        <a href="#">The Ultimate 2023 Fullstack </a>
-                                    </h3>
-                                    <div class="price">
-                                        <span class="courseItem_old-price">2.500.000đ</span>
-                                        <span class="courseItem_new-price">1.299.000đ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col l-3 m-4 c-12">
-                                <div class="commonItem_wrapper">
-                                    <a href="#" class="commonItem_link">
-                                        <!-- <button class="btn commonItem_btn">Xem khóa học</button> -->
-                                        <img
-                                            src="https://img-b.udemycdn.com/course/240x135/3655840_1c3c.jpg"
-                                            alt=""
-                                            class="commonItem_thumb"
-                                        />
-                                    </a>
-                                    <h3 class="commonItem_title">
-                                        <a href="#">The Ultimate 2023 Fullstack Web Development Bootcamp</a>
-                                    </h3>
-                                    <div class="price">
-                                        <span class="courseItem_old-price">2.500.000đ</span>
-                                        <span class="courseItem_new-price">1.299.000đ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col l-3 m-4 c-12">
-                                <div class="commonItem_wrapper">
-                                    <a href="#" class="commonItem_link">
-                                        <!-- <button class="btn commonItem_btn">Xem khóa học</button> -->
-                                        <img
-                                            src="https://img-b.udemycdn.com/course/240x135/3655840_1c3c.jpg"
-                                            alt=""
-                                            class="commonItem_thumb"
-                                        />
-                                    </a>
-                                    <h3 class="commonItem_title">
-                                        <a href="#">The Ultimate 2023 Fullstack Web Development Bootcamp</a>
-                                    </h3>
-                                    <div class="price">
-                                        <span class="courseItem_old-price">2.500.000đ</span>
-                                        <span class="courseItem_new-price">1.299.000đ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col l-3 m-4 c-12">
-                                <div class="commonItem_wrapper">
-                                    <a href="#" class="commonItem_link">
-                                        <!-- <button class="btn commonItem_btn">Xem khóa học</button> -->
-                                        <img
-                                            src="https://img-b.udemycdn.com/course/240x135/3655840_1c3c.jpg"
-                                            alt=""
-                                            class="commonItem_thumb"
-                                        />
-                                    </a>
-                                    <h3 class="commonItem_title">
-                                        <a href="#">The Ultimate 2023 Fullstack Web Development Bootcamp</a>
-                                    </h3>
-                                    <div class="price">
-                                        <span class="courseItem_old-price">2.500.000đ</span>
-                                        <span class="courseItem_new-price">1.299.000đ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col l-3 m-4 c-12">
-                                <div class="commonItem_wrapper">
-                                    <a href="#" class="commonItem_link">
-                                        <!-- <button class="btn commonItem_btn">Xem khóa học</button> -->
-                                        <img
-                                            src="https://img-b.udemycdn.com/course/240x135/3655840_1c3c.jpg"
-                                            alt=""
-                                            class="commonItem_thumb"
-                                        />
-                                    </a>
-                                    <h3 class="commonItem_title">
-                                        <a href="#">The Ultimate 2023 Fullstack Web Development Bootcamp</a>
-                                    </h3>
-                                    <div class="price">
-                                        <span class="courseItem_old-price">2.500.000đ</span>
-                                        <span class="courseItem_new-price">1.299.000đ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col l-3 m-4 c-12">
-                                <div class="commonItem_wrapper">
-                                    <a href="#" class="commonItem_link">
-                                        <!-- <button class="btn commonItem_btn">Xem khóa học</button> -->
-                                        <img
-                                            src="https://img-b.udemycdn.com/course/240x135/3655840_1c3c.jpg"
-                                            alt=""
-                                            class="commonItem_thumb"
-                                        />
-                                    </a>
-                                    <h3 class="commonItem_title">
-                                        <a href="#">The Ultimate 2023 Fullstack Web Development Bootcamp</a>
-                                    </h3>
-                                    <div class="price">
-                                        <span class="courseItem_old-price">2.500.000đ</span>
-                                        <span class="courseItem_new-price">1.299.000đ</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col l-3 m-4 c-12">
-                                <div class="commonItem_wrapper">
-                                    <a href="#" class="commonItem_link">
-                                        <!-- <button class="btn commonItem_btn">Xem khóa học</button> -->
-                                        <img
-                                            src="https://img-b.udemycdn.com/course/240x135/3655840_1c3c.jpg"
-                                            alt=""
-                                            class="commonItem_thumb"
-                                        />
-                                    </a>
-                                    <h3 class="commonItem_title">
-                                        <a href="#">The Ultimate 2023 Fullstack Web Development Bootcamp</a>
-                                    </h3>
-                                    <div class="price">
-                                        <span class="courseItem_old-price">2.500.000đ</span>
-                                        <span class="courseItem_new-price">1.299.000đ</span>
-                                    </div>
-                                </div>
-                            </div>
+                            ${dataCourses.list_json_NewCourses.map((data) => CommonItem({ data })).join('')}
                         </div>
                     </div>
                 </div>

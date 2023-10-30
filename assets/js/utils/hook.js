@@ -1,8 +1,20 @@
-const useEffect = (cb, changed) => {
-    setTimeout(() => {
-        cb();
-    }, 0);
-};
+const MyReact = (function () {
+    let _val;
+    return {
+        useState(initialValue) {
+            _val = _val || initialValue;
+            function setState(newVal) {
+                _val = newVal;
+            }
+            return [_val, setState];
+        },
+        useEffect(cb) {
+            setTimeout(() => {
+                cb();
+            }, 0);
+        },
+    };
+})();
 
 const useState = function (state) {
     return [
@@ -12,5 +24,10 @@ const useState = function (state) {
         },
     ];
 };
+function useEffect(cb, changed) {
+    setTimeout(() => {
+        cb();
+    }, 0);
+}
 
-export { useState, useEffect };
+export { useEffect };

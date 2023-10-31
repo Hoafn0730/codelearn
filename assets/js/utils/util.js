@@ -17,4 +17,13 @@ function calculateDay(params) {
     return daysDifference;
 }
 
-export { formatDate, formatNumber, calculateDay };
+function nameToSlug(name) {
+    const slug = name
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase();
+
+    return slug.replace(/[\s\W]+/g, '-');
+}
+
+export { formatDate, formatNumber, calculateDay, nameToSlug };

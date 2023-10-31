@@ -7,6 +7,7 @@ const myCourses = document.querySelector('#mycourses');
 const btnNatifications = document.querySelector('.notification-icon');
 const notifications = document.querySelector('#notifications');
 let btnAvatar = document.querySelector('.avatar');
+
 const userMenu = document.querySelector('#userMenu');
 
 let isExpanded = false;

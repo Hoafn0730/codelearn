@@ -8,7 +8,7 @@ import Blog from '../pages/blog.js';
 import DetailCourse from '../pages/detail-course.js';
 
 const content = document.getElementById('content');
-const dataCourses = courses.getCourse();
+const dataCourses = await courses.getCourse();
 
 template('home', function () {
     content.innerHTML = Home({ dataCourses });
@@ -30,12 +30,10 @@ function router() {
     var params = new URL(window.location.href).searchParams;
 
     if (parts[parts.length - 1] !== 'html' && params.size === 0) {
-        console.log(2);
         let url = window.location.hash.slice(1) || '/';
         let route = resolveRoute(url);
         route();
     } else if (window.location.href.split('/')[window.location.href.split('/').length - 1] === 'index.html') {
-        console.log(3);
         let url = '/';
         let route = resolveRoute(url);
         route();

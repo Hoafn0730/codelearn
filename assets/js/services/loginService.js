@@ -22,7 +22,7 @@ function login(data) {
         })
         .then((data) => {
             localStorage.setItem('account', JSON.stringify(data));
-            location.assign('/');
+            data.roleId === 'nomal' ? location.assign('/') : location.assign('/Admin/TongQuan.html');
         })
         .catch((e) => {
             console.error('Lỗi: ', e);
@@ -49,4 +49,4 @@ function handleForm() {
     };
 }
 
-handleForm();
+export default handleForm;

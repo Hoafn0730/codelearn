@@ -1,18 +1,22 @@
-import fetchData from '../utils/fetchData.js';
+import FetchData from '../utils/fetchData.js';
 import Category from '../components/Category.js';
 import MyCourse from '../components/MyCourse.js';
 import Notification from '../components/Notification.js';
 
 const category = {
-    renderCategory: function (categories) {
+    renderCategory: async function () {
+        const data = await FetchData.get('category/get-all');
+
         const listCategories = document.querySelector('.header_categories-list');
-        const htmls = categories.map((category) => Category({ category }));
+        const htmls = data.map((category) => Category({ category }));
         listCategories.innerHTML = htmls.join('');
     },
 };
 const id = 5;
 const myCourse = {
-    renderCourse: function (courses) {
+    renderCourse: async function () {
+        const data = await FetchData.get('course/get-by-userid?id=' + id);
+
         const listCourses = document.querySelector('.header_mycourses-list');
         if (courses.length == 0 || courses == null) {
             listCourses.innerHTML = `
@@ -20,15 +24,26 @@ const myCourse = {
             `;
             return;
         }
-        const htmls = courses.map((course) => MyCourse({ course }));
+        const htmls = data.map((course) => MyCourse({ course }));
         listCourses.innerHTML = htmls.join('');
     },
 };
 
 const notification = {
-    renderNotification: function (notifications) {
+    renderNotification: async function () {
+        const { data } = await FetchData.get('notification/get-notyfication', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                page: 1,
+                pageSize: 10,
+            }),
+        });
+
         const listNotifications = document.querySelector('.header_notifications-list');
-        if (notifications.data.length == 0) {
+        if (data.length == 0) {
             listNotifications.innerHTML = `
                 <div class="header_notifications-empty">No notifications.</div>
             `;
@@ -36,29 +51,20 @@ const notification = {
             return;
         }
 
-        const htmls = notifications.data.map((notification) => Notification({ notification }));
+        const htmls = data.map((notification) => Notification({ notification }));
         listNotifications.innerHTML = htmls.join('');
     },
 };
 
 export const courses = {
-    getCourse: function () {
-        const dataArray = {};
-        fetch(`${API}/api-user/home/get-home`)
-            .then((response) => response.json())
-            .then((data) => {
-                Object.assign(dataArray, data);
-            });
-        return dataArray;
+    getCourse: async function () {
+        const data = await FetchData.get('home/get-home');
+        return data;
     },
 };
 
 export default () => {
-    fetchData('category/get-all', category.renderCategory);
-    fetchData('course/get-by-userid?id=' + id, myCourse.renderCourse);
-    fetchData('notification/get-notyfication', notification.renderNotification, {
-        page: 1,
-        pageSize: 10,
-    });
-    // notification.getNotifications(notification.renderNotification);
+    category.renderCategory();
+    myCourse.renderCourse();
+    notification.renderNotification();
 };

@@ -455,9 +455,28 @@
 
 
         .header_actions-avatar {
-            margin-left  : 12px;
-            border-radius: 50%;
-            cursor       : pointer;
+            margin-left    : 12px;
+            border-radius  : 50%;
+            cursor         : pointer;
+            display        : flex;
+            align-items    : center;
+            justify-content: space-between;
+
+            h3 {
+                margin-left: 10px;
+            }
+
+            &.icon::after {
+                display       : inline-block;
+                margin-left   : .255em;
+                vertical-align: .255em;
+                content       : "";
+                border-top    : .3em solid;
+                border-right  : .3em solid transparent;
+                border-bottom : 0;
+                border-left   : .3em solid transparent;
+            }
+
         }
 
         .header_userMenu {

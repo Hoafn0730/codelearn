@@ -22,7 +22,7 @@ function login(data) {
         })
         .then((data) => {
             localStorage.setItem('account', JSON.stringify(data));
-            data.roleId === 'nomal' ? location.assign('/') : location.assign('/Admin/TongQuan.html');
+            data.roleId === 'nomal' ? location.assign('/') : location.assign('/Admin/MainAdmin.html');
         })
         .catch((e) => {
             console.error('Lỗi: ', e);

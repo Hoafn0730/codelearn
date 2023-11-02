@@ -6,8 +6,8 @@
         <title>Codelearn</title>
         <link rel="stylesheet" href="./assets/css/grid.css" />
         <link rel="stylesheet" href="./assets/css/main.css" />
-        <script src="./assets/js/angular.min.js"></script>
-        <script src="./assets/js/jquery-3.6.0.min.js"></script>
+        <script src="./assets/js/utils/angular.min.js"></script>
+        <script src="./assets/js/utils/jquery-3.6.0.min.js"></script>
         <script src="./assets/js/global.js"></script>
 
         <link
@@ -18,7 +18,7 @@
     </head>
 
     <body>
-        <div class="app">
+        <div ng-app="AppHocTap" class="app">
             <!-- Header -->
             <header class="header">
                 <div class="grid d-flex-center">
@@ -67,7 +67,7 @@
                     </div>
 
                     <!-- Header body -->
-                    <div ng-app="AppHocTap" ng-controller="SearchCtrl"  class="header_body d-flex-center">
+                    <div  ng-controller="SearchCtrl"  class="header_body d-flex-center">
                         <!-- Search -->
                         <div class="header_search">
                             <i class="header_search-icon fa-solid fa-magnifying-glass"></i>
@@ -232,6 +232,7 @@
                     </div>
                 </div>
             </footer>
+            
         </div>
         <script src="./assets/js/services/searchService.js"></script>
         <script type="module" src="./assets/js/script.js"></script>

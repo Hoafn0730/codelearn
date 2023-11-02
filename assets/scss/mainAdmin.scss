@@ -124,7 +124,6 @@
     border          : 1px solid #bce8f1;
     padding         : 10px;
     display         : flex;
-    justify-content : space-between;
 
     .box-left {
         font-size: 1.6rem;
@@ -132,11 +131,13 @@
     }
 
     .box-right {
-        font-size  : 1.6px;
-        font-weight: 500;
-        padding    : 16px 0px;
-        display    : flex;
-        align-items: center;
+        font-size   : 1.6px;
+        font-weight : 500;
+        padding     : 16px 0px;
+        display     : flex;
+        align-items : center;
+        margin-left : auto;
+        margin-right: 30px;
 
         button {
             padding      : 5px;

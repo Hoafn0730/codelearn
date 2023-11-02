@@ -18,12 +18,11 @@ function calculateDay(params) {
 }
 
 function nameToSlug(name) {
-    const slug = name
+    return name
         .normalize('NFD')
         .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[\s\W]+/g, '-')
         .toLowerCase();
-
-    return slug.replace(/[\s\W]+/g, '-');
 }
 
 export { formatDate, formatNumber, calculateDay, nameToSlug };

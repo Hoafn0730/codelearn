@@ -140,9 +140,10 @@
                         <div class="row">
                             <div class="col l-4">
                                 <div class="mt-4">
+
                                     <form name="form-course" class="row needs-validation" method="POST">
                                         <input
-                                            type="hidden"
+                                            type="text"
                                             class="form-control"
                                             id="courseId"
                                             name="courseId"
@@ -161,6 +162,7 @@
                                                 class="form-control"
                                                 id="description"
                                                 name="description"
+                                                
                                                 style="resize: vertical"
                                             ></textarea>
                                         </div>
@@ -201,6 +203,7 @@
                                         <div class="col l-12 mt-12">
                                             <button id="btn-course" class="btn btn-primary" type="submit">Lưu</button>
                                         </div>
+
                                     </form>
                                 </div>
                             </div>
@@ -228,8 +231,9 @@
                                                     <th scope="col" colspan="2">Thời gian tạo</th>
                                                 </tr>
                                             </thead>
+                                            
                                             <tbody>
-                                                <tr ng-repeat="x in listItem.data">
+                                                <tr class="course-item" ng-repeat="x in listItem.data">
                                                     <td>
                                                         <div class="form-check">
                                                             <input
@@ -240,20 +244,20 @@
                                                             />
                                                         </div>
                                                     </td>
-                                                    <th scope="row">{{$index + 1}}</th>
+                                                    <th scope="row">
+                                                        {{ $index + (listItem.page > 1 ? index = (listItem.page - 1) * 10 + 1 : index = 1 )}}
+                                                    </th>
                                                     <td>{{x.nameCourse}}</td>
                                                     <td>{{x.level}}</td>
                                                     <td>@{{x.createdAt}}</td>
                                                     <td>
                                                         <a
                                                             href=""
-                                                            class="btn btn-link"
+                                                            class="btn btn-link btn-delete-course"
                                                             data-id="{{x.courseId}}"
-                                                            data-bs-toggle="modal"
-                                                            data-bs-target="#delete-course-modal"
                                                             >Xóa
                                                         </a>
-                                                        <a href="" class="btn btn-link" data-id="{{x.courseId}}"
+                                                        <a href=""  class="btn btn-link btn-detail-course" data-id="{{x.courseId}}"
                                                             >Chi tiết
                                                         </a>
                                                     </td>
@@ -275,10 +279,13 @@
                                         </div>
                                         <div class="box-right">
                                             <button class="btn-primary"><i class="fas fa-angle-left"></i></button>
-                                            <button data-id="1" class="btn-primary">1</button>
-                                            <button data-id="2" class="btn-primary">2</button>
-                                            <button data-id="3" class="btn-primary">3</button>
-                                            <button data-id="4" class="btn-primary">4</button>
+                                            <div class="navigation">
+
+                                                <!-- <button data-id="1" class="btn-primary">1</button>
+                                                <button data-id="2" class="btn-primary">2</button>
+                                                <button data-id="3" class="btn-primary">3</button>
+                                                <button data-id="4" class="btn-primary">4</button> -->
+                                            </div>
                                             <button class="btn-primary"><i class="fas fa-angle-right"></i></button>
                                         </div>
                                     </div>

@@ -16,7 +16,6 @@ app.controller('SearchCtrl', function ($scope, $http) {
 
     searchInput.oninput = () => {
         if (searchInput.value !== '') {
-            console.log(123);
             $scope.SeachKhoaHoc(searchInput.value);
         }
     };

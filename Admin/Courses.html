@@ -122,9 +122,9 @@
                             </li>
 
                             <li class="sideBar_item">
-                                <a href="#/blog" id="blog" class="sideBar_item-link">
+                                <a href="/Admin/Courses.html" id="blog" class="sideBar_item-link">
                                     <i class="fa-solid fa-newspaper"></i>
-                                    <span class="text sideBar_item-text">Blog</span>
+                                    <span class="text sideBar_item-text">Bài học</span>
                                 </a>
                             </li>
                         </ul>
@@ -140,10 +140,10 @@
                         <div class="row">
                             <div class="col l-4">
                                 <div class="mt-4">
-
+                                    <!-- Form nhap thong tin khoa hoc -->
                                     <form name="form-course" class="row needs-validation" method="POST">
                                         <input
-                                            type="text"
+                                            type="hidden"
                                             class="form-control"
                                             id="courseId"
                                             name="courseId"
@@ -162,7 +162,6 @@
                                                 class="form-control"
                                                 id="description"
                                                 name="description"
-                                                
                                                 style="resize: vertical"
                                             ></textarea>
                                         </div>
@@ -177,6 +176,7 @@
                                             <select class="form-select" id="level" name="level">
                                                 <option selected disabled value="">Choose...</option>
                                                 <option value="Trình độ trung bình">Trình độ trung bình</option>
+                                                <option value="Cơ bản">Cơ bản</option>
                                             </select>
                                         </div>
 
@@ -203,7 +203,6 @@
                                         <div class="col l-12 mt-12">
                                             <button id="btn-course" class="btn btn-primary" type="submit">Lưu</button>
                                         </div>
-
                                     </form>
                                 </div>
                             </div>
@@ -221,6 +220,7 @@
                                         </button>
                                     </div>
 
+                                    <!-- Form du lieu -->
                                     <form name="container-form" action="">
                                         <table class="table">
                                             <thead>
@@ -231,7 +231,7 @@
                                                     <th scope="col" colspan="2">Thời gian tạo</th>
                                                 </tr>
                                             </thead>
-                                            
+
                                             <tbody>
                                                 <tr class="course-item" ng-repeat="x in listItem.data">
                                                     <td>
@@ -245,9 +245,10 @@
                                                         </div>
                                                     </td>
                                                     <th scope="row">
-                                                        {{ $index + (listItem.page > 1 ? index = (listItem.page - 1) * 10 + 1 : index = 1 )}}
+                                                        {{ $index + (listItem.page > 1 ? index = (listItem.page - 1) *
+                                                        10 + 1 : index = 1 )}}
                                                     </th>
-                                                    <td>{{x.nameCourse}}</td>
+                                                    <td class="name">{{x.nameCourse}}</td>
                                                     <td>{{x.level}}</td>
                                                     <td>@{{x.createdAt}}</td>
                                                     <td>
@@ -255,10 +256,15 @@
                                                             href=""
                                                             class="btn btn-link btn-delete-course"
                                                             data-id="{{x.courseId}}"
-                                                            >Xóa
+                                                        >
+                                                            Xóa
                                                         </a>
-                                                        <a href=""  class="btn btn-link btn-detail-course" data-id="{{x.courseId}}"
-                                                            >Chi tiết
+                                                        <a
+                                                            href=""
+                                                            class="btn btn-link btn-detail-course"
+                                                            data-id="{{x.courseId}}"
+                                                        >
+                                                            Chi tiết
                                                         </a>
                                                     </td>
                                                 </tr>
@@ -280,7 +286,6 @@
                                         <div class="box-right">
                                             <button class="btn-primary"><i class="fas fa-angle-left"></i></button>
                                             <div class="navigation">
-
                                                 <!-- <button data-id="1" class="btn-primary">1</button>
                                                 <button data-id="2" class="btn-primary">2</button>
                                                 <button data-id="3" class="btn-primary">3</button>
@@ -290,6 +295,127 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+
+                            <div class="overlay"></div>
+                            <!-- List Lesson -->
+                            <div class="lesson_wrapper">
+                                <h1 class="lesson_heading">Danh sách bài học</h1>
+                                <div class="btn btn-primary btn-exit-form">X</div>
+
+                                <div class="search">
+                                    <input
+                                        type="text"
+                                        class="search-type"
+                                        placeholder="Nhập mã, tên loại khóa học..."
+                                    />
+                                    <button class="btn btn-primary"><i class="fas fas fa-search"></i> Tìm kiếm</button>
+                                </div>
+
+                                <!-- Bảng bài học -->
+                                <div class="lesson_list">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" colspan="2">#</th>
+                                                <th scope="col">Tên bài học</th>
+                                                <th scope="col">Mô tả</th>
+                                                <th scope="col">Video ID</th>
+                                                <th scope="col">Thời lượng</th>
+                                                <th scope="col" style="width: 30%">Nội dung</th>
+                                                <th scope="col" colspan="2">Thời gian tạo</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr class="lesson-item" ng-repeat="x in listBaiHoc">
+                                                <td>
+                                                    <div class="form-check">
+                                                        <input
+                                                            class="form-check-input"
+                                                            type="checkbox"
+                                                            value="{{x.lessonId}}"
+                                                            name="lessonId"
+                                                        />
+                                                    </div>
+                                                </td>
+
+                                                <th scope="row">
+                                                    {{ $index + (listItem.page > 1 ? index = (listItem.page - 1) * 10 +
+                                                    1 : index = 1 )}}
+                                                </th>
+
+                                                <td>
+                                                    <section contenteditable="false" name="nameLesson" class="view">
+                                                        {{x.nameLesson}}
+                                                    </section>
+                                                </td>
+
+                                                <td>
+                                                    <section
+                                                        contenteditable="false"
+                                                        name="description"
+                                                        class="view"
+                                                        for=""
+                                                    >
+                                                        {{x.description}}
+                                                    </section>
+                                                </td>
+
+                                                <td>
+                                                    <section contenteditable="false" name="videoId" class="view" for="">
+                                                        {{x.videoId}}
+                                                    </section>
+
+                                                </td>
+
+                                                <td>
+                                                    <section
+                                                        contenteditable="false"
+                                                        name="duration"
+                                                        class="view"
+                                                        for=""
+                                                    >
+                                                        {{x.duration}}
+                                                    </section>
+                                                </td>
+
+                                                <td
+                                                    style="
+                                                        width: 30%;
+                                                        max-height: 48px;
+                                                        overflow: hidden;
+                                                        text-overflow: ellipsis;
+                                                    "
+                                                >
+                                                    <section class="view" name="content" for="">{{x.content}}</section>
+                                                </td>
+
+                                                <td name="createdAt">{{x.createdAt}}</td>
+
+                                                <td>
+                                                    <button
+                                                        href=""
+                                                        class="btn btn-link btn-delete-lesson"
+                                                        data-id="{{x.lessonId}}"
+                                                    >
+                                                        Xóa
+                                                    </button>
+                                                </td>
+                                            </tr>
+
+                                            
+
+                                            <!-- <tr>
+                                                    <td colspan='5' class='text-center'>Bạn chưa đăng khóa học nào.
+                                                    </td>
+                                                </tr> -->
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <button class="btn btn-primary btn-create-lesson">+</button>
+                                <button class="btn btn-primary btn-update-lesson">Lưu</button>
                             </div>
                         </div>
                     </div>
@@ -342,7 +468,7 @@
         <script>
             var user = JSON.parse(localStorage.getItem('account'));
             if (!user) {
-                window.location.href = "../login.html";
+                window.location.href = '../login.html';
             }
         </script>
         <script src="../assets/js/utils/angular.min.js"></script>

@@ -14,7 +14,7 @@ let isExpanded = false;
 let target;
 
 function handleEvent() {
-    window.addEventListener('load', router);
+    router();
     window.addEventListener('hashchange', router);
 
     btnAvatar.onclick = (e) => {

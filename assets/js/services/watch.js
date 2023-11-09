@@ -8,8 +8,6 @@ app.controller('WatchCtrl', function ($scope, $http) {
     $scope.listBaiHoc;
     $scope.baiHoc;
 
-    var idl = urlObject.searchParams.get('l');
-
     $scope.GetKhoaHoc = function () {
         $http({
             method: 'GET',
@@ -18,17 +16,24 @@ app.controller('WatchCtrl', function ($scope, $http) {
             // debugger;
             $scope.khoahoc = response.data;
             $scope.listBaiHoc = response.data.list_json_Lessons;
-            if (!idl) {
+            if (!response.data.list_json_Lessons) {
+                return;
+            }
+            if (!urlObject.searchParams.has('l')) {
                 let object = JSON.parse(localStorage.getItem('course' + id)) || {};
-                location.assign(`/watch-course.html?c=${id}&l=${object.lessonId}&v=${object.videoId}`);
+                urlObject.searchParams.append('l', object.lessonId);
+                urlObject.searchParams.append('v', object.videoId);
+                window.history.replaceState(null, null, urlObject.toString());
             }
 
             if (!localStorage.getItem('course' + id)) {
-                location.assign(
-                    `/watch-course.html?c=${id}&l=${$scope.listBaiHoc[0].lessonId}&v=${$scope.listBaiHoc[0].videoId}`,
-                );
+                urlObject.searchParams.append('l', $scope.listBaiHoc[0].lessonId);
+                urlObject.searchParams.append('v', $scope.listBaiHoc[0].videoId);
+                window.history.replaceState(null, null, urlObject.toString());
             }
-            $scope.baiHoc = response.data.list_json_Lessons.find((x) => x.lessonId === Number(idl));
+            $scope.baiHoc = response.data.list_json_Lessons.find(
+                (x) => x.lessonId === Number(urlObject.searchParams.get('l')),
+            );
             localStorage.setItem('course' + id, JSON.stringify($scope.baiHoc));
 
             document

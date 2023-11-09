@@ -3,7 +3,7 @@ import { calculateDay } from '../utils/util.js';
 function MyCourse({ course }) {
     return `
         <li class="header_mycourses-item course_item-${course.courseId}">
-            <a href="#" class="header_mycourse-link">
+            <a href="/detail-course.html?id=${course.courseId}" class="header_mycourse-link">
                 <img
                     src="${course.image}"
                     alt=""

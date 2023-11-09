@@ -12,6 +12,7 @@ const category = {
         listCategories.innerHTML = htmls.join('');
     },
 };
+
 const id = 5;
 const myCourse = {
     renderCourse: async function () {

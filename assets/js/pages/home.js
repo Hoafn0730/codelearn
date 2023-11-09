@@ -267,7 +267,10 @@ function Home({ dataCourses }) {
                     </div>
                     <div class="scrollList_body">
                         <div class="row">
-                           ${dataCourses.list_json_PopularCourses.map((data) => CommonItem({ data })).join('')}
+                           ${
+                               dataCourses.list_json_PopularCourses &&
+                               dataCourses.list_json_PopularCourses.map((data) => CommonItem({ data })).join('')
+                           }
                         </div>
                     </div>
                 </div>
@@ -278,7 +281,10 @@ function Home({ dataCourses }) {
                     </div>
                     <div class="scrollList_body">
                         <div class="row">
-                            ${dataCourses.list_json_FreeCourses.map((data) => CommonItem({ data })).join('')}
+                            ${
+                                dataCourses.list_json_FreeCourses &&
+                                dataCourses.list_json_FreeCourses.map((data) => CommonItem({ data })).join('')
+                            }
                         </div>
                     </div>
                 </div>
@@ -289,7 +295,10 @@ function Home({ dataCourses }) {
                     </div>
                     <div class="scrollList_body">
                         <div class="row">
-                            ${dataCourses.list_json_ProCourses.map((data) => CommonItem({ data })).join('')}
+                            ${
+                                dataCourses.list_json_ProCourses &&
+                                dataCourses.list_json_ProCourses.map((data) => CommonItem({ data })).join('')
+                            }
                         </div>
                     </div>
                 </div>
@@ -300,7 +309,10 @@ function Home({ dataCourses }) {
                     </div>
                     <div class="scrollList_body">
                         <div class="row">
-                            ${dataCourses.list_json_NewCourses.map((data) => CommonItem({ data })).join('')}
+                            ${
+                                dataCourses.list_json_NewCourses &&
+                                dataCourses.list_json_NewCourses.map((data) => CommonItem({ data })).join('')
+                            }
                         </div>
                     </div>
                 </div>

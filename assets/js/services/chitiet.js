@@ -12,11 +12,10 @@ app.controller('ChiTietCtrl', function ($scope, $http) {
 
     $scope.GetKhoaHoc = function () {
         $http({
-            method: 'GET',
             url: API + '/api-user/course/get-by-id?id=' + id,
+            method: 'GET',
         }).then(function (response) {
             $scope.formattedDate = formatDate(response.data.updatedAt);
-            // debugger;
             $scope.khoahoc = response.data;
             $scope.listBaiHoc = response.data.list_json_Lessons;
             document.querySelector('.btn.courseDetail_btn').onclick = () =>

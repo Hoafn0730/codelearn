@@ -1,7 +1,12 @@
-import { nameToSlug } from '../../../assets/js/utils/util.js';
+import nameToSlug from '../../../assets/js/utils/nameToSlug.js';
 
+const overlay = document.querySelector('.overlay');
+const btnExit = document.querySelector('.btn-exit-form');
+const lessonWrapper = document.querySelector('.lesson_wrapper');
 const btnAvatar = document.querySelector('.header_actions-avatar');
 const userMenu = document.querySelector('#userMenu');
+const inputName = document.querySelector('#nameCourse');
+const inputSlug = document.querySelector('#slug');
 
 let isExpanded = false;
 let target;
@@ -59,10 +64,17 @@ document.onclick = function (e) {
     }
 };
 
-const inputName = document.querySelector('#nameCourse');
-const inputSlug = document.querySelector('#slug');
-
 inputName.onblur = () => {
     const newValue = inputName.value;
     inputSlug.value = nameToSlug(newValue);
+};
+
+overlay.onclick = () => {
+    lessonWrapper.style.display = 'none';
+    overlay.style.display = 'none';
+};
+
+btnExit.onclick = () => {
+    lessonWrapper.style.display = 'none';
+    overlay.style.display = 'none';
 };

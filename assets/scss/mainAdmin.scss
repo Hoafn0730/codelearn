@@ -250,3 +250,15 @@ td.editing .edit {
 td .edit {
     display: none;
 }
+
+/* CSS cho section có thuộc tính data-src */
+.view[data-src] {
+    /* Thêm hiệu ứng khi chờ tải */
+    opacity   : 0.5;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* CSS cho section khi đã được tải */
+.view:not([data-src]) {
+    opacity: 1;
+}

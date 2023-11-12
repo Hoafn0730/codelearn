@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Codelearn</title>
+        <title>Admin Codelearn</title>
         <link rel="stylesheet" href="../assets/css/grid.css" />
         <link rel="stylesheet" href="../assets/css/mainAdmin.css" />
 
@@ -34,26 +34,6 @@
                         </a>
                     </div>
 
-                    <!-- Header body -->
-                    <div class="header_body d-flex-center">
-                        <!-- Search -->
-                        <div class="header_search">
-                            <i class="header_search-icon fa-solid fa-magnifying-glass"></i>
-                            <input type="text" class="header_search-input" placeholder="Search..." />
-
-                            <div class="header_search-history">
-                                <div class="search-history-list">
-                                    <div class="search_history-header">
-                                        <div class="search_history-heading">
-                                            <i class="header_search-icon fa-solid fa-magnifying-glass"></i>
-                                            <span>Search History </span>
-                                        </div>
-                                        <ul class="search_history-list"></ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
                     <!-- Header Actions -->
                     <div class="header_actions">
@@ -322,7 +302,7 @@
                                                 <th scope="col">Mô tả</th>
                                                 <th scope="col">Video ID</th>
                                                 <th scope="col">Thời lượng</th>
-                                                <th scope="col" style="width: 30%">Nội dung</th>
+                                                <th scope="col" style="width: 25%">Nội dung</th>
                                                 <th scope="col" colspan="2">Thời gian tạo</th>
                                             </tr>
                                         </thead>
@@ -346,8 +326,13 @@
                                                 </th>
 
                                                 <td>
-                                                    <section contenteditable="false" name="nameLesson" class="view">
-                                                        {{x.nameLesson}}
+                                                    <section
+                                                        contenteditable="false"
+                                                        name="nameLesson"
+                                                        class="view"
+                                                        data-src="{{x.nameLesson}}"
+                                                    >
+                                                        Loading...
                                                     </section>
                                                 </td>
 
@@ -356,17 +341,21 @@
                                                         contenteditable="false"
                                                         name="description"
                                                         class="view"
-                                                        for=""
+                                                        data-src="{{x.description}}"
                                                     >
-                                                        {{x.description}}
+                                                      
                                                     </section>
                                                 </td>
 
                                                 <td>
-                                                    <section contenteditable="false" name="videoId" class="view" for="">
-                                                        {{x.videoId}}
+                                                    <section
+                                                        contenteditable="false"
+                                                        name="videoId"
+                                                        class="view"
+                                                        data-src="{{x.videoId}}"
+                                                    >
+                                                     
                                                     </section>
-
                                                 </td>
 
                                                 <td>
@@ -374,21 +363,23 @@
                                                         contenteditable="false"
                                                         name="duration"
                                                         class="view"
-                                                        for=""
+                                                        data-src="{{x.duration}}"
                                                     >
-                                                        {{x.duration}}
+                                                       
                                                     </section>
                                                 </td>
 
                                                 <td
                                                     style="
-                                                        width: 30%;
+                                                        width: 25%;
                                                         max-height: 48px;
                                                         overflow: hidden;
                                                         text-overflow: ellipsis;
                                                     "
                                                 >
-                                                    <section class="view" name="content" for="">{{x.content}}</section>
+                                                    <section class="view" name="content"  data-src="{{x.content}}">
+                                                        
+                                                    </section>
                                                 </td>
 
                                                 <td name="createdAt">{{x.createdAt}}</td>
@@ -403,8 +394,6 @@
                                                     </button>
                                                 </td>
                                             </tr>
-
-                                            
 
                                             <!-- <tr>
                                                     <td colspan='5' class='text-center'>Bạn chưa đăng khóa học nào.

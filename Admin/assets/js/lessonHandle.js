@@ -17,7 +17,37 @@ const lessonHandle = () => {
     }, 100);
 
     handleCreateLesson(btnCreateLesson);
+
+    setTimeout(() => {
+        lazyLoadSections();
+    }, 800);
 };
+
+function lazyLoadSections() {
+    const lazySections = document.querySelectorAll('section[data-src]');
+
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.innerText = entry.target.getAttribute('data-src');
+                    observer.unobserve(entry.target);
+                    entry.target.removeAttribute('data-src');
+                }
+            });
+        });
+
+        lazySections.forEach(function (section) {
+            observer.observe(section);
+        });
+    } else {
+        // Fallback cho các trình duyệt không hỗ trợ Intersection Observer
+        lazySections.forEach(function (section) {
+            section.innerText = section.getAttribute('data-src');
+            entry.target.removeAttribute('data-src');
+        });
+    }
+}
 
 const handleCreateLesson = (btnCreate) => {
     // Sự kiện thêm bài học vào bảng
@@ -106,9 +136,10 @@ const handleUpdateLesson = (row) => {
         };
 
         section.onkeydown = (e) => {
-            if (e.keyCode === 13) {
+            if (e.keyCode === 13 && e.target.getAttribute('name') !== 'content') {
                 e.preventDefault();
                 section.setAttribute('contenteditable', false);
+                return;
             }
         };
     });
@@ -178,7 +209,7 @@ function LessonItem() {
             <td
                 class='editing'
                 style="
-                    width: 30%;
+                    width: 25%;
                     max-height: 48px;
                     overflow: hidden;
                     text-overflow: ellipsis;

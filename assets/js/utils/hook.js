@@ -30,4 +30,34 @@ function useEffect(cb, changed) {
     }, 0);
 }
 
+const React = (function () {
+    let hooks = [];
+    let index = 0;
+
+    function useState(initialValue) {
+        const _idx = index;
+        const state = hooks[_idx] || initialValue;
+
+        const setState = (newValue) => {
+            hooks[_idx] = newValue;
+        };
+
+        index++;
+
+        return [state, setState];
+    }
+
+    function render(component) {
+        index = 0;
+
+        const C = component();
+
+        C.render();
+
+        return C;
+    }
+
+    return { useState, render };
+})();
+
 export { useEffect };

@@ -2,11 +2,67 @@ const FetchData = (function () {
     return {
         get: async function (path, option = {}) {
             try {
-                const response = await fetch(`${API}/api-user/${path}`, option);
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return await response.json();
+                return await fetch(`${API}/api-user/${path}`, option).then((response) => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                });
+            } catch (error) {
+                console.error('Error fetching user data:', error);
+                return null;
+            }
+        },
+
+        post: async function (path, data = {}) {
+            try {
+                return await fetch(`${API}/api-user/${path}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                }).then((response) => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                });
+            } catch (error) {
+                console.error('Error fetching user data:', error);
+                return null;
+            }
+        },
+
+        patch: async function (path, data = {}) {
+            try {
+                return await fetch(`${API}/api-user/${path}`, {
+                    method: 'PATCH',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                }).then((response) => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                });
+            } catch (error) {
+                console.error('Error fetching user data:', error);
+                return null;
+            }
+        },
+        delete: async function (path, data = {}) {
+            try {
+                return await fetch(`${API}/api-user/${path}?id=${data.id}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                }).then((response) => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                });
             } catch (error) {
                 console.error('Error fetching user data:', error);
                 return null;

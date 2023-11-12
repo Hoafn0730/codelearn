@@ -170,6 +170,14 @@ function reload(data, { GetKhoaHoc, DeleteKhoaHoc, SeachKhoaHoc }) {
                 urlObject.searchParams.set('c', checkBox.value);
                 window.history.replaceState(null, null, urlObject.toString());
             };
+
+            ele.ondblclick = () => {
+                document.querySelector('.lesson_wrapper').style.display = 'block';
+                document.querySelector('.overlay').style.display = 'block';
+
+                GetKhoaHoc(document.querySelector('input[name="courseId"]').value);
+                lessonHandle();
+            };
         });
     }, 100);
 }

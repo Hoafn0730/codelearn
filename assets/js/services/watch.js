@@ -19,7 +19,7 @@ app.controller('WatchCtrl', function ($scope, $http) {
             if (!response.data.list_json_Lessons) {
                 return;
             }
-            if (!urlObject.searchParams.has('l')) {
+            if (!urlObject.searchParams.has('l') && localStorage.getItem('course' + id)) {
                 let object = JSON.parse(localStorage.getItem('course' + id)) || {};
                 urlObject.searchParams.append('l', object.lessonId);
                 urlObject.searchParams.append('v', object.videoId);

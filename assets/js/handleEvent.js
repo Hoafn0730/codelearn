@@ -1,4 +1,5 @@
 import router from './routes/router.js';
+import searchCourse from './services/searchService.js';
 
 const btnCategories = document.querySelector('.header_categories-btn');
 const categories = document.querySelector('#categories');
@@ -7,13 +8,17 @@ const myCourses = document.querySelector('#mycourses');
 const btnNatifications = document.querySelector('.notification-icon');
 const notifications = document.querySelector('#notifications');
 let btnAvatar = document.querySelector('.avatar');
-
 const userMenu = document.querySelector('#userMenu');
+const searchInput = document.querySelector('.header_search-input');
 
 let isExpanded = false;
 let target;
 
 function handleEvent() {
+    searchInput.oninput = () => {
+        searchCourse(searchInput.value);
+    };
+
     router();
     window.addEventListener('hashchange', router);
 

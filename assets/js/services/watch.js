@@ -1,4 +1,4 @@
-var app = angular.module('AppWatch', []);
+var app = angular.module('AppHocTap', []);
 
 var urlObject = new URL(window.location.href);
 var id = urlObject.searchParams.get('c');

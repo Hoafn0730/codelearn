@@ -1,22 +1,21 @@
-var app = angular.module('AppHocTap', []);
-const searchInput = document.querySelector('.header_search-input');
-app.controller('SearchCtrl', function ($scope, $http) {
-    $scope.khoahoc;
-    $scope.SeachKhoaHoc = function (name) {
-        $http({
-            method: 'POST',
-            data: { page: 1, pageSize: 10, name },
-            url: API + '/api-user/course/search',
-        }).then(function (response) {
-            // debugger;
-            $scope.listItem = response.data;
-            console.log($scope.listItem.data);
-        });
-    };
+import fetchData from '../utils/fetchData.js';
+import SearchItem from '../components/SearchItem.js';
 
-    searchInput.oninput = () => {
-        if (searchInput.value !== '') {
-            $scope.SeachKhoaHoc(searchInput.value);
-        }
-    };
-});
+const searchCourse = async (name) => {
+    const searchInput = document.querySelector('.header_search-input');
+    const listSearch = document.querySelector('.search_list');
+    const searchData = await fetchData.get('course/search', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ page: 1, pageSize: 10, name }),
+    });
+    searchInput.value === '' ? (searchData.data = []) : '';
+
+    document.querySelector('.searchCount').innerText = searchData.data.length + ' kết quả';
+    const htmls = searchData.data.map((course) => SearchItem({ course }));
+    listSearch.innerHTML = htmls.join('');
+};
+
+export default searchCourse;

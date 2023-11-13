@@ -1,11 +1,11 @@
-import FetchData from '../utils/fetchData.js';
+import fetchData from '../utils/fetchData.js';
 import Category from '../components/Category.js';
 import MyCourse from '../components/MyCourse.js';
 import Notification from '../components/Notification.js';
 
 const category = {
     renderCategory: async function () {
-        const data = await FetchData.get('category/get-all');
+        const data = await fetchData.get('category/get-all');
 
         const listCategories = document.querySelector('.header_categories-list');
         const htmls = data.map((category) => Category({ category }));
@@ -16,7 +16,7 @@ const category = {
 const id = 5;
 const myCourse = {
     renderCourse: async function () {
-        const data = await FetchData.get('course/get-by-userid?id=' + id);
+        const data = await fetchData.get('course/get-by-userid?id=' + id);
 
         const listCourses = document.querySelector('.header_mycourses-list');
         if (courses.length == 0 || courses == null) {
@@ -32,7 +32,7 @@ const myCourse = {
 
 const notification = {
     renderNotification: async function () {
-        const { data } = await FetchData.get('notification/get-notyfication', {
+        const { data } = await fetchData.get('notification/get-notyfication', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ const notification = {
 
 export const courses = {
     getCourse: async function () {
-        const data = await FetchData.get('home/get-home');
+        const data = await fetchData.get('home/get-home');
         return data;
     },
 };

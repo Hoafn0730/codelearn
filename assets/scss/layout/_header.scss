@@ -157,48 +157,115 @@
                 border-color: var(--primary-color);
             }
 
-            &:focus-within .header_search-history {
+            &:focus-within .search-wrapper {
                 display: block;
             }
 
-            .header_search-history {
-                position     : absolute;
+            .search-wrapper {
+                @include sub-menu;
                 inset        : 46px auto auto 0px;
                 margin       : 0px;
-                background   : var(--white-color);
+                width        : 420px;
                 border-radius: 10px;
-                box-shadow   : 0 -4px 32px rgba(0, 0, 0, .2);
                 color        : #1d2129;
-                margin       : 0;
-                overflow     : hidden;
-                padding-left : 0;
+                padding      : 10px 0 10px 0;
                 display      : none;
 
-                animation  : fadeIn .3s ease;
-                transition : all .3s ease-in-out;
-                will-change: opacity, transform;
 
-                .search-history-list {
-                    color              : var(--desc-color);
-                    max-height         : calc(90vh - 66px);
-                    min-height         : 50px;
-                    min-width          : 230px;
-                    overflow-y         : auto;
-                    overscroll-behavior: contain;
-                    padding            : 12px 24px;
-                    width              : 420px;
+                .search_list-wrapper {
 
-
-                    .search_history-header {
+                    .search_header {
                         align-items: center;
                         display    : flex;
-                        padding    : 6px 0 0;
-                        color      : var(--desc-color);
+                        padding    : 10px 20px;
 
-                        .header_search-icon {
-                            padding: 0 12px 0 0;
+                        .search_heading {
+                            font-size  : 1.6rem;
+                            line-height: 1.6rem;
+
+                            .search-icon {
+                                padding: 0 12px 0 0;
+                            }
+                        }
+
+                        .searchCount {
+                            margin-left: 10px;
+                            align-items: center;
+                            display    : flex;
+                            margin-left: auto;
+                        }
+
+                    }
+
+                    .search_list {
+                        @include sub-menu-list;
+
+                        .search_item {
+                            @include sub-menu-item;
+                            max-height: 52vh;
+
+                            .search_item-link {
+                                @include sub-menu-link;
+
+                                .search_item-thumb {
+                                    background-color: #ebebeb;
+                                    border-radius   : 50%;
+                                    display         : block;
+                                    height          : 40px;
+                                    width           : 40px;
+                                    text-align      : center;
+
+                                    &::after {
+                                        color    : var(--text-color);
+                                        content  : "NO IMAGE";
+                                        font-size: 1.2rem;
+                                    }
+                                }
+
+                                .search_item-info {
+                                    margin-left: 12px;
+
+                                    .search_item-title {
+                                        font-size: 1.4rem;
+                                        margin   : 6px 0 0;
+                                    }
+
+
+                                }
+                            }
+
+                            &:hover {
+                                background-color: rgba(22, 24, 35, .05);
+                            }
+                        }
+
+                        &::-webkit-scrollbar {
+                            width: 8px;
+                        }
+
+                        &::-webkit-scrollbar-thumb {
+                            background-color: #d9d9d9;
+                            border-radius   : 100px;
                         }
                     }
+
+
+
+
+                    .header_courses-empty {
+                        padding        : 10px;
+                        margin         : 0 8px;
+                        height         : 80px;
+                        text-align     : center;
+                        display        : flex;
+                        justify-content: center;
+                        align-items    : center;
+                    }
+
+
+
+
+
                 }
 
             }

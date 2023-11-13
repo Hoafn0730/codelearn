@@ -1,4 +1,4 @@
-const FetchData = (function () {
+const fetchData = (function () {
     return {
         get: async function (path, option = {}) {
             try {
@@ -71,4 +71,4 @@ const FetchData = (function () {
     };
 })();
 
-export default FetchData;
+export default fetchData;

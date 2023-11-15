@@ -1,3 +1,4 @@
+import { formatNumber } from '../utils/formatData.js';
 function CommonItem({ data }) {
     return `
     <div class="col l-3 m-6 c-12">
@@ -15,7 +16,7 @@ function CommonItem({ data }) {
             </h3>
             <div class="price">
                 <!--<span class="courseItem_old-price">2.500.000đ</span>-->
-                <span class="courseItem_new-price">${data.price}đ</span>
+                <span class="courseItem_new-price">${formatNumber(data.price)}đ</span>
             </div>
         </div>
     </div>

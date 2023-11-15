@@ -1,4 +1,5 @@
 import { useEffect } from '../utils/hook.js';
+
 import CommonItem from '../components/CommonItem.js';
 
 function Home({ dataCourses }) {

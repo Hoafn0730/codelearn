@@ -25,6 +25,22 @@ html {
     box-sizing : border-box;
 }
 
+.logo-link {
+    text-decoration : none;
+    color           : var(--black-color);
+    background-color: transparent;
+
+    .logo {
+        height: 28px;
+    }
+
+    &:hover {
+        cursor         : pointer;
+        text-decoration: none;
+        color          : var(--primary-color);
+    }
+}
+
 .d-flex {
     display: flex;
 }

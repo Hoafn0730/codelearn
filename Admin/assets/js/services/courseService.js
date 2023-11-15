@@ -1,9 +1,13 @@
 import convertFormData from '../../../../assets/js/utils/convertFormData.js';
-import { lessonHandle, dataArray } from '../lessonHandle.js';
+import { lessonHandle, dataArray, lazyLoadSections } from '../lessonHandle.js';
 
 const form = document.forms['form-course'];
 const btnCourse = document.querySelector('#btn-course');
 const btnUpdateLesson = document.querySelector('.btn-update-lesson');
+const searchType = document.querySelector('.search-type.input-course');
+const btnSearch = document.querySelector('.btn-search.search-course');
+const searchTypeLesson = document.querySelector('.search-type.input-lesson');
+const btnSearchLesson = document.querySelector('.btn-search.search-lesson');
 
 const courseId = document.querySelector('#courseId');
 const nameCourse = document.querySelector('#nameCourse');
@@ -81,8 +85,10 @@ app.controller('CourseCtrl', function ($scope, $http) {
         });
     };
 
+    // Lấy khóa học theo id
     $scope.khoahoc;
     $scope.listBaiHoc;
+    let lessonList = [];
     $scope.GetKhoaHoc = function (id) {
         $http({
             url: API + '/api-admin/course/get-by-id?id=' + id,
@@ -90,6 +96,7 @@ app.controller('CourseCtrl', function ($scope, $http) {
         }).then(function (response) {
             $scope.khoahoc = response.data;
             $scope.listBaiHoc = response.data.list_json_Lessons;
+            lessonList = $scope.listBaiHoc && [...$scope.listBaiHoc];
         });
     };
 
@@ -108,9 +115,27 @@ app.controller('CourseCtrl', function ($scope, $http) {
     btnUpdateLesson.onclick = (e) => {
         Object.assign(formDataObject, convertFormData(form));
         formDataObject.list_json_Lessons = dataArray;
-        console.log(formDataObject);
 
         $scope.UpdateKhoaHoc(formDataObject);
+    };
+
+    // Sự kiện nhấn của nút tìm kiếm khóa học
+    btnSearch.onclick = () => {
+        $scope.SeachKhoaHoc({
+            page: pageIndex,
+            pageSize: 10,
+            name: searchType.value,
+        });
+    };
+
+    // Sự kiện nhấn của nút tìm kiếm bài học
+    btnSearchLesson.onclick = () => {
+        $scope.listBaiHoc = lessonList.filter((x) => x.nameLesson.includes(searchTypeLesson.value));
+        setTimeout(() => {
+            lazyLoadSections();
+        });
+
+        $scope.$digest();
     };
 });
 
@@ -118,15 +143,17 @@ app.controller('CourseCtrl', function ($scope, $http) {
 function reload(data, { GetKhoaHoc, DeleteKhoaHoc, SeachKhoaHoc }) {
     setTimeout(() => {
         // Navigation
+
+        // Load thanh điều hướng theo tổng số khóa học
         const totalPages = Math.ceil(total / 10);
         document.querySelector('.navigation').innerHTML = '';
-
         for (let index = 0; index < totalPages; index++) {
             document.querySelector('.navigation').innerHTML += `
                 <button data-id="${index + 1}" class="btn-primary">${index + 1}</button>
             `;
         }
 
+        // Sự kiện nhấn của thanh điều hướng
         const btnNavigation = document.querySelectorAll('button[data-id]');
         btnNavigation.forEach(
             (item) =>
@@ -154,9 +181,7 @@ function reload(data, { GetKhoaHoc, DeleteKhoaHoc, SeachKhoaHoc }) {
 
             // Sự kiện click hàng trong bảng
             ele.onclick = () => {
-                const checkBox = ele.querySelector('input[name="courseIds[]"]');
-                data[index].courseId = checkBox.value;
-
+                // Thêm thông tin của hàng lên các ô input
                 courseId.value = data[index].courseId;
                 nameCourse.value = data[index].nameCourse;
                 description.value = data[index].description;
@@ -166,11 +191,13 @@ function reload(data, { GetKhoaHoc, DeleteKhoaHoc, SeachKhoaHoc }) {
                 categoryId.value = data[index].categoryId;
                 teacherId.value = data[index].teacherId;
 
+                // Thêm mã khóa học lên thanh url
                 var urlObject = new URL(window.location.href);
-                urlObject.searchParams.set('c', checkBox.value);
+                urlObject.searchParams.set('c', data[index].courseId);
                 window.history.replaceState(null, null, urlObject.toString());
             };
 
+            // Sự kiện nhấn đúp vào một hàng trong bảng
             ele.ondblclick = () => {
                 document.querySelector('.lesson_wrapper').style.display = 'block';
                 document.querySelector('.overlay').style.display = 'block';
@@ -182,6 +209,7 @@ function reload(data, { GetKhoaHoc, DeleteKhoaHoc, SeachKhoaHoc }) {
     }, 100);
 }
 
+// Sự kiện submit form
 form.onsubmit = (e) => {
     e.preventDefault();
     Object.assign(formDataObject, convertFormData(form));

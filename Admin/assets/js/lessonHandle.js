@@ -32,7 +32,7 @@ function lazyLoadSections() {
                 if (entry.isIntersecting) {
                     entry.target.innerText = entry.target.getAttribute('data-src');
                     observer.unobserve(entry.target);
-                    entry.target.removeAttribute('data-src');
+                    // entry.target.removeAttribute('data-src');
                 }
             });
         });
@@ -44,7 +44,7 @@ function lazyLoadSections() {
         // Fallback cho các trình duyệt không hỗ trợ Intersection Observer
         lazySections.forEach(function (section) {
             section.innerText = section.getAttribute('data-src');
-            entry.target.removeAttribute('data-src');
+            // entry.target.removeAttribute('data-src');
         });
     }
 }
@@ -233,4 +233,4 @@ function LessonItem() {
     `;
 }
 
-export { lessonHandle, dataArray };
+export { lessonHandle, dataArray, lazyLoadSections };

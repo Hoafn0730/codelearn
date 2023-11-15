@@ -64,17 +64,20 @@ document.onclick = function (e) {
     }
 };
 
-inputName.onblur = () => {
-    const newValue = inputName.value;
-    inputSlug.value = nameToSlug(newValue);
-};
+if (inputName) {
+    inputName.onblur = () => {
+        const newValue = inputName.value;
+        inputSlug.value = nameToSlug(newValue);
+    };
+}
 
-overlay.onclick = () => {
-    lessonWrapper.style.display = 'none';
-    overlay.style.display = 'none';
-};
-
-btnExit.onclick = () => {
-    lessonWrapper.style.display = 'none';
-    overlay.style.display = 'none';
-};
+if (overlay) {
+    overlay.onclick = () => {
+        lessonWrapper.style.display = 'none';
+        overlay.style.display = 'none';
+    };
+    btnExit.onclick = () => {
+        lessonWrapper.style.display = 'none';
+        overlay.style.display = 'none';
+    };
+}

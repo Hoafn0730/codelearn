@@ -1101,7 +1101,7 @@ td .edit {
 /* CSS cho section có thuộc tính data-src */
 .view[data-src] {
   /* Thêm hiệu ứng khi chờ tải */
-  opacity: 0.5;
+  opacity: 0.8;
   transition: opacity 0.5s ease-in-out;
 }
 

@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     </head>
 
-    <body>
+    <body ng-app="AppHocTap"  ng-controller="ParticipationCtrl">
         <div class="app">
             <!-- Header -->
             <header class="header">
@@ -108,83 +108,55 @@
                                 </a>
                             </li>
                         </ul>
-       
                     </div>
                 </div>
 
                 <!-- Content -->
-                <div ng-app="AppHocTap" ng-controller="CourseCtrl" id="content" class="content">
+                <div id="content" class="content">
                     <div class="grid">
                         <div class="title">
-                            <h3>Thông tin khóa học</h3>
+                            <h3>Thông tin đăng ký</h3>
                         </div>
                         <div class="row">
                             <div class="col l-4">
                                 <div class="mt-4">
-                                    <!-- Form nhap thong tin khoa hoc -->
-                                    <form name="form-course" class="row needs-validation" method="POST">
+
+                                    <!-- Form nhap thong tin đăng ký -->
+                                    <form name="form-participation" class="row needs-validation" method="POST">
                                         <input
                                             type="hidden"
                                             class="form-control"
-                                            id="courseId"
-                                            name="courseId"
+                                            id="participationId"
+                                            name="participationId"
                                             value="0"
                                         />
 
                                         <div class="col l-12 mt-12">
                                             <label for="name" class="form-label">Tên khóa học</label>
-                                            <input type="text" class="form-control" id="nameCourse" name="nameCourse" />
+                                            <input type="text" class="form-control" id="courseId" name="courseId" />
                                         </div>
 
                                         <div class="col l-12 mt-12">
-                                            <label for="description" class="form-label">Mô tả</label>
-                                            <textarea
-                                                type="text"
-                                                class="form-control"
-                                                id="description"
-                                                name="description"
-                                                style="resize: vertical"
-                                            ></textarea>
+                                            <label for="name" class="form-label">Tên khóa học</label>
+                                            <input type="text" class="form-control" id="userId" name="userId" />
                                         </div>
 
+                                        
                                         <div class="col l-12 mt-12">
-                                            <label for="image" class="form-label">Ảnh</label>
-                                            <input type="text" class="form-control" id="image" name="image" />
-                                        </div>
-
-                                        <div class="col l-12 mt-12">
-                                            <label for="level" class="form-label">Trình độ</label>
-                                            <select class="form-select" id="level" name="level">
+                                            <label for="status" class="form-label">Trình độ</label>
+                                            <select class="form-select" id="status" name="status">
                                                 <option selected disabled value="">Choose...</option>
-                                                <option value="Trình độ trung bình">Trình độ trung bình</option>
-                                                <option value="Cơ bản">Cơ bản</option>
+                                                <option value="false">Chưa được xác nhận</option>
+                                                <option value="true">Đã xác nhận</option>
                                             </select>
                                         </div>
 
-                                        <div class="col l-12 mt-12">
-                                            <label for="price" class="form-label">Giá</label>
-                                            <input type="text" class="form-control" id="price" name="price" />
-                                        </div>
-
-                                        <input type="hidden" class="form-control" id="slug" name="slug" />
 
                                         <div class="col l-12 mt-12">
-                                            <label for="level" class="form-label">Thể loại</label>
-                                            <select class="form-select" id="categoryId" name="categoryId">
-                                                <option selected disabled value="">Choose...</option>
-                                                <option value="1">Backend</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="col l-12 mt-12">
-                                            <label for="price" class="form-label">Mã giảng viên</label>
-                                            <input type="text" class="form-control" id="teacherId" name="teacherId" />
-                                        </div>
-
-                                        <div class="col l-12 mt-12">
-                                            <button id="btn-course" class="btn btn-primary" type="submit">Lưu</button>
+                                            <button id="btn-participation" class="btn btn-primary" type="submit">Lưu</button>
                                         </div>
                                     </form>
+                                    
                                 </div>
                             </div>
 
@@ -193,10 +165,10 @@
                                     <div class="search">
                                         <input
                                             type="text"
-                                            class="search-type input-course"
+                                            class="search-type"
                                             placeholder="Nhập mã, tên loại khóa học..."
                                         />
-                                        <button class="btn btn-primary btn-search search-course">
+                                        <button class="btn btn-primary btn-search">
                                             <i class="fas fas fa-search"></i> Tìm kiếm
                                         </button>
                                     </div>
@@ -207,21 +179,22 @@
                                             <thead>
                                                 <tr>
                                                     <th scope="col" colspan="2">#</th>
+                                                    <th scope="col">Tên người dùng</th>
                                                     <th scope="col">Tên khóa học</th>
-                                                    <th scope="col">Trình độ</th>
-                                                    <th scope="col" colspan="2">Thời gian tạo</th>
+                                                    <th scope="col">Ngày đăng ký</th>
+                                                    <th scope="col" colspan="2">Trạng thái</th>
                                                 </tr>
                                             </thead>
 
                                             <tbody>
-                                                <tr class="course-item" ng-repeat="x in listItem.data">
+                                                <tr class="participation-item" ng-repeat="x in listItem.data">
                                                     <td>
                                                         <div class="form-check">
                                                             <input
                                                                 class="form-check-input"
                                                                 type="checkbox"
-                                                                value="{{x.courseId}}"
-                                                                name="courseIds[]"
+                                                                value="{{x.participationId}}"
+                                                                name="participationIds[]"
                                                             />
                                                         </div>
                                                     </td>
@@ -229,24 +202,19 @@
                                                         {{ $index + (listItem.page > 1 ? index = (listItem.page - 1) *
                                                         10 + 1 : index = 1 )}}
                                                     </th>
-                                                    <td class="name">{{x.nameCourse}}</td>
-                                                    <td>{{x.level}}</td>
-                                                    <td>@{{x.createdAt}}</td>
+                                                    <td class="name">{{x.name}}</td>
+                                                    <td>{{x.nameCourse}}</td>
+                                                    <td>@{{x.registrationDate}}</td>
+                                                    <td>{{x.status ? 'Đã xác nhận' : 'Chưa được xác nhận'}}</td>
                                                     <td>
                                                         <a
                                                             href=""
-                                                            class="btn btn-link btn-delete-course"
-                                                            data-id="{{x.courseId}}"
+                                                            class="btn btn-link btn-delete-participation"
+                                                            data-id="{{x.participationId}}"
                                                         >
                                                             Xóa
                                                         </a>
-                                                        <a
-                                                            href=""
-                                                            class="btn btn-link btn-detail-course"
-                                                            data-id="{{x.courseId}}"
-                                                        >
-                                                            Chi tiết
-                                                        </a>
+                                                       
                                                     </td>
                                                 </tr>
 
@@ -278,135 +246,7 @@
                                 </div>
                             </div>
 
-                            <div class="overlay"></div>
-                            <!-- List Lesson -->
-                            <div class="lesson_wrapper">
-                                <h1 class="lesson_heading">Danh sách bài học</h1>
-                                <div class="btn btn-primary btn-exit-form">X</div>
-
-                                <div class="search">
-                                    <input
-                                        type="text"
-                                        class="search-type input-lesson"
-                                        placeholder="Nhập mã, tên bài học..."
-                                    />
-                                    <button class="btn btn-primary btn-search search-lesson"><i class="fas fas fa-search"></i> Tìm kiếm</button>
-                                </div>
-
-                                <!-- Bảng bài học -->
-                                <div class="lesson_list">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col" colspan="2">#</th>
-                                                <th scope="col">Tên bài học</th>
-                                                <th scope="col">Mô tả</th>
-                                                <th scope="col">Video ID</th>
-                                                <th scope="col">Thời lượng</th>
-                                                <th scope="col" style="width: 25%">Nội dung</th>
-                                                <th scope="col" colspan="2">Thời gian tạo</th>
-                                            </tr>
-                                        </thead>
-
-                                        <tbody>
-                                            <tr class="lesson-item" ng-repeat="x in listBaiHoc">
-                                                <td>
-                                                    <div class="form-check">
-                                                        <input
-                                                            class="form-check-input"
-                                                            type="checkbox"
-                                                            value="{{x.lessonId}}"
-                                                            name="lessonId"
-                                                        />
-                                                    </div>
-                                                </td>
-
-                                                <th scope="row">
-                                                    {{ $index + (listItem.page > 1 ? index = (listItem.page - 1) * 10 +
-                                                    1 : index = 1 )}}
-                                                </th>
-
-                                                <td>
-                                                    <section
-                                                        contenteditable="false"
-                                                        name="nameLesson"
-                                                        class="view"
-                                                        data-src="{{x.nameLesson}}"
-                                                    >
-                                                        Loading...
-                                                    </section>
-                                                </td>
-
-                                                <td>
-                                                    <section
-                                                        contenteditable="false"
-                                                        name="description"
-                                                        class="view"
-                                                        data-src="{{x.description}}"
-                                                    >
-                                                      
-                                                    </section>
-                                                </td>
-
-                                                <td>
-                                                    <section
-                                                        contenteditable="false"
-                                                        name="videoId"
-                                                        class="view"
-                                                        data-src="{{x.videoId}}"
-                                                    >
-                                                     
-                                                    </section>
-                                                </td>
-
-                                                <td>
-                                                    <section
-                                                        contenteditable="false"
-                                                        name="duration"
-                                                        class="view"
-                                                        data-src="{{x.duration}}"
-                                                    >
-                                                       
-                                                    </section>
-                                                </td>
-
-                                                <td
-                                                    style="
-                                                        width: 25%;
-                                                        max-height: 48px;
-                                                        overflow: hidden;
-                                                        text-overflow: ellipsis;
-                                                    "
-                                                >
-                                                    <section class="view" name="content"  data-src="{{x.content}}">
-                                                        
-                                                    </section>
-                                                </td>
-
-                                                <td name="createdAt">{{x.createdAt}}</td>
-
-                                                <td>
-                                                    <button
-                                                        href=""
-                                                        class="btn btn-link btn-delete-lesson"
-                                                        data-id="{{x.lessonId}}"
-                                                    >
-                                                        Xóa
-                                                    </button>
-                                                </td>
-                                            </tr>
-
-                                            <!-- <tr>
-                                                    <td colspan='5' class='text-center'>Bạn chưa đăng khóa học nào.
-                                                    </td>
-                                                </tr> -->
-                                        </tbody>
-                                    </table>
-                                </div> 
-
-                                <button class="btn btn-primary btn-create-lesson">+</button>
-                                <button class="btn btn-primary btn-update-lesson">Lưu</button>
-                            </div>
+                        
                         </div>
                     </div>
                 </div>
@@ -465,6 +305,6 @@
         <script src="../assets/js/utils/jquery-3.6.0.min.js"></script>
         <script src="../assets/js/global.js"></script>
         <script type="module" src="../Admin/assets/js/admin.js"></script>
-        <script type="module" src="../Admin/assets/js/services/courseService.js"></script>
+        <script type="module" src="../Admin/assets/js/services/participationService.js"></script>
     </body>
 </html>

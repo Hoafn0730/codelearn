@@ -1,4 +1,4 @@
-export default storage = {
+const storage = {
     get(key) {
         return JSON.parse(localStorage.getItem(key)) || [];
     },
@@ -6,3 +6,5 @@ export default storage = {
         localStorage.setItem(key, JSON.stringify(value));
     },
 };
+
+export { storage };

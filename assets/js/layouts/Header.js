@@ -1,5 +1,3 @@
-// import html from '../core.js'
-
 function Header() {
     return html`
         <header class="header">

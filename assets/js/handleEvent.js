@@ -19,7 +19,7 @@ function handleEvent() {
         searchCourse(searchInput.value);
     };
 
-    router();
+    // window.addEventListener('load', router);
     window.addEventListener('hashchange', router);
 
     btnAvatar.onclick = (e) => {

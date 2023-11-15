@@ -1,5 +1,3 @@
-import { useEffect } from '../utils/hook.js';
-
 function RoadMap() {
     return `<div class="grid">
         <div class="roadmap_wrapper">

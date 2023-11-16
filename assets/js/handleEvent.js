@@ -19,7 +19,8 @@ function handleEvent() {
         searchCourse(searchInput.value);
     };
 
-    // window.addEventListener('load', router);
+    // router();
+    window.addEventListener('load', router);
     window.addEventListener('hashchange', router);
 
     btnAvatar.onclick = (e) => {

@@ -1,4 +1,4 @@
-import { formatDate } from '../utils/util.js';
+import { formatDate } from '../../utils/formatData.js';
 
 function Notification({ notification }) {
     return `

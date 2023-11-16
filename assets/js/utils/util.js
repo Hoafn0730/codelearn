@@ -1,12 +1,3 @@
-function formatDate(params) {
-    var updatedAtDate = new Date(params);
-    return `${updatedAtDate.getDate()}/${updatedAtDate.getMonth() + 1}/${updatedAtDate.getFullYear()}`;
-}
-
-function formatNumber(params) {
-    return params.toLocaleString().replace(/,/g, '.');
-}
-
 function calculateDay(params) {
     if (!params) return 0;
     const specificDate = new Date(params);
@@ -17,12 +8,11 @@ function calculateDay(params) {
     return daysDifference;
 }
 
-function nameToSlug(name) {
-    return name
-        .normalize('NFD')
-        .replace(/[\u0300-\u036f]/g, '')
-        .replace(/[\s\W]+/g, '-')
-        .toLowerCase();
+export default function html([first, ...strings], ...value) {
+    return value
+        .reduce((acc, cur) => acc.concat(cur, strings.shift()), [first])
+        .filter((x) => (x && x !== true) || x === 0)
+        .join('');
 }
 
-export { formatDate, formatNumber, calculateDay, nameToSlug };
+export { calculateDay };

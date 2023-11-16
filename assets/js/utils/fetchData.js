@@ -1,8 +1,12 @@
 const fetchData = (function () {
+    let API;
     return {
+        use: function (path) {
+            API = path;
+        },
         get: async function (path, option = {}) {
             try {
-                return await fetch(`${API}/api-user/${path}`, option).then((response) => {
+                return await fetch(`${API}${path}`, option).then((response) => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
                     }

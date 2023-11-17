@@ -1,11 +1,13 @@
-import fetchData from '../utils/fetchData.js';
+import fetchApi from '../utils/fetchApi.js';
 import { storage } from '../utils/storage.js';
 
 const loginBtn = document.querySelector('#login-btn');
 const form = document.forms['login'];
 
+fetchApi.use(API);
+
 async function login(data) {
-    const fetchdt = await fetchData.get('account/login', {
+    const fetchdt = await fetchApi.get('/api-user/account/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

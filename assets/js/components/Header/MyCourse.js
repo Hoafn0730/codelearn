@@ -16,7 +16,9 @@ function MyCourse({ course }) {
                     <p class="header_mycourse-lastCompleted">Học cách đây ${calculateDay(
                         course.updatedAt,
                     )} ngày trước</p>
-                    <div class="VerticalProgressBar" aria-describedby="mycourses" style="--progress: ${50}%;"></div>
+                    <div class="VerticalProgressBar" aria-describedby="mycourses" style="--progress: ${
+                        course.process
+                    }%;"></div>
                 </div>
             </a>
         </li>

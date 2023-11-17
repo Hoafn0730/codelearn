@@ -1,4 +1,4 @@
-import { formatDate, formatNumber } from '../utils/util.js';
+import { formatDate, formatNumber } from '../utils/formatData.js';
 
 var app = angular.module('AppHocTap', []);
 app.controller('ChiTietCtrl', function ($scope, $http) {

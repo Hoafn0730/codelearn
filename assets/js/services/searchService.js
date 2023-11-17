@@ -1,13 +1,12 @@
-import fetchData from '../utils/fetchData.js';
+import fetchApi from '../utils/fetchApi.js';
 import SearchItem from '../components/Header/SearchItem.js';
 
-fetchData.use(API);
-
+fetchApi.use(API);
 const searchCourse = async (name) => {
     const searchInput = document.querySelector('.header_search-input');
     const listSearch = document.querySelector('.search_list');
 
-    const searchData = await fetchData.get('/api-user/course/search', {
+    const searchData = await fetchApi.get('/api-user/course/search', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

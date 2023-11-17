@@ -1,4 +1,4 @@
-const fetchData = (function () {
+const fetchApi = (function () {
     let API;
     return {
         use: function (path) {
@@ -75,4 +75,4 @@ const fetchData = (function () {
     };
 })();
 
-export default fetchData;
+export default fetchApi;

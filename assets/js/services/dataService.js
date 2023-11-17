@@ -1,13 +1,13 @@
-import fetchData from '../utils/fetchData.js';
+import fetchApi from '../utils/fetchApi.js';
 import Category from '../components/Header/Category.js';
 import MyCourse from '../components/Header/MyCourse.js';
 import Notification from '../components/Header/Notification.js';
 
-fetchData.use(API);
+fetchApi.use(API);
 
 const category = {
     renderCategory: async function () {
-        const data = await fetchData.get('/api-user/category/get-all');
+        const data = await fetchApi.get('/api-user/category/get-all');
 
         const listCategories = document.querySelector('.header_categories-list');
         const htmls = data.map((category) => Category({ category }));
@@ -18,7 +18,7 @@ const category = {
 const id = 5;
 const myCourse = {
     renderCourse: async function () {
-        const data = await fetchData.get('/api-user/course/get-by-userid?id=' + id);
+        const data = await fetchApi.get('/api-user/course/get-by-userid?id=' + id);
 
         const listCourses = document.querySelector('.header_mycourses-list');
         if (courses.length == 0 || courses == null) {
@@ -34,7 +34,7 @@ const myCourse = {
 
 const notification = {
     renderNotification: async function () {
-        const { data } = await fetchData.get('/api-user/notification/get-notyfication', {
+        const { data } = await fetchApi.get('/api-user/notification/get-notyfication', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ const notification = {
 
 export const courses = {
     getCourse: async function () {
-        const data = await fetchData.get('/api-user/home/get-home');
+        const data = await fetchApi.get('/api-user/home/get-home');
         return data;
     },
 };

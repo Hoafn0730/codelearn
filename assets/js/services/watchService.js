@@ -1,3 +1,5 @@
+import Comment from '../components/Comment/Comment.js';
+
 var app = angular.module('AppHocTap', []);
 
 var urlObject = new URL(window.location.href);
@@ -44,3 +46,6 @@ app.controller('WatchCtrl', function ($scope, $http) {
 
     $scope.GetKhoaHoc();
 });
+
+const lessonComment = document.querySelector('.lesson_comment div');
+lessonComment.innerHTML = Comment();

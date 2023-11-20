@@ -1,12 +1,12 @@
 import fetchApi from '../utils/fetchApi.js';
-import { storage } from '../utils/storage.js';
+import storage from '../utils/storage.js';
 
 const loginBtn = document.querySelector('#login-btn');
 const form = document.forms['login'];
 
 fetchApi.use(API);
 
-async function login(data) {
+const login = async (data) => {
     const fetchdt = await fetchApi.get('/api-user/account/login', {
         method: 'POST',
         headers: {
@@ -25,7 +25,7 @@ async function login(data) {
 
     storage.set('account', fetchdt);
     fetchdt.roleId === 'nomal' ? location.assign('/') : location.assign('/Admin/MainAdmin.html');
-}
+};
 
 function handleForm() {
     loginBtn.onclick = function () {

@@ -41,6 +41,186 @@ html {
     }
 }
 
+.comment_wrapper {
+    margin-top: 40px;
+
+    .comment_heading {
+        margin-bottom: 30px;
+
+        h4 {
+            font-size    : 1.6rem;
+            margin-bottom: 10px;
+        }
+
+        .Comment_help {
+            font-size    : 1.3rem;
+            margin-bottom: 10px;
+        }
+    }
+
+    .commentBox {
+        display: flex;
+
+        .commentBox_avatar {
+            margin-right: 14px;
+        }
+
+        .commentBox_content {
+            width: 100%;
+
+            .commentBox_input {
+                width           : 100%;
+                border          : none;
+                caret-color     : var(--primary-color);
+                flex            : 1 1;
+                height          : 40px;
+                outline         : none;
+                padding         : 0 20px;
+                background-color: var(--white-color);
+                font-size       : 1.8rem;
+                margin-right    : 8px;
+                border-radius   : 16px;
+                border-bottom   : 2px solid #ccc;
+
+                &:focus-within {
+                    border: 2px solid var(--primary-color);
+                }
+            }
+        }
+
+        .commentBox_actions.editing {
+            display: flex;
+        }
+
+        .commentBox_actions {
+            display        : flex;
+            align-items    : center;
+            justify-content: flex-end;
+            margin         : 10px auto 0 0;
+            display        : none;
+
+            .commentBox_ok {
+                margin-left     : 6px;
+                border-radius   : 16px;
+                background-color: var(--primary-color);
+                color           : var(--white-color);
+            }
+
+            .commentBox_cancel {
+                margin-left  : 6px;
+                border-radius: 16px;
+            }
+        }
+    }
+}
+
+.comment_detailComment {
+    margin-top: 20px;
+
+    .comment-list {
+
+        .comment-item {
+            display   : flex;
+            margin-top: 16px;
+            position  : relative;
+
+            .comment-item_avatar {
+                margin-right: 14px;
+            }
+
+            .comment-item_body {
+                width: 100%;
+
+                .comment-item_content {
+                    background-color: #f2f3f5;
+                    border-radius   : 16px;
+                    padding         : 14px;
+
+                    .comment-item_heading {
+
+                        .comment-item_author {
+                            color      : var(--black-color);
+                            display    : inline-block;
+                            font-size  : 1.5rem;
+                            font-weight: 600;
+                            margin     : 0;
+                        }
+                    }
+
+                    .comment-item_text {
+                        margin-top : 10px;
+                        font-size  : 1.4rem;
+                        font-weight: 500;
+                    }
+                }
+
+                .comment-item_actions {
+                    align-items: center;
+                    display    : flex;
+                    margin-top : 8px;
+                    min-height : 27px;
+
+                    .comment-item_actions-left {
+                        .comment-item_like {
+                            color           : #e87a5a;
+                            font-size       : 1.3rem;
+                            margin          : 0 4px;
+                            background-color: var(--white-color);
+                            border          : none;
+                            cursor          : pointer;
+                        }
+
+                        .comment-item_reply {
+                            color           : #e87a5a;
+                            font-size       : 1.3rem;
+                            margin          : 0 4px;
+                            background-color: var(--white-color);
+                            border          : none;
+                            cursor          : pointer;
+                        }
+                    }
+
+
+                    .comment-item_actions-right {
+                        margin-left: 4px;
+
+                        .comment-item_createdAt {
+                            font-size: 1.2rem;
+                        }
+                    }
+
+                }
+            }
+
+
+
+
+
+
+
+
+
+
+
+        }
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .hashtag {
     font-size: 1.6rem;
 }

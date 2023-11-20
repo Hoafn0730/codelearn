@@ -1,35 +1,33 @@
 import router from './routes/router.js';
 import searchCourse from './services/searchService.js';
 
-const btnCategories = document.querySelector('.header_categories-btn');
-const categories = document.querySelector('#categories');
-const btnMyCourses = document.querySelector('.header_mycourses-btn');
-const myCourses = document.querySelector('#mycourses');
-const btnNatifications = document.querySelector('.notification-icon');
-const notifications = document.querySelector('#notifications');
-let btnAvatar = document.querySelector('.avatar');
-const userMenu = document.querySelector('#userMenu');
 const searchInput = document.querySelector('.header_search-input');
+const loginBtn = document.querySelector('.login-btn');
 
-let isExpanded = false;
-let target;
+const handleClickActons = () => {
+    const btnCategories = document.querySelector('.header_categories-btn');
+    const categories = document.querySelector('#categories');
+    const btnMyCourses = document.querySelector('.header_mycourses-btn');
+    const myCourses = document.querySelector('#mycourses');
+    const btnNatifications = document.querySelector('.notification-icon');
+    const notifications = document.querySelector('#notifications');
+    let btnAvatar = document.querySelector('.avatar');
+    const userMenu = document.querySelector('#userMenu');
 
-function handleEvent() {
-    searchInput.oninput = () => {
-        searchCourse(searchInput.value);
-    };
+    let isExpanded = false;
+    let target;
+    const actions = [btnCategories, btnMyCourses, btnNatifications];
+    const elementsExpanded = [categories, myCourses, notifications];
 
-    // router();
-    window.addEventListener('load', router);
-    window.addEventListener('hashchange', router);
+    if (btnAvatar) {
+        actions.push(btnAvatar);
+        elementsExpanded.push(userMenu);
+        btnAvatar.onclick = (e) => {
+            btnAvatar = btnAvatar.parentElement;
+            target = btnAvatar.parentElement;
+        };
+    }
 
-    btnAvatar.onclick = (e) => {
-        btnAvatar = btnAvatar.parentElement;
-        target = btnAvatar.parentElement;
-    };
-
-    const actions = [btnCategories, btnMyCourses, btnNatifications, btnAvatar];
-    const elementsExpanded = [categories, myCourses, notifications, userMenu];
     // Handle event actions click
     actions.forEach((action, index) => {
         action.onclick = function (e) {
@@ -46,10 +44,13 @@ function handleEvent() {
             }
 
             elementsExpanded.forEach((item, i) => {
-                isExpanded = false;
-                actions[i].ariaExpanded = false;
-                item.ariaHidden = true;
-                item.style.display = 'none';
+                if (item) {
+                    isExpanded = false;
+                    actions[i].ariaExpanded = false;
+                    item.ariaHidden = true;
+
+                    item.style.display = 'none';
+                }
             });
 
             isExpanded = !isExpanded;
@@ -96,12 +97,28 @@ function handleEvent() {
         }
 
         if (!e.target.closest('#userMenu')) {
-            isExpanded = false;
-            btnAvatar.ariaExpanded = false;
-            userMenu.ariaHidden = true;
-            userMenu.style.display = 'none';
-            target = null;
+            if (btnAvatar && userMenu) {
+                isExpanded = false;
+                btnAvatar.ariaExpanded = false;
+                userMenu.ariaHidden = true;
+                userMenu.style.display = 'none';
+                target = null;
+            }
         }
+    };
+};
+
+function handleEvent() {
+    searchInput.oninput = () => {
+        searchCourse(searchInput.value);
+    };
+    // router();
+    window.addEventListener('load', router);
+    window.addEventListener('hashchange', router);
+
+    handleClickActons();
+    loginBtn.onclick = () => {
+        location.assign('/login.html');
     };
 
     // Handle event onmouseover show tooltip - chua lam
@@ -111,4 +128,5 @@ function handleEvent() {
     // }, 1000);
 }
 
+export { handleClickActons };
 export default handleEvent;

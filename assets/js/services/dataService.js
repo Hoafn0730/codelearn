@@ -1,9 +1,31 @@
 import fetchApi from '../utils/fetchApi.js';
+import storage from '../utils/storage.js';
 import Category from '../components/Header/Category.js';
 import MyCourse from '../components/Header/MyCourse.js';
 import Notification from '../components/Header/Notification.js';
+import UserMenu from '../components/Header/UserMenu.js';
+import { handleClickActons } from '../handleEvent.js';
+
+const headerActions = document.querySelector('.header_actions');
+const loginBtn = document.querySelector('.login-btn');
 
 fetchApi.use(API);
+const accountInfo = storage.get('account');
+
+const userData = async (accountId) => {
+    const infoUser = { ...accountInfo };
+    if (!accountInfo.hasOwnProperty('name')) {
+        const fetchUser = await fetchApi.get('/api-user/user/get-by-id?id=' + accountId);
+        Object.assign(infoUser, fetchUser);
+
+        storage.set('account', infoUser);
+    }
+
+    headerActions.removeChild(loginBtn);
+
+    headerActions.innerHTML += UserMenu({ data: infoUser });
+    handleClickActons();
+};
 
 const category = {
     renderCategory: async function () {
@@ -15,10 +37,9 @@ const category = {
     },
 };
 
-const id = 5;
 const myCourse = {
-    renderCourse: async function () {
-        const data = await fetchApi.get('/api-user/course/get-by-userid?id=' + id);
+    renderCourse: async function (accountId) {
+        const courses = await fetchApi.get('/api-user/course/get-by-userid?id=' + accountId);
 
         const listCourses = document.querySelector('.header_mycourses-list');
         if (courses.length == 0 || courses == null) {
@@ -27,7 +48,7 @@ const myCourse = {
             `;
             return;
         }
-        const htmls = data.map((course) => MyCourse({ course }));
+        const htmls = courses.map((course) => MyCourse({ course }));
         listCourses.innerHTML = htmls.join('');
     },
 };
@@ -59,15 +80,12 @@ const notification = {
     },
 };
 
-export const courses = {
-    getCourse: async function () {
-        const data = await fetchApi.get('/api-user/home/get-home');
-        return data;
-    },
-};
+export default async () => {
+    if (!accountInfo) return;
 
-export default () => {
+    const accountId = accountInfo.accountId;
+    userData(accountId);
+    myCourse.renderCourse(accountId);
     category.renderCategory();
-    myCourse.renderCourse();
     notification.renderNotification();
 };

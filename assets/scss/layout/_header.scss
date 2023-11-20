@@ -531,6 +531,7 @@
 
         }
 
+
         .header_userMenu {
             @include sub-menu;
             display: none;
@@ -578,7 +579,6 @@
 
                 }
 
-
             }
 
         }
@@ -590,6 +590,18 @@
             padding      : 8px 24px;
             inset        : 46px 0 auto auto;
         }
+
+        .login-btn {
+            border-radius   : 20px;
+            background-color: var(--primary-color);
+            color           : var(--white-color);
+            margin-left     : 12px;
+
+            &:hover {
+                background-color: rgba(59, 16, 229, 0.75);
+            }
+        }
+
 
     }
 

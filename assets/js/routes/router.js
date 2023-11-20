@@ -1,6 +1,6 @@
 import { template, resolveRoute } from '../utils/route.js';
 import routePath from './index.js';
-import { courses } from '../services/dataService.js';
+import courses from '../services/homeService.js';
 
 import Home from '../pages/home.js';
 import RoadMap from '../pages/road-map.js';

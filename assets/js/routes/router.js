@@ -19,7 +19,6 @@ template('road-map', function () {
 template('blog', function () {
     content.innerHTML = Blog();
 });
-
 template('detail-course', function () {
     content.innerHTML = DetailCourse({ dataCourses });
 });

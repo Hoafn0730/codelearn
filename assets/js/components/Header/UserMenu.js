@@ -1,10 +1,10 @@
-import storage from '../../utils/storage.js';
+import { logout } from '../../services/authService.js ';
 
 function UserMenu({ data }) {
     setTimeout(() => {
         const logoutBtn = document.querySelector('.logout-btn');
         logoutBtn.onclick = () => {
-            storage.remove('account');
+            logout();
             location.reload();
         };
     });

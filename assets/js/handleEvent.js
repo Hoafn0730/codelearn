@@ -112,11 +112,13 @@ function handleEvent() {
     searchInput.oninput = () => {
         searchCourse(searchInput.value);
     };
+
     // router();
     window.addEventListener('load', router);
     window.addEventListener('hashchange', router);
 
     handleClickActons();
+
     loginBtn.onclick = () => {
         location.assign('/login.html');
     };

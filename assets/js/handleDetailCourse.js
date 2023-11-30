@@ -1,4 +1,14 @@
+import storage from './utils/storage.js';
+
 const curriculumItems = document.querySelectorAll('.curriculum-item');
+const btnRegister = document.querySelector('.courseDetail_btn.register');
+
+btnRegister.onclick = () => {
+    if (!storage.get('account')) {
+        confirm('Đăng nhập để đăng ký') && location.assign('login.html');
+    }
+};
+
 curriculumItems.forEach((item) => {
     const curriculumPanel = item.querySelector('.curriculum_panel');
     const icon = item.querySelector('i');

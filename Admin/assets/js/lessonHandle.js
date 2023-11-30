@@ -52,6 +52,9 @@ function lazyLoadSections() {
 const handleCreateLesson = (btnCreate) => {
     // Sự kiện thêm bài học vào bảng
     btnCreate.onclick = () => {
+        //         const lessonList = document.querySelector('.lesson_list');
+        //
+        //         lessonList.scrollTop = lessonList.scrollHeight;
         tbody.innerHTML += LessonItem();
 
         const lessonItemClones = document.querySelectorAll('.lesson-item.clone');
@@ -105,6 +108,7 @@ const handleUpdateLesson = (row) => {
             const lessonId = lessonIdInput.value;
             const sectionName = section.getAttribute('name');
             const value = section.innerText;
+
             const existingDataIndex = dataArray.findIndex((data) => data.lessonId === lessonId);
 
             if (existingDataIndex !== -1) {
@@ -112,6 +116,7 @@ const handleUpdateLesson = (row) => {
                 dataArray[existingDataIndex][sectionName] = value;
                 return;
             }
+
             // Nếu chưa có trong mảng, thêm đối tượng mới vào mảng
             const newData = {
                 lessonId,
@@ -171,7 +176,7 @@ const handleDeleteLesson = (btnDelete, row) => {
 };
 
 function LessonItem() {
-    return `
+    return /*html*/ `
     <tr class="lesson-item clone">
             <td>
                 <div class="form-check">
@@ -184,7 +189,7 @@ function LessonItem() {
                 </div>
             </td>
 
-            <th scope="row"> </th>
+            <th scope="row"></th>
 
             <td class='editing'>
             <section contenteditable="false" name="nameLesson" class="view"> </section>

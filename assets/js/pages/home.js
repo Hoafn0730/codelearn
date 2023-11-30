@@ -1,4 +1,4 @@
-import html from '../utils/util.js';
+import html from '../utils/html.js';
 
 import CommonItem from '../components/CommonItem.js';
 import SlideShow from '../components/SlideShow.js';
@@ -128,83 +128,69 @@ function Home({ dataCourses }) {
         }
     });
 
-    return `
-    <div class="grid">
-
+    return html`
+        <div class="grid">
             <!-- SlideShow -->
-           ${SlideShow()}
-
+            ${SlideShow()}
 
             <div class="home_wrapper">
-            ${
-                dataCourses.list_json_PopularCourses
-                    ? `
-                <div class="scrollList_vertical">
-                    <div class="scrollList_heading">
-                        <h1>Popular Courses</h1>
-                    </div>
-                    <div class="scrollList_body">
-                        <div class="row">
-                           ${dataCourses.list_json_PopularCourses.map((data) => CommonItem({ data })).join('')}
-                        </div>
-                    </div>
-                </div>
-                `
-                    : ''
-            }
-                
-            ${
-                dataCourses.list_json_FreeCourses
-                    ? `
-                    <div class="scrollList_vertical">
-                        <div class="scrollList_heading">
-                            <h1>Free Courses</h1>
-                        </div>
-                        <div class="scrollList_body">
-                            <div class="row">
-                                ${dataCourses.list_json_FreeCourses.map((data) => CommonItem({ data })).join('')}
-                            </div>
-                        </div>
-                    </div>`
-                    : ''
-            }    
-                
-            ${
-                dataCourses.list_json_ProCourses
-                    ? `
-                    <div class="scrollList_vertical">
-                            <div class="scrollList_heading">
-                                <h1>Pro Courses</h1>
-                            </div>
-                            <div class="scrollList_body">
-                                <div class="row">
-                                    ${dataCourses.list_json_ProCourses.map((data) => CommonItem({ data })).join('')}
-                                </div>
-                            </div>
-                        </div>
-                    `
-                    : ''
-            }
-            
-            ${
-                dataCourses.list_json_NewCourses
-                    ? `
-                <div class="scrollList_vertical">
-                    <div class="scrollList_heading">
-                        <h1>New Courses</h1>
-                    </div>
-                    <div class="scrollList_body">
-                        <div class="row">
-                            ${dataCourses.list_json_NewCourses.map((data) => CommonItem({ data })).join('')}
-                        </div>
-                    </div>
-                </div>
-                `
-                    : ''
-            }
-
+                ${dataCourses.list_json_PopularCourses
+                    ? html`
+                          <div class="scrollList_vertical">
+                              <div class="scrollList_heading">
+                                  <h1>Popular Courses</h1>
+                              </div>
+                              <div class="scrollList_body">
+                                  <div class="row">
+                                      ${dataCourses.list_json_PopularCourses.map((data) => CommonItem({ data }))}
+                                  </div>
+                              </div>
+                          </div>
+                      `
+                    : ''}
+                ${dataCourses.list_json_FreeCourses
+                    ? html` <div class="scrollList_vertical">
+                          <div class="scrollList_heading">
+                              <h1>Free Courses</h1>
+                          </div>
+                          <div class="scrollList_body">
+                              <div class="row">
+                                  ${dataCourses.list_json_FreeCourses.map((data) => CommonItem({ data }))}
+                              </div>
+                          </div>
+                      </div>`
+                    : ''}
+                ${dataCourses.list_json_ProCourses
+                    ? html`
+                          <div class="scrollList_vertical">
+                              <div class="scrollList_heading">
+                                  <h1>Pro Courses</h1>
+                              </div>
+                              <div class="scrollList_body">
+                                  <div class="row">
+                                      ${dataCourses.list_json_ProCourses.map((data) => CommonItem({ data }))}
+                                  </div>
+                              </div>
+                          </div>
+                      `
+                    : ''}
+                ${dataCourses.list_json_NewCourses
+                    ? html`
+                          <div class="scrollList_vertical">
+                              <div class="scrollList_heading">
+                                  <h1>New Courses</h1>
+                              </div>
+                              <div class="scrollList_body">
+                                  <div class="row">
+                                      ${dataCourses.list_json_NewCourses.map((data) => CommonItem({ data }))}
+                                  </div>
+                              </div>
+                          </div>
+                      `
+                    : ''}
             </div>
-        </div>`;
+        </div>
+    `;
 }
 
 export default Home;

@@ -1,3 +1,5 @@
+import html from '../utils/html.js';
+
 function Footer() {
     return html`
         <footer class="footer">

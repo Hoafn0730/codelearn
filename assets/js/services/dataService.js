@@ -5,6 +5,7 @@ import MyCourse from '../components/Header/MyCourse.js';
 import Notification from '../components/Header/Notification.js';
 import UserMenu from '../components/Header/UserMenu.js';
 import { handleClickActons } from '../handleEvent.js';
+import connection from '../utils/signalr.js';
 
 const headerActions = document.querySelector('.header_actions');
 const loginBtn = document.querySelector('.login-btn');
@@ -15,11 +16,9 @@ const accountInfo = storage.get('account');
 const userData = async (accountInfo) => {
     const infoUser = { ...accountInfo };
     if (!accountInfo.hasOwnProperty('name')) {
-        const response = await fetchApi.get('/api-user/user/get-by-id?id=' + infoUser.accountId, {
-            headers: { Authorization: 'Bearer ' + infoUser.token },
-        });
+        const response = await fetchApi.get('/api-user/user/get-by-id?id=' + infoUser.accountId);
         if (response.status === 401) {
-            location.assign('login.html');
+            // location.assign('login.html');
         }
 
         const fetchUser = await response.json();
@@ -35,15 +34,15 @@ const userData = async (accountInfo) => {
 const myCourse = {
     renderCourse: async function (accountInfo) {
         const courses = await fetchApi
-            .get('/api-user/course/get-by-userid?id=' + accountInfo.accountId, {
-                headers: { Authorization: 'Bearer ' + accountInfo.token },
-            })
+            .get('/api-user/course/get-by-userid?id=' + accountInfo.accountId)
             .then((response) => {
                 if (response.status === 401) {
-                    location.assign('login.html');
+                    //location.assign('login.html');
                 }
                 return response.json();
             });
+
+        storage.set('myCourses', { userId: accountInfo.accountId, courses });
 
         const listCourses = document.querySelector('.header_mycourses-list');
         if (courses.length == 0 || courses == null) {
@@ -61,7 +60,7 @@ const category = {
     renderCategory: async function () {
         const categories = await fetchApi.get('/api-user/category/get-all').then((response) => {
             if (response.status === 401) {
-                location.assign('login.html');
+                //location.assign('login.html');
             }
             return response.json();
         });
@@ -71,6 +70,23 @@ const category = {
         listCategories.innerHTML = htmls.join('');
     },
 };
+
+connection.on('ReceiveNotification', (notifications) => {
+    const listNotifications = document.querySelector('.header_notifications-list');
+
+    if (notifications.length == 0) {
+        listNotifications.innerHTML = `
+                <div class="header_notifications-empty">No notifications.</div>
+            `;
+        document.querySelector('.header_notifications-isSeeAll').style.display = 'none';
+        return;
+    }
+
+    const htmls = notifications.map((notification) => Notification({ notification }));
+    listNotifications.innerHTML = htmls.join('');
+
+    console.log('Data received:', notifications);
+});
 
 const notification = {
     renderNotification: async function () {
@@ -108,7 +124,12 @@ const notification = {
 
 export default async () => {
     category.renderCategory();
-    notification.renderNotification();
+    // notification.renderNotification();
+
+    // Gọi phương thức "SendMessage" trên server
+    connection.invoke('GetAll').catch((err) => {
+        console.error('Error invoking SendMessage:', err);
+    });
 
     if (!accountInfo) return;
     userData(accountInfo);

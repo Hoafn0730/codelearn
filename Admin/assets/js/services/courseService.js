@@ -68,7 +68,7 @@ app.controller('CourseCtrl', function ($scope, $http) {
     // Tìm kiếm khóa học
     let pageIndex = 1;
     $scope.listItem;
-    $scope.SeachKhoaHoc = function (data) {
+    $scope.SearchKhoaHoc = function (data) {
         $http({
             method: 'POST',
             data,
@@ -80,10 +80,15 @@ app.controller('CourseCtrl', function ($scope, $http) {
             reload(response.data.data, {
                 GetKhoaHoc: $scope.GetKhoaHoc,
                 DeleteKhoaHoc: $scope.DeleteKhoaHoc,
-                SeachKhoaHoc: $scope.SeachKhoaHoc,
+                SearchKhoaHoc: $scope.SearchKhoaHoc,
             });
         });
     };
+
+    $scope.SearchKhoaHoc({
+        page: pageIndex,
+        pageSize: 10,
+    });
 
     // Lấy khóa học theo id
     $scope.khoahoc;
@@ -99,11 +104,6 @@ app.controller('CourseCtrl', function ($scope, $http) {
             lessonList = $scope.listBaiHoc && [...$scope.listBaiHoc];
         });
     };
-
-    $scope.SeachKhoaHoc({
-        page: pageIndex,
-        pageSize: 10,
-    });
 
     // Sự kiện nhấn của nút Lưu (Tạo hoặc cập nhất khóa học)
     btnCourse.onclick = () =>
@@ -121,7 +121,7 @@ app.controller('CourseCtrl', function ($scope, $http) {
 
     // Sự kiện nhấn của nút tìm kiếm khóa học
     btnSearch.onclick = () => {
-        $scope.SeachKhoaHoc({
+        $scope.SearchKhoaHoc({
             page: pageIndex,
             pageSize: 10,
             name: searchType.value,
@@ -140,10 +140,9 @@ app.controller('CourseCtrl', function ($scope, $http) {
 });
 
 // Reload
-function reload(data, { GetKhoaHoc, DeleteKhoaHoc, SeachKhoaHoc }) {
+function reload(data, { GetKhoaHoc, DeleteKhoaHoc, SearchKhoaHoc }) {
     setTimeout(() => {
         // Navigation
-
         // Load thanh điều hướng theo tổng số khóa học
         const totalPages = Math.ceil(total / 10);
         document.querySelector('.navigation').innerHTML = '';
@@ -158,7 +157,7 @@ function reload(data, { GetKhoaHoc, DeleteKhoaHoc, SeachKhoaHoc }) {
         btnNavigation.forEach(
             (item) =>
                 (item.onclick = () =>
-                    SeachKhoaHoc({
+                    SearchKhoaHoc({
                         page: item.dataset.id,
                         pageSize: 10,
                     })),

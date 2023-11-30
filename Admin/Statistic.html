@@ -14,13 +14,13 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     </head>
 
-    <body ng-app="AppHocTap"  ng-controller="ParticipationCtrl">
+    <body ng-app="AppHocTap" ng-controller="StatisticCtrl">
         <div class="app">
             <!-- Header -->
             <header class="header">
                 <div class="grid d-flex-center">
-                     <!-- Header logo -->
-                     <div class="header_logo">
+                    <!-- Header logo -->
+                    <div class="header_logo">
                         <a href="/" class="logo-link">
                             <svg viewBox="0 0 102 21.705" class="logo">
                                 <title>Codecademy Logo</title>
@@ -32,10 +32,7 @@
                                 </g>
                             </svg>
                         </a>
-
-                       
                     </div>
-
 
                     <!-- Header Actions -->
                     <div class="header_actions">
@@ -109,7 +106,6 @@
                                     <span class="text sideBar_item-text">Đăng ký</span>
                                 </a>
                             </li>
-
                             <li class="sideBar_item">
                                 <a href="Statistic.html" id="participation" class="sideBar_item-link">
                                     <i class="fa-solid fa-newspaper"></i>
@@ -124,48 +120,67 @@
                 <div id="content" class="content">
                     <div class="grid">
                         <div class="title">
+                            <h3>Thống kê tháng {{month}}</h3>
+                        </div>
+                        <div class="row">
+                            <div class="col l-4">
+                                <div class="padding-box">
+                                    <div class="box" style="background-color: #9abc32">
+                                        <div class="box-left"><i class="fas fa-signal"></i></div>
+                                        <div class="box-right">Số học viên đăng ký<br /><span>{{Total}}</span> học viên</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col l-4">
+                                <div class="padding-box">
+                                    <div class="box" style="background-color: #9abc32">
+                                        <div class="box-left"><i class="fas fa-signal"></i></div>
+                                        <div class="box-right">
+                                            Số khóa học được đăng ký<br /><span>{{Total}}</span> khóa học
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col l-4">
+                                <div class="padding-box">
+                                    <div class="box" style="background-color: #9abc32">
+                                        <div class="box-left"><i class="fas fa-signal"></i></div>
+                                        <div class="box-right">
+                                            Doanh thu theo tháng<br /><span>{{Revenue}}</span> VNĐ
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid">
+                        <div class="title">
                             <h3>Thông tin đăng ký</h3>
                         </div>
                         <div class="row">
                             <div class="col l-4">
                                 <div class="mt-4">
-
-                                    <!-- Form nhap thong tin đăng ký -->
-                                    <form name="form-participation" class="row needs-validation" method="POST">
-                                        <input
-                                            type="hidden"
-                                            class="form-control"
-                                            id="participationId"
-                                            name="participationId"
-                                            value="0"
-                                        />
-
+                                    <!-- Form nhập thông tin đăng ký -->
+                                    <form name="form-statistic" class="row needs-validation" method="POST">
                                         <div class="col l-12 mt-12">
-                                            <label for="name" class="form-label">Mã khóa học</label>
-                                            <input type="text" class="form-control" id="courseId" name="courseId" />
+                                            <label for="name" class="form-label">Tháng: </label>
+                                            <input type="text" class="form-control" id="month" name="month" />
                                         </div>
 
                                         <div class="col l-12 mt-12">
-                                            <label for="name" class="form-label">Mã người dùng</label>
-                                            <input type="text" class="form-control" id="userId" name="userId" />
+                                            <label for="name" class="form-label">Năm: </label>
+                                            <input type="text" class="form-control" id="year" name="year" />
                                         </div>
-
-                                        
-                                        <div class="col l-12 mt-12">
-                                            <label for="status" class="form-label">trạng thái</label>
-                                            <select class="form-select" id="status" name="status">
-                                                <option selected disabled value="">Choose...</option>
-                                                <option value="false">Chưa được xác nhận</option>
-                                                <option value="true">Đã xác nhận</option>
-                                            </select>
+                                        <div style="font-size: 1.6rem; margin: 10px 10px">
+                                            Danh thu : {{Revenue}} VNĐ
                                         </div>
-
-
                                         <div class="col l-12 mt-12">
-                                            <button id="btn-participation" class="btn btn-primary" type="submit">Lưu</button>
+                                            <button id="btn-statistic" name="submit" class="btn btn-primary" type="submit">
+                                                Lưu
+                                            </button>
                                         </div>
                                     </form>
-                                    
                                 </div>
                             </div>
 
@@ -178,7 +193,8 @@
                                             placeholder="Nhập mã, tên loại khóa học..."
                                         />
                                         <button class="btn btn-primary btn-search">
-                                            <i class="fas fas fa-search"></i> Tìm kiếm
+                                            <i class="fas fas fa-search"></i>
+                                            Tìm kiếm
                                         </button>
                                     </div>
 
@@ -191,8 +207,7 @@
                                                     <th scope="col">Mã người dùng</th>
                                                     <th scope="col">Tên người dùng</th>
                                                     <th scope="col">Tên khóa học</th>
-                                                    <th scope="col">Ngày đăng ký</th>
-                                                    <th scope="col" colspan="2">Trạng thái</th>
+                                                    <th scope="col" colspan="2">Ngày đăng ký</th>
                                                 </tr>
                                             </thead>
 
@@ -208,25 +223,15 @@
                                                             />
                                                         </div>
                                                     </td>
+
                                                     <th scope="row">
                                                         {{ $index + (listItem.page > 1 ? index = (listItem.page - 1) *
                                                         10 + 1 : index = 1 )}}
                                                     </th>
-                                                    <td >{{x.userId}}</td>
+                                                    <td class="name">{{x.userId}}</td>
                                                     <td class="name">{{x.name}}</td>
                                                     <td>{{x.nameCourse}}</td>
                                                     <td>@{{x.registrationDate}}</td>
-                                                    <td>{{x.status ? 'Đã xác nhận' : 'Chưa được xác nhận'}}</td>
-                                                    <td>
-                                                        <a
-                                                            href=""
-                                                            class="btn btn-link btn-delete-participation"
-                                                            data-id="{{x.participationId}}"
-                                                        >
-                                                            Xóa
-                                                        </a>
-                                                       
-                                                    </td>
                                                 </tr>
 
                                                 <!-- <tr>
@@ -256,15 +261,13 @@
                                     </div>
                                 </div>
                             </div>
-
-                        
                         </div>
                     </div>
                 </div>
             </div>
 
-             <!-- Footer -->
-             <footer class="footer">
+            <!-- Footer -->
+            <footer class="footer">
                 <div class="grid wide">
                     <div class="row">
                         <div class="col l-3">
@@ -371,6 +374,6 @@
         <script src="../assets/js/utils/jquery-3.6.0.min.js"></script>
         <script src="../assets/js/global.js"></script>
         <script type="module" src="../Admin/assets/js/admin.js"></script>
-        <script type="module" src="../Admin/assets/js/services/participationService.js"></script>
+        <script type="module" src="../Admin/assets/js/services/statisticService.js"></script>
     </body>
 </html>

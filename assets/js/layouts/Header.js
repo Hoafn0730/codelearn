@@ -1,3 +1,5 @@
+import html from '../utils/html.js';
+
 function Header() {
     return html`
         <header class="header">

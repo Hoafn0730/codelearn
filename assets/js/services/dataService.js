@@ -4,7 +4,7 @@ import Category from '../components/Header/Category.js';
 import MyCourse from '../components/Header/MyCourse.js';
 import Notification from '../components/Header/Notification.js';
 import UserMenu from '../components/Header/UserMenu.js';
-import { handleClickActons } from '../handleEvent.js';
+import { handleClickActions } from '../handleEvent.js';
 import connection from '../utils/signalr.js';
 
 const headerActions = document.querySelector('.header_actions');
@@ -28,7 +28,7 @@ const userData = async (accountInfo) => {
 
     headerActions.removeChild(loginBtn);
     headerActions.innerHTML += UserMenu({ data: infoUser });
-    handleClickActons();
+    handleClickActions();
 };
 
 const myCourse = {

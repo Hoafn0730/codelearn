@@ -1,62 +1,7 @@
 .header_mycourses-list {
     @include sub-menu-list;
 
-    .header_courses-empty {
-        padding        : 10px;
-        margin         : 0 8px;
-        height         : 80px;
-        text-align     : center;
-        display        : flex;
-        justify-content: center;
-        align-items    : center;
-    }
 
-    .header_mycourses-item {
-        @include sub-menu-item;
-        max-height: 52vh;
-
-        .header_mycourse-link {
-            @include sub-menu-link;
-
-            .header_mycourse-item-thumb {
-                background-color: #ebebeb;
-                border-radius   : 8px;
-                display         : block;
-                line-height     : 67px;
-                max-height      : 67px;
-                text-align      : center;
-                width           : 120px;
-
-                &::after {
-                    color    : var(--text-color);
-                    content  : "NO IMAGE";
-                    font-size: 1.2rem;
-                }
-            }
-
-            .header_mycourse-info {
-                margin-left: 12px;
-
-                .header_mycourse-title {
-                    font-size: 1.4rem;
-                    margin   : 6px 0 0;
-                }
-
-                .header_mycourse-lastCompleted {
-                    color    : #666;
-                    font-size: 1.2rem;
-                    margin   : 4px 0 0;
-
-                }
-
-            }
-        }
-
-        &:hover {
-            background-color: rgba(22, 24, 35, .05);
-        }
-
-    }
 
     &::-webkit-scrollbar {
         width: 8px;
@@ -66,4 +11,65 @@
         background-color: #d9d9d9;
         border-radius   : 100px;
     }
+}
+
+.header_courses-empty {
+    padding        : 10px;
+    margin         : 0 8px;
+    height         : 80px;
+    text-align     : center;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+.header_mycourses-item {
+    @include sub-menu-item;
+    max-height: 52vh;
+
+
+
+    &:hover {
+        background-color: rgba(22, 24, 35, .05);
+    }
+
+}
+
+.header_mycourse-link {
+    @include sub-menu-link;
+
+
+}
+
+.header_mycourse-item-thumb {
+    background-color: #ebebeb;
+    border-radius   : 8px;
+    display         : block;
+    line-height     : 67px;
+    max-height      : 67px;
+    text-align      : center;
+    width           : 120px;
+
+    &::after {
+        color    : var(--text-color);
+        content  : "NO IMAGE";
+        font-size: 1.2rem;
+    }
+}
+
+.header_mycourse-info {
+    margin-left: 12px;
+
+    .header_mycourse-title {
+        font-size: 1.4rem;
+        margin   : 6px 0 0;
+    }
+
+    .header_mycourse-lastCompleted {
+        color    : #666;
+        font-size: 1.2rem;
+        margin   : 4px 0 0;
+
+    }
+
 }

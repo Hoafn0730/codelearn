@@ -14,601 +14,606 @@
     background-color: var(--beige-color);
     z-index         : 3;
 
-    .header_logo {
-        align-items: center;
-        display    : flex;
-        position   : relative;
-
-
-        .header_categories-btn {
-            margin-left     : 30px;
-            font-size       : 1.6rem;
-            background-color: var(--beige-color);
-
-            &:hover {
-                color : var(--primary-color);
-                cursor: pointer;
-            }
-
-        }
-
-        .categories-wrapper {
-            border-radius : 10px;
-            min-width     : 360px;
-            padding-bottom: 14px;
-            padding       : 16px 0;
-            min-height    : 300px;
-            inset         : 45px 0 0 30%;
-        }
-
-        .header_categories {
-            @include sub-menu;
-            display: none;
-
-
-            .categories_header {
-                align-items: center;
-                display    : flex;
-                padding    : 10px 20px 20px;
-
-                .categories_heading {
-                    font-size  : 2rem;
-                    line-height: 1.6rem;
-                }
-            }
-
-            .header_categories-list {
-                @include sub-menu-list;
-
-                .header_categories-item {
-                    @include sub-menu-item;
-
-                    .header_categorie-link {
-                        @include sub-menu-link;
-                        justify-content: space-between;
-                        padding        : 10px;
-
-
-                        .header_categorie-icon {
-                            display: block;
-                        }
-
-                    }
-
-                    &:hover {
-                        background-color: rgba(22, 24, 35, .05);
-                        color           : var(--primary-color);
-                    }
-
-                    &:hover .header_categorie-link {
-                        color: var(--primary-color);
-                    }
-                }
-
-                &::-webkit-scrollbar {
-                    width: 8px;
-                }
-
-                &::-webkit-scrollbar-thumb {
-                    background-color: #d9d9d9;
-                    border-radius   : 100px;
-                }
-            }
-
-        }
-
-    }
-
-    .header_body {
-        .header_search {
-            height          : 40px;
-            width           : 420px;
-            border          : 2px solid #cacaca;
-            border-radius   : 20px;
-            background-color: var(--white-color);
-            padding         : 0 16px 0 8px;
-            transition      : border-color .2s ease-in-out;
-            display         : inline-flex;
-            align-items     : center;
-            position        : relative;
-
-            .header_search-icon {
-                font-size : 1.6rem;
-                padding   : 6px;
-                color     : var(--black-color);
-                transition: opacity .2s ease-in-out;
-                opacity   : .6;
-
-                &:hover {
-                    opacity: 1;
-                    color  : var(--primary-color);
-
-                }
-            }
-
-            .header_search-input {
-                border          : none;
-                caret-color     : var(--primary-color);
-                flex            : 1 1;
-                height          : 100%;
-                outline         : none;
-                padding         : 0 4px;
-                background-color: var(--white-color);
-                font-size       : 1.6rem;
-                margin-right    : 8px;
-            }
-
-            &:focus-within {
-                border-color: var(--primary-color);
-            }
-
-            &:focus-within .search-wrapper {
-                display: block;
-            }
-
-            .search-wrapper {
-                @include sub-menu;
-                inset        : 46px auto auto 0px;
-                margin       : 0px;
-                width        : 420px;
-                border-radius: 10px;
-                color        : #1d2129;
-                padding      : 10px 0 10px 0;
-                display      : none;
-
-
-                .search_list-wrapper {
-
-                    .search_header {
-                        align-items: center;
-                        display    : flex;
-                        padding    : 10px 20px;
-
-                        .search_heading {
-                            font-size  : 1.6rem;
-                            line-height: 1.6rem;
-
-                            .search-icon {
-                                padding: 0 12px 0 0;
-                            }
-                        }
-
-                        .searchCount {
-                            margin-left: 10px;
-                            align-items: center;
-                            display    : flex;
-                            margin-left: auto;
-                        }
-
-                    }
-
-                    .search_list {
-                        @include sub-menu-list;
-
-                        .search_item {
-                            @include sub-menu-item;
-                            max-height: 52vh;
-
-                            .search_item-link {
-                                @include sub-menu-link;
-
-                                .search_item-thumb {
-                                    background-color: #ebebeb;
-                                    border-radius   : 50%;
-                                    display         : block;
-                                    height          : 40px;
-                                    width           : 40px;
-                                    text-align      : center;
-
-                                    &::after {
-                                        color    : var(--text-color);
-                                        content  : "NO IMAGE";
-                                        font-size: 1.2rem;
-                                    }
-                                }
-
-                                .search_item-info {
-                                    margin-left: 12px;
-
-                                    .search_item-title {
-                                        font-size: 1.4rem;
-                                        margin   : 6px 0 0;
-                                    }
-
-
-                                }
-                            }
-
-                            &:hover {
-                                background-color: rgba(22, 24, 35, .05);
-                            }
-                        }
-
-                        &::-webkit-scrollbar {
-                            width: 8px;
-                        }
-
-                        &::-webkit-scrollbar-thumb {
-                            background-color: #d9d9d9;
-                            border-radius   : 100px;
-                        }
-                    }
-
-
-
-
-                    .header_courses-empty {
-                        padding        : 10px;
-                        margin         : 0 8px;
-                        height         : 80px;
-                        text-align     : center;
-                        display        : flex;
-                        justify-content: center;
-                        align-items    : center;
-                    }
-
-
-
-
-
-                }
-
-            }
-
-        }
-
-    }
-
-    .header_actions {
-        align-items    : center;
-        display        : flex;
-        justify-content: flex-end;
-        position       : relative;
-
-
-        // My courses
-        .header_mycourses-btn {
-            font-size       : 1.6rem;
-            background-color: transparent;
-        }
-
-        .header_mycourses {
-            @include sub-menu;
-            display: none;
-
-            .mycourses_header {
-                align-items: center;
-                display    : flex;
-                padding    : 10px 20px 20px;
-
-                .mycourses_heading {
-                    font-size  : 2rem;
-                    line-height: 1.6rem;
-                }
-            }
-
-            .header_mycourses-list {
-                @include sub-menu-list;
-
-                .header_courses-empty {
-                    padding        : 10px;
-                    margin         : 0 8px;
-                    height         : 80px;
-                    text-align     : center;
-                    display        : flex;
-                    justify-content: center;
-                    align-items    : center;
-                }
-
-                .header_mycourses-item {
-                    @include sub-menu-item;
-                    max-height: 52vh;
-
-                    .header_mycourse-link {
-                        @include sub-menu-link;
-
-                        .header_mycourse-item-thumb {
-                            background-color: #ebebeb;
-                            border-radius   : 8px;
-                            display         : block;
-                            line-height     : 67px;
-                            max-height      : 67px;
-                            text-align      : center;
-                            width           : 120px;
-
-                            &::after {
-                                color    : var(--text-color);
-                                content  : "NO IMAGE";
-                                font-size: 1.2rem;
-                            }
-                        }
-
-                        .header_mycourse-info {
-                            margin-left: 12px;
-
-                            .header_mycourse-title {
-                                font-size: 1.4rem;
-                                margin   : 6px 0 0;
-                            }
-
-                            .header_mycourse-lastCompleted {
-                                color    : #666;
-                                font-size: 1.2rem;
-                                margin   : 4px 0 0;
-
-                            }
-
-                        }
-                    }
-
-                    &:hover {
-                        background-color: rgba(22, 24, 35, .05);
-                    }
-
-                }
-
-                &::-webkit-scrollbar {
-                    width: 8px;
-                }
-
-                &::-webkit-scrollbar-thumb {
-                    background-color: #d9d9d9;
-                    border-radius   : 100px;
-                }
-            }
-        }
-
-        .mycourses-wrapper {
-            border-radius : 10px;
-            min-width     : 360px;
-            padding-bottom: 10px;
-            padding-top   : 16px;
-            min-height    : 10px;
-            inset         : 46px 20% auto auto;
-        }
-
-
-        .cart-btn {
-            user-select: none;
-            padding    : 8px;
-            cursor     : pointer;
-            font-size  : 2rem;
-            color      : #707070;
-        }
-
-        ;
-
-        // Notifications
-        .notification-btn {
-            user-select: none;
-            padding    : 8px;
-            cursor     : pointer;
-            font-size  : 2rem;
-            color      : #707070;
-
-            &:hover {
-                color: var(--primary-color);
-            }
-        }
-
-        .header_notifications {
-            @include sub-menu;
-            display: none;
-
-            .notifications_header {
-                align-items: center;
-                display    : flex;
-                padding    : 10px 20px 20px;
-
-                .notifications_heading {
-                    font-size  : 2rem;
-                    line-height: 1.6rem;
-                }
-            }
-
-            .header_notifications-list {
-                @include sub-menu-list;
-                max-height    : 53vh;
-                padding-bottom: 8px;
-
-                .header_notifications-empty {
-                    padding        : 10px;
-                    margin         : 0 8px;
-                    height         : 80px;
-                    text-align     : center;
-                    display        : flex;
-                    justify-content: center;
-                    align-items    : center;
-                }
-
-                .header_notifications-item {
-                    padding      : 10px;
-                    transition   : background-color .3s;
-                    border-radius: 10px;
-                    margin       : 0 8px;
-
-                    .notification-link {
-                        @include sub-menu-link;
-
-                        .notification_message {
-                            margin-left: 12px;
-                            line-height: 1.6rem;
-
-                            div {
-                                font-size  : 1.4rem;
-                                font-weight: 500;
-                                margin-top : 6px;
-                            }
-
-                            .notification_createdAt {
-                                color      : var(--primary-color);
-                                font-size  : 1.3rem;
-                                font-weight: 500;
-                                margin-top : 6px;
-                            }
-                        }
-                    }
-
-                    &:hover {
-                        background-color: rgba(22, 24, 35, .05);
-
-                    }
-
-                    &:hover .header_mycourses-link {
-                        color: var(--black-color);
-                    }
-
-                }
-
-                &::-webkit-scrollbar {
-                    width: 8px;
-                }
-
-                &::-webkit-scrollbar-thumb {
-                    background-color: #d9d9d9;
-                    border-radius   : 100px;
-                }
-            }
-
-            .header_notifications-isSeeAll {
-                bottom: 0;
-
-                background-color: #fff;
-                border-top      : 1px solid rgba(0, 0, 0, .1);
-                color           : var(--primary-color);
-                cursor          : pointer;
-                display         : flex;
-                justify-content : center;
-                align-items     : center;
-                font-size       : 14px;
-                font-weight     : 500;
-                height          : 44px;
-                text-decoration : none;
-                position        : sticky;
-                position        : -webkit-sticky;
-
-
-                &:hover {
-                    background-color: rgba(22, 24, 35, .05)
-                }
-
-            }
-
-        }
-
-        .notifications-wrapper {
-            border-radius : 10px;
-            width         : 360px;
-            min-height    : 180px;
-            padding-bottom: 14px;
-            padding       : 16px 0 0 0;
-            inset         : 46px 10% auto auto;
-        }
-
-
-        .header_actions-avatar {
-            margin-left    : 12px;
-            border-radius  : 50%;
-            cursor         : pointer;
-            display        : flex;
-            align-items    : center;
-            justify-content: space-between;
-
-            h3 {
-                margin-left: 10px;
-            }
-
-            &.icon::after {
-                display       : inline-block;
-                margin-left   : .255em;
-                vertical-align: .255em;
-                content       : "";
-                border-top    : .3em solid;
-                border-right  : .3em solid transparent;
-                border-bottom : 0;
-                border-left   : .3em solid transparent;
-            }
-
-        }
-
-
-        .header_userMenu {
-            @include sub-menu;
-            display: none;
-
-            .userMenu_user {
-                display    : flex;
-                align-items: center;
-
-                .userMenu_user-avatar {
-                    margin: 10px 0;
-                }
-
-                .userMenu_info {
-                    margin-left: 12px;
-
-                    .userMenu_info-name {
-                        color      : #292929;
-                        font-size  : 1.6rem;
-                        font-weight: 600;
-                    }
-
-                    .userMenu_info-username {
-                        color     : #757575;
-                        font-size : 1.4rem;
-                        margin-top: 4px;
-
-                    }
-                }
-
-            }
-
-            hr {
-                border    : none;
-                border-top: 1px solid rgba(0, 0, 0, .05);
-                margin    : 8px 0;
-            }
-
-            .userMenu-list {
-                .userMenu_item-link {
-                    color    : #666;
-                    cursor   : pointer;
-                    display  : block;
-                    font-size: 1.4rem;
-                    padding  : 10px 0;
-
-                }
-
-            }
-
-        }
-
-        .userMenu-wrapper {
-            border-radius: 10px;
-            min-width    : 230px;
-            min-height   : 180px;
-            padding      : 8px 24px;
-            inset        : 46px 0 auto auto;
-        }
-
-        .login-btn {
-            border-radius   : 20px;
-            background-color: var(--primary-color);
-            color           : var(--white-color);
-            margin-left     : 12px;
-
-            &:hover {
-                background-color: rgba(59, 16, 229, 0.75);
-            }
-        }
-
-
-    }
-
     .header_logo,
     .header_body,
     .header_actions {
         flex: 1 1;
     }
 
+}
+
+
+.header_logo {
+    align-items: center;
+    display    : flex;
+    position   : relative;
+
+}
+
+// category
+
+.header_categories-btn {
+    margin-left     : 30px;
+    font-size       : 1.6rem;
+    background-color: var(--beige-color);
+
+    &:hover {
+        color : var(--primary-color);
+        cursor: pointer;
+    }
+
+}
+
+.categories-wrapper {
+    border-radius : 10px;
+    min-width     : 360px;
+    padding-bottom: 14px;
+    padding       : 16px 0;
+    min-height    : 300px;
+    inset         : 45px 0 0 30%;
+}
+
+.header_categories {
+    @include sub-menu;
+    display: none;
+}
+
+.categories_header {
+    align-items: center;
+    display    : flex;
+    padding    : 10px 20px 20px;
+
+    .categories_heading {
+        font-size  : 2rem;
+        line-height: 1.6rem;
+    }
+}
+
+.header_categories-list {
+    @include sub-menu-list;
+
+
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #d9d9d9;
+        border-radius   : 100px;
+    }
+}
+
+.header_categories-item {
+    @include sub-menu-item;
+
+    &:hover {
+        background-color: rgba(22, 24, 35, .05);
+        color           : var(--primary-color);
+    }
+
+    &:hover .header_categorie-link {
+        color: var(--primary-color);
+    }
+}
+
+.header_categorie-link {
+    @include sub-menu-link;
+    justify-content: space-between;
+    padding        : 10px;
+
+}
+
+.header_categorie-icon {
+    display: block;
+}
+
+// Search
+.header_search {
+    height          : 40px;
+    width           : 420px;
+    border          : 2px solid #cacaca;
+    border-radius   : 20px;
+    background-color: var(--white-color);
+    padding         : 0 16px 0 8px;
+    transition      : border-color .2s ease-in-out;
+    display         : inline-flex;
+    align-items     : center;
+    position        : relative;
+
+    &:focus-within {
+        border-color: var(--primary-color);
+    }
+
+    &:focus-within .search-wrapper {
+        display: block;
+    }
+
+}
+
+.header_search-icon {
+    font-size : 1.6rem;
+    padding   : 6px;
+    color     : var(--black-color);
+    transition: opacity .2s ease-in-out;
+    opacity   : .6;
+
+    &:hover {
+        opacity: 1;
+        color  : var(--primary-color);
+
+    }
+}
+
+.header_search-input {
+    border          : none;
+    caret-color     : var(--primary-color);
+    flex            : 1 1;
+    height          : 100%;
+    outline         : none;
+    padding         : 0 4px;
+    background-color: var(--white-color);
+    font-size       : 1.6rem;
+    margin-right    : 8px;
+}
+
+.search-wrapper {
+    @include sub-menu;
+    inset        : 46px auto auto 0px;
+    margin       : 0px;
+    width        : 420px;
+    border-radius: 10px;
+    color        : #1d2129;
+    padding      : 10px 0 10px 0;
+    display      : none;
+
+
+
+}
+
+
+.search_header {
+    align-items: center;
+    display    : flex;
+    padding    : 10px 20px;
+
+}
+
+.search_heading {
+    font-size  : 1.6rem;
+    line-height: 1.6rem;
+
+    .search-icon {
+        padding: 0 12px 0 0;
+    }
+}
+
+.searchCount {
+    margin-left: 10px;
+    align-items: center;
+    display    : flex;
+    margin-left: auto;
+}
+
+.search_list {
+    @include sub-menu-list;
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #d9d9d9;
+        border-radius   : 100px;
+    }
+}
+
+.search_item {
+    @include sub-menu-item;
+    max-height: 52vh;
+
+    &:hover {
+        background-color: rgba(22, 24, 35, .05);
+    }
+}
+
+.search_item-link {
+    @include sub-menu-link;
+
+}
+
+.search_item-thumb {
+    background-color: #ebebeb;
+    border-radius   : 50%;
+    display         : block;
+    height          : 40px;
+    width           : 40px;
+    text-align      : center;
+
+    &::after {
+        color    : var(--text-color);
+        content  : "NO IMAGE";
+        font-size: 1.2rem;
+    }
+}
+
+.search_item-info {
+    margin-left: 12px;
+
+
+
+}
+
+.search_item-title {
+    font-size: 1.4rem;
+    margin   : 6px 0 0;
+}
+
+
+.header_courses-empty {
+    padding        : 10px;
+    margin         : 0 8px;
+    height         : 80px;
+    text-align     : center;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+
+// Actions
+.header_actions {
+    align-items    : center;
+    display        : flex;
+    justify-content: flex-end;
+    position       : relative;
+
+}
+
+// My courses
+.header_mycourses-btn {
+    font-size       : 1.6rem;
+    background-color: transparent;
+}
+
+.header_mycourses {
+    @include sub-menu;
+    display: none;
+
+}
+
+.mycourses_header {
+    align-items: center;
+    display    : flex;
+    padding    : 10px 20px 20px;
+
+    .mycourses_heading {
+        font-size  : 2rem;
+        line-height: 1.6rem;
+    }
+}
+
+.header_mycourses-list {
+    @include sub-menu-list;
+
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #d9d9d9;
+        border-radius   : 100px;
+    }
+}
+
+.header_courses-empty {
+    padding        : 10px;
+    margin         : 0 8px;
+    height         : 80px;
+    text-align     : center;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+.header_mycourses-item {
+    @include sub-menu-item;
+    max-height: 52vh;
+
+
+    &:hover {
+        background-color: rgba(22, 24, 35, .05);
+    }
+
+}
+
+.header_mycourse-link {
+    @include sub-menu-link;
+
+    .header_mycourse-item-thumb {
+        background-color: #ebebeb;
+        border-radius   : 8px;
+        display         : block;
+        line-height     : 67px;
+        max-height      : 67px;
+        text-align      : center;
+        width           : 120px;
+
+        &::after {
+            color    : var(--text-color);
+            content  : "NO IMAGE";
+            font-size: 1.2rem;
+        }
+    }
+
+
+}
+
+.header_mycourse-info {
+    margin-left: 12px;
+
+    .header_mycourse-title {
+        font-size: 1.4rem;
+        margin   : 6px 0 0;
+    }
+
+    .header_mycourse-lastCompleted {
+        color    : #666;
+        font-size: 1.2rem;
+        margin   : 4px 0 0;
+
+    }
+
+}
+
+.mycourses-wrapper {
+    border-radius : 10px;
+    min-width     : 360px;
+    padding-bottom: 10px;
+    padding-top   : 16px;
+    min-height    : 10px;
+    inset         : 46px 20% auto auto;
+}
+
+.cart-btn {
+    user-select: none;
+    padding    : 8px;
+    cursor     : pointer;
+    font-size  : 2rem;
+    color      : #707070;
+}
+
+
+
+// Notifications
+.notification-btn {
+    user-select: none;
+    padding    : 8px;
+    cursor     : pointer;
+    font-size  : 2rem;
+    color      : #707070;
+
+    &:hover {
+        color: var(--primary-color);
+    }
+}
+
+.header_notifications {
+    @include sub-menu;
+    display: none;
+
+
+}
+
+.notifications_header {
+    align-items: center;
+    display    : flex;
+    padding    : 10px 20px 20px;
+
+    .notifications_heading {
+        font-size  : 2rem;
+        line-height: 1.6rem;
+    }
+}
+
+.header_notifications-list {
+    @include sub-menu-list;
+    max-height    : 53vh;
+    padding-bottom: 8px;
+
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #d9d9d9;
+        border-radius   : 100px;
+    }
+}
+
+.header_notifications-empty {
+    padding        : 10px;
+    margin         : 0 8px;
+    height         : 80px;
+    text-align     : center;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+.header_notifications-item {
+    padding      : 10px;
+    transition   : background-color .3s;
+    border-radius: 10px;
+    margin       : 0 8px;
+
+    &:hover {
+        background-color: rgba(22, 24, 35, .05);
+
+    }
+
+    &:hover .header_mycourses-link {
+        color: var(--black-color);
+    }
+
+}
+
+.notification-link {
+    @include sub-menu-link;
+
+}
+
+.notification_message {
+    margin-left: 12px;
+    line-height: 1.6rem;
+
+    div {
+        font-size  : 1.4rem;
+        font-weight: 500;
+        margin-top : 6px;
+    }
+
+    .notification_createdAt {
+        color      : var(--primary-color);
+        font-size  : 1.3rem;
+        font-weight: 500;
+        margin-top : 6px;
+    }
+}
+
+
+.header_notifications-isSeeAll {
+    bottom: 0;
+
+    background-color: #fff;
+    border-top      : 1px solid rgba(0, 0, 0, .1);
+    color           : var(--primary-color);
+    cursor          : pointer;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    font-size       : 14px;
+    font-weight     : 500;
+    height          : 44px;
+    text-decoration : none;
+    position        : sticky;
+    position        : -webkit-sticky;
+
+
+    &:hover {
+        background-color: rgba(22, 24, 35, .05)
+    }
+
+}
+
+.notifications-wrapper {
+    border-radius : 10px;
+    width         : 360px;
+    min-height    : 180px;
+    padding-bottom: 14px;
+    padding       : 16px 0 0 0;
+    inset         : 46px 10% auto auto;
+}
+
+
+// Menu
+.header_actions-avatar {
+    margin-left    : 12px;
+    border-radius  : 50%;
+    cursor         : pointer;
+    display        : flex;
+    align-items    : center;
+    justify-content: space-between;
+
+    h3 {
+        margin-left: 10px;
+    }
+
+    &.icon::after {
+        display       : inline-block;
+        margin-left   : .255em;
+        vertical-align: .255em;
+        content       : "";
+        border-top    : .3em solid;
+        border-right  : .3em solid transparent;
+        border-bottom : 0;
+        border-left   : .3em solid transparent;
+    }
+
+}
+
+
+.header_userMenu {
+    @include sub-menu;
+    display: none;
+
+
+
+    hr {
+        border    : none;
+        border-top: 1px solid rgba(0, 0, 0, .05);
+        margin    : 8px 0;
+    }
+
+}
+
+.userMenu_user {
+    display    : flex;
+    align-items: center;
+
+    .userMenu_user-avatar {
+        margin: 10px 0;
+    }
+
+
+}
+
+.userMenu_info {
+    margin-left: 12px;
+
+    .userMenu_info-name {
+        color      : #292929;
+        font-size  : 1.6rem;
+        font-weight: 600;
+    }
+
+    .userMenu_info-username {
+        color     : #757575;
+        font-size : 1.4rem;
+        margin-top: 4px;
+
+    }
+}
+
+.userMenu-list {
+    .userMenu_item-link {
+        color    : #666;
+        cursor   : pointer;
+        display  : block;
+        font-size: 1.4rem;
+        padding  : 10px 0;
+
+    }
+
+}
+
+.userMenu-wrapper {
+    border-radius: 10px;
+    min-width    : 230px;
+    min-height   : 180px;
+    padding      : 8px 24px;
+    inset        : 46px 0 auto auto;
+}
+
+.login-btn {
+    border-radius   : 20px;
+    background-color: var(--primary-color);
+    color           : var(--white-color);
+    margin-left     : 12px;
+
+    &:hover {
+        background-color: rgba(59, 16, 229, 0.75);
+    }
 }

@@ -14,6 +14,7 @@ var app = angular.module('AppHocTap', []);
 app.controller('StatisticCtrl', function ($scope, $http) {
     $scope.Revenue;
     $scope.Total;
+    $scope.listPopularCourses;
     $scope.month = date.getMonth() + 1;
 
     let pageIndex = 1;
@@ -29,12 +30,18 @@ app.controller('StatisticCtrl', function ($scope, $http) {
             $scope.listItem = response.data;
             $scope.Total = response.data.totalItems;
             $scope.Revenue = formatNumber(response.data.revenue);
+            $scope.listPopularCourses = response.data?.data[0]?.list_json_PopularCourses;
 
             total = Number(response.data.totalItems);
             reload({
                 GetStatistic: $scope.GetStatistic,
             });
         });
+    };
+
+    $scope.formatDate = (params) => {
+        var updatedAtDate = new Date(params);
+        return `${updatedAtDate.getDate()}/${updatedAtDate.getMonth() + 1}/${updatedAtDate.getFullYear()}`;
     };
 
     $scope.GetStatistic({

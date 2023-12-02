@@ -18,7 +18,7 @@ const price = document.querySelector('#price');
 const categoryId = document.querySelector('#categoryId');
 const teacherId = document.querySelector('#teacherId');
 
-const formDataObject = {};
+const formData = {};
 let total = 0;
 
 var app = angular.module('AppHocTap', []);
@@ -108,15 +108,15 @@ app.controller('CourseCtrl', function ($scope, $http) {
     // Sự kiện nhấn của nút Lưu (Tạo hoặc cập nhất khóa học)
     btnCourse.onclick = () =>
         document.getElementById('courseId').value === '0'
-            ? $scope.CreateKhoaHoc(formDataObject)
-            : $scope.UpdateKhoaHoc(formDataObject);
+            ? $scope.CreateKhoaHoc(formData)
+            : $scope.UpdateKhoaHoc(formData);
 
     // Sự kiện nhấn của nút Lưu bài học
     btnUpdateLesson.onclick = (e) => {
-        Object.assign(formDataObject, convertFormData(form));
-        formDataObject.list_json_Lessons = dataArray;
+        Object.assign(formData, convertFormData(form));
+        formData.list_json_Lessons = dataArray;
 
-        $scope.UpdateKhoaHoc(formDataObject);
+        $scope.UpdateKhoaHoc(formData);
     };
 
     // Sự kiện nhấn của nút tìm kiếm khóa học
@@ -211,5 +211,5 @@ function reload(data, { GetKhoaHoc, DeleteKhoaHoc, SearchKhoaHoc }) {
 // Sự kiện submit form
 form.onsubmit = (e) => {
     e.preventDefault();
-    Object.assign(formDataObject, convertFormData(form));
+    Object.assign(formData, convertFormData(form));
 };

@@ -127,7 +127,9 @@
                                 <div class="padding-box">
                                     <div class="box" style="background-color: #9abc32">
                                         <div class="box-left"><i class="fas fa-signal"></i></div>
-                                        <div class="box-right">Số học viên đăng ký<br /><span>{{Total}}</span> học viên</div>
+                                        <div class="box-right">
+                                            Số học viên đăng ký<br /><span>{{Total}}</span> học viên
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -176,7 +178,12 @@
                                             Danh thu : {{Revenue}} VNĐ
                                         </div>
                                         <div class="col l-12 mt-12">
-                                            <button id="btn-statistic" name="submit" class="btn btn-primary" type="submit">
+                                            <button
+                                                id="btn-statistic"
+                                                name="submit"
+                                                class="btn btn-primary"
+                                                type="submit"
+                                            >
                                                 Lưu
                                             </button>
                                         </div>
@@ -260,6 +267,25 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col l-6">
+                                <h2 class="popular-title">Khóa học phổ biến</h2>
+                                <ul class="list-popular-courses">
+                                    <li
+                                        class="mycourses-item course_item-{{x.courseId}}"
+                                        ng-repeat="x in listPopularCourses"
+                                    >
+                                        <h4 style="font-size: 1.6rem; margin-right: 10px;">{{$index + 1}}</h4>
+                                        <img src="{{x.image}}" alt="" class="course-item-thumb" />
+                                        <div class="course-info">
+                                            <h3 class="course-title">{{x.nameCourse}}</h3>
+                                            <span class="createdAt">Ngày tạo {{formatDate(x.createdAt)}}</span>
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>

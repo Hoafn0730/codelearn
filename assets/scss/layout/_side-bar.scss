@@ -1,62 +1,66 @@
 .sideBar {
     flex-shrink: 0;
 
-    .sideBar_wrapper {
-        position  : -webkit-sticky;
-        position  : sticky;
-        top       : var(--header-height);
-        left      : 0;
-        transition: width .2s linear;
 
-        display       : flex;
-        flex-direction: column;
-        flex-shrink   : 0;
-        padding       : 0 8px;
-        width         : var(--width-sideBar);
-        overflow      : hidden;
-        z-index       : 1;
+}
 
-        &:hover {
-            width: 250px;
-        }
+.sideBar_wrapper {
+    position  : -webkit-sticky;
+    position  : sticky;
+    top       : var(--header-height);
+    left      : 0;
+    transition: width .2s linear;
 
-        &:hover .sideBar_item-text {
-            display: inline-flex;
-        }
+    display       : flex;
+    flex-direction: column;
+    flex-shrink   : 0;
+    padding       : 0 8px;
+    width         : var(--width-sideBar);
+    overflow      : hidden;
+    z-index       : 1;
 
-        .sideBar_list {
-            padding-left: 0;
-            margin      : 10px;
-        }
+    &:hover {
+        width: 250px;
+    }
 
-        .sideBar_item {
-            padding        : 10px 10px 10px 30px;
-            height         : 50px;
-            display        : flex;
-            align-items    : center;
-            justify-content: left;
-            width          : 225px;
-            border-radius  : 10px;
+    &:hover .sideBar_item-text {
+        display: inline-flex;
+    }
 
-            .fa-solid {
-                font-size: 20px;
-                min-width: 60px;
-            }
 
-            .fa-solid,
-            .sideBar_item-text {
-                color    : #404040;
-                font-size: 1.6rem;
-            }
+}
 
-            &:hover {
-                background-color: rgba(22, 24, 35, .05);
+.sideBar_list {
+    padding-left: 0;
+    margin      : 10px;
+}
 
-                .fa-solid,
-                .sideBar_item-text {
-                    color: var(--primary-color);
-                }
-            }
+.sideBar_item {
+    padding        : 10px 10px 10px 30px;
+    height         : 50px;
+    display        : flex;
+    align-items    : center;
+    justify-content: left;
+    width          : 225px;
+    border-radius  : 10px;
+
+    .fa-solid {
+        font-size: 20px;
+        min-width: 60px;
+    }
+
+    .fa-solid,
+    .sideBar_item-text {
+        color    : #404040;
+        font-size: 1.6rem;
+    }
+
+    &:hover {
+        background-color: rgba(22, 24, 35, .05);
+
+        .fa-solid,
+        .sideBar_item-text {
+            color: var(--primary-color);
         }
     }
 }

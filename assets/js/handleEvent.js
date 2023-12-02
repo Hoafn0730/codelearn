@@ -4,7 +4,7 @@ import searchCourse from './services/searchService.js';
 const searchInput = document.querySelector('.header_search-input');
 const loginBtn = document.querySelector('.login-btn');
 
-const handleClickActons = () => {
+const handleClickActions = () => {
     const btnCategories = document.querySelector('.header_categories-btn');
     const categories = document.querySelector('#categories');
     const btnMyCourses = document.querySelector('.header_mycourses-btn');
@@ -117,7 +117,7 @@ function handleEvent() {
     window.addEventListener('load', router);
     window.addEventListener('hashchange', router);
 
-    handleClickActons();
+    handleClickActions();
 
     loginBtn.onclick = () => {
         location.assign('/login.html');
@@ -130,5 +130,5 @@ function handleEvent() {
     // }, 1000);
 }
 
-export { handleClickActons };
+export { handleClickActions };
 export default handleEvent;

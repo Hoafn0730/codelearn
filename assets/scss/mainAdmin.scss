@@ -7,22 +7,22 @@
     &:hover {
         width: var(--width-sideBar);
     }
+}
 
-    .sideBar_item {
-        padding: 20px 3px 20px 3px;
-        width  : 80px;
-        margin : 10px 0;
+.sideBar_item {
+    padding: 20px 3px 20px 3px;
+    width  : 80px;
+    margin : 10px 0;
 
-        .sideBar_item-link {
-            text-align: center;
+    .sideBar_item-link {
+        text-align: center;
+        display   : block;
+        width     : 80px;
+
+
+        .sideBar_item-text {
             display   : block;
-            width     : 80px;
-
-
-            .sideBar_item-text {
-                display   : block;
-                margin-top: 6px;
-            }
+            margin-top: 6px;
         }
     }
 }
@@ -90,30 +90,30 @@
     height       : 180px;
     margin-top   : 15px;
 
+}
 
-    .box2-top {
-        padding    : 12px;
-        font-weight: 500;
-        font-size  : 16px;
+.box2-top {
+    padding    : 12px;
+    font-weight: 500;
+    font-size  : 16px;
+}
+
+.box2-bot {
+    padding  : 12px 15px;
+    font-size: 14px;
+
+    .box2-bot-left {
+        float        : left;
+        width        : 50%;
+        margin-bottom: 10px;
     }
 
-    .box2-bot {
-        padding  : 12px 15px;
-        font-size: 14px;
-
-        .box2-bot-left {
-            float        : left;
-            width        : 50%;
-            margin-bottom: 10px;
-        }
-
-        .box2-bot-right {
-            float          : left;
-            width          : 50%;
-            margin-bottom  : 10px;
-            text-align     : right;
-            text-decoration: underline;
-        }
+    .box2-bot-right {
+        float          : left;
+        width          : 50%;
+        margin-bottom  : 10px;
+        text-align     : right;
+        text-decoration: underline;
     }
 }
 
@@ -125,30 +125,32 @@
     padding         : 10px;
     display         : flex;
 
-    .box-left {
-        font-size: 1.6rem;
-        padding  : 20px;
-    }
 
-    .box-right {
-        font-size   : 1.6px;
-        font-weight : 500;
-        padding     : 16px 0px;
-        display     : flex;
-        align-items : center;
-        margin-left : auto;
-        margin-right: 30px;
+}
 
-        button {
-            padding      : 5px;
-            width        : 25px;
-            height       : 25px;
-            border-radius: 3px;
-            font-size    : 14px;
-            border       : none;
-            margin-left  : 5px;
+.box-left {
+    font-size: 1.6rem;
+    padding  : 20px;
+}
 
-        }
+.box-right {
+    font-size   : 1.6px;
+    font-weight : 500;
+    padding     : 16px 0px;
+    display     : flex;
+    align-items : center;
+    margin-left : auto;
+    margin-right: 30px;
+
+    button {
+        padding      : 5px;
+        width        : 25px;
+        height       : 25px;
+        border-radius: 3px;
+        font-size    : 14px;
+        border       : none;
+        margin-left  : 5px;
+
     }
 }
 
@@ -165,43 +167,45 @@
     overflow        : hidden;
     display         : none;
 
-    .lesson_heading {
-        margin-bottom: 20px;
-        font-size    : 2.4rem;
+}
+
+
+.lesson_heading {
+    margin-bottom: 20px;
+    font-size    : 2.4rem;
+}
+
+.lesson_list {
+    overflow-y: auto;
+    height    : 62vh;
+
+    &::-webkit-scrollbar {
+        width: 8px;
     }
 
-    .lesson_list {
-        overflow-y: auto;
-        height    : 62vh;
-
-        &::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        &::-webkit-scrollbar-thumb {
-            background-color: #696262;
-            border-radius   : 100px;
-        }
-
+    &::-webkit-scrollbar-thumb {
+        background-color: #696262;
+        border-radius   : 100px;
     }
 
-    .btn-update-lesson {
-        float: right;
-    }
+}
 
-    .btn-create-lesson {
-        float    : left;
-        font-size: 2rem;
-        min-width: auto;
-    }
+.btn-update-lesson {
+    float: right;
+}
 
-    .btn-exit-form {
-        min-width: auto;
-        position : absolute;
-        top      : 0;
-        right    : 0;
-        margin   : 20px;
-    }
+.btn-create-lesson {
+    float    : left;
+    font-size: 2rem;
+    min-width: auto;
+}
+
+.btn-exit-form {
+    min-width: auto;
+    position : absolute;
+    top      : 0;
+    right    : 0;
+    margin   : 20px;
 }
 
 .overlay {
@@ -318,4 +322,48 @@ td .edit {
 
 .Details>.home>.homedetails>table tr td:last-child {
     font-size: 14px;
+}
+
+.popular-title {
+    font-size: 2.4rem;
+}
+
+.list-popular-courses {
+    margin-top: 20px;
+}
+
+.mycourses-item {
+    display      : flex;
+    align-items  : center;
+    width        : 80%;
+    padding      : 10px;
+    border-radius: 16px;
+
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+}
+
+.course-item-thumb {
+    height       : 120px;
+    border-radius: 10px;
+    object-fit   : cover;
+}
+
+
+.course-info {
+    margin-left: 16px;
+}
+
+.course-title {
+    font-size    : 2.4rem;
+    line-height  : 2.4rem;
+    margin-bottom: 10px;
+    font-weight  : 700;
+}
+
+.createdAt {
+    font-size  : 1.8rem;
+    font-weight: 600;
+    line-height: 1.6rem;
 }

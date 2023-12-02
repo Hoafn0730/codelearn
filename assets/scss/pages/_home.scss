@@ -2,21 +2,21 @@
     margin-top: 40px;
     overflow  : hidden;
     padding   : 0 44px 74px;
+}
 
-    .scrollList_heading {
-        padding-bottom: 20px;
+.scrollList_heading {
+    padding-bottom: 20px;
 
-        h1 {
-            color       : #242424;
-            font-size   : 2.4rem;
-            font-weight : 900;
-            margin-right: auto;
-            margin-top  : 16px;
-        }
+    h1 {
+        color       : #242424;
+        font-size   : 2.4rem;
+        font-weight : 900;
+        margin-right: auto;
+        margin-top  : 16px;
     }
+}
 
-    .scrollList_body {
-        min-height    : 200px;
-        padding-bottom: 0;
-    }
+.scrollList_body {
+    min-height    : 200px;
+    padding-bottom: 0;
 }

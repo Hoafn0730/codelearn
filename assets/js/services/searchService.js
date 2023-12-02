@@ -6,13 +6,15 @@ const searchCourse = async (name) => {
     const searchInput = document.querySelector('.header_search-input');
     const listSearch = document.querySelector('.search_list');
 
-    const searchData = await fetchApi.get('/api-user/course/search', {
+    const response = await fetchApi.get('/api-user/course/search', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({ page: 1, pageSize: 10, name }),
     });
+    const searchData = await response.json();
+
     searchInput.value === '' ? (searchData.data = []) : '';
 
     document.querySelector('.searchCount').innerText = searchData.data.length + ' kết quả';

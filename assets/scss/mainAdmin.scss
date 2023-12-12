@@ -11,17 +11,16 @@
 
 .sideBar_item {
     padding: 20px 3px 20px 3px;
-    width  : 80px;
-    margin : 10px 0;
+    width: 80px;
+    margin: 10px 0;
 
     .sideBar_item-link {
         text-align: center;
-        display   : block;
-        width     : 80px;
-
+        display: block;
+        width: 80px;
 
         .sideBar_item-text {
-            display   : block;
+            display: block;
             margin-top: 6px;
         }
     }
@@ -29,29 +28,29 @@
 
 .content {
     .title {
-        font-size : 2.2rem;
+        font-size: 2.2rem;
         margin-top: 20px;
 
         hr {
-            margin-top      : 10px;
-            border          : 1px solid #00a2ff;
+            margin-top: 10px;
+            border: 1px solid #00a2ff;
             background-color: #00a2ff;
-            width           : 250px;
+            width: 250px;
         }
     }
 
     .search {
-        display        : flex;
+        display: flex;
         justify-content: space-between;
-        margin-bottom  : 14px;
+        margin-bottom: 14px;
 
         .search-type {
-            padding      : 10px;
-            font-size    : 14px;
-            border       : 1px solid #ccc;
-            width        : 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            width: 100%;
             border-radius: 3px;
-            margin-right : 10px;
+            margin-right: 10px;
         }
 
         button {
@@ -66,118 +65,112 @@
 
 .box {
     border-radius: 5px;
-    width        : 100%;
-    min-height   : 75px;
-    color        : white;
-    display      : flex;
-    align-items  : center;
+    width: 100%;
+    min-height: 75px;
+    color: white;
+    display: flex;
+    align-items: center;
 
     .box-left {
         font-size: 2.2rem;
-        padding  : 20px;
+        padding: 20px;
     }
 
     .box-right {
-        font-size  : 16px;
+        font-size: 16px;
         font-weight: 500;
-        padding    : 16px 0px;
+        padding: 16px 0px;
     }
 }
 
 .box2 {
     border-radius: 5px;
-    width        : 100%;
-    height       : 180px;
-    margin-top   : 15px;
-
+    width: 100%;
+    height: 180px;
+    margin-top: 15px;
 }
 
 .box2-top {
-    padding    : 12px;
+    padding: 12px;
     font-weight: 500;
-    font-size  : 16px;
+    font-size: 16px;
 }
 
 .box2-bot {
-    padding  : 12px 15px;
+    padding: 12px 15px;
     font-size: 14px;
 
     .box2-bot-left {
-        float        : left;
-        width        : 50%;
+        float: left;
+        width: 50%;
         margin-bottom: 10px;
     }
 
     .box2-bot-right {
-        float          : left;
-        width          : 50%;
-        margin-bottom  : 10px;
-        text-align     : right;
+        float: left;
+        width: 50%;
+        margin-bottom: 10px;
+        text-align: right;
         text-decoration: underline;
     }
 }
 
 .box-sum {
-    width           : 100%;
-    height          : 65px;
+    width: 100%;
+    height: 65px;
     background-color: #d9edf7;
-    border          : 1px solid #bce8f1;
-    padding         : 10px;
-    display         : flex;
-
-
+    border: 1px solid #bce8f1;
+    padding: 10px;
+    display: flex;
 }
 
 .box-left {
     font-size: 1.6rem;
-    padding  : 20px;
+    padding: 20px;
 }
 
 .box-right {
-    font-size   : 1.6px;
-    font-weight : 500;
-    padding     : 16px 0px;
-    display     : flex;
-    align-items : center;
-    margin-left : auto;
+    font-size: 1.6px;
+    font-weight: 500;
+    padding: 16px 0px;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
     margin-right: 30px;
 
     button {
-        padding      : 5px;
-        width        : 25px;
-        height       : 25px;
+        padding: 5px;
+        width: 25px;
+        height: 25px;
         border-radius: 3px;
-        font-size    : 14px;
-        border       : none;
-        margin-left  : 5px;
-
+        font-size: 14px;
+        border: none;
+        margin-left: 5px;
     }
 }
 
 .lesson_wrapper {
-    position        : fixed;
-    width           : 1200px;
-    height          : 650px;
+    position: fixed;
+    width: 1200px;
+    height: 650px;
     background-color: var(--white-color);
-    padding         : 30px;
-    border-radius   : 16px;
-    top             : 8%;
-    left            : 12%;
-    z-index         : 10;
-    overflow        : hidden;
-    display         : none;
-
+    padding: 30px;
+    border-radius: 16px;
+    top: 8%;
+    left: 12%;
+    z-index: 10;
+    overflow: hidden;
+    display: none;
 }
-
 
 .lesson_heading {
     margin-bottom: 20px;
-    font-size    : 2.4rem;
+    font-size: 2.4rem;
 }
 
 .lesson_list {
     overflow-y: auto;
-    height    : 62vh;
+    height: 62vh;
 
     &::-webkit-scrollbar {
         width: 8px;
@@ -185,9 +178,8 @@
 
     &::-webkit-scrollbar-thumb {
         background-color: #696262;
-        border-radius   : 100px;
+        border-radius: 100px;
     }
-
 }
 
 .btn-update-lesson {
@@ -195,42 +187,42 @@
 }
 
 .btn-create-lesson {
-    float    : left;
+    float: left;
     font-size: 2rem;
     min-width: auto;
 }
 
 .btn-exit-form {
     min-width: auto;
-    position : absolute;
-    top      : 0;
-    right    : 0;
-    margin   : 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 20px;
 }
 
 .overlay {
-    position        : fixed;
-    inset           : 0;
+    position: fixed;
+    inset: 0;
     background-color: rgba(0, 0, 0, 0.8);
-    z-index         : 9;
-    display         : none;
+    z-index: 9;
+    display: none;
 }
 
 .edit {
-    position               : relative;
-    margin                 : 0;
-    width                  : 100%;
-    font-size              : 1.6rem;
-    font-family            : inherit;
-    font-weight            : inherit;
-    line-height            : 1.4em;
-    border                 : 0;
-    color                  : inherit;
-    padding                : 6px;
-    border                 : 1px solid #999;
-    box-shadow             : inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
-    box-sizing             : border-box;
-    -webkit-font-smoothing : antialiased;
+    position: relative;
+    margin: 0;
+    width: 100%;
+    font-size: 1.6rem;
+    font-family: inherit;
+    font-weight: inherit;
+    line-height: 1.4em;
+    border: 0;
+    color: inherit;
+    padding: 6px;
+    border: 1px solid #999;
+    box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
@@ -239,11 +231,11 @@ td.editing .view {
 }
 
 td section {
-    padding    : 15px 15px 15px 15px;
-    display    : block;
+    padding: 15px 15px 15px 15px;
+    display: block;
     line-height: 1.2;
-    transition : color 0.4s;
-    cursor     : text;
+    transition: color 0.4s;
+    cursor: text;
 }
 
 td.editing .edit {
@@ -257,7 +249,7 @@ td .edit {
 /* CSS cho section có thuộc tính data-src */
 .view[data-src] {
     /* Thêm hiệu ứng khi chờ tải */
-    opacity   : 0.8;
+    opacity: 0.8;
     transition: opacity 0.5s ease-in-out;
 }
 
@@ -266,61 +258,58 @@ td .edit {
     opacity: 1;
 }
 
-// 
+//
 
-
-.Details>.home>.homehello {
-    margin-top     : 20px;
-    display        : flex;
+.Details > .home > .homehello {
+    margin-top: 20px;
+    display: flex;
     justify-content: center;
-    font-size      : 25px;
-    color          : rgb(20, 12, 235);
+    font-size: 25px;
+    color: rgb(20, 12, 235);
 }
 
-
-
-.Details>.home>.infhome {
+.Details > .home > .infhome {
     margin-left: 5%;
-    font-size  : 20px;
+    font-size: 20px;
     font-weight: 500;
-    color      : #064d0c;
-    margin-top : 10px;
+    color: #064d0c;
+    margin-top: 10px;
 }
 
-.Details>.home>a>#changepww {
-    float           : right;
-    margin-right    : 30px;
+.Details > .home > a > #changepww {
+    float: right;
+    margin-right: 30px;
     background-color: #90ed64;
-    line-height     : 30px;
-    border          : none;
-    font-weight     : 500;
-    border-radius   : 3px;
+    line-height: 30px;
+    border: none;
+    font-weight: 500;
+    border-radius: 3px;
 }
 
-.Details>.home>a>#changepww:hover {
+.Details > .home > a > #changepww:hover {
     background-color: chocolate;
 }
 
-.Details>.home>a>#changepww i {
+.Details > .home > a > #changepww i {
     padding-right: 3px;
 }
 
-.Details>.home>.homedetails {
-    display        : flex;
+.Details > .home > .homedetails {
+    display: flex;
     justify-content: center;
-    font-size      : 1.6rem;
+    font-size: 1.6rem;
 }
 
-.Details>.home>.homedetails>table {
+.Details > .home > .homedetails > table {
     line-height: 30px;
 }
 
-.Details>.home>.homedetails>table tr td:first-child {
+.Details > .home > .homedetails > table tr td:first-child {
     padding-right: 50px;
-    font-weight  : bold;
+    font-weight: bold;
 }
 
-.Details>.home>.homedetails>table tr td:last-child {
+.Details > .home > .homedetails > table tr td:last-child {
     font-size: 14px;
 }
 
@@ -333,10 +322,10 @@ td .edit {
 }
 
 .mycourses-item {
-    display      : flex;
-    align-items  : center;
-    width        : 80%;
-    padding      : 10px;
+    display: flex;
+    align-items: center;
+    width: 80%;
+    padding: 10px;
     border-radius: 16px;
 
     &:hover {
@@ -345,25 +334,24 @@ td .edit {
 }
 
 .course-item-thumb {
-    height       : 120px;
+    height: 120px;
     border-radius: 10px;
-    object-fit   : cover;
+    object-fit: cover;
 }
-
 
 .course-info {
     margin-left: 16px;
 }
 
 .course-title {
-    font-size    : 2.4rem;
-    line-height  : 2.4rem;
+    font-size: 2.4rem;
+    line-height: 2.4rem;
     margin-bottom: 10px;
-    font-weight  : 700;
+    font-weight: 700;
 }
 
 .createdAt {
-    font-size  : 1.8rem;
+    font-size: 1.8rem;
     font-weight: 600;
     line-height: 1.6rem;
 }

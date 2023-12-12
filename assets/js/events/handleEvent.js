@@ -1,5 +1,5 @@
-import router from './routes/router.js';
-import searchCourse from './services/searchService.js';
+import router from '../routes/router.js';
+import searchCourse from '../services/searchService.js';
 
 const searchInput = document.querySelector('.header_search-input');
 const loginBtn = document.querySelector('.login-btn');
@@ -9,14 +9,14 @@ const handleClickActions = () => {
     const categories = document.querySelector('#categories');
     const btnMyCourses = document.querySelector('.header_mycourses-btn');
     const myCourses = document.querySelector('#mycourses');
-    const btnNatifications = document.querySelector('.notification-icon');
+    const btnNotifications = document.querySelector('.notification-icon');
     const notifications = document.querySelector('#notifications');
     let btnAvatar = document.querySelector('.avatar');
     const userMenu = document.querySelector('#userMenu');
 
     let isExpanded = false;
     let target;
-    const actions = [btnCategories, btnMyCourses, btnNatifications];
+    const actions = [btnCategories, btnMyCourses, btnNotifications];
     const elementsExpanded = [categories, myCourses, notifications];
 
     if (btnAvatar) {
@@ -90,7 +90,7 @@ const handleClickActions = () => {
 
         if (!e.target.closest('#notifications')) {
             isExpanded = false;
-            btnNatifications.ariaExpanded = false;
+            btnNotifications.ariaExpanded = false;
             notifications.ariaHidden = true;
             notifications.style.display = 'none';
             target = null;

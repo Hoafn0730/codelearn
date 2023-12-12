@@ -1,6 +1,6 @@
 import { template, resolveRoute } from '../utils/route.js';
 import routePath from './index.js';
-import courses from '../services/homeService.js';
+import * as homeService from '../services/homeService.js';
 
 import Home from '../pages/home.js';
 import RoadMap from '../pages/road-map.js';
@@ -8,10 +8,11 @@ import Blog from '../pages/blog.js';
 import DetailCourse from '../pages/detail-course.js';
 
 const content = document.getElementById('content');
-const dataCourses = await courses.getCourse();
 
-template('home', function () {
-    content.innerHTML = Home({ dataCourses });
+template('home', async function () {
+    const data = await homeService.getCourse();
+
+    content.innerHTML = Home({ data });
 });
 template('road-map', function () {
     content.innerHTML = RoadMap();
@@ -20,7 +21,7 @@ template('blog', function () {
     content.innerHTML = Blog();
 });
 template('detail-course', function () {
-    content.innerHTML = DetailCourse({ dataCourses });
+    content.innerHTML = DetailCourse();
 });
 
 function router() {

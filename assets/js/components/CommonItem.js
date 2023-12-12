@@ -14,7 +14,7 @@ function CommonItem({ data }) {
                 </h3>
                 <div class="price">
                     <!--<span class="courseItem_old-price">2.500.000đ</span>-->
-                    <span class="courseItem_new-price">${formatNumber(data.price)}đ</span>
+                    <span class="courseItem_new-price">${formatNumber(data.price)} đ</span>
                 </div>
             </div>
         </div>

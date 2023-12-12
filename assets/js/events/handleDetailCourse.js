@@ -1,4 +1,4 @@
-import storage from './utils/storage.js';
+import storage from '../utils/storage.js';
 
 const curriculumItems = document.querySelectorAll('.curriculum-item');
 const btnRegister = document.querySelector('.courseDetail_btn.register');

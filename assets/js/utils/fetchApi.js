@@ -1,5 +1,5 @@
 const fetchApi = (function () {
-    let API;
+    let API = 'http://localhost:3000';
     return {
         use: function (path) {
             API = path;
@@ -30,7 +30,6 @@ const fetchApi = (function () {
                 return null;
             }
         },
-
         patch: async function (path, data = {}) {
             try {
                 return await fetch(`${API}/api-user/${path}`, {

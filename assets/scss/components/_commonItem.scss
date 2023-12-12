@@ -1,34 +1,31 @@
 .commonItem_wrapper {
-    flex-shrink  : 0;
+    flex-shrink: 0;
     margin-bottom: 32px;
-    overflow     : hidden;
-
-
+    overflow: hidden;
 }
-
 
 .commonItem_link {
     border-radius: 16px;
-    display      : block;
-    overflow     : hidden;
+    display: block;
+    overflow: hidden;
 
     .commonItem_thumb {
-        width        : 100%;
-        object-fit   : cover;
+        width: 100%;
+        object-fit: cover;
         border-radius: 16px;
+        border: 1px solid rgba(22, 24, 35, 0.03);
     }
 }
 
 .commonItem_title {
     a {
         // word-wrap            : break-word;
-        -webkit-box-orient      : vertical;
+        -webkit-box-orient: vertical;
         // -webkit-line-clamp: 1;
         // display              : -webkit-box;
-        color                   : #292929;
-        font-size               : 1.6rem;
-        line-height             : 1.4;
-        overflow                : hidden;
-
+        color: #292929;
+        font-size: 1.6rem;
+        line-height: 1.4;
+        overflow: hidden;
     }
 }

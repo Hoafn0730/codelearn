@@ -3,7 +3,9 @@ import html from '../utils/html.js';
 import CommonItem from '../components/CommonItem.js';
 import SlideShow from '../components/SlideShow.js';
 
-function Home({ dataCourses }) {
+function Home({ data }) {
+    const courses = data;
+
     setTimeout(() => {
         const slideList = document.querySelector('.slide-track');
         const slideItems = document.querySelectorAll('.slide-item');
@@ -134,56 +136,48 @@ function Home({ dataCourses }) {
             ${SlideShow()}
 
             <div class="home_wrapper">
-                ${dataCourses.list_json_PopularCourses
+                ${courses.popularCourses
                     ? html`
                           <div class="scrollList_vertical">
                               <div class="scrollList_heading">
                                   <h1>Popular Courses</h1>
                               </div>
                               <div class="scrollList_body">
-                                  <div class="row">
-                                      ${dataCourses.list_json_PopularCourses.map((data) => CommonItem({ data }))}
-                                  </div>
+                                  <div class="row">${courses.popularCourses.map((data) => CommonItem({ data }))}</div>
                               </div>
                           </div>
                       `
                     : ''}
-                ${dataCourses.list_json_FreeCourses
+                ${courses.popularCourses
                     ? html` <div class="scrollList_vertical">
                           <div class="scrollList_heading">
                               <h1>Free Courses</h1>
                           </div>
                           <div class="scrollList_body">
-                              <div class="row">
-                                  ${dataCourses.list_json_FreeCourses.map((data) => CommonItem({ data }))}
-                              </div>
+                              <div class="row">${courses.popularCourses.map((data) => CommonItem({ data }))}</div>
                           </div>
                       </div>`
                     : ''}
-                ${dataCourses.list_json_ProCourses
+                ${courses.popularCourses
                     ? html`
                           <div class="scrollList_vertical">
                               <div class="scrollList_heading">
                                   <h1>Pro Courses</h1>
                               </div>
                               <div class="scrollList_body">
-                                  <div class="row">
-                                      ${dataCourses.list_json_ProCourses.map((data) => CommonItem({ data }))}
-                                  </div>
+                                  <div class="row">${courses.popularCourses.map((data) => CommonItem({ data }))}</div>
                               </div>
                           </div>
                       `
                     : ''}
-                ${dataCourses.list_json_NewCourses
+                ${courses.popularCourses
                     ? html`
                           <div class="scrollList_vertical">
                               <div class="scrollList_heading">
                                   <h1>New Courses</h1>
                               </div>
                               <div class="scrollList_body">
-                                  <div class="row">
-                                      ${dataCourses.list_json_NewCourses.map((data) => CommonItem({ data }))}
-                                  </div>
+                                  <div class="row">${courses.popularCourses.map((data) => CommonItem({ data }))}</div>
                               </div>
                           </div>
                       `

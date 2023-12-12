@@ -5,27 +5,20 @@ import Category from '../components/Header/Category.js';
 import MyCourse from '../components/Header/MyCourse.js';
 import Notification from '../components/Header/Notification.js';
 import UserMenu from '../components/Header/UserMenu.js';
+
 import { handleClickActions } from '../events/handleEvent.js';
 
 const headerActions = document.querySelector('.header_actions');
 const loginBtn = document.querySelector('.login-btn');
 
-const userData = async () => {
-    const infoUser = {};
-    //     if (!accountInfo.hasOwnProperty('name')) {
-    //         const response = await fetchApi.get('/api-user/user/get-by-id?id=' + infoUser.accountId);
-    //         if (response.status === 401) {
-    //             // location.assign('login.html');
-    //         }
-    //
-    //         const fetchUser = await response.json();
-    //         Object.assign(infoUser, fetchUser);
-    //         storage.set('account', infoUser);
-    //     }
+const userData = () => {
+    const userData = storage.get('account');
 
-    headerActions.removeChild(loginBtn);
-    headerActions.innerHTML += UserMenu({ data: infoUser });
-    handleClickActions();
+    if (userData) {
+        headerActions.removeChild(loginBtn);
+        headerActions.innerHTML += UserMenu({ data: userData });
+        handleClickActions();
+    }
 };
 
 const myCourse = {

@@ -7,10 +7,6 @@
         <link rel="stylesheet" href="../assets/css/grid.css" />
         <link rel="stylesheet" href="../assets/css/mainAdmin.css" />
 
-        <link
-            href="https: //fonts.googleapis.com/css2? family = Roboto: wght @ 300; 400; 500; 700 & display = swap "
-            rel=" stylesheet "
-        />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     </head>
 
@@ -32,10 +28,7 @@
                                 </g>
                             </svg>
                         </a>
-
-                       
                     </div>
-
 
                     <!-- Header Actions -->
                     <div class="header_actions">
@@ -117,7 +110,6 @@
                                 </a>
                             </li>
                         </ul>
-       
                     </div>
                 </div>
 
@@ -239,7 +231,7 @@
                                                         {{ $index + (listItem.page > 1 ? index = (listItem.page - 1) *
                                                         10 + 1 : index = 1 )}}
                                                     </th>
-                                                    <td >{{x.courseId}}</td>
+                                                    <td>{{x.courseId}}</td>
                                                     <td class="name">{{x.nameCourse}}</td>
                                                     <td>{{x.level}}</td>
                                                     <td>@{{x.createdAt}}</td>
@@ -277,7 +269,7 @@
                                         </div>
                                         <div class="box-right">
                                             <button class="btn-primary"><i class="fas fa-angle-left"></i></button>
-                                            
+
                                             <div class="navigation">
                                                 <!-- <button data-id="1" class="btn-primary">1</button>
                                                 <button data-id="2" class="btn-primary">2</button>
@@ -303,7 +295,9 @@
                                         class="search-type input-lesson"
                                         placeholder="Nhập mã, tên bài học..."
                                     />
-                                    <button class="btn btn-primary btn-search search-lesson"><i class="fas fas fa-search"></i> Tìm kiếm</button>
+                                    <button class="btn btn-primary btn-search search-lesson">
+                                        <i class="fas fas fa-search"></i> Tìm kiếm
+                                    </button>
                                 </div>
 
                                 <!-- Bảng bài học -->
@@ -356,9 +350,7 @@
                                                         name="description"
                                                         class="view"
                                                         data-src="{{x.description}}"
-                                                    >
-                                                      
-                                                    </section>
+                                                    ></section>
                                                 </td>
 
                                                 <td>
@@ -367,9 +359,7 @@
                                                         name="videoId"
                                                         class="view"
                                                         data-src="{{x.videoId}}"
-                                                    >
-                                                     
-                                                    </section>
+                                                    ></section>
                                                 </td>
 
                                                 <td>
@@ -378,9 +368,7 @@
                                                         name="duration"
                                                         class="view"
                                                         data-src="{{x.duration}}"
-                                                    >
-                                                       
-                                                    </section>
+                                                    ></section>
                                                 </td>
 
                                                 <td
@@ -391,9 +379,11 @@
                                                         text-overflow: ellipsis;
                                                     "
                                                 >
-                                                    <section class="view" name="content"  data-src="{{x.content}}">
-                                                        
-                                                    </section>
+                                                    <section
+                                                        class="view"
+                                                        name="content"
+                                                        data-src="{{x.content}}"
+                                                    ></section>
                                                 </td>
 
                                                 <td name="createdAt">{{x.createdAt}}</td>
@@ -415,7 +405,7 @@
                                                 </tr> -->
                                         </tbody>
                                     </table>
-                                </div> 
+                                </div>
 
                                 <button class="btn btn-primary btn-create-lesson">+</button>
                                 <button class="btn btn-primary btn-update-lesson">Lưu</button>
@@ -425,8 +415,8 @@
                 </div>
             </div>
 
-             <!-- Footer -->
-             <footer class="footer">
+            <!-- Footer -->
+            <footer class="footer">
                 <div class="grid wide">
                     <div class="row">
                         <div class="col l-3">
@@ -529,9 +519,6 @@
                 window.location.href = '../login.html';
             }
         </script>
-        <script src="../assets/js/utils/angular.min.js"></script>
-        <script src="../assets/js/utils/jquery-3.6.0.min.js"></script>
-        <script src="../assets/js/global.js"></script>
         <script type="module" src="../Admin/assets/js/admin.js"></script>
         <script type="module" src="../Admin/assets/js/services/courseService.js"></script>
     </body>

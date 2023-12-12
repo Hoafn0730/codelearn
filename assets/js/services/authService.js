@@ -2,13 +2,7 @@ import fetchApi from '../utils/fetchApi.js';
 import storage from '../utils/storage.js';
 
 const login = async (data) => {
-    const response = await fetchApi.get('/api-user/account/login', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-    });
+    const response = await fetchApi.get(`/users?userName=${data.userName}&userName=${data.password}`);
 
     return response.json();
 };

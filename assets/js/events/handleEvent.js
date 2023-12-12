@@ -1,5 +1,6 @@
 import router from '../routes/router.js';
 import searchCourse from '../services/searchService.js';
+import nameToSlug from '../utils/nameToSlug.js';
 
 const searchInput = document.querySelector('.header_search-input');
 const loginBtn = document.querySelector('.login-btn');
@@ -110,7 +111,14 @@ const handleClickActions = () => {
 
 function handleEvent() {
     searchInput.oninput = () => {
-        searchCourse(searchInput.value);
+        const value = searchInput.value;
+        searchCourse(value);
+    };
+
+    searchInput.onkeyup = (e) => {
+        if (e.key === 'Enter' && searchInput.value) {
+            location.assign('/search.html?search=' + nameToSlug(searchInput.value));
+        }
     };
 
     // router();

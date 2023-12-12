@@ -7,28 +7,28 @@ function handleForm() {
     const form = document.forms['login'];
 
     loginBtn.onclick = async function () {
-        var username = form.elements.username.value;
+        var userName = form.elements.userName.value;
         var password = form.elements.password.value;
-        if (username === '' || password === '') {
+        if (userName === '' || password === '') {
             alert('Bạn chưa nhập đủ thông tin tài khoản!');
             return;
         }
         var formData = {
-            username,
+            userName,
             password,
         };
         const fetchdt = await login(formData);
 
-        if (!fetchdt) {
+        if (fetchdt.length == 0) {
             alert('Bạn nhập sai tài khoản hoặc mật khẩu! Yêu cầu nhập lại');
-            form.elements.username.value = '';
-            form.elements.username.focus();
+            form.elements.userName.value = '';
+            form.elements.userName.focus();
             form.elements.password.value = '';
             return;
         }
 
-        storage.set('account', fetchdt);
-        fetchdt.roleId === 'nomal' ? location.assign('/') : location.assign('/Admin/MainAdmin.html');
+        storage.set('account', fetchdt[0]);
+        fetchdt[0].role === 'normal' ? location.assign('/') : location.assign('/Admin/MainAdmin.html');
     };
 
     form.onsubmit = (e) => {

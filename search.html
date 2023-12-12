@@ -5,12 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Codelearn</title>
         <link rel="stylesheet" href="./assets/css/grid.css" />
-        <link rel="stylesheet" href="./assets/css/main.css" />
+        <link rel="stylesheet" href="./assets/css/search.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     </head>
 
-    <body ng-app="AppHocTap">
-        <div id="root"></div>
+    <body>
         <div class="app">
             <!-- Header -->
             <header class="header">
@@ -95,7 +94,7 @@
                         <!-- Cart -->
                         <!-- <div class="cart-btn cart-icon fa-solid fa-cart-shopping"></div> -->
 
-                        <!-- Notificotion -->
+                        <!-- Notification -->
                         <div aria-expanded="false" class="notification-btn notification-icon fa-solid fa-bell"></div>
                         <div aria-hidden="true" id="notifications" class="header_notifications notifications-wrapper">
                             <div class="notifications_header">
@@ -113,7 +112,7 @@
             </header>
 
             <!-- Container -->
-            <div ng-controller="ChiTietCtrl" class="container">
+            <div class="container">
                 <!-- Sidebar -->
                 <div class="sideBar">
                     <div class="sideBar_wrapper">
@@ -145,91 +144,240 @@
                 <!-- Content -->
                 <div id="content" class="content">
                     <div class="grid">
-                        <div class="row">
-                            <div class="col l-8 m-12 c-12">
-                                <div class="courseDetail_wrapper">
-                                    <h1 class="courseDetail_heading">{{khoahoc.nameCourse}}</h1>
-                                    <div class="courseDetail_description">{{khoahoc.description}}</div>
-                                    <div class="star">
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star"></span>
-                                    </div>
-                                    <div class="last-update-date">
-                                        <span id="last-updated">~ Last updated {{formattedDate}}</span>
-                                    </div>
-                                    <div class="curriculum">
-                                        <h1 class="curriculum-header">Nội dung khóa học</h1>
-                                        <ul class="curriculum-list">
-                                            <li class="curriculum-item">
-                                                <div class="curriculum_panel">
-                                                    <div class="curriculum_heading">1. Giới thiệu</div>
-                                                    <div class="icon-container">
-                                                        <i class="fas fa-chevron-right"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="curriculum_collapse">
-                                                    <div ng-repeat="x in listBaiHoc" class="curriculum_lessionItem">
-                                                        <span>{{$index + 1}}. {{x.nameLesson}}</span>
-                                                        <span class="duration">{{x.duration}}</span>
-                                                    </div>
-                                                </div>
-                                            </li>
+                        <div class="search_wrapper">
+                            <div class="row d-flex-center">
+                                <h1 class="col l-10 search_header">
+                                    <span>2,982</span>
+                                    &nbsp;results for&nbsp;
+                                    <span>“nodejs”</span>
+                                </h1>
+                                <ul class="col l-9 search-list">
+                                    <li class="search-item">
+                                        <a href="detail-course.html" class="search-item_link">
+                                            <img
+                                                src="https://img-c.udemycdn.com/course/240x135/1879018_95b6_3.jpg"
+                                                alt=""
+                                                class="search-item_img"
+                                            />
+                                        </a>
 
-                                            <li class="curriculum-item">
-                                                <div class="curriculum_panel">
-                                                    <div class="curriculum_heading">2. Kiến thức cốt lõi</div>
-                                                    <div class="icon-container">
-                                                        <i class="fas fa-chevron-right"></i>
-                                                    </div>
-                                                </div>
+                                        <div class="search-item_content">
+                                            <h3 class="search-item_title">
+                                                <a href="detail-course.html" class="search-item_link">
+                                                    NodeJS - The Complete Guide (MVC, REST APIs, GraphQL, Deno)</a
+                                                >
+                                            </h3>
+                                            <div class="search-item__createdAt">~ 1 tháng trước</div>
+                                            <div class="search-item__author">
+                                                <a href="/@hoafn0730">
+                                                    <img
+                                                        class="avatar"
+                                                        src="https://files.fullstack.edu.vn/f8-prod/user_avatars/128430/63079012d4a87.jpg"
+                                                        alt=""
+                                                    />
+                                                </a>
+                                                <a href="/@hoafn0730">
+                                                    <span>hoafn.t_</span>
+                                                </a>
+                                            </div>
 
-                                                <div class="curriculum_collapse">
-                                                    <div ng-repeat="x in listBaiHoc" class="curriculum_lessionItem">
-                                                        <span>{{$index + 3}}. {{x.nameLesson}}</span>
-                                                        <span class="duration">{{x.duration}}</span>
-                                                    </div>
-                                                </div>
-                                            </li>
+                                            <p class="search-item_description">
+                                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id quis
+                                                suscipit aspernatur, nihil porro hic totam accusantium natus blanditiis!
+                                                Magnam tempore animi, adipisci officiis porro veniam temporibus
+                                                accusamus nihil ullam.
+                                            </p>
+                                            <div class="star">
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star"></span>
+                                            </div>
+                                        </div>
+                                        <div class="search-item_price">2,299,000đ</div>
+                                    </li>
+                                    <li class="search-item">
+                                        <a href="detail-course.html" class="search-item_link">
+                                            <img
+                                                src="https://img-c.udemycdn.com/course/240x135/1879018_95b6_3.jpg"
+                                                alt=""
+                                                class="search-item_img"
+                                            />
+                                        </a>
 
-                                            <li class="curriculum-item">
-                                                <div class="curriculum_panel">
-                                                    <div class="curriculum_heading">3. Xây dựng website</div>
-                                                    <div class="icon-container">
-                                                        <i class="fas fa-chevron-right"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="curriculum_collapse">
-                                                    <div ng-repeat="x in listBaiHoc" class="curriculum_lessionItem">
-                                                        <span>{{$index + 5}}. {{x.nameLesson}}</span>
-                                                        <span class="duration">{{x.duration}}</span>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                        <div class="search-item_content">
+                                            <h3 class="search-item_title">
+                                                <a href="detail-course.html" class="search-item_link">
+                                                    NodeJS - The Complete Guide (MVC, REST APIs, GraphQL, Deno)</a
+                                                >
+                                            </h3>
+                                            <div class="search-item__createdAt">~ 1 tháng trước</div>
+                                            <div class="search-item__author">
+                                                <a href="/@hoafn0730">
+                                                    <img
+                                                        class="avatar"
+                                                        src="https://files.fullstack.edu.vn/f8-prod/user_avatars/128430/63079012d4a87.jpg"
+                                                        alt=""
+                                                    />
+                                                </a>
+                                                <a href="/@hoafn0730">
+                                                    <span>hoafn.t_</span>
+                                                </a>
+                                            </div>
 
-                                    <div class="courseDetail_description">
-                                        <h1>Mô tả</h1>
-                                        <p>{{khoahoc.content}}</p>
-                                    </div>
-                                </div>
-                            </div>
+                                            <p class="search-item_description">
+                                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id quis
+                                                suscipit aspernatur, nihil porro hic totam accusantium natus blanditiis!
+                                                Magnam tempore animi, adipisci officiis porro veniam temporibus
+                                                accusamus nihil ullam.
+                                            </p>
+                                            <div class="star">
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star"></span>
+                                            </div>
+                                        </div>
+                                        <div class="search-item_price">2,299,000đ</div>
+                                    </li>
+                                    <li class="search-item">
+                                        <a href="detail-course.html" class="search-item_link">
+                                            <img
+                                                src="https://img-c.udemycdn.com/course/240x135/1879018_95b6_3.jpg"
+                                                alt=""
+                                                class="search-item_img"
+                                            />
+                                        </a>
 
-                            <div class="col l-4 m-12 c-12">
-                                <div class="courseDetail_purchaseBadge">
-                                    <div class="courseDetail_preview">
-                                        <img src="{{khoahoc.image}}" alt="" class="courseDetail_img" />
-                                    </div>
-                                    <div class="price">
-                                        <span class="courseItem_old-price">2.500.000đ</span>
-                                        <span class="courseItem_new-price">{{formatNumber}}đ</span>
-                                    </div>
-                                    <button class="btn courseDetail_btn register">Đăng ký</button>
-                                    <div class="courseDetail_level">~ {{khoahoc.level}}</div>
-                                </div>
+                                        <div class="search-item_content">
+                                            <h3 class="search-item_title">
+                                                <a href="detail-course.html" class="search-item_link">
+                                                    NodeJS - The Complete Guide (MVC, REST APIs, GraphQL, Deno)</a
+                                                >
+                                            </h3>
+                                            <div class="search-item__createdAt">~ 1 tháng trước</div>
+                                            <div class="search-item__author">
+                                                <a href="/@hoafn0730">
+                                                    <img
+                                                        class="avatar"
+                                                        src="https://files.fullstack.edu.vn/f8-prod/user_avatars/128430/63079012d4a87.jpg"
+                                                        alt=""
+                                                    />
+                                                </a>
+                                                <a href="/@hoafn0730">
+                                                    <span>hoafn.t_</span>
+                                                </a>
+                                            </div>
+
+                                            <p class="search-item_description">
+                                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id quis
+                                                suscipit aspernatur, nihil porro hic totam accusantium natus blanditiis!
+                                                Magnam tempore animi, adipisci officiis porro veniam temporibus
+                                                accusamus nihil ullam.
+                                            </p>
+                                            <div class="star">
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star"></span>
+                                            </div>
+                                        </div>
+                                        <div class="search-item_price">2,299,000đ</div>
+                                    </li>
+                                    <li class="search-item">
+                                        <a href="detail-course.html" class="search-item_link">
+                                            <img
+                                                src="https://img-c.udemycdn.com/course/240x135/1879018_95b6_3.jpg"
+                                                alt=""
+                                                class="search-item_img"
+                                            />
+                                        </a>
+
+                                        <div class="search-item_content">
+                                            <h3 class="search-item_title">
+                                                <a href="detail-course.html" class="search-item_link">
+                                                    NodeJS - The Complete Guide (MVC, REST APIs, GraphQL, Deno)</a
+                                                >
+                                            </h3>
+                                            <div class="search-item__createdAt">~ 1 tháng trước</div>
+                                            <div class="search-item__author">
+                                                <a href="/@hoafn0730">
+                                                    <img
+                                                        class="avatar"
+                                                        src="https://files.fullstack.edu.vn/f8-prod/user_avatars/128430/63079012d4a87.jpg"
+                                                        alt=""
+                                                    />
+                                                </a>
+                                                <a href="/@hoafn0730">
+                                                    <span>hoafn.t_</span>
+                                                </a>
+                                            </div>
+
+                                            <p class="search-item_description">
+                                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id quis
+                                                suscipit aspernatur, nihil porro hic totam accusantium natus blanditiis!
+                                                Magnam tempore animi, adipisci officiis porro veniam temporibus
+                                                accusamus nihil ullam.
+                                            </p>
+                                            <div class="star">
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star"></span>
+                                            </div>
+                                        </div>
+                                        <div class="search-item_price">2,299,000đ</div>
+                                    </li>
+                                    <li class="search-item">
+                                        <a href="detail-course.html" class="search-item_link">
+                                            <img
+                                                src="https://img-c.udemycdn.com/course/240x135/1879018_95b6_3.jpg"
+                                                alt=""
+                                                class="search-item_img"
+                                            />
+                                        </a>
+
+                                        <div class="search-item_content">
+                                            <h3 class="search-item_title">
+                                                <a href="detail-course.html" class="search-item_link">
+                                                    NodeJS - The Complete Guide (MVC, REST APIs, GraphQL, Deno)</a
+                                                >
+                                            </h3>
+                                            <div class="search-item__createdAt">~ 1 tháng trước</div>
+                                            <div class="search-item__author">
+                                                <a href="/@hoafn0730">
+                                                    <img
+                                                        class="avatar"
+                                                        src="https://files.fullstack.edu.vn/f8-prod/user_avatars/128430/63079012d4a87.jpg"
+                                                        alt=""
+                                                    />
+                                                </a>
+                                                <a href="/@hoafn0730">
+                                                    <span>hoafn.t_</span>
+                                                </a>
+                                            </div>
+
+                                            <p class="search-item_description">
+                                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id quis
+                                                suscipit aspernatur, nihil porro hic totam accusantium natus blanditiis!
+                                                Magnam tempore animi, adipisci officiis porro veniam temporibus
+                                                accusamus nihil ullam.
+                                            </p>
+                                            <div class="star">
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star"></span>
+                                            </div>
+                                        </div>
+                                        <div class="search-item_price">2,299,000đ</div>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -335,6 +483,5 @@
             </footer>
         </div>
         <script type="module" src="./assets/js/index.js"></script>
-        <script type="module" src="./assets/js/events/handleDetailCourse.js"></script>
     </body>
 </html>

@@ -7,20 +7,16 @@
         <link rel="stylesheet" href="../assets/css/grid.css" />
         <link rel="stylesheet" href="../assets/css/mainAdmin.css" />
 
-        <link
-            href="https: //fonts.googleapis.com/css2? family = Roboto: wght @ 300; 400; 500; 700 & display = swap "
-            rel=" stylesheet "
-        />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     </head>
 
-    <body ng-app="AppHocTap"  ng-controller="ParticipationCtrl">
+    <body ng-app="AppHocTap" ng-controller="ParticipationCtrl">
         <div class="app">
             <!-- Header -->
             <header class="header">
                 <div class="grid d-flex-center">
-                     <!-- Header logo -->
-                     <div class="header_logo">
+                    <!-- Header logo -->
+                    <div class="header_logo">
                         <a href="/" class="logo-link">
                             <svg viewBox="0 0 102 21.705" class="logo">
                                 <title>Codecademy Logo</title>
@@ -32,10 +28,7 @@
                                 </g>
                             </svg>
                         </a>
-
-                       
                     </div>
-
 
                     <!-- Header Actions -->
                     <div class="header_actions">
@@ -129,7 +122,6 @@
                         <div class="row">
                             <div class="col l-4">
                                 <div class="mt-4">
-
                                     <!-- Form nhap thong tin đăng ký -->
                                     <form name="form-participation" class="row needs-validation" method="POST">
                                         <input
@@ -150,7 +142,6 @@
                                             <input type="text" class="form-control" id="userId" name="userId" />
                                         </div>
 
-                                        
                                         <div class="col l-12 mt-12">
                                             <label for="status" class="form-label">trạng thái</label>
                                             <select class="form-select" id="status" name="status">
@@ -160,12 +151,12 @@
                                             </select>
                                         </div>
 
-
                                         <div class="col l-12 mt-12">
-                                            <button id="btn-participation" class="btn btn-primary" type="submit">Lưu</button>
+                                            <button id="btn-participation" class="btn btn-primary" type="submit">
+                                                Lưu
+                                            </button>
                                         </div>
                                     </form>
-                                    
                                 </div>
                             </div>
 
@@ -212,7 +203,7 @@
                                                         {{ $index + (listItem.page > 1 ? index = (listItem.page - 1) *
                                                         10 + 1 : index = 1 )}}
                                                     </th>
-                                                    <td >{{x.userId}}</td>
+                                                    <td>{{x.userId}}</td>
                                                     <td class="name">{{x.name}}</td>
                                                     <td>{{x.nameCourse}}</td>
                                                     <td>@{{x.registrationDate}}</td>
@@ -225,7 +216,6 @@
                                                         >
                                                             Xóa
                                                         </a>
-                                                       
                                                     </td>
                                                 </tr>
 
@@ -256,15 +246,13 @@
                                     </div>
                                 </div>
                             </div>
-
-                        
                         </div>
                     </div>
                 </div>
             </div>
 
-             <!-- Footer -->
-             <footer class="footer">
+            <!-- Footer -->
+            <footer class="footer">
                 <div class="grid wide">
                     <div class="row">
                         <div class="col l-3">
@@ -367,9 +355,7 @@
                 window.location.href = '../login.html';
             }
         </script>
-        <script src="../assets/js/utils/angular.min.js"></script>
-        <script src="../assets/js/utils/jquery-3.6.0.min.js"></script>
-        <script src="../assets/js/global.js"></script>
+
         <script type="module" src="../Admin/assets/js/admin.js"></script>
         <script type="module" src="../Admin/assets/js/services/participationService.js"></script>
     </body>

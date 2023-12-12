@@ -1,10 +1,12 @@
-import html from '../utils/html.js';
+import html from '../../utils/html.js';
 
-import CommonItem from '../components/CommonItem.js';
-import SlideShow from '../components/SlideShow.js';
+import SlideShow from '../../components/SlideShow.js';
+import ScrollList from './ScrollList.js';
 
-function Home({ data }) {
-    const courses = data;
+import * as homeService from '../../services/homeService.js';
+
+async function Home() {
+    const data = await homeService.getCourse();
 
     setTimeout(() => {
         const slideList = document.querySelector('.slide-track');
@@ -135,54 +137,7 @@ function Home({ data }) {
             <!-- SlideShow -->
             ${SlideShow()}
 
-            <div class="home_wrapper">
-                ${courses.popularCourses
-                    ? html`
-                          <div class="scrollList_vertical">
-                              <div class="scrollList_heading">
-                                  <h1>Popular Courses</h1>
-                              </div>
-                              <div class="scrollList_body">
-                                  <div class="row">${courses.popularCourses.map((data) => CommonItem({ data }))}</div>
-                              </div>
-                          </div>
-                      `
-                    : ''}
-                ${courses.popularCourses
-                    ? html` <div class="scrollList_vertical">
-                          <div class="scrollList_heading">
-                              <h1>Free Courses</h1>
-                          </div>
-                          <div class="scrollList_body">
-                              <div class="row">${courses.popularCourses.map((data) => CommonItem({ data }))}</div>
-                          </div>
-                      </div>`
-                    : ''}
-                ${courses.popularCourses
-                    ? html`
-                          <div class="scrollList_vertical">
-                              <div class="scrollList_heading">
-                                  <h1>Pro Courses</h1>
-                              </div>
-                              <div class="scrollList_body">
-                                  <div class="row">${courses.popularCourses.map((data) => CommonItem({ data }))}</div>
-                              </div>
-                          </div>
-                      `
-                    : ''}
-                ${courses.popularCourses
-                    ? html`
-                          <div class="scrollList_vertical">
-                              <div class="scrollList_heading">
-                                  <h1>New Courses</h1>
-                              </div>
-                              <div class="scrollList_body">
-                                  <div class="row">${courses.popularCourses.map((data) => CommonItem({ data }))}</div>
-                              </div>
-                          </div>
-                      `
-                    : ''}
-            </div>
+            <div class="home_wrapper">${data.map((item) => ScrollList({ data: item }))}</div>
         </div>
     `;
 }

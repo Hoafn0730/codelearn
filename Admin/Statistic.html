@@ -7,10 +7,6 @@
         <link rel="stylesheet" href="../assets/css/grid.css" />
         <link rel="stylesheet" href="../assets/css/mainAdmin.css" />
 
-        <link
-            href="https: //fonts.googleapis.com/css2? family = Roboto: wght @ 300; 400; 500; 700 & display = swap "
-            rel=" stylesheet "
-        />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     </head>
 
@@ -278,7 +274,7 @@
                                         class="mycourses-item course_item-{{x.courseId}}"
                                         ng-repeat="x in listPopularCourses"
                                     >
-                                        <h4 style="font-size: 1.6rem; margin-right: 10px;">{{$index + 1}}</h4>
+                                        <h4 style="font-size: 1.6rem; margin-right: 10px">{{$index + 1}}</h4>
                                         <img src="{{x.image}}" alt="" class="course-item-thumb" />
                                         <div class="course-info">
                                             <h3 class="course-title">{{x.nameCourse}}</h3>
@@ -396,9 +392,7 @@
                 window.location.href = '../login.html';
             }
         </script>
-        <script src="../assets/js/utils/angular.min.js"></script>
-        <script src="../assets/js/utils/jquery-3.6.0.min.js"></script>
-        <script src="../assets/js/global.js"></script>
+
         <script type="module" src="../Admin/assets/js/admin.js"></script>
         <script type="module" src="../Admin/assets/js/services/statisticService.js"></script>
     </body>

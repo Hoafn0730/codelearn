@@ -351,6 +351,7 @@ tr {
 
 .header {
   height: var(--header-height);
+  width: 100%;
   position: sticky;
   position: -webkit-sticky;
   inset: 0;

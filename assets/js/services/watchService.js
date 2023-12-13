@@ -1,51 +1,68 @@
+import fetchApi from '../utils/fetchApi.js';
+import storage from '../utils/storage.js';
+import html from '../utils/html.js';
+
 import Comment from '../components/Comment/Comment.js';
 
-var app = angular.module('AppHocTap', []);
+const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
+
+const lessonComment = document.querySelector('.lesson_comment div');
+const video = $('.video');
+const video_title = $('.video_title');
+const lesson_header = $('.lesson_header a');
+const lesson_list = $('.lesson_list');
+const lesson_descriptionDetail = $('.lesson_description-detail');
+const lessonContent = $('.lesson-content');
 
 var urlObject = new URL(window.location.href);
 var id = urlObject.searchParams.get('c');
 
-app.controller('WatchCtrl', function ($scope, $http) {
-    $scope.khoahoc;
-    $scope.listBaiHoc;
-    $scope.baiHoc;
+const getListLesson = async function () {
+    const response = await fetchApi.get('/lessons?courseId=' + id);
+    return await response.json();
+};
+const data = await getListLesson();
 
-    $scope.GetKhoaHoc = function () {
-        $http({
-            method: 'GET',
-            url: API + '/api-user/course/get-by-id?id=' + id,
-        }).then(function (response) {
-            // debugger;
-            $scope.khoahoc = response.data;
-            $scope.listBaiHoc = response.data.list_json_Lessons;
-            if (!response.data.list_json_Lessons) {
-                return;
-            }
-            if (!urlObject.searchParams.has('l') && localStorage.getItem('course' + id)) {
-                let object = JSON.parse(localStorage.getItem('course' + id)) || {};
-                urlObject.searchParams.append('l', object.lessonId);
-                urlObject.searchParams.append('v', object.videoId);
-                window.history.replaceState(null, null, urlObject.toString());
-            }
+const htmls = data.map(
+    (item, index) => html`
+        <li class="lesson_item">
+            <span class="lesson_item-index">${index + 1}</span>
+            <a href="watch-course.html?c=${id}&l=${item.id}&v=${item.videoId}" class="lesson_item-link">
+                <img src="https://i.ytimg.com/vi/${item.videoId}/hq720.jpg" alt="" class="lesson_item-thumb" />
+                <h3 class="lesson_item-title">${item.name}</h3>
+            </a>
+        </li>
+    `,
+);
+lesson_list.innerHTML = htmls.join('');
 
-            if (!localStorage.getItem('course' + id)) {
-                urlObject.searchParams.append('l', $scope.listBaiHoc[0].lessonId);
-                urlObject.searchParams.append('v', $scope.listBaiHoc[0].videoId);
-                window.history.replaceState(null, null, urlObject.toString());
-            }
-            $scope.baiHoc = response.data.list_json_Lessons.find(
-                (x) => x.lessonId === Number(urlObject.searchParams.get('l')),
-            );
-            localStorage.setItem('course' + id, JSON.stringify($scope.baiHoc));
+const copyWatch = { ...storage.get('watch') };
+const loadData = (data) => {
+    urlObject.searchParams.set('l', data.id);
+    urlObject.searchParams.set('v', data.videoId);
+    window.history.replaceState(null, null, urlObject.toString());
 
-            document
-                .querySelector('.video')
-                .setAttribute('src', 'https://www.youtube.com/embed/' + urlObject.searchParams.get('v'));
-        });
-    };
+    video.src = 'https://www.youtube.com/embed/' + urlObject.searchParams.get('v');
+    video_title.innerText = data.name;
+    lesson_header.innerText = data.name;
+    lesson_descriptionDetail.innerText = data.description;
+    lessonContent.innerText = data.content;
+    storage.set('watch', { ...copyWatch, ['course' + id]: data });
+};
 
-    $scope.GetKhoaHoc();
-});
+let course = copyWatch['course' + id];
+if (course) {
+    if (urlObject.searchParams.has('l')) {
+        course = {
+            ...course,
+            id: urlObject.searchParams.get('l'),
+            videoId: urlObject.searchParams.get('v'),
+        };
+    }
+    loadData(course);
+} else {
+    loadData(data[0]);
+}
 
-const lessonComment = document.querySelector('.lesson_comment div');
 lessonComment.innerHTML = Comment();

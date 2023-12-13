@@ -350,6 +350,7 @@ tr {
 
 .header {
   height: var(--header-height);
+  width: 100%;
   position: sticky;
   position: -webkit-sticky;
   inset: 0;
@@ -1355,6 +1356,7 @@ tr {
 }
 
 .last-update-date,
+.courseDetail_content,
 .courseDetail_description {
   font-size: 1.6rem;
   margin: 10px 0;
@@ -1418,12 +1420,15 @@ tr {
   border-bottom: 1px solid #e0e0e0;
 }
 
+.courseDetail_content,
 .courseDetail_description {
   margin-top: 30px;
 }
+.courseDetail_content h1,
 .courseDetail_description h1 {
   padding: 20px 0;
 }
+.courseDetail_content p,
 .courseDetail_description p {
   font-size: 1.6rem;
   line-height: 2rem;

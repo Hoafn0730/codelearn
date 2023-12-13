@@ -22,13 +22,8 @@ const userData = () => {
 };
 
 const myCourse = {
-    renderCourse: async function () {
-        const courses = await fetchApi.get('/myCourses').then((response) => {
-            if (response.status === 401) {
-                //location.assign('login.html');
-            }
-            return response.json();
-        });
+    renderCourse: function () {
+        const courses = storage.get('myCourses') || [];
 
         const listCourses = document.querySelector('.header_mycourses-list');
         if (courses.length == 0 || courses == null) {
@@ -37,6 +32,7 @@ const myCourse = {
             `;
             return;
         }
+
         const htmls = courses.map((course) => MyCourse({ course }));
         listCourses.innerHTML = htmls.join('');
     },

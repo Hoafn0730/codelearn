@@ -1,58 +1,55 @@
 .courseDetail_wrapper {
     padding: 20px;
-
 }
 
 .courseDetail_heading {
-    font-size  : 3.2rem;
+    font-size: 3.2rem;
     font-weight: 700;
-    margin-top : 16px;
-    min-height : 33px;
+    margin-top: 16px;
+    min-height: 33px;
 }
 
 .last-update-date,
+.courseDetail_content,
 .courseDetail_description {
     font-size: 1.6rem;
-    margin   : 10px 0;
+    margin: 10px 0;
 }
 
 .curriculum {
     margin-top: 30px;
-
 }
 
 .curriculum-header {
-    font-size  : 2rem;
+    font-size: 2rem;
     font-weight: 700;
-    margin     : 20px 0;
+    margin: 20px 0;
 }
 
 .curriculum-list {
     border-radius: 10px;
-    box-shadow   : 0 0 10px rgba(0, 0, 0, 0.1);
-
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-
 .curriculum_panel {
-    padding        : 20px;
-    border-bottom  : 1px solid #e0e0e0;
-    cursor         : pointer;
-    transition     : background-color 0.3s ease-in-out;
-    display        : flex;
+    padding: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    display: flex;
     justify-content: space-between;
-    align-items    : center;
+    align-items: center;
 
     .curriculum_heading {
-        font-size     : 18px;
-        font-weight   : 700;
+        font-size: 18px;
+        font-weight: 700;
         padding-bottom: 3px;
-        padding-top   : 3px;
+        padding-top: 3px;
     }
 
     .icon-container i {
-        font-size : 16px;
-        cursor    : pointer;
+        font-size: 16px;
+        cursor: pointer;
         transition: transform 0.3s ease-in-out;
     }
 
@@ -62,11 +59,11 @@
 }
 
 .curriculum_collapse {
-    font-size    : 16px;
-    max-height   : 0;
-    overflow     : hidden;
-    transition   : max-height 0.3s ease-in-out;
-    padding-left : 10px;
+    font-size: 16px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    padding-left: 10px;
     padding-right: 10px;
 
     .curriculum_lessionItem {
@@ -82,6 +79,7 @@
     border-bottom: 1px solid #e0e0e0;
 }
 
+.courseDetail_content,
 .courseDetail_description {
     margin-top: 30px;
 
@@ -90,50 +88,45 @@
     }
 
     p {
-        font-size  : 1.6rem;
+        font-size: 1.6rem;
         line-height: 2rem;
     }
-
-    ;
 }
 
 .courseDetail_purchaseBadge {
-    position      : -webkit-sticky;
-    position      : sticky;
-    align-items   : center;
-    background    : #fff;
-    display       : flex;
+    position: -webkit-sticky;
+    position: sticky;
+    align-items: center;
+    background: #fff;
+    display: flex;
     flex-direction: column;
-    top           : 90px;
+    top: 90px;
     padding-bottom: 40px;
-    margin-bottom : 80px;
-
-
+    margin-bottom: 80px;
 }
 
 .courseDetail_preview {
-    padding      : 20px;
-    overflow     : hidden;
+    padding: 20px;
+    overflow: hidden;
     margin-bottom: 10px;
 
-
     .courseDetail_img {
-        display         : block;
-        border-radius   : 16px;
-        object-fit      : contain;
+        display: block;
+        border-radius: 16px;
+        object-fit: contain;
         background-color: #ebebeb;
-        text-align      : center;
-        line-height     : 1.6rem;
-        height          : 258px;
-        width           : 460px;
+        text-align: center;
+        line-height: 1.6rem;
+        height: 258px;
+        width: 460px;
     }
 }
 
 .courseDetail_btn {
-    margin          : 10px 0 20px 0;
-    border-radius   : 16px;
+    margin: 10px 0 20px 0;
+    border-radius: 16px;
     background-color: var(--primary-color);
-    color           : var(--white-color);
+    color: var(--white-color);
 }
 
 .courseDetail_level {

@@ -30,14 +30,20 @@ html {
   text-decoration: none;
   color: var(--black-color);
   background-color: transparent;
+  font-style: 1.8rem;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .logo-link .logo {
-  height: 28px;
+  font-size: 3rem;
+  margin-bottom: 4px;
 }
 .logo-link:hover {
-  cursor: pointer;
   text-decoration: none;
   color: var(--primary-color);
+  cursor: pointer;
 }
 
 .hashtag {
@@ -955,6 +961,11 @@ tr {
 }
 .footer .logo-link {
   color: var(--white-color);
+  font-size: 2rem;
+}
+.footer .logo-link .logo {
+  font-size: 4rem;
+  margin-bottom: 10px;
 }
 
 .footer__heading {

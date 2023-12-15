@@ -1,6 +1,7 @@
 import fetchApi from '../utils/fetchApi.js';
 import storage from '../utils/storage.js';
 import html from '../utils/html.js';
+import url from '../utils/url.js';
 
 import Comment from '../components/Comment/Comment.js';
 
@@ -15,15 +16,13 @@ const lesson_list = $('.lesson_list');
 const lesson_descriptionDetail = $('.lesson_description-detail');
 const lessonContent = $('.lesson-content');
 
-var urlObject = new URL(window.location.href);
-var id = urlObject.searchParams.get('c');
+var id = url.getSearchParams('c');
 
 const getListLesson = async function () {
     const response = await fetchApi.get('/lessons?courseId=' + id);
     return await response.json();
 };
 const data = await getListLesson();
-
 const htmls = data.map(
     (item, index) => html`
         <li class="lesson_item">
@@ -37,13 +36,14 @@ const htmls = data.map(
 );
 lesson_list.innerHTML = htmls.join('');
 
+// Load data from local storage
 const copyWatch = { ...storage.get('watch') };
 const loadData = (data) => {
-    urlObject.searchParams.set('l', data.id);
-    urlObject.searchParams.set('v', data.videoId);
-    window.history.replaceState(null, null, urlObject.toString());
+    url.setSearchParams('l', data.id);
+    url.setSearchParams('v', data.videoId);
+    url.updateUrl();
 
-    video.src = 'https://www.youtube.com/embed/' + urlObject.searchParams.get('v');
+    video.src = 'https://www.youtube.com/embed/' + url.getSearchParams('v');
     video_title.innerText = data.name;
     lesson_header.innerText = data.name;
     lesson_descriptionDetail.innerText = data.description;
@@ -53,11 +53,11 @@ const loadData = (data) => {
 
 let course = copyWatch['course' + id];
 if (course) {
-    if (urlObject.searchParams.has('l')) {
+    if (url.hasSearchParams('l')) {
         course = {
             ...course,
-            id: urlObject.searchParams.get('l'),
-            videoId: urlObject.searchParams.get('v'),
+            id: url.getSearchParams('l'),
+            videoId: url.getSearchParams('v'),
         };
     }
     loadData(course);

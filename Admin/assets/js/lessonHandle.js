@@ -52,10 +52,11 @@ function lazyLoadSections() {
 const handleCreateLesson = (btnCreate) => {
     // Sự kiện thêm bài học vào bảng
     btnCreate.onclick = () => {
-        //         const lessonList = document.querySelector('.lesson_list');
-        //
-        //         lessonList.scrollTop = lessonList.scrollHeight;
+        const lessonList = document.querySelector('.lesson_list');
+
         tbody.innerHTML += LessonItem();
+
+        lessonList.scrollTop = lessonList.scrollHeight;
 
         const lessonItemClones = document.querySelectorAll('.lesson-item.clone');
         lessonItemClones.forEach((lessonItemClone) => {

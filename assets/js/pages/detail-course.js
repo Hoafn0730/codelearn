@@ -1,11 +1,10 @@
-import { useEffect } from '../utils/hook.js';
 import html from '../utils/html.js';
 
 function DetailCourse({ dataCourses }) {
     const parts = window.location.href.split('/');
     const foundObject = dataCourses.find((obj) => obj.slug === parts[parts.length - 1]);
 
-    useEffect(() => {
+    setTimeout(() => {
         const curriculumItems = document.querySelectorAll('.curriculum-item');
         curriculumItems.forEach((item) => {
             const curriculumPanel = item.querySelector('.curriculum_panel');

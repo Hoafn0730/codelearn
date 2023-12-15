@@ -1,212 +1,195 @@
 import convertFormData from '../../../../assets/js/utils/convertFormData.js';
+import html from '../../../../assets/js/utils/html.js';
+import fetchApi from '../../../../assets/js/utils/fetchApi.js';
+import url from '../../../../assets/js/utils/url.js';
+
 import { lessonHandle, dataArray, lazyLoadSections } from '../lessonHandle.js';
 
-const form = document.forms['form-course'];
-const btnCourse = document.querySelector('#btn-course');
-const btnUpdateLesson = document.querySelector('.btn-update-lesson');
-const searchType = document.querySelector('.search-type.input-course');
-const btnSearch = document.querySelector('.btn-search.search-course');
-const searchTypeLesson = document.querySelector('.search-type.input-lesson');
-const btnSearchLesson = document.querySelector('.btn-search.search-lesson');
+const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
 
-const courseId = document.querySelector('#courseId');
-const nameCourse = document.querySelector('#nameCourse');
-const description = document.querySelector('#description');
-const image = document.querySelector('#image');
-const level = document.querySelector('#level');
-const price = document.querySelector('#price');
-const categoryId = document.querySelector('#categoryId');
-const teacherId = document.querySelector('#teacherId');
+const form = document.forms['form-course'];
+const table = $('.table tbody');
+const btnCourse = $('#btn-course');
+const btnUpdateLesson = $('.btn-update-lesson');
+const searchType = $('.search-type.input-course');
+const btnSearch = $('.btn-search.search-course');
+const searchTypeLesson = $('.search-type.input-lesson');
+const btnSearchLesson = $('.btn-search.search-lesson');
+const lessonList = $('.lesson_list .table tbody');
+
+const courseId = $('#courseId');
+const nameCourse = $('#nameCourse');
+const description = $('#description');
+const image = $('#image');
+const level = $('#level');
+const price = $('#price');
+const categoryId = $('#categoryId');
+const teacherId = $('#teacherId');
 
 const formData = {};
 let total = 0;
 
-var app = angular.module('AppHocTap', []);
-app.controller('CourseCtrl', function ($scope, $http) {
-    // Tạo khóa học
-    $scope.CreateKhoaHoc = function (data) {
-        console.log('create');
+const getListCourse = async function (page, pageSize) {
+    const response = await fetchApi.get(`/courses?_page=${page}&_limit=${pageSize}`);
+    return await response.json();
+};
 
-        $http({
-            method: 'POST',
-            data,
-            url: API + '/api-admin/course/create-course',
-        }).then(function (response) {
-            alert('Bạn thêm khóa học thành công');
-            location.reload();
-        });
-    };
+const getListLessonById = async (id) => {
+    const response = await fetchApi.get(`/lessons?courseId=${id}`);
+    return await response.json();
+};
 
-    // Cập nhật khóa học
-    $scope.UpdateKhoaHoc = function (data) {
-        console.log('update');
+// + (listItem.page > 1 ? index = (listItem.page - 1) * 10 + 1 : index = 1 )
+const data = await getListCourse(1, 10);
+const htmls = data.map((item, index) => Row({ data: item, index }));
 
-        $http({
-            method: 'PATCH',
-            data,
-            url: API + '/api-admin/course/update-course',
-        }).then(function (response) {
-            alert('Bạn sửa khóa học thành công');
-            location.reload();
-        });
-    };
+function Row({ data, index }) {
+    return html`
+        <tr class="course-item">
+            <td>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="${data.id}" name="courseIds[]" />
+                </div>
+            </td>
+            <th scope="row">${index + 1}</th>
+            <td>${data.id}</td>
+            <td class="name">${data.name}</td>
+            <td>${data.level}</td>
+            <td>@${data.createdAt}</td>
+            <td>
+                <button class="btn btn-link btn-delete-course" data-id="${data.id}">Xóa</button>
+                <button class="btn btn-link btn-detail-course" data-id="${data.id}">Chi tiết</button>
+            </td>
+        </tr>
+    `;
+}
 
-    // Xóa khóa học
-    $scope.DeleteKhoaHoc = function (id) {
-        console.log('delete');
+function RowLesson({ data, index }) {
+    return html`
+        <tr class="lesson-item">
+            <td>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="${data.id}" name="lessonId" />
+                </div>
+            </td>
 
-        confirm('Bạn có chắc chắn muốn xóa?') &&
-            $http({
-                method: 'DELETE',
-                url: API + '/api-admin/course/delete-course?id=' + id,
-            }).then(function (response) {
-                location.reload();
-                alert('Bạn xóa thành công.');
-            });
-    };
+            <th scope="row">${index}</th>
 
-    // Tìm kiếm khóa học
-    let pageIndex = 1;
-    $scope.listItem;
-    $scope.SearchKhoaHoc = function (data) {
-        $http({
-            method: 'POST',
-            data,
-            url: API + '/api-admin/course/get-course',
-        }).then(function (response) {
-            // debugger;
-            $scope.listItem = response.data;
-            total = Number(response.data.totalItems);
-            reload(response.data.data, {
-                GetKhoaHoc: $scope.GetKhoaHoc,
-                DeleteKhoaHoc: $scope.DeleteKhoaHoc,
-                SearchKhoaHoc: $scope.SearchKhoaHoc,
-            });
-        });
-    };
+            <td>
+                <section contenteditable="false" name="nameLesson" class="view" data-src="${data.name}">
+                    Loading...
+                </section>
+            </td>
 
-    $scope.SearchKhoaHoc({
-        page: pageIndex,
-        pageSize: 10,
-    });
+            <td>
+                <section
+                    contenteditable="false"
+                    name="description"
+                    class="view"
+                    data-src="${data.description}"
+                ></section>
+            </td>
 
-    // Lấy khóa học theo id
-    $scope.khoahoc;
-    $scope.listBaiHoc;
-    let lessonList = [];
-    $scope.GetKhoaHoc = function (id) {
-        $http({
-            url: API + '/api-admin/course/get-by-id?id=' + id,
-            method: 'GET',
-        }).then(function (response) {
-            $scope.khoahoc = response.data;
-            $scope.listBaiHoc = response.data.list_json_Lessons;
-            lessonList = $scope.listBaiHoc && [...$scope.listBaiHoc];
-        });
-    };
+            <td>
+                <section contenteditable="false" name="videoId" class="view" data-src="${data.videoId}"></section>
+            </td>
 
-    // Sự kiện nhấn của nút Lưu (Tạo hoặc cập nhất khóa học)
-    btnCourse.onclick = () =>
-        document.getElementById('courseId').value === '0'
-            ? $scope.CreateKhoaHoc(formData)
-            : $scope.UpdateKhoaHoc(formData);
+            <td>
+                <section contenteditable="false" name="duration" class="view" data-src="${data.duration}"></section>
+            </td>
 
-    // Sự kiện nhấn của nút Lưu bài học
-    btnUpdateLesson.onclick = (e) => {
-        Object.assign(formData, convertFormData(form));
-        formData.list_json_Lessons = dataArray;
+            <td
+                style="
+                width: 25%;
+                max-height: 48px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                "
+            >
+                <section class="view" name="content" data-src="${data.content}"></section>
+            </td>
 
-        $scope.UpdateKhoaHoc(formData);
-    };
+            <td name="createdAt">${data.name}</td>
 
-    // Sự kiện nhấn của nút tìm kiếm khóa học
-    btnSearch.onclick = () => {
-        $scope.SearchKhoaHoc({
-            page: pageIndex,
-            pageSize: 10,
-            name: searchType.value,
-        });
-    };
+            <td>
+                <button class="btn btn-link btn-delete-lesson" data-id="${data.id}">Xóa</button>
+            </td>
+        </tr>
+    `;
+}
 
-    // Sự kiện nhấn của nút tìm kiếm bài học
-    btnSearchLesson.onclick = () => {
-        $scope.listBaiHoc = lessonList.filter((x) => x.nameLesson.includes(searchTypeLesson.value));
-        setTimeout(() => {
-            lazyLoadSections();
-        });
-
-        $scope.$digest();
-    };
-});
+table.innerHTML = htmls.join('');
 
 // Reload
-function reload(data, { GetKhoaHoc, DeleteKhoaHoc, SearchKhoaHoc }) {
-    setTimeout(() => {
-        // Navigation
-        // Load thanh điều hướng theo tổng số khóa học
-        const totalPages = Math.ceil(total / 10);
-        document.querySelector('.navigation').innerHTML = '';
-        for (let index = 0; index < totalPages; index++) {
-            document.querySelector('.navigation').innerHTML += `
+async function reload() {
+    // Navigation
+    // Load thanh điều hướng theo tổng số khóa học
+    const response = await fetchApi.get(`/courses`);
+    const courses = await response.json();
+
+    const total = courses.length;
+    const totalPages = Math.ceil(total / 10);
+    $('.navigation').innerHTML = '';
+    for (let index = 0; index < totalPages; index++) {
+        $('.navigation').innerHTML += `
                 <button data-id="${index + 1}" class="btn-primary">${index + 1}</button>
             `;
-        }
+    }
 
-        // Sự kiện nhấn của thanh điều hướng
-        const btnNavigation = document.querySelectorAll('button[data-id]');
-        btnNavigation.forEach(
-            (item) =>
-                (item.onclick = () =>
-                    SearchKhoaHoc({
-                        page: item.dataset.id,
-                        pageSize: 10,
-                    })),
-        );
+    // Sự kiện nhấn của thanh điều hướng
+    const btnNavigation = $$('button[data-id]');
+    btnNavigation.forEach(
+        (item) =>
+            (item.onclick = async () => {
+                const data = await getListCourse(item.dataset.id, 10);
+                const htmls = data.map((item, index) => Row({ data: item, index }));
+                table.innerHTML = htmls.join('');
+            }),
+    );
 
-        // bắt sự kiện các các hàng
-        document.querySelectorAll('.course-item').forEach((ele, index) => {
-            // Sự kiện xóa khóa học
-            const btnDelete = ele.querySelector('.btn-delete-course');
-            const btnDetail = ele.querySelector('.btn-detail-course');
+    // bắt sự kiện các các hàng
+    $$('.course-item').forEach((ele, index) => {
+        // Sự kiện xóa khóa học
+        const btnDelete = ele.querySelector('.btn-delete-course');
+        const btnDetail = ele.querySelector('.btn-detail-course');
 
-            btnDelete.onclick = (e) => DeleteKhoaHoc(e.target.dataset.id);
-            btnDetail.onclick = (e) => {
-                document.querySelector('.lesson_wrapper').style.display = 'block';
-                document.querySelector('.overlay').style.display = 'block';
+        btnDelete.onclick = (e) => DeleteKhoaHoc(e.target.dataset.id);
+        btnDetail.onclick = async (e) => {
+            $('.lesson_wrapper').style.display = 'block';
+            $('.overlay').style.display = 'block';
+            const lessons = await getListLessonById(e.target.dataset.id);
 
-                GetKhoaHoc(e.target.dataset.id);
-                lessonHandle();
-            };
+            const htmls = lessons.map((lesson, index) => RowLesson({ data: lesson, index }));
+            lessonList.innerHTML = htmls.join('');
+            lessonHandle();
+        };
 
-            // Sự kiện click hàng trong bảng
-            ele.onclick = () => {
-                // Thêm thông tin của hàng lên các ô input
-                courseId.value = data[index].courseId;
-                nameCourse.value = data[index].nameCourse;
-                description.value = data[index].description;
-                image.value = data[index].image;
-                level.value = data[index].level;
-                price.value = data[index].price;
-                categoryId.value = data[index].categoryId;
-                teacherId.value = data[index].teacherId;
+        // Sự kiện click hàng trong bảng
+        ele.onclick = () => {
+            // Thêm thông tin của hàng lên các ô input
+            courseId.value = data[index].id;
+            nameCourse.value = data[index].name;
+            description.value = data[index].description;
+            image.value = data[index].image;
+            level.value = data[index].level;
+            price.value = data[index].price;
+            categoryId.value = data[index].categoryId;
+            // teacherId.value = data[index].teacherId;
 
-                // Thêm mã khóa học lên thanh url
-                var urlObject = new URL(window.location.href);
-                urlObject.searchParams.set('c', data[index].courseId);
-                window.history.replaceState(null, null, urlObject.toString());
-            };
+            // Thêm mã khóa học lên thanh url
+            url.setSearchParams('c', data[index].id);
+            url.updateUrl();
+        };
 
-            // Sự kiện nhấn đúp vào một hàng trong bảng
-            ele.ondblclick = () => {
-                document.querySelector('.lesson_wrapper').style.display = 'block';
-                document.querySelector('.overlay').style.display = 'block';
-
-                GetKhoaHoc(document.querySelector('input[name="courseId"]').value);
-                lessonHandle();
-            };
-        });
-    }, 100);
+        // Sự kiện nhấn đúp vào một hàng trong bảng
+        ele.ondblclick = () => {
+            $('.lesson_wrapper').style.display = 'block';
+            $('.overlay').style.display = 'block';
+        };
+    });
 }
+reload();
 
 // Sự kiện submit form
 form.onsubmit = (e) => {

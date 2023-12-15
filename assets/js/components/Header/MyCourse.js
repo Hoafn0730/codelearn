@@ -1,4 +1,4 @@
-import { calculateDay } from '../../utils/util.js';
+import { calculateDay } from '../../utils/calculateDay.js';
 import html from '../../utils/html.js';
 
 function MyCourse({ course }) {

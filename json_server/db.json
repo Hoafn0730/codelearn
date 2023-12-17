@@ -1,0 +1,769 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "userName": "hoan",
+            "password": "123456",
+            "name": "Hoàn Trần",
+            "avatar": "https://files.fullstack.edu.vn/f8-prod/user_avatars/330533/656b17e84ff15.jpg",
+            "bio": "",
+            "role": "normal"
+        },
+        {
+            "id": 2,
+            "userName": "hoan1",
+            "password": "123456",
+            "name": "Hoàn Trần2",
+            "avatar": "https://files.fullstack.edu.vn/f8-prod/user_avatars/330533/656b17e84ff15.jpg",
+            "bio": "",
+            "role": "admin"
+        }
+    ],
+    "categories": [
+        {
+            "id": 1,
+            "name": "Frontend Development",
+            "description": "Description web Frontend development",
+            "slug": "frontend-development"
+        },
+        {
+            "id": 2,
+            "name": "Backend Development",
+            "description": "Description web Backend development",
+            "slug": "backend-development"
+        },
+        {
+            "id": 3,
+            "name": "Mobile Development",
+            "description": "Description web development",
+            "slug": "mobile-development"
+        },
+        {
+            "id": 4,
+            "name": "Program Languages",
+            "description": "Description Program Languages",
+            "slug": "program-languages"
+        }
+    ],
+    "notifications": [
+        {
+            "id": 1,
+            "title": "Giới thiệu khóa học Sass",
+            "createdAt": "10-12-2023"
+        },
+        {
+            "id": 1,
+            "title": "Giới thiệu khóa học Sass",
+            "createdAt": "10-12-2023"
+        },
+        {
+            "id": 1,
+            "title": "Giới thiệu khóa học Sass",
+            "createdAt": "10-12-2023"
+        },
+        {
+            "id": 1,
+            "title": "Giới thiệu khóa học Sass",
+            "createdAt": "10-12-2023"
+        },
+        {
+            "id": 1,
+            "title": "Giới thiệu khóa học Sass",
+            "createdAt": "10-12-2023"
+        }
+    ],
+    "courses": [
+        {
+            "id": 1,
+            "name": "Game Development",
+            "description": "Description Game development",
+            "image": "https://files.fullstack.edu.vn/f8-prod/courses/15/62f13d2424a47.png",
+            "level": "Cơ bản",
+            "price": 0,
+            "slug": "game-development",
+            "content": "content",
+            "categoryId": 1,
+            "createdAt": "",
+            "updatedAt": "",
+            "DeletedAt": ""
+        },
+        {
+            "id": 2,
+            "name": "Game Development",
+            "description": "Description Game development",
+            "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+            "level": "Cơ bản",
+            "price": 10,
+            "slug": "game-development",
+            "content": "content",
+            "categoryId": 1,
+            "createdAt": "",
+            "updatedAt": "",
+            "DeletedAt": ""
+        },
+        {
+            "id": 3,
+            "name": "Game Development",
+            "description": "Description Game development",
+            "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+            "level": "Cơ bản",
+            "price": 10,
+            "slug": "game-development",
+            "content": "content",
+            "categoryId": 1,
+            "createdAt": "",
+            "updatedAt": "",
+            "DeletedAt": ""
+        },
+        {
+            "id": 4,
+            "name": "Game Development",
+            "description": "Description Game development",
+            "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+            "level": "Cơ bản",
+            "price": 10,
+            "slug": "game-development",
+            "content": "content",
+            "categoryId": 1,
+            "createdAt": "",
+            "updatedAt": "",
+            "DeletedAt": ""
+        },
+        {
+            "id": 5,
+            "name": "Game Development",
+            "description": "Description Game development",
+            "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+            "level": "Cơ bản",
+            "price": 10,
+            "slug": "game-development",
+            "content": "content",
+            "categoryId": 1,
+            "createdAt": "",
+            "updatedAt": "",
+            "DeletedAt": ""
+        },
+        {
+            "id": 6,
+            "name": "Game Development",
+            "description": "Description Game development",
+            "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+            "level": "Cơ bản",
+            "price": 10,
+            "slug": "game-development",
+            "content": "content",
+            "categoryId": 1,
+            "createdAt": "",
+            "updatedAt": "",
+            "DeletedAt": ""
+        },
+        {
+            "id": 6,
+            "name": "Game Development",
+            "description": "Description Game development",
+            "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+            "level": "Cơ bản",
+            "price": 10,
+            "slug": "game-development",
+            "content": "content",
+            "categoryId": 1,
+            "createdAt": "",
+            "updatedAt": "",
+            "DeletedAt": ""
+        },
+        {
+            "id": 6,
+            "name": "Game Development",
+            "description": "Description Game development",
+            "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+            "level": "Cơ bản",
+            "price": 10,
+            "slug": "game-development",
+            "content": "content",
+            "categoryId": 1,
+            "createdAt": "",
+            "updatedAt": "",
+            "DeletedAt": ""
+        },
+        {
+            "id": 6,
+            "name": "Game Development",
+            "description": "Description Game development",
+            "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+            "level": "Cơ bản",
+            "price": 10,
+            "slug": "game-development",
+            "content": "content",
+            "categoryId": 1,
+            "createdAt": "",
+            "updatedAt": "",
+            "DeletedAt": ""
+        },
+        {
+            "id": 6,
+            "name": "Game Development",
+            "description": "Description Game development",
+            "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+            "level": "Cơ bản",
+            "price": 10,
+            "slug": "game-development",
+            "content": "content",
+            "categoryId": 1,
+            "createdAt": "",
+            "updatedAt": "",
+            "DeletedAt": ""
+        },
+        {
+            "id": 6,
+            "name": "Game Development",
+            "description": "Description Game development",
+            "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+            "level": "Cơ bản",
+            "price": 10,
+            "slug": "game-development",
+            "content": "content",
+            "categoryId": 1,
+            "createdAt": "",
+            "updatedAt": "",
+            "DeletedAt": ""
+        },
+        {
+            "id": 6,
+            "name": "Game Development",
+            "description": "Description Game development",
+            "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+            "level": "Cơ bản",
+            "price": 10,
+            "slug": "game-development",
+            "content": "content",
+            "categoryId": 1,
+            "createdAt": "",
+            "updatedAt": "",
+            "DeletedAt": ""
+        },
+        {
+            "id": 6,
+            "name": "Game Development",
+            "description": "Description Game development",
+            "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+            "level": "Cơ bản",
+            "price": 10,
+            "slug": "game-development",
+            "content": "content",
+            "categoryId": 1,
+            "createdAt": "",
+            "updatedAt": "",
+            "DeletedAt": ""
+        }
+    ],
+    "lessons": [
+        {
+            "id": 1,
+            "name": "BAi 1",
+            "description": "bai 1",
+            "videoId": "_tV5LEBDs7w",
+            "duration": "2:30",
+            "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+            "slug": "bai-1",
+            "content": "content",
+            "courseId": 1
+        },
+        {
+            "id": 2,
+            "name": "BAi 2",
+            "description": "bai 1",
+            "videoId": "bai 1",
+            "duration": "2:30",
+            "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+            "slug": "bai-1",
+            "courseId": 1
+        },
+        {
+            "id": 3,
+            "name": "BAi 3",
+            "description": "bai 1",
+            "videoId": "bai 1",
+            "duration": "2:30",
+            "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+            "slug": "bai-1",
+            "courseId": 1
+        },
+        {
+            "id": 4,
+            "name": "BAi 4",
+            "description": "bai 1",
+            "videoId": "bai 1",
+            "duration": "2:30",
+            "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+            "slug": "bai-1",
+            "courseId": 1
+        },
+        {
+            "id": 5,
+            "name": "BAi 5",
+            "description": "bai 1",
+            "videoId": "bai 1",
+            "duration": "2:30",
+            "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+            "slug": "bai-1",
+            "courseId": 1
+        }
+    ],
+    "register": [
+        {
+            "id": 1,
+            "courseId": 1,
+            "userId": 1,
+            "registrationDate": "2023-07-30",
+            "status": true,
+            "process": 30
+        }
+    ],
+
+    "home": [
+        {
+            "title": "Popular Courses",
+            "listCourses": [
+                {
+                    "id": 1,
+                    "name": "React JS cơ bản",
+                    "description": "Description React development",
+                    "image": "https://files.fullstack.edu.vn/f8-prod/courses/15/62f13d2424a47.png",
+                    "level": "Cơ bản",
+                    "price": 0,
+                    "slug": "React-development",
+                    "content": "content",
+                    "categoryId": 1,
+                    "createdAt": "",
+                    "updatedAt": "",
+                    "DeletedAt": ""
+                },
+                {
+                    "id": 2,
+                    "name": "Game Development",
+                    "description": "Description Game development",
+                    "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+                    "level": "Cơ bản",
+                    "price": 10,
+                    "slug": "game-development",
+                    "content": "content",
+                    "categoryId": 1,
+                    "createdAt": "",
+                    "updatedAt": "",
+                    "DeletedAt": ""
+                },
+                {
+                    "id": 3,
+                    "name": "Game Development",
+                    "description": "Description Game development",
+                    "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+                    "level": "Cơ bản",
+                    "price": 10,
+                    "slug": "game-development",
+                    "content": "content",
+                    "categoryId": 1,
+                    "createdAt": "",
+                    "updatedAt": "",
+                    "DeletedAt": ""
+                },
+                {
+                    "id": 4,
+                    "name": "Game Development",
+                    "description": "Description Game development",
+                    "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+                    "level": "Cơ bản",
+                    "price": 10,
+                    "slug": "game-development",
+                    "content": "content",
+                    "categoryId": 1,
+                    "createdAt": "",
+                    "updatedAt": "",
+                    "DeletedAt": ""
+                },
+                {
+                    "id": 5,
+                    "name": "Game Development",
+                    "description": "Description Game development",
+                    "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+                    "level": "Cơ bản",
+                    "price": 10,
+                    "slug": "game-development",
+                    "content": "content",
+                    "categoryId": 1,
+                    "createdAt": "",
+                    "updatedAt": "",
+                    "DeletedAt": ""
+                },
+                {
+                    "id": 6,
+                    "name": "Game Development",
+                    "description": "Description Game development",
+                    "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+                    "level": "Cơ bản",
+                    "price": 10,
+                    "slug": "game-development",
+                    "content": "content",
+                    "categoryId": 1,
+                    "createdAt": "",
+                    "updatedAt": "",
+                    "DeletedAt": ""
+                }
+            ]
+        },
+        {
+            "title": "Free Courses",
+            "listCourses": [
+                {
+                    "id": 1,
+                    "name": "Game Development",
+                    "description": "Description Game development",
+                    "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+                    "level": "Cơ bản",
+                    "price": 0,
+                    "slug": "game-development",
+                    "content": "content",
+                    "categoryId": 1,
+                    "createdAt": "",
+                    "updatedAt": "",
+                    "DeletedAt": ""
+                },
+                {
+                    "id": 1,
+                    "name": "Game Development",
+                    "description": "Description Game development",
+                    "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+                    "level": "Cơ bản",
+                    "price": 10,
+                    "slug": "game-development",
+                    "content": "content",
+                    "categoryId": 1,
+                    "createdAt": "",
+                    "updatedAt": "",
+                    "DeletedAt": ""
+                },
+                {
+                    "id": 1,
+                    "name": "Game Development",
+                    "description": "Description Game development",
+                    "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+                    "level": "Cơ bản",
+                    "price": 10,
+                    "slug": "game-development",
+                    "content": "content",
+                    "categoryId": 1,
+                    "createdAt": "",
+                    "updatedAt": "",
+                    "DeletedAt": ""
+                },
+                {
+                    "id": 1,
+                    "name": "Game Development",
+                    "description": "Description Game development",
+                    "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+                    "level": "Cơ bản",
+                    "price": 10,
+                    "slug": "game-development",
+                    "content": "content",
+                    "categoryId": 1,
+                    "createdAt": "",
+                    "updatedAt": "",
+                    "DeletedAt": ""
+                },
+                {
+                    "id": 1,
+                    "name": "Game Development",
+                    "description": "Description Game development",
+                    "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+                    "level": "Cơ bản",
+                    "price": 10,
+                    "slug": "game-development",
+                    "content": "content",
+                    "categoryId": 1,
+                    "createdAt": "",
+                    "updatedAt": "",
+                    "DeletedAt": ""
+                },
+                {
+                    "id": 1,
+                    "name": "Game Development",
+                    "description": "Description Game development",
+                    "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+                    "level": "Cơ bản",
+                    "price": 10,
+                    "slug": "game-development",
+                    "content": "content",
+                    "categoryId": 1,
+                    "createdAt": "",
+                    "updatedAt": "",
+                    "DeletedAt": ""
+                }
+            ]
+        },
+        {
+            "title": "Pro Courses",
+            "listCourses": [
+                {
+                    "id": 1,
+                    "name": "Game Development",
+                    "description": "Description Game development",
+                    "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+                    "level": "Cơ bản",
+                    "price": 0,
+                    "slug": "game-development",
+                    "content": "content",
+                    "categoryId": 1,
+                    "createdAt": "",
+                    "updatedAt": "",
+                    "DeletedAt": ""
+                },
+                {
+                    "id": 1,
+                    "name": "Game Development",
+                    "description": "Description Game development",
+                    "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+                    "level": "Cơ bản",
+                    "price": 10,
+                    "slug": "game-development",
+                    "content": "content",
+                    "categoryId": 1,
+                    "createdAt": "",
+                    "updatedAt": "",
+                    "DeletedAt": ""
+                },
+                {
+                    "id": 1,
+                    "name": "Game Development",
+                    "description": "Description Game development",
+                    "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+                    "level": "Cơ bản",
+                    "price": 10,
+                    "slug": "game-development",
+                    "content": "content",
+                    "categoryId": 1,
+                    "createdAt": "",
+                    "updatedAt": "",
+                    "DeletedAt": ""
+                },
+                {
+                    "id": 1,
+                    "name": "Game Development",
+                    "description": "Description Game development",
+                    "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+                    "level": "Cơ bản",
+                    "price": 10,
+                    "slug": "game-development",
+                    "content": "content",
+                    "categoryId": 1,
+                    "createdAt": "",
+                    "updatedAt": "",
+                    "DeletedAt": ""
+                },
+                {
+                    "id": 1,
+                    "name": "Game Development",
+                    "description": "Description Game development",
+                    "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+                    "level": "Cơ bản",
+                    "price": 10,
+                    "slug": "game-development",
+                    "content": "content",
+                    "categoryId": 1,
+                    "createdAt": "",
+                    "updatedAt": "",
+                    "DeletedAt": ""
+                },
+                {
+                    "id": 1,
+                    "name": "Game Development",
+                    "description": "Description Game development",
+                    "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+                    "level": "Cơ bản",
+                    "price": 10,
+                    "slug": "game-development",
+                    "content": "content",
+                    "categoryId": 1,
+                    "createdAt": "",
+                    "updatedAt": "",
+                    "DeletedAt": ""
+                }
+            ]
+        },
+        {
+            "title": "New Courses",
+            "listCourses": [
+                {
+                    "id": 1,
+                    "name": "Game Development",
+                    "description": "Description Game development",
+                    "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+                    "level": "Cơ bản",
+                    "price": 0,
+                    "slug": "game-development",
+                    "content": "content",
+                    "categoryId": 1,
+                    "createdAt": "",
+                    "updatedAt": "",
+                    "DeletedAt": ""
+                },
+                {
+                    "id": 1,
+                    "name": "Game Development",
+                    "description": "Description Game development",
+                    "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+                    "level": "Cơ bản",
+                    "price": 10,
+                    "slug": "game-development",
+                    "content": "content",
+                    "categoryId": 1,
+                    "createdAt": "",
+                    "updatedAt": "",
+                    "DeletedAt": ""
+                },
+                {
+                    "id": 1,
+                    "name": "Game Development",
+                    "description": "Description Game development",
+                    "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+                    "level": "Cơ bản",
+                    "price": 10,
+                    "slug": "game-development",
+                    "content": "content",
+                    "categoryId": 1,
+                    "createdAt": "",
+                    "updatedAt": "",
+                    "DeletedAt": ""
+                },
+                {
+                    "id": 1,
+                    "name": "Game Development",
+                    "description": "Description Game development",
+                    "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+                    "level": "Cơ bản",
+                    "price": 10,
+                    "slug": "game-development",
+                    "content": "content",
+                    "categoryId": 1,
+                    "createdAt": "",
+                    "updatedAt": "",
+                    "DeletedAt": ""
+                },
+                {
+                    "id": 1,
+                    "name": "Game Development",
+                    "description": "Description Game development",
+                    "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+                    "level": "Cơ bản",
+                    "price": 10,
+                    "slug": "game-development",
+                    "content": "content",
+                    "categoryId": 1,
+                    "createdAt": "",
+                    "updatedAt": "",
+                    "DeletedAt": ""
+                },
+                {
+                    "id": 1,
+                    "name": "Game Development",
+                    "description": "Description Game development",
+                    "image": "https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg",
+                    "level": "Cơ bản",
+                    "price": 10,
+                    "slug": "game-development",
+                    "content": "content",
+                    "categoryId": 1,
+                    "createdAt": "",
+                    "updatedAt": "",
+                    "DeletedAt": ""
+                }
+            ]
+        }
+    ],
+    "road-map": [
+        {
+            "header": "Giao đoạn 1: Ôn Tập Kiến Thức",
+            "listPhaseCourses": [
+                {
+                    "title": "Kiến thức cơ bản/ Ngôn ngữ lập trình",
+                    "images": [
+                        {
+                            "name": "html",
+                            "image": "https://files.fullstack.edu.vn/f8-prod/courses/15/62f13d2424a47.png"
+                        },
+                        {
+                            "name": "html",
+                            "image": "https://files.fullstack.edu.vn/f8-prod/courses/15/62f13d2424a47.png"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "header": "Giao đoạn 2: Học Kiến Thức (Frontend/Backend)",
+            "listPhaseCourses": [
+                {
+                    "title": "Frontend",
+                    "images": [
+                        {
+                            "name": "html",
+                            "image": "https://files.fullstack.edu.vn/f8-prod/courses/15/62f13d2424a47.png"
+                        },
+                        {
+                            "name": "html",
+                            "image": "https://files.fullstack.edu.vn/f8-prod/courses/15/62f13d2424a47.png"
+                        },
+                        {
+                            "name": "html",
+                            "image": "https://files.fullstack.edu.vn/f8-prod/courses/15/62f13d2424a47.png"
+                        }
+                    ]
+                },
+                {
+                    "title": "Backend",
+                    "images": [
+                        {
+                            "name": "html",
+                            "image": "https://files.fullstack.edu.vn/f8-prod/courses/15/62f13d2424a47.png"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "header": "Giao đoạn 3: Thực Hành Fullstack",
+            "listPhaseCourses": [
+                {
+                    "title": "Định Hướng 1",
+                    "images": [
+                        {
+                            "name": "html",
+                            "image": "https://files.fullstack.edu.vn/f8-prod/courses/15/62f13d2424a47.png"
+                        }
+                    ]
+                },
+                {
+                    "title": "Định Hướng 2",
+                    "images": [
+                        {
+                            "name": "html",
+                            "image": "https://files.fullstack.edu.vn/f8-prod/courses/15/62f13d2424a47.png"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "header": "Giao đoạn 4: Triển khai dự án thực tế",
+            "listPhaseCourses": [
+                {
+                    "title": "Xây dựng và triển khai sản phẩm",
+                    "images": [
+                        {
+                            "name": "html",
+                            "image": "https://files.fullstack.edu.vn/f8-prod/courses/15/62f13d2424a47.png"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

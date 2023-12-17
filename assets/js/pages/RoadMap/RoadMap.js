@@ -6,15 +6,14 @@ import PhaseRow from './PhaseRow.js';
 async function RoadMap() {
     const process = roadmapService.getRoadMap();
     const data = await process;
-    console.log('🚀 ~ file: RoadMap.js:7 ~ RoadMap ~ data:', data);
     return html`
-        <div class="grid wide">
+        <div class="grid">
             <div class="roadmap_wrapper">
-                <div class="row">
-                    <div class="col l-12 d-flex-center">
+                <div class="row d-flex-center">
+                    <div class="col l-12 m-12 c-12 d-flex-center">
                         <h1 class="roadmap_heading">Road Map</h1>
                     </div>
-                    <div class="col l-12 d-flex-center">
+                    <div class="col l-11 m-11 c-12 d-flex-center">
                         <div class="step_wrapper">
                             <div class="step_horizontal">
                                 <div class="step-item">

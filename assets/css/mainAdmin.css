@@ -369,9 +369,10 @@ tr {
   background-color: var(--beige-color);
   z-index: 3;
 }
-.header .header_logo,
-.header .header_body,
-.header .header_actions {
+
+.header_logo,
+.header_body,
+.header_actions {
   flex: 1 1;
 }
 

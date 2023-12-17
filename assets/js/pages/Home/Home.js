@@ -6,7 +6,7 @@ import ScrollList from './ScrollList.js';
 import * as homeService from '../../services/homeService.js';
 
 async function Home() {
-    const data = await homeService.getCourse();
+    const process = homeService.getCourse();
 
     setTimeout(() => {
         const slideList = document.querySelector('.slide-track');
@@ -131,6 +131,8 @@ async function Home() {
             clearInterval(interval);
         }
     });
+
+    const data = await process;
 
     return html`
         <div class="grid">

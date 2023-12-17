@@ -2,7 +2,7 @@ import { template, resolveRoute } from '../utils/route.js';
 import routePath from './index.js';
 
 import Home from '../pages/Home/index.js';
-import RoadMap from '../pages/road-map.js';
+import RoadMap from '../pages/RoadMap/index.js';
 import Blog from '../pages/blog.js';
 import DetailCourse from '../pages/detail-course.js';
 
@@ -11,8 +11,8 @@ const content = document.getElementById('content');
 template('home', async function () {
     content.innerHTML = await Home();
 });
-template('road-map', function () {
-    content.innerHTML = RoadMap();
+template('road-map', async function () {
+    content.innerHTML = await RoadMap();
 });
 template('blog', function () {
     content.innerHTML = Blog();

@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     </head>
 
-    <body ng-app="AppHocTap">
+    <body>
         <div id="root"></div>
         <div class="app">
             <!-- Header -->
@@ -18,9 +18,9 @@
                     <!-- Header logo -->
                     <div class="header_logo">
                         <a href="/" class="logo-link">
-                                <i class="fa-solid fa-code logo"></i>
-                                Codelearn
-                            </a>
+                            <i class="fa-solid fa-code logo"></i>
+                            Codelearn
+                        </a>
 
                         <button aria-expanded="false" class="header_categories-btn btn">
                             Categories
@@ -136,7 +136,7 @@
                 </div>
 
                 <!-- Content -->
-                <div ng-controller="WatchCtrl" id="content" class="content">
+                <div id="content" class="content">
                     <div class="grid">
                         <div class="row">
                             <div class="col l-8 m-12 c-12">
@@ -151,29 +151,26 @@
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                         allowfullscreen
                                     ></iframe>
-                                    <h1 class="video_title">{{baiHoc.nameLesson}}</h1>
+                                    <h1 class="video_title"></h1>
                                 </div>
                             </div>
 
                             <div class="col l-4 m-12 c-12">
                                 <div class="lessons_wrapper">
                                     <h3 class="lesson_header">
-                                        <a href="#">{{khoahoc.nameCourse}}</a>
+                                        <a href="#"></a>
                                     </h3>
 
                                     <ul class="lesson_list">
-                                        <li class="lesson_item" ">
-                                            <span class="lesson_item-index">{{$index + 1}}</span>
-                                            <a
-                                                href="watch-course.html?c={{khoahoc.courseId}}&l={{x.lessonId}}&v={{x.videoId}}"
-                                                class="lesson_item-link"
-                                            >
+                                        <li class="lesson_item">
+                                            <span class="lesson_item-index"></span>
+                                            <a href="watch-course.html" class="lesson_item-link">
                                                 <img
-                                                    src="https://i.ytimg.com/vi/{{x.videoId}}/hq720.jpg"
+                                                    src="https://i.ytimg.com/vi//hq720.jpg"
                                                     alt=""
                                                     class="lesson_item-thumb"
                                                 />
-                                                <h3 class="lesson_item-title">{{x.nameLesson}}</h3>
+                                                <h3 class="lesson_item-title"></h3>
                                             </a>
                                         </li>
                                     </ul>
@@ -188,9 +185,8 @@
                                     <a href="#" class="hashtag">#nodejs</a>
 
                                     <div class="lesson_description-detail" style="font-size: 1.5rem">
-                                        {{baiHoc.description}}
                                         <br />
-                                        <p class="lesson-content">{{baiHoc.content}}</p>
+                                        <p class="lesson-content"></p>
                                     </div>
                                 </div>
 

@@ -1,5 +1,5 @@
 import storage from '../utils/storage.js';
-import { formatDate, formatNumber } from '../utils/formatData.js';
+import { formatNumber } from '../utils/formatData.js';
 
 import CurriculumItem from '../components/CurriculumItem.js';
 
@@ -100,6 +100,7 @@ if (existingDataIndex) {
         } else {
             courses.push(data);
             storage.set('myCourses', courses);
+            alert('Bạn đăng ký thành công!');
             location.reload();
         }
     };

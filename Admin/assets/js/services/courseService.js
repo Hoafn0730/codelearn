@@ -10,12 +10,7 @@ const $$ = document.querySelectorAll.bind(document);
 
 const form = document.forms['form-course'];
 const table = $('.table tbody');
-const btnCourse = $('#btn-course');
-const btnUpdateLesson = $('.btn-update-lesson');
-const searchType = $('.search-type.input-course');
-const btnSearch = $('.btn-search.search-course');
-const searchTypeLesson = $('.search-type.input-lesson');
-const btnSearchLesson = $('.btn-search.search-lesson');
+
 const lessonList = $('.lesson_list .table tbody');
 
 const courseId = $('#courseId');
@@ -25,19 +20,15 @@ const image = $('#image');
 const level = $('#level');
 const price = $('#price');
 const categoryId = $('#categoryId');
-const teacherId = $('#teacherId');
 
 const formData = {};
-let total = 0;
 
 const getListCourse = async function (page, pageSize) {
-    const response = await fetchApi.get(`/courses?_page=${page}&_limit=${pageSize}`);
-    return await response.json();
+    return await fetchApi.get(`/courses?_page=${page}&_limit=${pageSize}`);
 };
 
 const getListLessonById = async (id) => {
-    const response = await fetchApi.get(`/lessons?courseId=${id}`);
-    return await response.json();
+    return await fetchApi.get(`/lessons?courseId=${id}`);
 };
 
 // + (listItem.page > 1 ? index = (listItem.page - 1) * 10 + 1 : index = 1 )
@@ -125,8 +116,7 @@ table.innerHTML = htmls.join('');
 async function reload() {
     // Navigation
     // Load thanh điều hướng theo tổng số khóa học
-    const response = await fetchApi.get(`/courses`);
-    const courses = await response.json();
+    const courses = await fetchApi.get(`/courses`);
 
     const total = courses.length;
     const totalPages = Math.ceil(total / 10);

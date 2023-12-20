@@ -22,8 +22,9 @@ const userData = () => {
 };
 
 const myCourse = {
-    renderCourse: function () {
-        const courses = storage.get('myCourses') || [];
+    renderCourse: async function () {
+        const process = fetchApi.get('/register');
+        const courses = storage.get('myCourses') || (await process);
 
         const listCourses = document.querySelector('.header_mycourses-list');
         if (courses.length == 0 || courses == null) {
@@ -40,12 +41,7 @@ const myCourse = {
 
 const category = {
     renderCategory: async function () {
-        const categories = await fetchApi.get('/categories').then((response) => {
-            if (response.status === 401) {
-                //location.assign('login.html');
-            }
-            return response.json();
-        });
+        const categories = await fetchApi.get('/categories');
 
         const listCategories = document.querySelector('.header_categories-list');
         const htmls = categories.map((category) => Category({ category }));
@@ -55,12 +51,7 @@ const category = {
 
 const notification = {
     renderNotification: async function () {
-        const notifications = await fetchApi.get('/notifications').then((response) => {
-            if (response.status === 401) {
-                location.assign('login.html');
-            }
-            return response.json();
-        });
+        const notifications = await fetchApi.get('/notifications');
 
         const listNotifications = document.querySelector('.header_notifications-list');
         if (notifications.length == 0) {

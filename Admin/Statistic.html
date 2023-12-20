@@ -109,15 +109,23 @@
                 <div id="content" class="content">
                     <div class="grid">
                         <div class="title">
-                            <h3>Thống kê tháng {{month}}</h3>
+                            <h3>Thống kê tháng 12</h3>
                         </div>
                         <div class="row">
                             <div class="col l-4">
                                 <div class="padding-box">
                                     <div class="box" style="background-color: #9abc32">
                                         <div class="box-left"><i class="fas fa-signal"></i></div>
+                                        <div class="box-right">Số học viên đăng ký<br /><span>120</span> học viên</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col l-4">
+                                <div class="padding-box">
+                                    <div class="box" style="background-color: #9abc32">
+                                        <div class="box-left"><i class="fas fa-signal"></i></div>
                                         <div class="box-right">
-                                            Số học viên đăng ký<br /><span>{{Total}}</span> học viên
+                                            Số khóa học được đăng ký<br /><span>12</span> khóa học
                                         </div>
                                     </div>
                                 </div>
@@ -127,17 +135,7 @@
                                     <div class="box" style="background-color: #9abc32">
                                         <div class="box-left"><i class="fas fa-signal"></i></div>
                                         <div class="box-right">
-                                            Số khóa học được đăng ký<br /><span>{{Total}}</span> khóa học
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col l-4">
-                                <div class="padding-box">
-                                    <div class="box" style="background-color: #9abc32">
-                                        <div class="box-left"><i class="fas fa-signal"></i></div>
-                                        <div class="box-right">
-                                            Doanh thu theo tháng<br /><span>{{Revenue}}</span> VNĐ
+                                            Doanh thu theo tháng<br /><span>2.000.000</span> VNĐ
                                         </div>
                                     </div>
                                 </div>
@@ -163,9 +161,7 @@
                                             <label for="name" class="form-label">Năm: </label>
                                             <input type="text" class="form-control" id="year" name="year" />
                                         </div>
-                                        <div style="font-size: 1.6rem; margin: 10px 10px">
-                                            Danh thu : {{Revenue}} VNĐ
-                                        </div>
+                                        <div style="font-size: 1.6rem; margin: 10px 10px">Danh thu : 2.000.000 VNĐ</div>
                                         <div class="col l-12 mt-12">
                                             <button
                                                 id="btn-statistic"
@@ -195,48 +191,56 @@
                                     </div>
 
                                     <!-- Form du lieu -->
-                                    <form name="container-form" action="">
-                                        <table class="table">
-                                            <thead>
-                                                <tr>
-                                                    <th scope="col" colspan="2">#</th>
-                                                    <th scope="col">Mã người dùng</th>
-                                                    <th scope="col">Tên người dùng</th>
-                                                    <th scope="col">Tên khóa học</th>
-                                                    <th scope="col" colspan="2">Ngày đăng ký</th>
-                                                </tr>
-                                            </thead>
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" colspan="2">#</th>
+                                                <th scope="col">Mã người dùng</th>
+                                                <th scope="col">Tên người dùng</th>
+                                                <th scope="col">Mã khóa học</th>
+                                                <th scope="col">Ngày đăng ký</th>
+                                                <th scope="col" colspan="2">Trạng thái</th>
+                                            </tr>
+                                        </thead>
 
-                                            <tbody>
-                                                <tr class="participation-item" ng-repeat="x in listItem.data">
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <input
-                                                                class="form-check-input"
-                                                                type="checkbox"
-                                                                value="{{x.participationId}}"
-                                                                name="participationIds[]"
-                                                            />
-                                                        </div>
-                                                    </td>
+                                        <tbody>
+                                            <tr class="participation-item">
+                                                <td>
+                                                    <div class="form-check">
+                                                        <input
+                                                            class="form-check-input"
+                                                            type="checkbox"
+                                                            value="{{x.participationId}}"
+                                                            name="participationIds[]"
+                                                        />
+                                                    </div>
+                                                </td>
+                                                <th scope="row">
+                                                    {{ $index + (listItem.page > 1 ? index = (listItem.page - 1) * 10 +
+                                                    1 : index = 1 )}}
+                                                </th>
+                                                <td>{{x.userId}}</td>
+                                                <td class="name">{{x.name}}</td>
+                                                <td>{{x.nameCourse}}</td>
+                                                <td>@{{x.registrationDate}}</td>
+                                                <td>{{x.status ? 'Đã xác nhận' : 'Chưa được xác nhận'}}</td>
+                                                <td>
+                                                    <a
+                                                        href=""
+                                                        class="btn btn-link btn-delete-participation"
+                                                        data-id="{{x.participationId}}"
+                                                    >
+                                                        Xóa
+                                                    </a>
+                                                </td>
+                                            </tr>
 
-                                                    <th scope="row">
-                                                        {{ $index + (listItem.page > 1 ? index = (listItem.page - 1) *
-                                                        10 + 1 : index = 1 )}}
-                                                    </th>
-                                                    <td class="name">{{x.userId}}</td>
-                                                    <td class="name">{{x.name}}</td>
-                                                    <td>{{x.nameCourse}}</td>
-                                                    <td>@{{x.registrationDate}}</td>
-                                                </tr>
-
-                                                <!-- <tr>
+                                            <!-- <tr>
                                                         <td colspan='5' class='text-center'>Bạn chưa đăng khóa học nào.
                                                         </td>
                                                     </tr> -->
-                                            </tbody>
-                                        </table>
-                                    </form>
+                                        </tbody>
+                                    </table>
                                 </div>
 
                                 <div class="padding-box">

@@ -4,6 +4,7 @@ import routePath from './index.js';
 import Home from '../pages/Home/index.js';
 import RoadMap from '../pages/RoadMap/index.js';
 import Blog from '../pages/blog.js';
+import Profile from '../pages/Profile/index.js';
 import DetailCourse from '../pages/detail-course.js';
 
 const content = document.getElementById('content');
@@ -16,6 +17,9 @@ template('road-map', async function () {
 });
 template('blog', function () {
     content.innerHTML = Blog();
+});
+template('profile', function () {
+    content.innerHTML = Profile();
 });
 template('detail-course', function () {
     content.innerHTML = DetailCourse();

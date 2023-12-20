@@ -6,6 +6,7 @@ function routePath() {
     route('/', 'home');
     route('/road-map', 'road-map');
     route('/blog', 'blog');
+    route('/profile', 'profile');
     route('/courses/' + part[part.length - 1], 'detail-course');
 }
 

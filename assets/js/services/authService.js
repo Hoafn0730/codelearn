@@ -2,9 +2,7 @@ import fetchApi from '../utils/fetchApi.js';
 import storage from '../utils/storage.js';
 
 const login = async (data) => {
-    const response = await fetchApi.get(`/users?userName=${data.userName}&userName=${data.password}`);
-
-    return response.json();
+    return await fetchApi.get(`/users?userName=${data.userName}&userName=${data.password}`);
 };
 
 const logout = () => {

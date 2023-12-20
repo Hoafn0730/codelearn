@@ -130,7 +130,7 @@ async function Home() {
         function runClearInterval() {
             clearInterval(interval);
         }
-    });
+    }, 100);
 
     const data = await process;
 

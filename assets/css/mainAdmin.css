@@ -60,6 +60,18 @@ html {
   justify-content: center;
 }
 
+.bdr {
+  border: 1px solid red;
+}
+
+.bdo {
+  border: 1px solid orange;
+}
+
+.bdb {
+  border: 1px solid blue;
+}
+
 .dropdown-icon {
   height: 14px;
   margin-left: 6px;

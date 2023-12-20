@@ -5,12 +5,15 @@ const fetchApi = (function () {
             API = path;
         },
         get: async function (path, option = {}) {
-            try {
-                return await fetch(`${API}${path}`, option).then((response) => response);
-            } catch (error) {
-                console.error('Error fetching user data:', error);
-                return null;
-            }
+            return new Promise(async (resolve, reject) => {
+                try {
+                    const res = await fetch(`${API}${path}`, option);
+                    resolve(res.json());
+                } catch (error) {
+                    console.error('Error fetching user data:', error);
+                    reject(error);
+                }
+            });
         },
         post: async function (path, data = {}) {
             try {

@@ -1,8 +1,8 @@
 import fetchApi from '../utils/fetchApi.js';
 
 const getCourse = async function () {
-    const response = await fetchApi.get('/home');
-    return await response.json();
+    const data = await fetchApi.get('/home');
+    return data;
 };
 
 export { getCourse };

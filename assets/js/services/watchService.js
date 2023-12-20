@@ -19,8 +19,7 @@ const lessonContent = $('.lesson-content');
 var id = url.getSearchParams('c');
 
 const getListLesson = async function () {
-    const response = await fetchApi.get('/lessons?courseId=' + id);
-    return await response.json();
+    return await fetchApi.get('/lessons?courseId=' + id);
 };
 const data = await getListLesson();
 const htmls = data.map(

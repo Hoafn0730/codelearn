@@ -28,7 +28,7 @@ function UserMenu({ data }) {
             <hr />
             <ul class="userMenu-list">
                 <li class="userMenu_item">
-                    <a href="/profile?id=${data.userId}" class="userMenu_item-link"> Profile</a>
+                    <a href="#/profile" class="userMenu_item-link"> Profile</a>
                 </li>
                 <hr />
                 <li class="userMenu_item">

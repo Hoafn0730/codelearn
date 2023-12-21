@@ -1,6 +1,6 @@
 import convertFormData from '../../../../assets/js/utils/convertFormData.js';
 import html from '../../../../assets/js/utils/html.js';
-import fetchApi from '../../../../assets/js/utils/fetchApi.js';
+import db from '../../../../assets/js/db.js';
 import url from '../../../../assets/js/utils/url.js';
 
 import { lessonHandle, dataArray, lazyLoadSections } from '../lessonHandle.js';
@@ -10,6 +10,7 @@ const $$ = document.querySelectorAll.bind(document);
 
 const form = document.forms['form-course'];
 const table = $('.table tbody');
+const soluong = $('#soluong');
 
 const lessonList = $('.lesson_list .table tbody');
 
@@ -23,12 +24,22 @@ const categoryId = $('#categoryId');
 
 const formData = {};
 
-const getListCourse = async function (page, pageSize) {
-    return await fetchApi.get(`/courses?_page=${page}&_limit=${pageSize}`);
+// Hàm phân trang
+function paginateData(dataArray, pageNumber, pageSize) {
+    const startIndex = (pageNumber - 1) * pageSize;
+    const endIndex = startIndex + pageSize;
+    const paginatedData = dataArray.slice(startIndex, endIndex);
+
+    return paginatedData;
+}
+
+const getListCourse = function (page, pageSize) {
+    const data = db.courses;
+    return paginateData(data, page, pageSize);
 };
 
-const getListLessonById = async (id) => {
-    return await fetchApi.get(`/lessons?courseId=${id}`);
+const getListLessonById = (id) => {
+    return db.lessons.filter((x) => x.courseId === Number(id));
 };
 
 // + (listItem.page > 1 ? index = (listItem.page - 1) * 10 + 1 : index = 1 )
@@ -116,9 +127,10 @@ table.innerHTML = htmls.join('');
 async function reload() {
     // Navigation
     // Load thanh điều hướng theo tổng số khóa học
-    const courses = await fetchApi.get(`/courses`);
+    const courses = db.courses;
 
     const total = courses.length;
+    soluong.innerText = total;
     const totalPages = Math.ceil(total / 10);
     $('.navigation').innerHTML = '';
     for (let index = 0; index < totalPages; index++) {

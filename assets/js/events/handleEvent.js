@@ -1,6 +1,5 @@
 import router from '../routes/router.js';
 import searchCourse from '../services/searchService.js';
-import nameToSlug from '../utils/nameToSlug.js';
 
 const searchInput = document.querySelector('.header_search-input');
 const loginBtn = document.querySelector('.login-btn');
@@ -12,7 +11,7 @@ const handleClickActions = () => {
     const myCourses = document.querySelector('#mycourses');
     const btnNotifications = document.querySelector('.notification-icon');
     const notifications = document.querySelector('#notifications');
-    let btnAvatar = document.querySelector('.avatar');
+    let btnAvatar = document.querySelector('.header_actions-avatar .avatar');
     const userMenu = document.querySelector('#userMenu');
 
     let isExpanded = false;
@@ -112,12 +111,13 @@ const handleClickActions = () => {
 function handleEvent() {
     searchInput.oninput = () => {
         const value = searchInput.value;
+        console.log('🚀 ~ file: handleEvent.js:115 ~ handleEvent ~ value:', value);
         searchCourse(value);
     };
 
     searchInput.onkeyup = (e) => {
         if (e.key === 'Enter' && searchInput.value) {
-            location.assign('/search.html?search=' + nameToSlug(searchInput.value));
+            location.assign('/search.html?search=' + searchInput.value);
         }
     };
 

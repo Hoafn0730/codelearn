@@ -1,5 +1,5 @@
-import fetchApi from '../utils/fetchApi.js';
 import storage from '../utils/storage.js';
+import db from '../db.js';
 
 import Category from '../components/Header/Category.js';
 import MyCourse from '../components/Header/MyCourse.js';
@@ -22,9 +22,9 @@ const userData = () => {
 };
 
 const myCourse = {
-    renderCourse: async function () {
-        const process = fetchApi.get('/register');
-        const courses = storage.get('myCourses') || (await process);
+    renderCourse: function () {
+        // const process = fetchApi.get('/register');
+        const courses = storage.get('myCourses') || db.register;
 
         const listCourses = document.querySelector('.header_mycourses-list');
         if (courses.length == 0 || courses == null) {
@@ -40,8 +40,8 @@ const myCourse = {
 };
 
 const category = {
-    renderCategory: async function () {
-        const categories = await fetchApi.get('/categories');
+    renderCategory: function () {
+        const categories = db.categories;
 
         const listCategories = document.querySelector('.header_categories-list');
         const htmls = categories.map((category) => Category({ category }));
@@ -50,8 +50,8 @@ const category = {
 };
 
 const notification = {
-    renderNotification: async function () {
-        const notifications = await fetchApi.get('/notifications');
+    renderNotification: function () {
+        const notifications = db.notifications;
 
         const listNotifications = document.querySelector('.header_notifications-list');
         if (notifications.length == 0) {
@@ -67,7 +67,7 @@ const notification = {
     },
 };
 
-export default async () => {
+export default () => {
     category.renderCategory();
     myCourse.renderCourse();
     notification.renderNotification();

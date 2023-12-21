@@ -1,7 +1,7 @@
-import fetchApi from '../utils/fetchApi.js';
+import db from '../db.js';
 
-const getCourse = async function () {
-    const data = await fetchApi.get('/home');
+const getCourse = function () {
+    const data = db.home;
     return data;
 };
 

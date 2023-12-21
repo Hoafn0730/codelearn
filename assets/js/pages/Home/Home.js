@@ -5,7 +5,7 @@ import ScrollList from './ScrollList.js';
 
 import * as homeService from '../../services/homeService.js';
 
-async function Home() {
+function Home() {
     const process = homeService.getCourse();
 
     setTimeout(() => {
@@ -132,7 +132,7 @@ async function Home() {
         }
     }, 100);
 
-    const data = await process;
+    const data = process;
 
     return html`
         <div class="grid">

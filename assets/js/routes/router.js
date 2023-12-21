@@ -9,11 +9,11 @@ import DetailCourse from '../pages/detail-course.js';
 
 const content = document.getElementById('content');
 
-template('home', async function () {
-    content.innerHTML = await Home();
+template('home', function () {
+    content.innerHTML = Home();
 });
-template('road-map', async function () {
-    content.innerHTML = await RoadMap();
+template('road-map', function () {
+    content.innerHTML = RoadMap();
 });
 template('blog', function () {
     content.innerHTML = Blog();

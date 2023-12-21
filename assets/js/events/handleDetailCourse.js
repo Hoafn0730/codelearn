@@ -1,9 +1,8 @@
 import storage from '../utils/storage.js';
 import { formatNumber } from '../utils/formatData.js';
+import db from '../db.js';
 
 import CurriculumItem from '../components/CurriculumItem.js';
-
-import getCourseById from '../services/detailService.js';
 
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
@@ -21,7 +20,7 @@ const courseDetailLevel = $('.courseDetail_level');
 
 var urlObject = new URL(window.location.href);
 var id = urlObject.searchParams.get('id');
-const data = await getCourseById(id);
+const data = db.courses.find((x) => x.id === Number(id));
 
 const listLesson = [
     {

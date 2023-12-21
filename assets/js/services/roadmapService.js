@@ -1,7 +1,8 @@
 import fetchApi from '../utils/fetchApi.js';
+import db from '../db.js';
 
-const getRoadMap = async function () {
-    const data = await fetchApi.get('/road-map');
+const getRoadMap = function () {
+    const data = db['road-map'];
     return data;
 };
 

@@ -3,9 +3,9 @@ import * as roadmapService from '../../services/roadmapService.js';
 
 import PhaseRow from './PhaseRow.js';
 
-async function RoadMap() {
-    const process = roadmapService.getRoadMap();
-    const data = await process;
+function RoadMap() {
+    const data = roadmapService.getRoadMap();
+
     return html`
         <div class="grid">
             <div class="roadmap_wrapper">

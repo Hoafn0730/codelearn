@@ -1,7 +1,7 @@
-import fetchApi from '../utils/fetchApi.js';
 import storage from '../utils/storage.js';
 import html from '../utils/html.js';
 import url from '../utils/url.js';
+import db from '../db.js';
 
 import Comment from '../components/Comment/Comment.js';
 
@@ -18,9 +18,10 @@ const lessonContent = $('.lesson-content');
 
 var id = url.getSearchParams('c');
 
-const getListLesson = async function () {
-    return await fetchApi.get('/lessons?courseId=' + id);
+const getListLesson = function () {
+    return db.lessons.filter((x) => x.courseId === Number(id));
 };
+
 const data = await getListLesson();
 const htmls = data.map(
     (item, index) => html`

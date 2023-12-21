@@ -1,5 +1,5 @@
 import convertFormData from '../../../../assets/js/utils/convertFormData.js';
-import fetchApi from '../../../../assets/js/utils/fetchApi.js';
+import db from '../../../../assets/js/db.js';
 import html from '../../../../assets/js/utils/html.js';
 
 const $ = document.querySelector.bind(document);
@@ -16,9 +16,8 @@ const userId = document.querySelector('#userId');
 const status = document.querySelector('#status');
 
 const formDataObject = {};
-const data = await fetchApi.get(`/register`);
+const data = db.register;
 
-console.log('🚀 ~ file: participationService.js:20 ~ data:', data);
 const htmls = data
     .map(
         (x, index) => html`

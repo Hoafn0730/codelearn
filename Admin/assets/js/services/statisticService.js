@@ -1,6 +1,6 @@
 import convertFormData from '../../../../assets/js/utils/convertFormData.js';
 import { formatNumber } from '../../../../assets/js/utils/formatData.js';
-import fetchApi from '../../../../assets/js/utils/fetchApi.js';
+import db from '../../../../assets/js/db.js';
 import html from '../../../../assets/js/utils/html.js';
 
 const form = document.forms['form-statistic'];
@@ -11,10 +11,18 @@ const listPopularCourses = $('.list-popular-courses');
 
 const formDataObject = {};
 
-const data = await fetchApi.get(`/register`);
-const data2 = await fetchApi.get(`/courses?_page=${1}&_limit=${5}`);
+// Hàm phân trang
+function paginateData(dataArray, pageNumber, pageSize) {
+    const startIndex = (pageNumber - 1) * pageSize;
+    const endIndex = startIndex + pageSize;
+    const paginatedData = dataArray.slice(startIndex, endIndex);
 
-console.log('🚀 ~ file: statisticService.js:17 ~ data2:', data2);
+    return paginatedData;
+}
+
+const data = db.register;
+const data2 = paginateData(db.courses, 1, 5);
+
 const htmls = data
     .map(
         (x, index) => html`

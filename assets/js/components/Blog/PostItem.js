@@ -1,6 +1,6 @@
 import html from '../../utils/html.js';
 
-function PostItem() {
+function PostItem({ data }) {
     return html`
         <li class="post-item">
             <div class="post-item__header">
@@ -58,21 +58,14 @@ function PostItem() {
             <div class="post-item__body">
                 <div class="post-item__info">
                     <a href="">
-                        <h3 class="post-item__title">Hướng dẫn chi tiết cách sử dụng Dev Mode trong khóa Pro</h3>
+                        <h3 class="post-item__title">${data.title}</h3>
                     </a>
-                    <p class="post-item__description">
-                        Chào bạn! Nếu bạn đã là học viên khóa Pro của F8, chắc hẳn bạn đã biết tới "Dev Mode" - giúp
-                        thực hành code song song khi xem video (bạn không cần phải dùng tới VS code nữa).
-                    </p>
-                    <a href="#" class="hashtag">#reactjs</a>
+                    <p class="post-item__description">${data.description}</p>
+                    <a href="/search.html?search=${data.hashtag}" class="hashtag">#${data.hashtag}</a>
                 </div>
 
                 <div class="post-item__thumb">
-                    <img
-                        src="https://files.fullstack.edu.vn/f8-prod/blog_posts/8334/64f01064b0724.png"
-                        alt=""
-                        class="post-item__img"
-                    />
+                    <img src="${data.image}" alt="" class="post-item__img" />
                 </div>
             </div>
 

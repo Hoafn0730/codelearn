@@ -8,7 +8,7 @@ function Footer() {
                     <div class="col l-3">
                         <a href="/" class="logo-link">
                             <i class="fa-solid fa-code logo"></i>
-                            Codelearn
+                            CodeLearn
                         </a>
                     </div>
                     <div class="col l-2">

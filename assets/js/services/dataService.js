@@ -24,10 +24,10 @@ const userData = () => {
 const myCourse = {
     renderCourse: function () {
         // const process = fetchApi.get('/register');
-        const courses = storage.get('myCourses') || db.register;
+        const courses = storage.get('myCourses') || [];
 
         const listCourses = document.querySelector('.header_mycourses-list');
-        if (courses.length == 0 || courses == null) {
+        if (courses.length === 0) {
             listCourses.innerHTML = `
                 <div class="header_courses-empty">Your course list is empty</div>
             `;

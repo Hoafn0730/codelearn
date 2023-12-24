@@ -38,7 +38,7 @@ function Profile() {
                                         </div>
                                         <span>
                                             Thành viên của
-                                            <strong class="profile_highlight">Codelearn</strong>
+                                            <strong class="profile_highlight">CodeLearn</strong>
                                             từ 6 tháng trước
                                         </span>
                                     </div>

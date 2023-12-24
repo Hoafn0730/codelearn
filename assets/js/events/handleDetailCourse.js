@@ -75,7 +75,7 @@ courseDetailDescription.innerText = data.description;
 lastUpdated.innerText = '~ Last updated ' + data.updatedAt;
 courseDetailContent.innerText = data.content;
 courseDetailImg.src = data.image;
-courseItemNewPrice.innerText = formatNumber(data.price) + 'đ';
+courseItemNewPrice.innerText = data.price !== -1 ? formatNumber(data.price) + 'đ' : '';
 courseDetailLevel.innerText = 'Cơ bản';
 
 const html = listLesson.map((section, index) => CurriculumItem({ data: section, index }));
@@ -93,6 +93,9 @@ if (existingDataIndex) {
         location.assign('watch-course.html?c=' + id);
     };
 } else {
+    if (data.price === -1) {
+        btnRegister.setAttribute('disabled', true);
+    }
     btnRegister.onclick = () => {
         if (!storage.get('account')) {
             confirm('Đăng nhập để đăng ký') && location.assign('login.html');

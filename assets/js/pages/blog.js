@@ -1,9 +1,10 @@
 import html from '../utils/html.js';
+import db from '../db.js';
 
 import PostItem from '../components/Blog/PostItem.js';
 
 function Blog() {
-    const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const data = db.blogs;
 
     return html`
         <div class="grid">
@@ -12,7 +13,7 @@ function Blog() {
                     <div class="col l-7">
                         <h1>Bài viết nổi bật</h1>
                         <ul class="post-list">
-                            ${data.map((item) => PostItem())}
+                            ${data.map((item) => PostItem({ data: item }))}
                         </ul>
                     </div>
                 </div>

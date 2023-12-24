@@ -1335,7 +1335,7 @@ tr {
   width: 100%;
   object-fit: cover;
   border-radius: 16px;
-  border: 1px solid rgba(22, 24, 35, 0.03);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .commonItem_title a {
@@ -1491,6 +1491,12 @@ tr {
   border-radius: 16px;
   background-color: var(--primary-color);
   color: var(--white-color);
+}
+
+.courseDetail_btn[disabled] {
+  user-select: none;
+  opacity: 0.5;
+  background-color: var(--primary-color);
 }
 
 .courseDetail_level {

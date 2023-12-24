@@ -10,11 +10,17 @@ function CommonItem({ data }) {
                     <img src="${data.image}" alt="" class="commonItem_thumb" />
                 </a>
                 <h3 class="commonItem_title">
-                    <a href="detail-course.html?id=${data.id}">${data.nameCourse}</a>
+                    <a href="detail-course.html?id=${data.id}">${data.name}</a>
                 </h3>
                 <div class="price">
-                    <!--<span class="courseItem_old-price">2.500.000đ</span>-->
-                    <span class="courseItem_new-price">${formatNumber(data.price)} đ</span>
+                    ${data.price === 0 || data.price === -1
+                        ? ''
+                        : data.price >= 1000000
+                        ? '<span class="courseItem_old-price">1.500.000đ</span>'
+                        : '<span class="courseItem_old-price">500.000đ</span>'}
+                    <span class="courseItem_new-price"
+                        >${data.price === -1 ? '' : data.price > 0 ? formatNumber(data.price) + ' đ' : 'Miễn phí'}
+                    </span>
                 </div>
             </div>
         </div>

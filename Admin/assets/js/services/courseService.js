@@ -76,7 +76,7 @@ function RowLesson({ data, index }) {
                 </div>
             </td>
 
-            <th scope="row">${index}</th>
+            <th scope="row">${index + 1}</th>
 
             <td>
                 <section contenteditable="false" name="nameLesson" class="view" data-src="${data.name}">

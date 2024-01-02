@@ -1,6 +1,7 @@
 import storage from '../utils/storage.js';
 import { formatNumber } from '../utils/formatData.js';
 import db from '../db.js';
+import url from '../utils/url.js';
 
 import CurriculumItem from '../components/CurriculumItem.js';
 
@@ -18,8 +19,7 @@ const courseDetailImg = $('.courseDetail_img');
 const courseItemNewPrice = $('.courseItem_new-price');
 const courseDetailLevel = $('.courseDetail_level');
 
-var urlObject = new URL(window.location.href);
-var id = urlObject.searchParams.get('id');
+var id = url.getSearchParams('id');
 const data = db.courses.find((x) => x.id === Number(id));
 
 const listLesson = [
@@ -100,6 +100,10 @@ if (existingDataIndex) {
         if (!storage.get('account')) {
             confirm('Đăng nhập để đăng ký') && location.assign('login.html');
         } else {
+            if (data.price > 0) {
+                location.assign('pay.html?c=' + id);
+                return;
+            }
             courses.push(data);
             storage.set('myCourses', courses);
             alert('Bạn đăng ký thành công!');

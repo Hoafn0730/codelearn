@@ -1,0 +1,94 @@
+.pay_wrapper {
+    padding: 20px 0;
+
+    .row {
+        border: 1px solid rgba(0, 0, 0, 0.137);
+        padding: 10px;
+        margin: 10px 0;
+        outline: none;
+        width: 100%;
+        min-width: unset;
+        border-radius: 5px;
+        background-color: rgba(221, 228, 236, 0.301);
+        border-color: rgba(221, 228, 236, 0.459);
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+}
+.course_heading {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+form a {
+    color: grey;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    &:hover {
+        color: grey;
+        text-decoration: none;
+    }
+}
+
+.card-input {
+    width: 100%;
+    padding: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 1.6rem;
+    border: none;
+    outline: none;
+    background-color: transparent;
+
+    &:focus::-webkit-input-placeholder {
+        color: transparent;
+    }
+
+    &:focus:-moz-placeholder {
+        color: transparent;
+    }
+
+    &:focus::-moz-placeholder {
+        color: transparent;
+    }
+
+    &:focus:-ms-input-placeholder {
+        color: transparent;
+    }
+}
+
+.check {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+.mb-50 {
+    margin-bottom: 50px;
+}
+
+.mx-auto {
+    margin: 0 auto;
+}
+
+.card-title {
+    font-weight: 700;
+    font-size: 2.5em;
+}
+
+#card-header {
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+#card-inner {
+    font-size: 1.6rem;
+    color: gray;
+}

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CodeLearn</title>
+        <link rel="stylesheet" href="./assets/css/grid.css" />
+        <link rel="stylesheet" href="./assets/css/main.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    </head>
+
+    <body>
+        <div class="app">
+            <!-- Header -->
+            <header class="header">
+                <div class="grid d-flex-center">
+                    <!-- Header logo -->
+                    <div class="header_logo">
+                        <a href="/" class="logo-link">
+                            <a href="/" class="logo-link">
+                                <i class="fa-solid fa-code logo"></i>
+                                CodeLearn
+                            </a>
+                        </a>
+
+                        <button aria-expanded="false" class="header_categories-btn btn">
+                            Categories
+                            <svg
+                                viewBox="0 0 8 8"
+                                fill="#fff"
+                                xmlns="http://www.w3.org/2000/svg"
+                                role="img"
+                                aria-hidden="true"
+                                aria-label="dropdown"
+                                class="dropdown-icon"
+                            >
+                                <title>Arrow Chevron Down Filled Icon</title>
+                                <mask id="ArrowChevronDownFilledIcon-mask-3">
+                                    <path d="M7.066 1.5L4 6.099.934 1.5h6.132z" fill="#fff"></path>
+                                </mask>
+                                <g mask="url(#ArrowChevronDownFilledIcon-mask-3)">
+                                    <rect width="100%" height="100%" fill="currentColor"></rect>
+                                </g>
+                            </svg>
+                        </button>
+                        <!-- Categories -->
+                        <div aria-hidden="true" id="categories" class="header_categories categories-wrapper">
+                            <div class="categories_header">
+                                <h6 class="categories_heading">Categories</h6>
+                            </div>
+
+                            <ul class="header_categories-list"></ul>
+                        </div>
+                    </div>
+
+                    <!-- Header body -->
+                    <div class="header_body d-flex-center">
+                        <!-- Search -->
+                        <div class="header_search">
+                            <i class="header_search-icon fa-solid fa-magnifying-glass"></i>
+                            <input type="text" class="header_search-input" placeholder="Search..." />
+
+                            <div class="search-wrapper">
+                                <div class="search_list-wrapper">
+                                    <div class="search_header">
+                                        <div class="search_heading">
+                                            <i class="search-icon fa-solid fa-magnifying-glass"></i>
+                                            <span>Search</span>
+                                        </div>
+                                        <div class="searchCount"></div>
+                                    </div>
+                                    <ul class="search_list"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Header Actions -->
+                    <div class="header_actions">
+                        <!-- myCourse -->
+                        <button aria-expanded="false" class="header_mycourses-btn btn">My Courses</button>
+                        <div aria-hidden="true" id="mycourses" class="header_mycourses mycourses-wrapper">
+                            <div class="mycourses_header">
+                                <h6 class="mycourses_heading">My Courses</h6>
+                            </div>
+                            <ul class="header_mycourses-list"></ul>
+                        </div>
+
+                        <!-- Cart -->
+                        <!-- <div class="cart-btn cart-icon fa-solid fa-cart-shopping"></div> -->
+
+                        <!-- Notification -->
+                        <div aria-expanded="false" class="notification-btn notification-icon fa-solid fa-bell"></div>
+                        <div aria-hidden="true" id="notifications" class="header_notifications notifications-wrapper">
+                            <div class="notifications_header">
+                                <h6 class="notifications_heading">Notifications</h6>
+                            </div>
+
+                            <ul class="header_notifications-list"></ul>
+
+                            <a href="#" class="header_notifications-isSeeAll">Xem tất cả thông báo</a>
+                        </div>
+
+                        <button class="btn login-btn">Đăng nhập</button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Container -->
+            <div class="container">
+                <!-- Sidebar -->
+                <div class="sideBar">
+                    <div class="sideBar_wrapper">
+                        <ul class="sideBar_list">
+                            <li class="sideBar_item">
+                                <a href="#/" id="home" class="sideBar_item-link">
+                                    <i class="fa-solid fa-house"></i>
+                                    <span class="text sideBar_item-text">Home</span>
+                                </a>
+                            </li>
+
+                            <li class="sideBar_item">
+                                <a href="#/road-map" id="road-map" class="sideBar_item-link">
+                                    <i class="fa-solid fa-road"></i>
+                                    <span class="text sideBar_item-text">Road map</span>
+                                </a>
+                            </li>
+
+                            <li class="sideBar_item">
+                                <a href="#/blog" id="blog" class="sideBar_item-link">
+                                    <i class="fa-solid fa-newspaper"></i>
+                                    <span class="text sideBar_item-text">Blog</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div id="content" class="content">
+                    <div class="grid">
+                        <div class="pay_wrapper">
+                            <div class="row">
+                                <div class="col l-7">
+                                    <form>
+                                        <span id="card-header">Thẻ đã lưu:</span>
+                                        <div class="row d-flex-center">
+                                            <input type="radio" name="check" class="check" />
+                                            <div class="col l-1">
+                                                <img
+                                                    class="img-fluid"
+                                                    src="https://img.icons8.com/color/48/000000/mastercard-logo.png"
+                                                />
+                                            </div>
+                                            <div class="col l-8">
+                                                <input
+                                                    class="card-input"
+                                                    type="text"
+                                                    placeholder="**** **** **** 3193"
+                                                    disabled
+                                                />
+                                            </div>
+                                            <div class="col l-2">
+                                                <a href="#">Remove card</a>
+                                            </div>
+                                        </div>
+                                        <div class="row d-flex-center">
+                                            <input type="radio" name="check" class="check" />
+                                            <div class="col l-1">
+                                                <img
+                                                    class="img-fluid"
+                                                    src="https://img.icons8.com/color/48/000000/visa.png"
+                                                />
+                                            </div>
+                                            <div class="col l-8">
+                                                <input
+                                                    class="card-input"
+                                                    type="text"
+                                                    placeholder="**** **** **** 4296"
+                                                    disabled
+                                                />
+                                            </div>
+                                            <div class="col l-2">
+                                                <a href="#">Remove card</a>
+                                            </div>
+                                        </div>
+
+                                        <span id="card-header">Thêm thông tin thẻ:</span>
+                                        <div class="row">
+                                            <div class="col l-12"><span id="card-inner">Tên trên thẻ </span></div>
+                                            <div class="col l-12">
+                                                <input class="card-input" type="text" placeholder="Bojan Viner" />
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col l-6">
+                                                <span id="card-inner">Số thẻ</span>
+                                                <input class="card-input" type="text" placeholder="5134-5264-4" />
+                                            </div>
+                                            <div class="col l-3">
+                                                <span id="card-inner">Ngày hết hạn </span>
+                                                <input class="card-input" type="text" placeholder="MM/YY" />
+                                            </div>
+                                            <div class="col l-3">
+                                                <span id="card-inner">CVV</span>
+                                                <input class="card-input" type="text" placeholder="CVV" />
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-primary d-flex-center"><b>Thêm thẻ</b></button>
+                                    </form>
+                                </div>
+
+                                <div class="col l-5 m-12 c-12">
+                                    <div class="courseDetail_purchaseBadge">
+                                        <div class="courseDetail_preview">
+                                            <img src="{{khoahoc.image}}" alt="" class="courseDetail_img" />
+                                        </div>
+                                        <span class="course_heading">{{khoahoc.nameCourse}}</span>
+                                        <div class="price">
+                                            <span class="courseItem_new-price">{{formatNumber}}đ</span>
+                                        </div>
+                                        <button class="btn btn-primary btn-checkout">Hoàn tất thanh toán</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="grid wide">
+                    <div class="row">
+                        <div class="col l-3">
+                            <a href="/" class="logo-link">
+                                <i class="fa-solid fa-code logo"></i>
+                                CodeLearn
+                            </a>
+                        </div>
+                        <div class="col l-2">
+                            <h1 class="footer__heading">Thông tin</h1>
+                            <ul class="footer-list">
+                                <li class="footer-item">
+                                    <a href="#" class="footer-item__link">Giới thiệu</a>
+                                </li>
+                                <li class="footer-item">
+                                    <a href="#" class="footer-item__link">Liên hệ</a>
+                                </li>
+                                <li class="footer-item">
+                                    <a href="#" class="footer-item__link">Điều khoản</a>
+                                </li>
+                                <li class="footer-item">
+                                    <a href="#" class="footer-item__link">Bảo mật</a>
+                                </li>
+                                <li class="footer-item">
+                                    <a href="#" class="footer-item__link">Cơ hội việc làm</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col l-2">
+                            <h1 class="footer__heading">Khám phá</h1>
+                            <ul class="footer-list">
+                                <li class="footer-item">
+                                    <a href="#" class="footer-item__link">Game Nester</a>
+                                </li>
+                                <li class="footer-item">
+                                    <a href="#" class="footer-item__link">Game CSS Diner</a>
+                                </li>
+                                <li class="footer-item">
+                                    <a href="#" class="footer-item__link">Game CSS Selectors</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col l-2">
+                            <h1 class="footer__heading">Công cụ</h1>
+                            <ul class="footer-list">
+                                <li class="footer-item">
+                                    <a href="#" class="footer-item__link">Tạo CV xin việc</a>
+                                </li>
+                                <li class="footer-item">
+                                    <a href="#" class="footer-item__link">Rút gọn liên kết</a>
+                                </li>
+                                <li class="footer-item">
+                                    <a href="#" class="footer-item__link">Snippet generator</a>
+                                </li>
+                                <li class="footer-item">
+                                    <a href="#" class="footer-item__link">CSS Grid generator</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col l-3">
+                            <h3 class="footer__heading">THEO DÕI</h3>
+                            <ul class="footer-list">
+                                <li class="footer-item">
+                                    <a href="#" class="footer-item__link">
+                                        <i class="footer-item__icon fa-brands fa-facebook"></i>
+                                        Facebook</a
+                                    >
+                                </li>
+                                <li class="footer-item">
+                                    <a href="#" class="footer-item__link">
+                                        <i class="footer-item__icon fa-brands fa-instagram"></i>
+                                        Instagram</a
+                                    >
+                                </li>
+                                <li class="footer-item">
+                                    <a href="#" class="footer-item__link">
+                                        <i class="footer-item__icon fa-brands fa-linkedin"></i>
+                                        LinkedIn</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer__bottom">
+                        <p class="footer__text">© 2018 - 2023 CodeLearn. Nền tảng học lập trình hàng đầu Việt Nam</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script type="module" src="./assets/js/index.js"></script>
+        <script type="module" src="./assets/js/events/handlePay.js"></script>
+    </body>
+</html>

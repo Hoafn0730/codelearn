@@ -82,7 +82,8 @@ const db = {
             level: 'Cơ bản',
             price: 1000000,
             slug: 'nodejs',
-            content: 'content',
+            content:
+                'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
             categoryId: 2,
             createdAt: '',
             updatedAt: '',
@@ -97,7 +98,8 @@ const db = {
             level: 'Cơ bản',
             price: 1200000,
             slug: 'reactjs',
-            content: 'content',
+            content:
+                'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
             categoryId: 1,
             createdAt: '',
             updatedAt: '',
@@ -112,7 +114,8 @@ const db = {
             level: 'Cơ bản',
             price: 0,
             slug: 'javascript',
-            content: 'content',
+            content:
+                'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
             categoryId: 4,
             createdAt: '',
             updatedAt: '',
@@ -126,7 +129,8 @@ const db = {
             level: 'Cơ bản',
             price: 0,
             slug: 'html-css',
-            content: 'content',
+            content:
+                'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
             categoryId: 4,
             createdAt: '',
             updatedAt: '',
@@ -141,7 +145,8 @@ const db = {
             level: 'Cơ bản',
             price: 0,
             slug: 'lap-trinh-cpp-co-ban',
-            content: 'content',
+            content:
+                'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
             categoryId: 4,
             createdAt: '',
             updatedAt: '',
@@ -156,7 +161,8 @@ const db = {
             level: 'Nâng cao',
             price: 299000,
             slug: 'javascript-nang-cao',
-            content: 'content',
+            content:
+                'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
             categoryId: 4,
             createdAt: '',
             updatedAt: '',
@@ -171,7 +177,8 @@ const db = {
             level: 'Cơ bản',
             price: 0,
             slug: 'typescript-co-ban',
-            content: 'content',
+            content:
+                'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
             categoryId: 4,
             createdAt: '',
             updatedAt: '',
@@ -186,7 +193,8 @@ const db = {
             level: 'Cơ bản',
             price: 299000,
             slug: 'redux-co-ban',
-            content: 'content',
+            content:
+                'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
             categoryId: 1,
             createdAt: '',
             updatedAt: '',
@@ -201,7 +209,8 @@ const db = {
             level: 'Cơ bản',
             price: 0,
             slug: 'mongodb-co-ban',
-            content: 'content',
+            content:
+                'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
             categoryId: 2,
             createdAt: '',
             updatedAt: '',
@@ -215,7 +224,8 @@ const db = {
             level: 'Cơ bản',
             price: 399000,
             slug: 'lap-trinh-mobile-voi-react-native',
-            content: 'content',
+            content:
+                'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
             categoryId: 3,
             createdAt: '',
             updatedAt: '',
@@ -231,7 +241,8 @@ const db = {
             level: 'Cơ bản',
             price: -1,
             slug: 'reactjs',
-            content: 'content',
+            content:
+                'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
             categoryId: 1,
             createdAt: '',
             updatedAt: '',
@@ -246,7 +257,8 @@ const db = {
             level: 'Cơ bản',
             price: -1,
             slug: 'reactjs',
-            content: 'content',
+            content:
+                'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
             categoryId: 2,
             createdAt: '',
             updatedAt: '',
@@ -261,7 +273,8 @@ const db = {
             level: 'Cơ bản',
             price: -1,
             slug: 'reactjs',
-            content: 'content',
+            content:
+                'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
             categoryId: 2,
             createdAt: '',
             updatedAt: '',
@@ -278,7 +291,8 @@ const db = {
             duration: '2:30',
             image: 'https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg',
             slug: 'bai-1',
-            content: 'content',
+            content:
+                'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
             courseId: 1,
         },
         {
@@ -290,6 +304,8 @@ const db = {
             duration: '2:30',
             image: 'https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg',
             slug: 'bai-1',
+            content:
+                'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
             courseId: 1,
         },
         {
@@ -301,6 +317,8 @@ const db = {
             duration: '2:30',
             image: 'https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg',
             slug: 'bai-1',
+            content:
+                'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
             courseId: 1,
         },
         {
@@ -312,6 +330,8 @@ const db = {
             duration: '2:30',
             image: 'https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg',
             slug: 'bai-1',
+            content:
+                'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
             courseId: 1,
         },
         {
@@ -323,6 +343,8 @@ const db = {
             duration: '2:30',
             image: 'https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg',
             slug: 'bai-1',
+            content:
+                'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
             courseId: 1,
         },
         {
@@ -334,6 +356,8 @@ const db = {
             duration: '2:30',
             image: 'https://img-b.udemycdn.com/course/480x270/1906852_93c6_2.jpg',
             slug: 'bai-1',
+            content:
+                'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
             courseId: 1,
         },
     ],
@@ -350,7 +374,8 @@ const db = {
                     level: 'Cơ bản',
                     price: 1000000,
                     slug: 'nodejs',
-                    content: 'content',
+                    content:
+                        'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
                     categoryId: 2,
                     createdAt: '',
                     updatedAt: '',
@@ -365,7 +390,8 @@ const db = {
                     level: 'Cơ bản',
                     price: 1200000,
                     slug: 'reactjs',
-                    content: 'content',
+                    content:
+                        'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
                     categoryId: 1,
                     createdAt: '',
                     updatedAt: '',
@@ -380,7 +406,8 @@ const db = {
                     level: 'Cơ bản',
                     price: 0,
                     slug: 'javascript',
-                    content: 'content',
+                    content:
+                        'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
                     categoryId: 4,
                     createdAt: '',
                     updatedAt: '',
@@ -395,7 +422,8 @@ const db = {
                     level: 'Cơ bản',
                     price: 0,
                     slug: 'html-css',
-                    content: 'content',
+                    content:
+                        'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
                     categoryId: 4,
                     createdAt: '',
                     updatedAt: '',
@@ -410,7 +438,8 @@ const db = {
                     level: 'Cơ bản',
                     price: 0,
                     slug: 'lap-trinh-cpp-co-ban',
-                    content: 'content',
+                    content:
+                        'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
                     categoryId: 4,
                     createdAt: '',
                     updatedAt: '',
@@ -425,7 +454,8 @@ const db = {
                     level: 'Nâng cao',
                     price: 299000,
                     slug: 'javascript-nang-cao',
-                    content: 'content',
+                    content:
+                        'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
                     categoryId: 4,
                     createdAt: '',
                     updatedAt: '',
@@ -440,7 +470,8 @@ const db = {
                     level: 'Cơ bản',
                     price: 0,
                     slug: 'typescript-co-ban',
-                    content: 'content',
+                    content:
+                        'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
                     categoryId: 4,
                     createdAt: '',
                     updatedAt: '',
@@ -460,7 +491,8 @@ const db = {
                     level: 'Cơ bản',
                     price: 0,
                     slug: 'javascript',
-                    content: 'content',
+                    content:
+                        'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
                     categoryId: 4,
                     createdAt: '',
                     updatedAt: '',
@@ -475,7 +507,8 @@ const db = {
                     level: 'Cơ bản',
                     price: 0,
                     slug: 'html-css',
-                    content: 'content',
+                    content:
+                        'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
                     categoryId: 4,
                     createdAt: '',
                     updatedAt: '',
@@ -490,7 +523,8 @@ const db = {
                     level: 'Cơ bản',
                     price: 0,
                     slug: 'lap-trinh-cpp-co-ban',
-                    content: 'content',
+                    content:
+                        'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
                     categoryId: 4,
                     createdAt: '',
                     updatedAt: '',
@@ -506,7 +540,8 @@ const db = {
                     level: 'Cơ bản',
                     price: 0,
                     slug: 'typescript-co-ban',
-                    content: 'content',
+                    content:
+                        'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
                     categoryId: 4,
                     createdAt: '',
                     updatedAt: '',
@@ -522,7 +557,8 @@ const db = {
                     level: 'Cơ bản',
                     price: 0,
                     slug: 'mongodb-co-ban',
-                    content: 'content',
+                    content:
+                        'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
                     categoryId: 2,
                     createdAt: '',
                     updatedAt: '',
@@ -542,7 +578,8 @@ const db = {
                     level: 'Cơ bản',
                     price: 1000000,
                     slug: 'nodejs',
-                    content: 'content',
+                    content:
+                        'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
                     categoryId: 2,
                     createdAt: '',
                     updatedAt: '',
@@ -557,7 +594,8 @@ const db = {
                     level: 'Cơ bản',
                     price: 1200000,
                     slug: 'reactjs',
-                    content: 'content',
+                    content:
+                        'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
                     categoryId: 1,
                     createdAt: '',
                     updatedAt: '',
@@ -572,7 +610,8 @@ const db = {
                     level: 'Nâng cao',
                     price: 299000,
                     slug: 'javascript-nang-cao',
-                    content: 'content',
+                    content:
+                        'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
                     categoryId: 4,
                     createdAt: '',
                     updatedAt: '',
@@ -587,7 +626,8 @@ const db = {
                     level: 'Cơ bản',
                     price: 299000,
                     slug: 'redux-co-ban',
-                    content: 'content',
+                    content:
+                        'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
                     categoryId: 1,
                     createdAt: '',
                     updatedAt: '',
@@ -601,7 +641,8 @@ const db = {
                     level: 'Cơ bản',
                     price: 399000,
                     slug: 'lap-trinh-mobile-voi-react-native',
-                    content: 'content',
+                    content:
+                        'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
                     categoryId: 1,
                     createdAt: '',
                     updatedAt: '',
@@ -616,7 +657,8 @@ const db = {
                     level: 'Cơ bản',
                     price: -1,
                     slug: 'reactjs',
-                    content: 'content',
+                    content:
+                        'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
                     categoryId: 1,
                     createdAt: '',
                     updatedAt: '',
@@ -631,7 +673,8 @@ const db = {
                     level: 'Cơ bản',
                     price: -1,
                     slug: 'reactjs',
-                    content: 'content',
+                    content:
+                        'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
                     categoryId: 2,
                     createdAt: '',
                     updatedAt: '',
@@ -651,7 +694,8 @@ const db = {
                     level: 'Cơ bản',
                     price: 1000000,
                     slug: 'nodejs',
-                    content: 'content',
+                    content:
+                        'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
                     categoryId: 2,
                     createdAt: '',
                     updatedAt: '',
@@ -666,7 +710,8 @@ const db = {
                     level: 'Cơ bản',
                     price: 1200000,
                     slug: 'reactjs',
-                    content: 'content',
+                    content:
+                        'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
                     categoryId: 1,
                     createdAt: '',
                     updatedAt: '',
@@ -681,7 +726,8 @@ const db = {
                     level: 'Nâng cao',
                     price: 299000,
                     slug: 'javascript-nang-cao',
-                    content: 'content',
+                    content:
+                        'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
                     categoryId: 4,
                     createdAt: '',
                     updatedAt: '',
@@ -696,7 +742,8 @@ const db = {
                     level: 'Cơ bản',
                     price: 0,
                     slug: 'typescript-co-ban',
-                    content: 'content',
+                    content:
+                        'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
                     categoryId: 4,
                     createdAt: '',
                     updatedAt: '',
@@ -711,7 +758,8 @@ const db = {
                     level: 'Cơ bản',
                     price: 299000,
                     slug: 'redux-co-ban',
-                    content: 'content',
+                    content:
+                        'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
                     categoryId: 1,
                     createdAt: '',
                     updatedAt: '',
@@ -725,7 +773,8 @@ const db = {
                     level: 'Cơ bản',
                     price: 399000,
                     slug: 'lap-trinh-mobile-voi-react-native',
-                    content: 'content',
+                    content:
+                        'Học Javascript cơ bản phù hợp cho người chưa từng học lập trình. Với hơn 100 bài học và có bài tập thực hành sau mỗi bài học',
                     categoryId: 1,
                     createdAt: '',
                     updatedAt: '',
@@ -906,6 +955,35 @@ const db = {
                 'Chào bạn! Nếu bạn đã là học viên khóa Pro của F8, chắc hẳn bạn đã biết tới "Dev Mode" - giúp thực hành code song song khi xem video (bạn không cần phải dùng tới VS code nữa).',
             image: 'https://files.fullstack.edu.vn/f8-prod/blog_posts/8334/64f01064b0724.png',
             hashtag: 'reactjs',
+        },
+    ],
+    register: [
+        {
+            id: 1,
+            courseId: 1,
+            userId: 1,
+            userName: 'hoan',
+            registrationDate: '2023-07-30',
+            status: true,
+            process: 30,
+        },
+        {
+            id: 1,
+            courseId: 1,
+            userId: 1,
+            userName: 'hoan2',
+            registrationDate: '2023-07-30',
+            status: true,
+            process: 30,
+        },
+        {
+            id: 1,
+            courseId: 1,
+            userId: 1,
+            userName: 'hoan2',
+            registrationDate: '2023-07-30',
+            status: true,
+            process: 30,
         },
     ],
 };

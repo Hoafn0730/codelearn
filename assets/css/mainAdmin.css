@@ -55,8 +55,8 @@ html {
 }
 
 .d-flex-center {
-  align-items: center;
   display: flex;
+  align-items: center;
   justify-content: center;
 }
 
